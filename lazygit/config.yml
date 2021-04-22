@@ -1,0 +1,16 @@
+gui:
+  theme:
+    activeBorderColor:
+      - white
+      - bold
+    inactiveBorderColor:
+      - magenta
+keybinding:
+  universal:
+    prevItem-alt: 'u'
+    nextBlock-alt: 'k'
+    nextMatch: '='
+    prevMatch: '-'
+    scrollUpMain-alt1: 'U'
+  branches:
+    setUpstream: 's'

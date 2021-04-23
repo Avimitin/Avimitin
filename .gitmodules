@@ -5,3 +5,4 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/Avimitin/nvim.git
+	branch = linux

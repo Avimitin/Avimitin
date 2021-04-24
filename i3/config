@@ -23,7 +23,7 @@ font pango: UbuntuMono Nerd Font Mono 10
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec alacritty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -173,7 +173,7 @@ client.background       #F8F8F2
 
 # Start i3blocks to display a workspace bar
 bar {
-    position bottom
+    position top
     status_command i3blocks
     i3bar_command i3bar
     font pango: SauceCodePro Nerd Font 9

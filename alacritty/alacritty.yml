@@ -86,7 +86,7 @@ visual_bell:
   animation: EaseOutExpo
   duration: 0
 
-background_opacity: 1.0
+background_opacity: 0.7
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

@@ -13,15 +13,9 @@ separator_block_width=15
 markup=pango
 
 [battery]
-command=$SCRIPT_DIR/battery2
+command=$HOME/scripts/battery2
 markup=pango
 interval=30
-
-[wifi]
-command=iwgetid -r | tr '\n' ' ' && grep $(iwgetid -m | awk '{ printf "%s", $1 }') /proc/net/wireless | awk '{ printf "%i%\n", int($3 * 100 / 70) }'
-instance=wlp11s0f3u1
-interval=5
-label=<span color="#f1fa8c"> </span>
 
 [mediaplayer]
 command=playerctl metadata --format "{{ artist }} - {{ title }}"
@@ -43,15 +37,6 @@ command=df -h / | awk 'FNR==2{print $4}'
 interval=3
 label=<span color="#bd93f9"> </span>
 
-[gpu-load]
-command=nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | awk '{ printf "%02i<span color=\"#8be9fd\"><b>%</b></span>\n", $0}'
-label=<span color="#8be9fd"><b>GPU: </b></span>
-interval=2
-
-[gpu-temperature]
-command=nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | awk '{ printf "%i<span color=\"#8be9fd\">糖 </span>\n", $0}'
-interval=2
-
 [cpu_load]
 command=sar -u 1 1 | awk 'FNR == 5 { printf "%04.1f<span color=\"#50fa7b\"><b>%</b></span>\n", (100 - $8) } '
 interval=2
@@ -71,29 +56,19 @@ command=pulseaudio-ctl full-status | awk '{ printf "%i%\n", $1 }'
 interval=1
 label=<span color="#ffb86c"> </span>
 
-[time_pst]
-command=TZ=":US/Pacific" date '+%I:%M %Z'
-interval=1
-label=<span color="#ff5555"> </span>
-
-[time_cst]
-command=TZ=":US/Central" date '+%I:%M %Z'
-interval=1
-label=<span color="#ff79c6"> </span>
-
-[time_est]
-command=TZ=":US/Eastern" date '+%I:%M %Z'
+[time_China]
+command=date '+%I:%M %Z'
 interval=1
 label=<span color="#bd93f9"> </span>
 
 [date]
-command=date '+%Y年%B%d日 %A'
+command=date '+%Y年%B %d日 %A'
 interval=60
 label=<span color="#8be9fd"> </span>
 
 [shutdown_menu]
 full_text=<span color="#50fa7b"> </span>
-command=~/.config/i3blocks/blocks/shutdown_menu/shutdown_menu
+command=~/scripts/shutdown_menu
 ROFI_TEXT=Menu:
 ROFI_OPTIONS=-no-config -location 3 -yoffset 29 -width 5 -xoffset 5 -bw 0 -border 0 -theme ~/.config/rofi/menu.rasi
 ENABLE_CONFIRMATIONS=true

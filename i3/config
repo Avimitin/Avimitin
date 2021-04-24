@@ -29,16 +29,16 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 #Screenshot
-bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Shift+PrintSc exec flameshot gui
 
 # Start rofi
-bindsym $mod+d exec rofi -show drun -columns 3
+bindsym $mod+o exec rofi -show drun -columns 3
 
 # Move between windows
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+a focus left
+bindsym $mod+s focus down
+bindsym $mod+w focus up
+bindsym $mod+d focus right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -47,10 +47,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+a move left
+bindsym $mod+Shift+s move down
+bindsym $mod+Shift+w move up
+bindsym $mod+Shift+d move right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -68,8 +68,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+k layout stacking
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
@@ -79,7 +79,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # Focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # Name the workspaces
 set $workspace1 " 1:  "
@@ -161,7 +161,7 @@ mode "resize"
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+Shift+e exec "~/.config/i3blocks/blocks/shutdown_menu/shutdown_menu"
+bindsym $mod+Shift+e exec "~/scripts/shutdown_menu"
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4

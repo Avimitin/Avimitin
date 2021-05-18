@@ -1,0 +1,15 @@
+# ignore all
+*
+
+# except:
+!.gitignore
+!alacritty/
+!fish/functions/*
+!fish/config.fish
+!i3/
+!i3blocks/
+!lazygit/
+!nvim/
+!polybar/
+!ranger/
+!rofi/

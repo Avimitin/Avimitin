@@ -1,7 +1,6 @@
-# Defined via `source`
-function ra --wraps=ranger --description 'alias ra ranger'
-	if test -z "$RANGER_LEVEL"
-		ranger $argv
+function ra --wraps=ranger --description 'prevent nested instance'
+	if test -z $RANGER_LEVEL
+		ranger  $argv
 	else
 		exit
 	end

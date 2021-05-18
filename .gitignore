@@ -2,6 +2,7 @@
 *
 
 # except:
+!README.md
 !.gitignore
 !alacritty/
 !fish/functions/*

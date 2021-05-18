@@ -22,6 +22,9 @@ font pango: UbuntuMono Nerd Font Mono 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# changed random background
+bindsym $mod+b exec ~/scripts/wp-change.sh
+
 # Start a terminal
 bindsym $mod+Return exec alacritty
 

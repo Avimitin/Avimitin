@@ -181,13 +181,13 @@ bar {
     i3bar_command i3bar --transparency
     font pango: FiraMono Nerd Font Mono 9
     colors {
-        background #00000000
+        background #0000001A
         statusline #F8F8F2
         separator  #44475A
 
-        focused_workspace  #FFFFFF #2B2B2B #F8F8F2
-        active_workspace   #1E95D04D #00000000 #000000
-        inactive_workspace #0000004D #0000004D #F8F8F2
+        focused_workspace  #00000000 #FFFFFF80 #F8F8F2
+        active_workspace   #00000000 #FFFFFF80 #000000
+        inactive_workspace #00000000 #0000001A #F8F8F2
         urgent_workspace   #FF5555 #FF5555 #F8F8F2
         binding_mode       #FF5555 #FF5555 #F8F8F2
     }

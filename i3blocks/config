@@ -25,12 +25,12 @@ label=<span color="#ffb86c"> </span>
 [root]
 command=df -h / | awk 'FNR==2{print $4}'
 interval=3
-label=<span color="#000000"> Storage: </span>
+label=<span color="#FFFFFF"> Storage: </span>
 
 [cpu_load]
 command=sar -u 1 1 | awk 'FNR == 5 { printf "%04.1f<span color=\"#50fa7b\"><b>%</b></span>\n", (100 - $8) } '
 interval=2
-label=<span color="#000000"><b>CPU: </b></span>
+label=<span color="#FFFFFF"><b>CPU: </b></span>
 
 [cpu_temperature]
 command=sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf "%i<span color=\"#50fa7b\">糖 </span>\n", $3 } }'
@@ -39,7 +39,7 @@ interval=2
 [memory]
 command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
 interval=2
-label=<span color="#000000"> Memory: </span>
+label=<span color="#FFFFFF"> Memory: </span>
 
 [volume]
 command=pulseaudio-ctl full-status | awk '{ printf "%i%\n", $1 }'
@@ -49,4 +49,4 @@ label=<span color="#ffb86c"> </span>
 [date]
 command=date '+%Y/%B/%d %A %I:%M'
 interval=60
-label=<span color="#000000"> </span>
+label=<span color="#FFFFFF"> </span>

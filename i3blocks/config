@@ -22,25 +22,15 @@ command=playerctl metadata --format "{{ artist }} - {{ title }}"
 interval=2
 label=<span color="#ffb86c"> </span>
 
-[arch-update]
-command=checkupdates | wc -l
-interval=once
-label=<span color="#ff5555"> </span>
-
-[home]
-command=df -h /home | awk 'FNR==2{print $4}'
-interval=3
-label=<span color="#ff79c6"> </span>
-
 [root]
 command=df -h / | awk 'FNR==2{print $4}'
 interval=3
-label=<span color="#bd93f9"> </span>
+label=<span color="#000000"> Storage: </span>
 
 [cpu_load]
 command=sar -u 1 1 | awk 'FNR == 5 { printf "%04.1f<span color=\"#50fa7b\"><b>%</b></span>\n", (100 - $8) } '
 interval=2
-label=<span color="#50fa7b"><b>CPU: </b></span>
+label=<span color="#000000"><b>CPU: </b></span>
 
 [cpu_temperature]
 command=sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf "%i<span color=\"#50fa7b\">糖 </span>\n", $3 } }'
@@ -49,28 +39,14 @@ interval=2
 [memory]
 command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
 interval=2
-label=<span color="#f1fa8c"> </span>
+label=<span color="#000000"> Memory: </span>
 
 [volume]
 command=pulseaudio-ctl full-status | awk '{ printf "%i%\n", $1 }'
 interval=1
 label=<span color="#ffb86c"> </span>
 
-[time_China]
-command=date '+%I:%M %Z'
-interval=1
-label=<span color="#bd93f9"> </span>
-
 [date]
-command=date '+%Y年%B %d日 %A'
+command=date '+%Y/%B/%d %A %I:%M'
 interval=60
-label=<span color="#8be9fd"> </span>
-
-[shutdown_menu]
-full_text=<span color="#50fa7b"> </span>
-command=~/scripts/shutdown_menu
-ROFI_TEXT=Menu:
-ROFI_OPTIONS=-no-config -location 3 -yoffset 29 -width 5 -xoffset 5 -bw 0 -border 0 -theme ~/.config/rofi/menu.rasi
-ENABLE_CONFIRMATIONS=true
-LAUNCHER=rofi
-LOCKSCRIPT=betterlockscreen -l dimblur
+label=<span color="#000000"> </span>

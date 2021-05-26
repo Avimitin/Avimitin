@@ -1,5 +1,5 @@
 # MY DOTFILE
 
-![scree](https://img.vim-cn.com/ca/6a9bc853a5f2d71d585bf9df72f0c0511334f7.png)
+![screen shot](https://img.vim-cn.com/a2/e755fd59c15c815915ef630bb2d68122aa4588.png)
 
 Try it: `git clone https://github.com/Avimitin/dotfile.git .config`

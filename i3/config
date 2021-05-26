@@ -85,16 +85,16 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+p focus parent
 
 # Name the workspaces
-set $workspace1 " 1:  "
-set $workspace2 " 2:  "
-set $workspace3 " 3:  "
-set $workspace4 " 4:  "
-set $workspace5 " 5:  "
-set $workspace6 " 6:  "
-set $workspace7 " 7:  "
-set $workspace8 " 8: ♫ "
-set $workspace9 " 9:  "
-set $workspace0 " 10:  "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace0 "10"
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -178,16 +178,16 @@ client.background       #F8F8F2
 bar {
     position top
     status_command i3blocks
-    i3bar_command i3bar
-    font pango: SauceCodePro Nerd Font 9
+    i3bar_command i3bar --transparency
+    font pango: JetbrainsMono Nerd Font Mono 9
     colors {
-        background #282A36
+        background #00000000
         statusline #F8F8F2
         separator  #44475A
 
-        focused_workspace  #44475A #44475A #F8F8F2
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
+        focused_workspace  #FFFFFF #2B2B2B #F8F8F2
+        active_workspace   #1E95D04D #00000000 #000000
+        inactive_workspace #0000004D #0000004D #F8F8F2
         urgent_workspace   #FF5555 #FF5555 #F8F8F2
         binding_mode       #FF5555 #FF5555 #F8F8F2
     }

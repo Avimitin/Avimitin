@@ -32,7 +32,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 #Screenshot
-bindsym $mod+PrintSc exec flameshot gui
+bindsym $mod+Shift+s exec flameshot gui
 
 # Start rofi
 bindsym $mod+o exec rofi -show drun -columns 3
@@ -71,9 +71,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+k layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+a layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+p layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle

@@ -23,25 +23,25 @@ font pango: UbuntuMono Nerd Font Mono 10
 floating_modifier $mod
 
 # changed random background
-bindsym $mod+b exec ~/scripts/wp-change.sh
+bindsym $mod+Shift+b exec ~/scripts/wp-change.sh
 
 # Start a terminal
 bindsym $mod+Return exec alacritty
 
 # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 #Screenshot
-bindsym $mod+Shift+PrintSc exec flameshot gui
+bindsym $mod+PrintSc exec flameshot gui
 
 # Start rofi
 bindsym $mod+o exec rofi -show drun -columns 3
 
 # Move between windows
-bindsym $mod+a focus left
-bindsym $mod+s focus down
-bindsym $mod+w focus up
-bindsym $mod+d focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -50,10 +50,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+a move left
-bindsym $mod+Shift+s move down
-bindsym $mod+Shift+w move up
-bindsym $mod+Shift+d move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -62,7 +62,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # Split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # Split in vertical orientation
 bindsym $mod+v split v
@@ -119,26 +119,6 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
-
-# Always open some programs on specified workspace
-assign [class="VirtualBox"]	$workspace5
-assign [class="cmus"]		    $workspace8
-assign [class="spotify"]		$workspace8
-
-# Enable float for some windows
-for_window [class="^Pavucontrol$"] floating enable
-for_window [class="^Arandr$"] floating enable
-for_window [class="^Steam$" title="^Friends List$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-for_window [class="Yad"] floating enable
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload

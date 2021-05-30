@@ -159,7 +159,7 @@ bar {
     position top
     status_command i3blocks
     i3bar_command i3bar --transparency
-    font pango: FiraMono Nerd Font Mono 9
+    font pango: DroidSansMono NF 10
     colors {
         background #0000001A
         statusline #F8F8F2

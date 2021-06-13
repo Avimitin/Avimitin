@@ -1,10 +1,14 @@
 gui:
   theme:
     activeBorderColor:
-      - white
+      - blue
       - bold
     inactiveBorderColor:
-      - magenta
+      - white
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
 keybinding:
   universal:
     nextMatch: '='

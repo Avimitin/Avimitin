@@ -11,3 +11,14 @@ keybinding:
     prevMatch: '-'
   branches:
     setUpstream: 's'
+
+customCommands:
+  - key: '<c-p>'
+    context: 'global'
+    loadingText: 'pushing'
+    prompts:
+      - type: 'input'
+        title: 'push to which remote?'
+      - type: 'input'
+        title: 'push to which branch?'
+    command: 'git push {{index .PromptResponses 0}} {{index .PromptResponses 1}}'

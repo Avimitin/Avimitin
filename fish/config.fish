@@ -1,5 +1,3 @@
-set PATH ~/go/bin $PATH
-
 # function to test executable exist
 function exec_exist
 	if test -z (command -v $argv)
@@ -10,7 +8,15 @@ function exec_exist
 	return 0
 end
 
-# -_-test starship exist-_-
+if exec_exist go
+	set PATH ~/go/bin $PATH
+end
+
+if not exec_exist node
+	nvm use node || true
+end
+
+# ---test starship exist---
 if not exec_exist starship
 	echo "starship not found, install it from https://starship.rs/guide/#%F0%9F%9A%80-installation"
 	echo "or run command:"

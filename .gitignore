@@ -18,6 +18,7 @@
 !fish/functions/cr.fish
 !fish/functions/lg.fish
 !fish/functions/t.fish
+!fish/functions/nvm.fish
 
 # i3
 !i3

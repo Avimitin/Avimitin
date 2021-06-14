@@ -1,6 +1,5 @@
 set COLOR_RED '\e[31m'
 set COLOR_GREEN '\e[32m'
-set COLOR_YELLOW '\e[33m'
 set COLOR_NM '\e[0m'
 
 # function to test executable exist
@@ -63,5 +62,4 @@ if test -x ~/scripts/fetch-host-ip.sh
 	set host_ip (~/scripts/fetch-host-ip.sh)
 	set -gx http_proxy "http://$host_ip:7890"
 	set -gx https_proxy "http://$host_ip:7890"
-	echo -e $COLOR_YELLOW"Proxy:"$COLOR_NM" $http_proxy"
 end

@@ -85,16 +85,16 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+p focus parent
 
 # Name the workspaces
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace0 "10"
+set $workspace1 ""
+set $workspace2 ""
+set $workspace3 ""
+set $workspace4 ""
+set $workspace5 ""
+set $workspace6 ""
+set $workspace7 ""
+set $workspace8 ""
+set $workspace9 ""
+set $workspace0 ""
 
 # Switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -165,13 +165,13 @@ bar {
     i3bar_command i3bar --transparency
     font pango: DroidSansMono NF 10
     colors {
-        background #0000001A
-        statusline #F8F8F2
+        background #242a32e6
+        statusline #eaeaea
         separator  #44475A
 
-        focused_workspace  #00000000 #FFFFFF80 #F8F8F2
-        active_workspace   #00000000 #FFFFFF80 #000000
-        inactive_workspace #00000000 #0000001A #F8F8F2
+        focused_workspace  #e5c07b #e5c07b #242a32
+        active_workspace   #e5c07b #e5c07b #242a32
+        inactive_workspace #242a32 #242a32 #e5c07b
         urgent_workspace   #FF5555 #FF5555 #F8F8F2
         binding_mode       #FF5555 #FF5555 #F8F8F2
     }

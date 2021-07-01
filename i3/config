@@ -17,7 +17,7 @@ new_window pixel
 gaps inner 1
 
 # Font for window titles.
-font pango: UbuntuMono Nerd Font Mono 10
+font pango: Ubuntu Nerd Font Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -163,7 +163,7 @@ bar {
     position top
     status_command i3blocks
     i3bar_command i3bar --transparency
-    font pango: DroidSansMono NF 10
+    font pango: Ubuntu Nerd Font 9
     colors {
         background #242a32e6
         statusline #eaeaea

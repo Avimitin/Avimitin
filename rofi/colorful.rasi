@@ -8,47 +8,47 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"Applications";
-    drun-display-format:            "{name}";
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+  font:                "Ubunutu Nerd Font 10";
+  show-icons:          true;
+  icon-theme:          "Tera";
+  display-drun:        "Applications";
+  drun-display-format: "{name}";
+  disable-history:     false;
+  fullscreen:          false;
+  hide-scrollbar:      true;
+  sidebar-mode:        false;
 }
 
 @import "colors.rasi"
 
 window {
-    transparency:                   "real";
-    background-color:               @bg;
-    text-color:                     @fg;
-	border:							0px;
-	border-color:					@ac;
-    border-radius:                  15px;
-	width:							35%;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
+    transparency:     "real";
+    background-color: @bg;
+    text-color:       @fg;
+    border:           0px;
+    border-color:     @ac;
+    border-radius:    15px;
+    width:            35%;
+    location:         center;
+    x-offset:         0;
+    y-offset:         0;
 }
 
 prompt {
-    enabled: 						true;
-	padding: 						1% 0.75% 1% 0.75%;
-	background-color: 				@ac;
-	text-color: 					@fg;
-    border-radius:                  10px;
-	font:							"Iosevka Nerd Font 12";
+  enabled:          true;
+  padding:          1%       0.75% 1%   0.75%;
+  background-color: @ac;
+  text-color:       @fg;
+  border-radius:    10px;
+  font:             "Ubuntu Nerd  Font 12";
 }
 
 textbox-prompt-colon {
-	padding: 						1% 0% 1% 0%;
-	background-color: 				@se;
-	text-color: 					@fg;
-	expand: false;
-	str: " :: ";
+  padding:            1% 0% 1% 0%;
+  background-color:         @se;
+  text-color:           @fg;
+  expand: false;
+  str: " :: ";
 }
 
 entry {
@@ -58,18 +58,18 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
-	padding: 						1.15% 0.5% 1% 0.5%;
+  padding:            1.15% 0.5% 1% 0.5%;
     blink:                          true;
 }
 
 inputbar {
-	children: 						[ prompt, entry ];
+  children:             [ prompt, entry ];
     background-color:               @se;
     text-color:                     @fg;
     expand:                         false;
-	border:							0% 0% 0% 0%;
+  border:             0% 0% 0% 0%;
     border-radius:                  10px;
-	border-color:					@ac;
+  border-color:         @ac;
 }
 
 listview {
@@ -77,7 +77,7 @@ listview {
     padding:                        0px;
     columns:                        2;
     lines:                          7;
-    spacing:                       	1%;
+    spacing:                        1%;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;
@@ -85,11 +85,11 @@ listview {
 
 mainbox {
     background-color:               @al;
-	border:							0% 0% 0% 0%;
+    border:             0% 0% 0% 0%;
     border-radius:                  0% 0% 0% 0%;
-	border-color:					@ac;
+    border-color:         @ac;
     children:                       [ inputbar, listview ];
-    spacing:                       	2%;
+    spacing:                        2%;
     padding:                        4% 2% 4% 2%;
 }
 
@@ -116,7 +116,7 @@ element-text {
 element selected {
     background-color:               @se;
     text-color:                     @ac;
-	border:							0% 0.3% 0% 0.3%;
+    border:             0% 0.3% 0% 0.3%;
     border-radius:                  12px;
-    border-color:                  	@ac;
+    border-color:                   @ac;
 }

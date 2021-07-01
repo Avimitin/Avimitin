@@ -44,7 +44,7 @@ if $has_nnn
 	export NNN_PLUG_EXPLORE='j:autojump;f:finder;o:fzopen'
 	export NNN_PLUG_FILE='t:nmount'
 	export NNN_PLUG_VIEW='p:mocplay;v:imgview;p:preview-tui-ext'
-	export NNN_PLUG='$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW'
+	export NNN_PLUG="$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW"
 	export NNN_FCOLORS="0B0B04060006060009060B06"
 	set --export NNN_FIFO "/tmp/nnn.fifo"
 end

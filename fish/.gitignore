@@ -1,0 +1,15 @@
+/*
+!/.gitignore
+!/config.fish
+!/startup.fish
+
+!/functions
+/functions/*
+
+!/functions/n.fish
+!/functions/v.fish
+!/functions/cr.fish
+!/functions/lg.fish
+!/functions/t.fish
+!/functions/nvm.fish
+!/functions/set_proxy.fish

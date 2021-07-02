@@ -1,5 +1,5 @@
 # ignore all
-*
+/*
 
 # except:
 # basic
@@ -7,40 +7,28 @@
 !.gitignore
 
 # alacritty
-!alacritty
+!/alacritty
 
 # fish
-!fish
-!fish/config.fish
-!fish/startup.fish
-!fish/functions
-!fish/functions/n.fish
-!fish/functions/v.fish
-!fish/functions/cr.fish
-!fish/functions/lg.fish
-!fish/functions/t.fish
-!fish/functions/nvm.fish
+!/fish
 
 # i3
-!i3
-!i3blocks
+!/i3
+!/i3blocks
 
 # lazygit
-!lazygit
+!/lazygit
 
 # neovim
-!nvim
+!/nvim
 
 # deprecated
-!polybar
-!ranger
-!rofi
-!rofi/*
+!/polybar
+!/ranger
+!/rofi
 
 # images
-!images
-!/images/**
+!/images
 
 # tmux
-!.tmux
-!/tmux/**
+!/.tmux

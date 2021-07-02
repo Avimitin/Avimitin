@@ -12,6 +12,7 @@
 # fish
 !fish
 !fish/config.fish
+!fish/startup.fish
 !fish/functions
 !fish/functions/n.fish
 !fish/functions/v.fish

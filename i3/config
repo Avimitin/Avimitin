@@ -151,9 +151,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+e exec "~/scripts/shutdown_menu"
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          #2c323b #2c323b #F8F8F2 #2c323b   #2c323b
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.unfocused        #14181c00 #14181c00 #BFBFBF #14181c00   #14181c00
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
@@ -163,7 +163,7 @@ bar {
     position top
     status_command i3blocks
     i3bar_command i3bar --transparency
-    font pango: Ubuntu Nerd Font 9
+    font pango: Ubuntu Nerd Font 10
     colors {
         background #242a32e6
         statusline #eaeaea

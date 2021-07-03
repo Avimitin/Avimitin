@@ -5,6 +5,7 @@
 # basic
 !README.md
 !.gitignore
+!picom.conf
 
 # alacritty
 !/alacritty

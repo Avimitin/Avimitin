@@ -9,7 +9,7 @@
 align=center
 separator=true
 color=#eaeaea
-separator_block_width=15
+separator_block_width=30
 markup=pango
 
 [battery]
@@ -20,21 +20,21 @@ interval=30
 [root]
 command=df -h / | awk 'FNR==2{print $4}'
 interval=3
-label=<span color="#70c0ba"> STORE </span>
+label=<span color="#EAEAEA"> STORE </span>
 
 [cpu_load]
 command=sar -u 1 1 | awk 'FNR == 5 { printf "%4.1f <span>%</span>\n", (100 - $8) } '
 interval=2
-label=<span color="#c678dd"> CPU</span>
+label=<span color="#EAEAEA"> CPU</span>
 
 #[cpu_temperature]
-#command=sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf "%i<span color=\"#50fa7b\">糖 </span>\n", $3 } }'
+#command=sensors | awk '{ if ($1 == "CPU" && $2 == "Temperature:") { gsub(/[+°C]/, "") ; printf "%i<span color=\"EAEAEA\">糖 </span>\n", $3 } }'
 #interval=2
 
 [memory]
 command=free -h --si | awk 'FNR==2{ print $0 }' | awk '{ print $7 }'
 interval=2
-label=<span color="#90c966"> MEM </span>
+label=<span color="#EAEAEA"> MEM </span>
 
 #[volume]
 #command=pulseaudio-ctl full-status | awk '{ printf "%i%\n", $1 }'
@@ -42,6 +42,6 @@ label=<span color="#90c966"> MEM </span>
 #label=<span color="#ffb86c"> </span>
 
 [date]
-command=printf "<span color=\"#666666\">%s</span>\n" "$(date '+%Y/%B/%d %I:%M')"
+command=printf "<span color=\"#EAEAEA\">%s</span>\n" "$(date '+%Y/%B/%d %I:%M')"
 interval=60
-label=<span color="#eaeaea"> </span>
+label=<span color="#EAEAEA"> </span>

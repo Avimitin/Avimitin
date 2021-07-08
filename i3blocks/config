@@ -7,9 +7,9 @@
 # |_|____/|_.__/|_|\___/ \___|_|\_\___/
 
 align=center
-separator=true
-color=#eaeaea
-separator_block_width=30
+separator=false
+color=#D6C6C2
+separator_block_width=35
 markup=pango
 
 [battery]

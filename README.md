@@ -19,11 +19,14 @@ Try it: `git clone https://github.com/Avimitin/dotfile.git .config`
 | alacritty            | Terminal with GPU accelerate |
 | acpi                 | battery information          |
 | sysstat              | CPU information              |
-| nerdfont             | fancy icon                   |
 | starship             | fancy promt                  |
 | zoxide               | easy jump                    |
-| nm-applet | network manager |
-| feh | background image |
+| nm-applet            | network manager              |
+| feh                  | background image             |
+
+## Font
+
+You will need to install [Jetbrains Mono](https://github.com/ryanoasis/nerd-fonts/releases)
 
 ## Environment setting
 

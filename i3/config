@@ -85,8 +85,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+p focus parent
 
 # Name the workspaces
-set $workspace1 ""
-set $workspace2 ""
+set $workspace1 ""
+set $workspace2 ""
 set $workspace3 ""
 set $workspace4 ""
 set $workspace5 ""

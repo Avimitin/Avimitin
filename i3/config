@@ -160,7 +160,7 @@ client.background       #F8F8F2
 
 # Start i3blocks to display a workspace bar
 bar {
-    position top
+    position bottom
     status_command i3blocks
     i3bar_command i3bar --transparency
     font pango: Jetbrains Mono Nerd Font Mono Medium 12

@@ -1,5 +1,13 @@
 # MY DOTFILE
 
+```text
+ ____  ____  _____  _____ _  _     _____
+/  _ \/  _ \/__ __\/    // \/ \   /  __/
+| | \|| / \|  / \  |  __\| || |   |  \  
+| |_/|| \_/|  | |  | |   | || |_/\|  /_ 
+\____/\____/  \_/  \_/   \_/\____/\____\
+```
+
 ![screen shot](./images/screenshot.png)
 
 Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`

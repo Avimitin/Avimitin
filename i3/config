@@ -163,7 +163,7 @@ bar {
     position top
     status_command i3blocks
     i3bar_command i3bar --transparency
-    font pango: Ubuntu Nerd Font 10
+    font pango: Jetbrains Mono Nerd Font Mono Medium 12
     colors {
         background #242a32e6
         statusline #eaeaea

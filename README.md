@@ -36,6 +36,30 @@ Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`
 
 You will need to install [Jetbrains Mono](https://github.com/ryanoasis/nerd-fonts/releases)
 
+## i3 keymap
+
+Normally mod key is the win key. And `hjkl` can be replaced with `↑ ↓ ← →`
+
+| keymap                       | functionality        |
+| ---                          | ---                  |
+| `<Mod> + h/j/k/l`            | focused around       |
+| `<Mod> + Shift + h/j/k/l`    | moved windows around |
+| `<Mod> + 1234567890`         | focuse workspace     |
+| `<Mod> + Shift + 1234567890` | focuse workspace     |
+| `<Mod> + Enter`              | open terminal        |
+| `<Mod> + o`                  | open app selector    |
+
+For detail please take a look on [i3](./i3/config)
+
+### Resize mod
+
+Press `<Mod> + r` to get into resize mod.
+
+| keymap    | functionality  |
+| ---       | ---            |
+| `- / +`   | resize gap     |
+| `↑ ↓ ← →` | resize windows |
+
 ## Environment setting
 
 ### fcitx

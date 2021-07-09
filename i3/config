@@ -35,7 +35,10 @@ bindsym $mod+q kill
 bindsym $mod+Shift+s exec flameshot gui
 
 # Start rofi
-bindsym $mod+o exec rofi -show drun -columns 3
+bindsym $mod+o exec dmenu_run
+
+# open up a shutdown menu
+bindsym $mod+Shift+e exec "~/scripts/shutdown_dmenu"
 
 # Move between windows
 bindsym $mod+h focus left
@@ -159,8 +162,6 @@ mode "Resize Mode" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "Resize Mode"
-
-bindsym $mod+Shift+e exec "~/scripts/shutdown_menu"
 
 # class                 border  bground text    indicator child_border
 client.focused          #2c323b #2c323b #F8F8F2 #2c323b   #2c323b

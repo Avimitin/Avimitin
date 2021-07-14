@@ -1,5 +1,4 @@
 function nvm
-	echo "==checking nvm=="
 	if not type -q bass
 		echo "No bass, try to use fisher install"
 		

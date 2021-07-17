@@ -14,27 +14,27 @@ Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`
 
 ## Dependency
 
-| Software                             | Why                          |
-| ---                                  | ---                          |
-| tmux                                 | Terminal Pane                |
-| neovim(latest build)                 | Editor                       |
-| lazygit                              | Git TUI                      |
-| exa                                  | Another ls                   |
-| git-delta                            | fancy git diff               |
-| picom                                | Gaussain blur                |
-| nnn                                  | file explorer                |
-| fish                                 | Shell for 90s                |
-| alacritty                            | Terminal with GPU accelerate |
-| acpi                                 | battery information          |
-| sysstat                              | CPU information              |
-| starship                             | fancy promt                  |
-| zoxide                               | easy jump                    |
-| nm-applet                            | network manager              |
-| feh                                  | background image             |
-| i3-gap                               | windows manager              |
-| i3-block                             | i3 bar                       |
-| [st](https://github.com/Avimitin/st) | simple terminal              |
-| dmenu                                | app, script selector         |
+| Software                                   | Why                                        |
+| ---                                        | ---                                        |
+| tmux                                       | Terminal Pane                              |
+| neovim(latest build)                       | Editor                                     |
+| lazygit                                    | Git TUI                                    |
+| exa                                        | Another ls                                 |
+| git-delta                                  | fancy git diff                             |
+| [picom](https://github.com/jonaburg/picom) | Blur, shadow, round corners and animations |
+| nnn                                        | file explorer                              |
+| fish                                       | Shell for 90s                              |
+| alacritty                                  | Terminal with GPU accelerate               |
+| acpi                                       | battery information                        |
+| sysstat                                    | CPU information                            |
+| starship                                   | fancy promt                                |
+| zoxide                                     | easy jump                                  |
+| nm-applet                                  | network manager                            |
+| feh                                        | background image                           |
+| i3-gap                                     | windows manager                            |
+| i3-block                                   | i3 bar                                     |
+| [st](https://github.com/Avimitin/st)       | simple terminal                            |
+| [dmenu](https://github.com/Avimitin/dmenu) | app, script selector                       |
 
 ## Font
 
@@ -64,6 +64,11 @@ Press `<Mod> + r` to get into resize mod.
 | `- / +`   | resize gap     |
 | `↑ ↓ ← →` | resize windows |
 
+### Deprecated warning
+
+But anyway, I am using [DWM](https://github.com/Avimitin/dwm) now. Please take
+a look at it. I think you will love it. The i3 configuration is now archive. 
+
 ## Environment setting
 
 ### fcitx
@@ -79,6 +84,6 @@ export XMODIFIERS="@im=fcitx"
 
 ```
 # picom
-picom --experimental-backends --backend glx -b -c
+picom -b -c
 ```
 

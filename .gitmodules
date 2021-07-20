@@ -5,7 +5,7 @@
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/Avimitin/nvim.git
-	branch = linux
+	branch = master
 [submodule ".tmux"]
 	path = .tmux
 	url = https://github.com/Avimitin/.tmux.git

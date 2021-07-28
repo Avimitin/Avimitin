@@ -40,7 +40,9 @@ if not exec_exist nnn
 end
 
 if $has_nnn
+	export ICONLOOKUP=1
 	export NNN_PLUG_GIT='g:lazygit;d:diffs'
+	export NNN_BMS="d:$HOME/Documents;c:$HOME/.config;D:$HOME/Downloads/"
 	export NNN_PLUG_EXPLORE='j:autojump;f:finder;o:fzopen'
 	export NNN_PLUG_FILE='t:nmount'
 	export NNN_PLUG_VIEW='v:imgview;p:preview-tui'

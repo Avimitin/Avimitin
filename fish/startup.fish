@@ -2,6 +2,12 @@ set COLOR_RED '\e[31m'
 set COLOR_GREEN '\e[32m'
 set COLOR_NM '\e[0m'
 
+if test -z (pgrep ssh-agent | string collect)
+    eval (ssh-agent -c)
+    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+end
+
 # function to test executable exist
 function exec_exist
 	set exec $argv[1]
@@ -17,10 +23,6 @@ end
 
 if exec_exist go
 	set PATH ~/go/bin $PATH
-end
-
-if not exec_exist node
-	nvm use node || true
 end
 
 # ---test starship exist---

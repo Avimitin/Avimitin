@@ -8,7 +8,7 @@ symbol=""
 [cmake]
 symbol=""
 [git_branch]
-symbol=""
+symbol=" "
 [git_status]
 conflicted = ""
 ahead = ""

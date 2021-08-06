@@ -3,3 +3,20 @@ success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
 [golang]
 symbol=""
+[rust]
+symbol=""
+[cmake]
+symbol=""
+[git_branch]
+symbol=""
+[git_status]
+conflicted = ""
+ahead = ""
+behind = ""
+diverged = "ﮙ"
+untracked = ""
+stashed = ""
+modified = ""
+staged = '[++\($count\)](green)'
+renamed = "凜"
+deleted = ""

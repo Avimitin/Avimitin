@@ -33,3 +33,13 @@
 
 # tmux
 !/.tmux
+
+!/fcitx
+fcitx/*
+!fcitx/rime
+fcitx/rime/build
+fcitx/rime/extended.userdb
+lua
+
+fcitx/rime/.place_holder
+fcitx/rime/installation.yaml

@@ -1,7 +1,3 @@
-[submodule "ranger"]
-	path = ranger
-	url = https://github.com/Avimitin/ranger.git
-
 [submodule "nvim"]
 	path = nvim
 	url = https://github.com/Avimitin/nvim.git

@@ -44,3 +44,7 @@ lua
 fcitx/rime/.place_holder
 fcitx/rime/installation.yaml
 fcitx/rime/user.yaml
+
+!fontconfig/
+fontconfig/*
+!fontconfig/fonts.conf

@@ -1,4 +1,4 @@
-set DEFAULT_SESSION_NAME 'MUX-WORK'
+set DEFAULT_SESSION_NAME 'TMUX'
 
 function t --description 'tmux'
 	if test -n "$argv"

@@ -49,3 +49,7 @@ fcitx/rime/user.yaml
 !fontconfig/
 fontconfig/*
 !fontconfig/fonts.conf
+
+!ncspot/
+ncspot/*
+!ncspot/config.toml

@@ -1,13 +1,14 @@
 use_nerdfont=true
 [theme]
-primary = "#E5C07B"
+background = "#000000"
+primary = "#B2B49C"
 secondary = "#EAEAEA"
 title = "#90C966"
 playing = "#98C379"
 playing_selected = "#98C379"
-playing_bg = "#1C323B"
+playing_bg = "#2E642C"
 highlight = "#529521"
-highlight_bg = "#EAEAEA"
+highlight_bg = "#2C2C2C"
 error = "#E5C07B"
 error_bg = "#D54E53"
 statusbar = "#98C379"

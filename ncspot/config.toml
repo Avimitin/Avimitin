@@ -1,4 +1,5 @@
 use_nerdfont=true
+notify=true
 [theme]
 background = "#000000"
 primary = "#B2B49C"

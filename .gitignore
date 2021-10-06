@@ -42,3 +42,5 @@ fontconfig/*
 !ncspot/
 ncspot/*
 !ncspot/config.toml
+
+!.gittemplate

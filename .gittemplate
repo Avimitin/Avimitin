@@ -1,8 +1,9 @@
 # ==========================================================================
 # Apply template: git config --global commit.template ~/.config/.gittemplate
-# Credit:
-# https://gist.github.com/lisawolderiksen/a7b99d94c92c6671181611be1641c733
-# https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+# Credit: this template's idea is copied from below projects.
+# * https://chris.beams.io/posts/git-commit
+# * https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+# Check out there contributions for more details.
 # ==========================================================================
 # Title: Summary, imperative, start upper case, don't end with a period
 #

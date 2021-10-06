@@ -1,5 +1,9 @@
+# =================================================================
+# UTILITIES
+# =================================================================
 set COLOR_RED '\e[31m'
 set COLOR_GREEN '\e[32m'
+set COLOR_YELLOW '\e[33m'
 set COLOR_NM '\e[0m'
 
 if test -z (pgrep ssh-agent | string collect)
@@ -8,37 +12,63 @@ if test -z (pgrep ssh-agent | string collect)
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 end
 
+function WARNING
+  echo -e "$COLOR_RED$argv[1]$COLOR_NM"
+end
+
+function SUCCESS
+  echo -e "$COLOR_GREEN$argv[1]$COLOR_NM"
+end
+
+function HINT
+  echo -e "$COLOR_YELLOW$argv[1]$COLOR_NM"
+end
+
 # function to test executable exist
 function exec_exist
 	set exec $argv[1]
+	set -g has_$argv false
 
 	if test -z (command -v $exec)
-		echo -e "$COLOR_RED$exec not found$COLOR_NM"
+        WARNING "$exec not found"
 		return 1
 	end
 
-	set -g has_$argv true
+    set has_$argv true
 	return 0
 end
 
-if exec_exist go
-	set PATH ~/go/bin $PATH
+# =================================================================
+# MAIN STEP
+# =================================================================
+
+# Test if I am using arch
+set IS_ARCH_LINUX false
+if uname -a | grep -q "arch"
+  set IS_ARCH_LINUX true
 end
 
-# ---test starship exist---
+# ======= starship =======
 if not exec_exist starship
-	echo "install it: https://starship.rs/guide/#%F0%9F%9A%80-installation"
-	echo "or run command:"
-	echo "sh -c '\$(curl -fsSL https://starship.rs/install.sh)'"
+    if $IS_ARCH_LINUX
+      HINT "RUN: paru -S starship"
+    else
+      HINT "RUN: sh -c '\$(curl -fsSL https://starship.rs/install.sh)'"
+    end
 end
 
 if $has_starship
 	starship init fish | source
 end
 
-#----test nnn-----
+# ======= nnn =======
 if not exec_exist nnn
-	echo "install it: https://github.com/jarun/nnn/wiki/Usage"
+    if $IS_ARCH_LINUX
+      HINT "RUN: paru -G nnn-icons && sed -i 's/O_ICONS/O_NERD/g ./nnn-icons/PKGBUILD"
+      HINT "RUN: cd ./nnn-icons && makepkg -si"
+    else
+      HINT "RUN: https://github.com/jarun/nnn/wiki/Usage"
+    end
 end
 
 if $has_nnn
@@ -53,20 +83,27 @@ if $has_nnn
 	set --export NNN_FIFO "/tmp/nnn.fifo"
 end
 
-#---test lsd----
+# ========= exa ===========
 if not exec_exist exa
-	echo $COLOR_RED"exa not found"$COLOR_NM
-	echo "Install nnn https://github.com/Peltoche/lsd#installation"
+    if $IS_ARCH_LINUX
+      HINT "RUN: paru -S exa"
+    else
+      HINT "FOLLOW: https://github.com/ogham/exa#installation"
+    end
 end
 
 if $has_exa
-	alias ls "exa -l --icons"
+    alias ll "exa -l -@ --icons"
+    alias lt "exa -l -T -L2 --icons"
 end
 
-# ---test zoxide---
+# =========== zoxide ===========
 if not exec_exist zoxide
-	echo -e $COLOR_RED"zoxide not found"$COLOR_NM
-	echo "install it from https://github.com/ajeetdsouza/zoxide"
+    if $IS_ARCH_LINUX
+      HINT "RUN: paru -S zoxide"
+    else
+      HINT "FOLLOW: https://github.com/ajeetdsouza/zoxide#step-1-install-zoxide"
+    end
 end
 
 if $has_zoxide

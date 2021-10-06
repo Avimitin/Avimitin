@@ -1,0 +1,31 @@
+# ==========================================================================
+# Apply template: git config --global commit.template ~/.config/.gittemplate
+# Credit:
+# https://gist.github.com/lisawolderiksen/a7b99d94c92c6671181611be1641c733
+# https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+# ==========================================================================
+# Title: Summary, imperative, start upper case, don't end with a period
+#
+# Commit message header:
+# <type>(<scope>): <short summary>
+#   │       │             │
+#   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+#   │       │
+#   │       └─⫸ Commit Scope: common|app-name|file-name|core|
+#   │
+#   └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+#
+# No more than 50 chars. #### 50 chars is here: #
+
+# <Blank line between title and body>
+
+# Body: Explain *what* and *why* (not *how*). Include task ID (Jira issue).
+# Fixes #<issue number> or Closes #<pr number>
+# Wrap at 72 chars. ################################## which is here: #
+
+# <Blank line between body and footer>
+
+# At the end: Include Co-authored-by for all contributors.
+# Include at least one empty line before it. Format:
+# Co-authored-by: name <user@users.noreply.github.com>
+avimitin <avimitin@gmail.com>

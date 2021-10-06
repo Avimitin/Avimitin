@@ -17,15 +17,17 @@
 #   └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
 #
 # A properly formed Git commit subject line should always be able to complete
-# the following sentence: "If applied, this commit will your subject line here".
-# No more than 50 chars. #### 50 chars is here: #
+# the following sentence: "If applied, this commit will <YOUR COMMIT>".
+# For example: "If applied, this commit will refactor subsystem X for readability"
+#
+# <- No more than 50 chars. #50 chars is here: ->
 # Write *TITLE* below:
 
 # <Blank line between title and body>
 
 # Body: Explain *what* and *why* (not *how*). Include task ID like
 # Fixes #<issue number> or Closes #<pr number>
-# Wrap at 72 chars. ################################## which is here: #
+# <- Wrap at 72 chars. ############################## which is here: ->
 # Write *BODY* below:
 
 # <Blank line between body and footer>

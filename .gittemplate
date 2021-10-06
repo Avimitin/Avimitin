@@ -4,9 +4,10 @@
 # https://gist.github.com/lisawolderiksen/a7b99d94c92c6671181611be1641c733
 # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
 # ==========================================================================
-# Title: Summary, imperative, start upper case, don't end with a period
+# Title:
+# Summary, imperative, start upper case, don't end with a period
 #
-# Commit message header:
+# Commit message header example
 # <type>(<scope>): <short summary>
 #   │       │             │
 #   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
@@ -19,12 +20,14 @@
 
 # <Blank line between title and body>
 
-# Body: Explain *what* and *why* (not *how*). Include task ID (Jira issue).
+# Body:
+# Explain *what* and *why* (not *how*). Include task ID like
 # Fixes #<issue number> or Closes #<pr number>
 # Wrap at 72 chars. ################################## which is here: #
 
 # <Blank line between body and footer>
 
+# Footer:
 # At the end: Include Co-authored-by for all contributors.
 # Include at least one empty line before it. Format:
 # Co-authored-by: name <user@users.noreply.github.com>

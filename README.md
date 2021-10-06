@@ -87,3 +87,14 @@ export XMODIFIERS="@im=fcitx"
 picom -b -c
 ```
 
+### Git
+
+I've written a git commit message template which follow the Angular commit
+guide line and a blog from [chris beams](https://chris.beams.io/posts/git-commit/).
+Checkout .gittemplate file for details.
+
+Use command to add it as an template:
+
+```bash
+git config --global commit.template ~/.config/.gittemplate
+```

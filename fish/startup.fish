@@ -59,6 +59,7 @@ end
 
 if $has_starship
 	starship init fish | source
+    set --erase $has_starship
 end
 
 # ======= nnn =======
@@ -81,6 +82,8 @@ if $has_nnn
 	export NNN_PLUG="$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW"
 	export NNN_FCOLORS="0B0B04060006060009060B06"
 	set --export NNN_FIFO "/tmp/nnn.fifo"
+
+    set --erase $has_nnn
 end
 
 # ========= exa ===========
@@ -95,6 +98,8 @@ end
 if $has_exa
     alias ll "exa -l -@ --icons"
     alias lt "exa -l -T -L2 --icons"
+
+    set --erase $has_exa
 end
 
 # =========== zoxide ===========
@@ -108,4 +113,25 @@ end
 
 if $has_zoxide
 	zoxide init fish | source
+
+    set --erase $has_zoxide
 end
+
+# ========== neovide ===========
+# if neovide exist, enable multigrid feature
+if exec_exist neovide
+  set -x NEOVIDE_MULTIGRID 1
+
+  set --erase $has_neovide
+end
+
+# ========= clean up ===========
+functions -e exec_exist
+functions -e WARNING
+functions -e SUCCESS
+functions -e HINT
+
+set --erase COLOR_RED
+set --erase COLOR_GREEN
+set --erase COLOR_NM
+set --erase COLOR_YELLOW

@@ -8,7 +8,3 @@ source ~/.config/fish/startup.fish
 #end
 
 set -x fish_greeting ""
-
-if command -q cowsay and command -q lolcat
-  cowsay "What a great day" | lolcat
-end

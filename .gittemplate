@@ -6,24 +6,19 @@
 # Check out there contributions for more details.
 # ==========================================================================
 # Title: Summary, imperative, start upper case, don't end with a period
-#
-# Commit message header example
-# <type>(<scope>): <short summary>
-#   │       │             │
-#   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
-#   │       │
-#   │       └─⫸ Commit Scope: common|app-name|file-name|core|
-#   │
-#   └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
-#
-# A properly formed Git commit subject line should always be able to complete
-# the following sentence: "If applied, this commit will <YOUR COMMIT>".
-# For example: "If applied, this commit will refactor subsystem X for readability"
-#
 # <- No more than 50 chars. #50 chars is here: ->
 # Write *TITLE* below:
 
-# <Blank line between title and body>
+# <part>: <short summary>
+#   │        │
+#   │        └─⫸ Summary in present tense. Not capitalized. No period at the end.
+#   │
+#   └─⫸ part: What part of the project has been changed.
+# Example: Socket: Create buffer when open new stream
+#
+# Hint: A properly formed Git commit subject line should always be able to complete
+# the following sentence: "If applied, this commit will <YOUR COMMIT>".
+# For example: "If applied, this commit will *refactor subsystem X for readability*"
 
 # Body: Explain *what* and *why* (not *how*). Include task ID like
 # Fixes #<issue number> or Closes #<pr number>

@@ -12,29 +12,30 @@
 
 Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`
 
-## Dependency
+## What Apps I use
 
-| Software                                   | Why                                        |
-| ---                                        | ---                                        |
-| tmux                                       | Terminal Pane                              |
-| neovim(latest build)                       | Editor                                     |
-| lazygit                                    | Git TUI                                    |
-| exa                                        | Another ls                                 |
-| git-delta                                  | fancy git diff                             |
-| [picom](https://github.com/jonaburg/picom) | Blur, shadow, round corners and animations |
-| nnn                                        | file explorer                              |
-| fish                                       | Shell for 90s                              |
-| alacritty                                  | Terminal with GPU accelerate               |
-| acpi                                       | battery information                        |
-| sysstat                                    | CPU information                            |
-| starship                                   | fancy promt                                |
-| zoxide                                     | easy jump                                  |
-| nm-applet                                  | network manager                            |
-| feh                                        | background image                           |
-| i3-gap                                     | windows manager                            |
-| i3-block                                   | i3 bar                                     |
-| [st](https://github.com/Avimitin/st)       | simple terminal                            |
-| [dmenu](https://github.com/Avimitin/dmenu) | app, script selector                       |
+| Software                                            | Why                                        |
+| ---                                                 | ---                                        |
+| tmux                                                | Terminal Pane                              |
+| neovim(latest build)                                | Editor                                     |
+| [lazygit](https://github.com/jesseduffield/lazygit) | Git TUI                                    |
+| exa                                                 | Another ls                                 |
+| git-delta                                           | fancy git diff                             |
+| [picom](https://github.com/jonaburg/picom)          | Blur, shadow, round corners and animations |
+| nnn                                                 | file explorer                              |
+| fish                                                | Shell for 90s                              |
+| alacritty                                           | Terminal with GPU accelerate               |
+| acpi                                                | battery information                        |
+| sysstat                                             | CPU information                            |
+| starship                                            | fancy promt                                |
+| zoxide                                              | easy jump                                  |
+| nm-applet                                           | network manager                            |
+| feh                                                 | background image                           |
+| i3-gap                                              | windows manager                            |
+| i3-block                                            | i3 bar                                     |
+| [st](https://github.com/Avimitin/st)                | simple terminal                            |
+| [dmenu](https://github.com/Avimitin/dmenu)          | app, script selector                       |
+| [ncspot](https://github.com/hrkfdn/ncspot)          | Light weight Spotify player                |
 
 ## Font
 

@@ -34,6 +34,6 @@
 
 # Footer: At the end: Include Co-authored-by for all contributors.
 # Write *FOOTER* below:
-avimitin <avimitin@gmail.com>
+Signed-off-by: avimitin <avimitin@gmail.com>
 # <Trailing blank line>
 

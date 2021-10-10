@@ -93,8 +93,17 @@ I've written a git commit message template which follow the Angular commit
 guide line and a blog from [chris beams](https://chris.beams.io/posts/git-commit/).
 Checkout .gittemplate file for details.
 
-Use command to add it as an template:
+Use the below command to apply the template.
 
 ```bash
 git config --global commit.template ~/.config/.gittemplate
 ```
+
+#### Credit
+
+The contents in my git commit template is inspired by below project.
+
+- https://chris.beams.io/posts/git-commit
+- https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+- https://github.com/torvalds/linux/commits/master
+

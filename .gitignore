@@ -44,3 +44,9 @@ ncspot/*
 !ncspot/config.toml
 
 !.gittemplate
+
+!nnn/
+nnn/*
+!nnn/plugins
+nnn/plugins/*
+!nnn/plugins/mine

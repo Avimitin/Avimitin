@@ -1,13 +1,6 @@
-# ==========================================================================
-# Apply template: git config --global commit.template ~/.config/.gittemplate
-# Credit: this template's idea is copied from below projects.
-# * https://chris.beams.io/posts/git-commit
-# * https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
-# Check out there contributions for more details.
-# ==========================================================================
 # Title: Summary, imperative, start upper case, don't end with a period
 # <- No more than 50 chars. #50 chars is here: ->
-# Write *TITLE* below:
+# ============ Write *TITLE* below =============:
 
 # <part>: <short summary>
 #   │        │
@@ -23,12 +16,12 @@
 # Body: Explain *what* and *why* (not *how*). Include task ID like
 # Fixes #<issue number> or Closes #<pr number>
 # <- Wrap at 72 chars. ############################## which is here: ->
-# Write *BODY* below:
+# ====================== Write *BODY* below ==========================:
 
 # <Blank line between body and footer>
 
 # Footer: At the end: Include Co-authored-by for all contributors.
-# Write *FOOTER* below:
+# ===================== Write *FOOTER* below ====================:
 Signed-off-by: avimitin <avimitin@gmail.com>
 # <Trailing blank line>
 

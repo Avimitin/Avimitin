@@ -66,8 +66,8 @@ Press `<Mod> + r` to get into resize mod.
 
 ### Deprecated warning
 
-But anyway, I am using [DWM](https://github.com/Avimitin/dwm) now. Please take
-a look at it. I think you will love it. The i3 configuration is now archive. 
+But anyway, I am using [DWM](https://github.com/Avimitin/sdwm) now. Please take
+a look at it. I think you will love it. The i3 configuration is now archive.
 
 ## Environment setting
 

@@ -3,7 +3,7 @@
 # Description: using this script to call lazygit at current path
 # Author: avimitin
 if ! command -v lazygit > /dev/null; then
-  echo "This plugin is relying on lazygit, please install it first"
+  echo "This plugin relies on lazygit, please install it first"
   exit 1
 fi
 

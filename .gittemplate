@@ -3,23 +3,19 @@
 
 # <part>: <short summary>
 #   │        │
-#   │        └─⫸ Summary in present tense. Not capitalized. No period at the end.
+#   │        └─⫸ Summary in present tense. Capitalized. No period at the end.
 #   │
-#   └─⫸ part: What part of the project has been changed.
-# Example: Socket: Create buffer when open new stream
+#   └─⫸ What part of the project has been changed.
 #
-# Hint: A properly formed Git commit subject line should always be able to complete
-# the following sentence: "If applied, this commit will <YOUR COMMIT>".
-# For example: "If applied, this commit will *refactor subsystem X for readability*"
+# Example: Socket: Create buffer when open new stream
 
 # Body: Explain *what* and *why* (not *how*). Include task ID like
-# Fixes #<issue number> or Closes #<pr number>
+# Fixes #<issue ID> or Closes #<pr ID>
 # ============= Write *BODY* below, wrap at 72 chars. 72 chars is here:
 
 # <Blank line between body and footer>
 
-# Footer: At the end: Include Co-authored-by for all contributors.
-# ===================== Write *FOOTER* below ====================:
+# == Write *FOOTER* below. Include Co-authored-by for all contributors:
 Signed-off-by: avimitin <avimitin@gmail.com>
 # <Trailing blank line>
 

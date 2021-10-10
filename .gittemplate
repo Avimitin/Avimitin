@@ -1,6 +1,5 @@
 # Title: Summary, imperative, start upper case, don't end with a period
-# <- No more than 50 chars. #50 chars is here: ->
-# ============ Write *TITLE* below =============:
+# === Write *TITLE* below, no more than 50 chars:
 
 # <part>: <short summary>
 #   │        │
@@ -15,8 +14,7 @@
 
 # Body: Explain *what* and *why* (not *how*). Include task ID like
 # Fixes #<issue number> or Closes #<pr number>
-# <- Wrap at 72 chars. ############################## which is here: ->
-# ====================== Write *BODY* below ==========================:
+# ============= Write *BODY* below, wrap at 72 chars. 72 chars is here:
 
 # <Blank line between body and footer>
 

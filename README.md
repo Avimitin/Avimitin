@@ -25,14 +25,10 @@ Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`
 | nnn                                                 | file explorer                              |
 | fish                                                | Shell for 90s                              |
 | alacritty                                           | Terminal with GPU accelerate               |
-| acpi                                                | battery information                        |
-| sysstat                                             | CPU information                            |
 | starship                                            | fancy promt                                |
 | zoxide                                              | easy jump                                  |
 | nm-applet                                           | network manager                            |
 | feh                                                 | background image                           |
-| i3-gap                                              | windows manager                            |
-| i3-block                                            | i3 bar                                     |
 | [st](https://github.com/Avimitin/st)                | simple terminal                            |
 | [dmenu](https://github.com/Avimitin/dmenu)          | app, script selector                       |
 | [ncspot](https://github.com/hrkfdn/ncspot)          | Light weight Spotify player                |
@@ -41,34 +37,14 @@ Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`
 
 You will need to install [Jetbrains Mono](https://github.com/ryanoasis/nerd-fonts/releases)
 
-## i3 keymap
+## i3 is deleted
 
-Normally mod key is the win key. And `hjkl` can be replaced with `↑ ↓ ← →`
+![img](./images/i3-screenshot.png)
 
-| keymap                       | functionality        |
-| ---                          | ---                  |
-| `<Mod> + h/j/k/l`            | focused around       |
-| `<Mod> + Shift + h/j/k/l`    | moved windows around |
-| `<Mod> + 1234567890`         | focuse workspace     |
-| `<Mod> + Shift + 1234567890` | focuse workspace     |
-| `<Mod> + Enter`              | open terminal        |
-| `<Mod> + o`                  | open app selector    |
-
-For detail please take a look on [i3](./i3/config)
-
-### Resize mod
-
-Press `<Mod> + r` to get into resize mod.
-
-| keymap    | functionality  |
-| ---       | ---            |
-| `- / +`   | resize gap     |
-| `↑ ↓ ← →` | resize windows |
-
-### Deprecated warning
-
-But anyway, I am using [DWM](https://github.com/Avimitin/sdwm) now. Please take
-a look at it. I think you will love it. The i3 configuration is now archive.
+I am using [DWM](https://github.com/Avimitin/sdwm) now. The i3 configuration is 
+now deleted. If you still wants my i3 configuration, please use git to revert
+history to
+[`0b8823cc`](https://github.com/Avimitin/dotfile/commit/0b8823cc94ff38f4ad92793e73178470d6796b95).
 
 ## Environment setting
 

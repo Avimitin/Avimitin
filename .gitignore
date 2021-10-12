@@ -41,3 +41,5 @@ nnn/*
 !nnn/plugins
 nnn/plugins/*
 !nnn/plugins/mine
+
+!dunst

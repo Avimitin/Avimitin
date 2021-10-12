@@ -1,21 +1,29 @@
-# Title: Summary, imperative, start upper case, don't end with a period
-# === Write *TITLE* below, no more than 50 chars:
+# <---Title: one-line summary wrap at 50 chars--->:
 
-# <part>: <short summary>
-#   │        │
-#   │        └─⫸ Summary in present tense. Capitalized. No period at the end.
-#   │
-#   └─⫸ What part of the project has been changed.
-#
-# Example: Socket: Create buffer when open new stream
+# <blank line>
 
-# Body: Explain *what* and *why* (not *how*). Include task ID like
-# Fixes #<issue ID> or Closes #<pr ID>
-# ============= Write *BODY* below, wrap at 72 chars. 72 chars is here:
+# <---- Body: Explain what and why (not *how*) wrap at 72 chars ----->:
 
-# <Blank line between body and footer>
+# <blank line>
 
-# == Write *FOOTER* below. Include Co-authored-by for all contributors:
+# <----- Footer: Include Co-authored-by for all contributors -------->:
 Signed-off-by: Avimitin <avimitin@gmail.com>
 # <Trailing blank line>
 
+# Guideline:
+# Title: Summary, imperative, lower case, don't end with a period
+# <package>: <short summary>
+#   │        │
+#   │        └─⫸ Summary in present tense. Not capitalized. No period at the end.
+#   │
+#   └─⫸ The primary package of the project which have been affected.
+#
+# A rule of thumb is that it should be written to complete this
+# sentence: "If applied, this patch will modify the project to...".
+# Example: socket: create buffer when open new stream
+#
+# Body: Include task ID like Fixes #<issue ID> or Closes #<pr ID>.
+# The rest of the description elaborates and should provide context for the
+# change and explain what it does. Write in complete sentences with correct
+# punctuation, just like for your comments in code. Don't use HTML, Markdown, 
+# or any other markup language. 

@@ -1,14 +1,13 @@
 # <---Title: one-line summary wrap at 50 chars--->:
 
-# <blank line>
 
+# Do not delete the line above
 # <---- Body: Explain what and why (not *how*) wrap at 72 chars ----->:
 
-# <blank line>
 
+# Do not delete the line above
 # <----- Footer: Include Co-authored-by for all contributors -------->:
 Signed-off-by: Avimitin <avimitin@gmail.com>
-# <Trailing blank line>
 
 # Guideline:
 # Title: Summary, imperative, lower case, don't end with a period

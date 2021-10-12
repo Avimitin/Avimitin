@@ -13,20 +13,11 @@
 # fish
 !/fish
 
-# i3
-!/i3
-!/i3blocks
-
 # lazygit
 !/lazygit
 
 # neovim
 !/nvim
-
-# deprecated
-!/polybar
-!/ranger
-!/rofi
 
 # images
 !/images

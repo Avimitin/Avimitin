@@ -43,3 +43,5 @@ nnn/plugins/*
 !nnn/plugins/mine
 
 !dunst
+
+!chromium-flags.conf

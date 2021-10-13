@@ -120,8 +120,6 @@ end
 # ========== neovide ===========
 # if neovide exist, enable multigrid feature
 if exec_exist neovide
-  set -x NEOVIDE_MULTIGRID 1
-
   set --erase $has_neovide
 end
 

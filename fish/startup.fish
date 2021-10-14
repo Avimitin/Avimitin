@@ -77,7 +77,7 @@ if $has_nnn
 	export NNN_PLUG_GIT='g:mine/lazygit;d:diffs'
 	export NNN_BMS="d:$HOME/Documents;c:$HOME/.config;D:$HOME/Downloads/"
 	export NNN_PLUG_EXPLORE='j:autojump;f:fzcd;o:fzopen'
-	export NNN_PLUG_FILE='t:nmount;k:nuke;n:mine/neovide-remote'
+	export NNN_PLUG_FILE='t:nmount;k:nuke;n:mine/neovide-remote;u:mine/nvui-remote'
 	export NNN_PLUG_VIEW='v:imgview;p:preview-tui'
 	export NNN_PLUG="$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW"
 	export NNN_FCOLORS="0B0B04060006060009060B06"

@@ -17,5 +17,5 @@ if test -z $1; then
 fi
 
 if ! nvr --nostart -s --remote $1; then
-  NVIM_LISTEN_ADDRESS=/tmp/nvimsocket neovide $1
+  NVIM_LISTEN_ADDRESS=/tmp/nvimsocket neovide "$1"
 fi

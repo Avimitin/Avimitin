@@ -23,7 +23,7 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     # stty lwrap undef
     # stty lnext undef
 
-    nnn -e -d -D $argv
+    nnn -e $argv
 
     if test -e $NNN_TMPFILE
         source $NNN_TMPFILE

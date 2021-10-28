@@ -23,6 +23,7 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     # stty lwrap undef
     # stty lnext undef
 
+    set -x NNN_FIFO "/tmp/nnn.fifo"
     nnn -e $argv
 
     if test -e $NNN_TMPFILE

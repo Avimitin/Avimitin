@@ -93,12 +93,6 @@ if $has_zoxide
     set --erase $has_zoxide
 end
 
-# ========== neovide ===========
-# if neovide exist, enable multigrid feature
-if exec_exist neovide
-  set --erase $has_neovide
-end
-
 # ========= clean up ===========
 functions -e exec_exist
 functions -e WARNING

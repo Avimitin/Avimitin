@@ -62,30 +62,6 @@ if $has_starship
     set --erase $has_starship
 end
 
-# ======= nnn =======
-if not exec_exist nnn
-    if $IS_ARCH_LINUX
-      HINT "RUN: paru -G nnn-icons && sed -i 's/O_ICONS/O_NERD/g ./nnn-icons/PKGBUILD"
-      HINT "RUN: cd ./nnn-icons && makepkg -si"
-    else
-      HINT "RUN: https://github.com/jarun/nnn/wiki/Usage"
-    end
-end
-
-if $has_nnn
-	export ICONLOOKUP=1
-	export NNN_PLUG_GIT='g:mine/lazygit;d:diffs'
-	export NNN_BMS="d:$HOME/Documents;c:$HOME/.config;D:$HOME/Downloads/"
-	export NNN_PLUG_EXPLORE='j:autojump;f:fzcd;o:fzopen'
-	export NNN_PLUG_FILE='t:nmount;k:nuke;n:mine/neovide-remote;u:mine/nvui-remote'
-	export NNN_PLUG_VIEW='v:imgview;p:preview-tui'
-	export NNN_PLUG="$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW"
-	export NNN_FCOLORS="0B0B04060006060009060B06"
-	set --export NNN_FIFO "/tmp/nnn.fifo"
-
-    set --erase $has_nnn
-end
-
 # ========= exa ===========
 if not exec_exist exa
     if $IS_ARCH_LINUX

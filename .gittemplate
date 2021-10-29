@@ -9,20 +9,11 @@
 # <----- Footer: Include Co-authored-by for all contributors -------->:
 Signed-off-by: Avimitin <avimitin@gmail.com>
 
-# Guideline:
-# Title: Summary, imperative, lower case, don't end with a period
-# <package>: <short summary>
-#   │        │
-#   │        └─⫸ Summary in present tense. Not capitalized. No period at the end.
-#   │
-#   └─⫸ The primary package of the project which have been affected.
+# Tips:
+# [Title]: Lower case, prefix with module name, don't end with a period.
+# A rule of thumb: "This patch will modify the project to _____".
+# Example format: <component>: <summary>
 #
-# A rule of thumb is that it should be written to complete this
-# sentence: "If applied, this patch will modify the project to...".
-# Example: socket: create buffer when open new stream
-#
-# Body: Include task ID like Fixes #<issue ID> or Closes #<pr ID>.
-# The rest of the description elaborates and should provide context for the
-# change and explain what it does. Write in complete sentences with correct
-# punctuation, just like for your comments in code. Don't use HTML, Markdown, 
-# or any other markup language. 
+# [Body]: Provide context for the change and explain what it does and
+# why do this. Don't use markup language. Remember to include
+# "Fixes #ID" or "Closes #ID" if necessary.

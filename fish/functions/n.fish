@@ -31,12 +31,13 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     # nnn settings
     set -x ICONLOOKUP       1
     set -x NNN_PLUG_GIT     'g:mine/lazygit;d:diffs'
-    set -x NNN_BMS          "e:$HOME/Codes;h:$HOME;d:$HOME/Documents;c:$HOME/.config;D:$HOME/Downloads/"
+    set -x NNN_BMS_CFG      "n:$HOME/.config/nvim;c:$HOME/.config"
+    set -x NNN_BMS          "e:$HOME/Codes;h:$HOME;d:$HOME/Documents;D:$HOME/Downloads;$NNN_BMS_CFG"
     set -x NNN_PLUG_EXPLORE 'j:autojump;f:fzcd;o:fzopen'
     set -x NNN_PLUG_FILE    't:nmount;k:nuke;n:mine/neovide-remote;u:mine/nvui-remote'
     set -x NNN_PLUG_VIEW    'v:imgview;p:preview-tui;P:preview-tabbed;w:mine/wallpaper'
     set -x NNN_PLUG         "$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW"
-    set -x NNN_FCOLORS      "0B0B04060006060009060B06"
+    set -x NNN_FCOLORS      "a1e4217afb0606f409060B06"
     set -x NNN_FIFO         "/tmp/nnn.fifo"
 
     # exercute

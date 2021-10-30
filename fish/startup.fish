@@ -48,19 +48,19 @@ if uname -a | grep -q "arch"
   set IS_ARCH_LINUX true
 end
 
-# ======= starship =======
-if not exec_exist starship
-    if $IS_ARCH_LINUX
-      HINT "RUN: paru -S starship"
-    else
-      HINT "RUN: sh -c '\$(curl -fsSL https://starship.rs/install.sh)'"
-    end
-end
-
-if $has_starship
-	starship init fish | source
-    set --erase $has_starship
-end
+## ======= starship =======
+#if not exec_exist starship
+#    if $IS_ARCH_LINUX
+#      HINT "RUN: paru -S starship"
+#    else
+#      HINT "RUN: sh -c '\$(curl -fsSL https://starship.rs/install.sh)'"
+#    end
+#end
+#
+#if $has_starship
+#	starship init fish | source
+#    set --erase $has_starship
+#end
 
 # ========= exa ===========
 if not exec_exist exa

@@ -20,9 +20,9 @@ function fish_prompt -d "Write out the prompt"
     printf '%s' (fish_git_prompt)
     echo
     if test $ok -gt 0
-      printf '%s %s' (set_color red) (set_color normal)
+      printf '%s %s' (set_color red) (set_color normal)
     else
-      printf '%s %s' (set_color green) (set_color normal)
+      printf '%s %s' (set_color blue) (set_color normal)
     end
     set -e contents
     set -e ok

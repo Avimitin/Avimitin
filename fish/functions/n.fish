@@ -40,8 +40,7 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     set -x NNN_FCOLORS      "a1e4217afb0606f409060B06"
     set -x NNN_FIFO         "/tmp/nnn.fifo"
 
-    # exercute
-    nnn -e $argv
+    nnn -Gde $argv
 
     if test -e $NNN_TMPFILE
         source $NNN_TMPFILE

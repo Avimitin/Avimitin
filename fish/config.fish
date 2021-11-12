@@ -13,7 +13,7 @@ function fish_prompt -d "Write out the prompt"
     set ok $status
     echo
     set -g fish_prompt_pwd_dir_length 3
-    printf '%s%s%s' (set_color green) $USER (set_color normal)
+    printf '%s%s%s' (set_color brmagenta) $USER (set_color normal)
     printf ' in %s%s%s' (set_color cyan) (prompt_pwd) (set_color normal)
     if fish_git_prompt > /dev/null
       printf '%s  %s' (set_color yellow) (set_color normal)

@@ -1,5 +1,5 @@
 # <---Title: one-line summary wrap at 50 chars--->:
-<T> 
+< > 
 
 # Do not delete the line above
 # <---- Body: Explain what and why (not *how*) wrap at 72 chars ----->:
@@ -17,7 +17,6 @@ Signed-off-by: Avimitin <avimitin@gmail.com>
 # <N> means new features
 # <B> means breaking changes
 # <F> means a new fix
-# <D> means document update
 # <R> means refactor
 #
 # [Body]: Provide context for the change and explain what it does and

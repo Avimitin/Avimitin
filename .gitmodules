@@ -6,3 +6,6 @@
 	path = tmux
 	url = https://github.com/Avimitin/tmux.git
 	branch = master
+[submodule "git-template"]
+	path = git-template
+	url = https://github.com/Avimitin/commit-convention

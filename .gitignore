@@ -49,3 +49,5 @@ nnn/plugins/*
 !peaclock
 peaclock/*
 !peaclock/config
+
+!git-template/

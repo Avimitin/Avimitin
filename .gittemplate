@@ -1,7 +1,12 @@
+# Format: [!]<type>|[module: ]descriptions
+# Available type option
+# N means new features  # R means refactor
+# F means a new fix     # C means chore
 # <---Title: one-line summary wrap at 50 chars--->:
-< > 
+
 
 # Do not delete the line above
+# Remember to include "Fixes #ID" or "Closes #ID" when you making PR.
 # <---- Body: Explain what and why (not *how*) wrap at 72 chars ----->:
 
 
@@ -12,13 +17,6 @@ Signed-off-by: Avimitin <avimitin@gmail.com>
 # Tips:
 # [Title]: Lower case, prefix with module name, don't end with a period.
 # A rule of thumb: "This patch will modify the project to _____".
-# Example format: <T> <component>: <summary>
-# Type options
-# <N> means new features
-# <B> means breaking changes
-# <F> means a new fix
-# <R> means refactor
 #
 # [Body]: Provide context for the change and explain what it does and
-# why do this. Don't use markup language. Remember to include
-# "Fixes #ID" or "Closes #ID" if necessary.
+# why do this.

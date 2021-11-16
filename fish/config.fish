@@ -9,21 +9,33 @@ source ~/.config/fish/startup.fish
 
 set -x fish_greeting ""
 
-function fish_prompt -d "Write out the prompt"
-    set ok $status
-    echo
+function __set_up_user_prompt
+    printf "%s%s%s" (set_color brmagenta) $USER (set_color normal)
+end
+
+function __set_up_pwd_prompt
     set -g fish_prompt_pwd_dir_length 3
-    printf '%s%s%s' (set_color brmagenta) $USER (set_color normal)
-    printf ' in %s%s%s' (set_color cyan) (prompt_pwd) (set_color normal)
-    if fish_git_prompt > /dev/null
-      printf '%s  %s' (set_color yellow) (set_color normal)
+    printf "%s%s%s" (set_color cyan) (prompt_pwd) (set_color normal)
+end
+
+function __set_up_git_prompt
+    if git rev-parse > /dev/null 2>&1
+      printf ' in %s%s%s' (set_color yellow) (git branch --show-current) (set_color normal)
     end
+end
+
+function fish_prompt -d "Write out the prompt"
     echo
-    if test $ok -gt 0
+    set __ok $status
+    __set_up_user_prompt
+    printf " in "
+    __set_up_pwd_prompt
+    __set_up_git_prompt
+    echo
+    if test $__ok -gt 0
       printf '%sx %s' (set_color red) (set_color normal)
     else
       printf '%s> %s' (set_color blue) (set_color normal)
     end
-    set -e contents
-    set -e ok
+    set -e __ok
 end

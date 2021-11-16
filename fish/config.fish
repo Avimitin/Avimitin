@@ -15,7 +15,7 @@ end
 
 function __set_up_pwd_prompt
     set -g fish_prompt_pwd_dir_length 3
-    printf "%s%s%s" (set_color cyan) (prompt_pwd) (set_color normal)
+    printf " in %s%s%s" (set_color cyan) (prompt_pwd) (set_color normal)
 end
 
 function __set_up_git_prompt
@@ -28,7 +28,6 @@ function fish_prompt -d "Write out the prompt"
     set __ok $status
     echo
     __set_up_user_prompt
-    printf " in "
     __set_up_pwd_prompt
     __set_up_git_prompt
     echo

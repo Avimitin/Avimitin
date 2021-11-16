@@ -25,8 +25,8 @@ function __set_up_git_prompt
 end
 
 function fish_prompt -d "Write out the prompt"
-    echo
     set __ok $status
+    echo
     __set_up_user_prompt
     printf " in "
     __set_up_pwd_prompt

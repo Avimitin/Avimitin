@@ -19,9 +19,8 @@ function __set_up_pwd_prompt
 end
 
 function __set_up_git_prompt
-    if git rev-parse > /dev/null 2>&1
-      printf ' in %s%s%s' (set_color yellow) (git branch --show-current) (set_color normal)
-    end
+  set -g __fish_git_prompt_showdirtystate 1
+  printf "%s%s%s" (set_color yellow) (fish_git_prompt) (set_color normal)
 end
 
 function fish_prompt -d "Write out the prompt"

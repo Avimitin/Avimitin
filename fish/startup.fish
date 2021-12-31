@@ -72,7 +72,7 @@ if not exec_exist exa
 end
 
 if $has_exa
-    alias ll "exa -l -@ --icons"
+    alias ll "exa -l -@ --icons --group-directories-first"
     alias lt "exa -l -T -L2 --icons"
 
     set --erase $has_exa

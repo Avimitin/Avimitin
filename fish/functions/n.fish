@@ -37,7 +37,6 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     set -x NNN_PLUG_FILE    't:nmount;k:nuke;n:mine/neovide-remote;u:mine/nvui-remote'
     set -x NNN_PLUG_VIEW    'v:imgview;p:preview-tui;P:preview-tabbed;w:mine/wallpaper'
     set -x NNN_PLUG         "$NNN_PLUG_GIT;$NNN_PLUG_EXPLORE;$NNN_PLUG_FILE;$NNN_PLUG_VIEW"
-    set -x NNN_FCOLORS      "a1e4217afb0606f409060B06"
     set -x NNN_FIFO         "/tmp/nnn.fifo"
 
     nnn -Gde $argv

@@ -38,3 +38,9 @@ customCommands:
     description: 'commit file with editor and with diff'
     context: 'files'
     subprocess: true
+  - key: 'c'
+    context: 'files'
+    prompts:
+      - type: 'input'
+        title: 'Commit message'
+    command: "git commit -m '{{index .PromptResponses 0}}' --signoff"

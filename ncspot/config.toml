@@ -1,5 +1,6 @@
 use_nerdfont=true
 notify=true
+audio_cache_size=2000
 [theme]
 background = "black"
 primary = "light white"

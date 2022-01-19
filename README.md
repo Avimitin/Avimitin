@@ -1,86 +1,73 @@
-# MY DOTFILE
+## 👋 Hi, here is Avimitin
 
-```text
- ____  ____  _____  _____ _  _     _____
-/  _ \/  _ \/__ __\/    // \/ \   /  __/
-| | \|| / \|  / \  |  __\| || |   |  \  
-| |_/|| \_/|  | |  | |   | || |_/\|  /_ 
-\____/\____/  \_/  \_/   \_/\____/\____\  by Avimitin
-```
+<img align="right" width="25%" src="./output.gif"/>
 
-![screen shot](./images/screenshot.png)
+A beginner developer who loves the open-source community wants to contribute to it.
 
-Try it: `git clone https://github.com/Avimitin/dotfile.git ~/.config`
+Programming, but not programmer yet.
 
-## What Apps I use
+- 🤯 Using `C++` and learning `Rust`
+- 🛠 Spending time on some useless stuff that is much ado about nothing
+- 💻 Using Arch and suckless stuff btw. xd.
+- 🧐 Working hard to solve problem and be more than just a programmer.
+- 💤 Dreaming of becoming an expert in the field of operating system.
 
-| Software                                            | Why                                        |
-| ---                                                 | ---                                        |
-| tmux                                                | Terminal Pane                              |
-| neovim(latest build)                                | Editor                                     |
-| [lazygit](https://github.com/jesseduffield/lazygit) | Git TUI                                    |
-| exa                                                 | Another ls                                 |
-| git-delta                                           | fancy git diff                             |
-| [picom](https://github.com/jonaburg/picom)          | Blur, shadow, round corners and animations |
-| nnn                                                 | file explorer                              |
-| fish                                                | Shell for 90s                              |
-| alacritty                                           | Terminal with GPU accelerate               |
-| starship                                            | fancy promt                                |
-| zoxide                                              | easy jump                                  |
-| nm-applet                                           | network manager                            |
-| feh                                                 | background image                           |
-| [st](https://github.com/Avimitin/st)                | simple terminal                            |
-| [dmenu](https://github.com/Avimitin/dmenu)          | app, script selector                       |
-| [ncspot](https://github.com/hrkfdn/ncspot)          | Light weight Spotify player                |
+PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)
 
-## Font
+## Stats
 
-You will need to install [Jetbrains Mono](https://github.com/ryanoasis/nerd-fonts/releases)
+<p>
+<a href="https://github.com/Avimitin?tab=repositories"><img align="left" width="36%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&layout=compact&hide=html,roff&exclude_repo=MacOS-Hackintosh&theme=tokyonight"/></a>
+<a href="https://github.com/Avimitin"><img width="43%" src="https://github-readme-stats.vercel.app/api?username=Avimitin&show_icons=true&theme=tokyonight"/></a>
+</p>
 
-## i3 is deleted
+<h2 align="center">
+🐧 Screenshots for my Arch Linux customization
+</h2>
 
-![img](./images/i3-screenshot.png)
+<p align="center">
+<i>
+These are some fabulous stuff I use everyday
+</i>
+</p>
 
-I am using [DWM](https://github.com/Avimitin/sdwm) now. The i3 configuration is 
-now deleted. If you still wants my i3 configuration, please use git to revert
-history to
-[`0b8823cc`](https://github.com/Avimitin/dotfile/commit/0b8823cc94ff38f4ad92793e73178470d6796b95).
+### My Neovim
 
-## Environment setting
+<a href="https://github.com/Avimitin/nvim"><img align="right" width="38%" src="https://raw.githubusercontent.com/Avimitin/nvim/master/docs/images/screenshot.png"/></a>
 
-### fcitx
+- Really fast! Start up in only 28ms!
+- LSP support
+- Completion like VSCode
+- Optimized Rust, C++, Golang, Lua coding experience
+- Floating terminal and REPL support
+- Handy git tools
+- Motion on speed
+- Markdown preview and snippet
+- [And more...](https://github.com/Avimitin/nvim)
 
-```bash
-# running fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-```
+---
 
-### picom
+### My Windows Manager
 
-```
-# picom
-picom -b -c
-```
+<a href="https://github.com/Avimitin/sdwm"><img align="right" width="40%" src="https://raw.githubusercontent.com/Avimitin/sdwm/master/images/dwm-screenshot.png"/></a>
 
-### Git
+- Full nerd font icon
+- Out of the box
+- Lightweight and portable
+- Trasnparent systray
+- No annoying title
+- Hide tag automatically
+- [And more...](https://github.com/Avimitin/sdwm)
 
-I've written a git commit message template which follow the Angular commit
-guide line and a blog from [chris beams](https://chris.beams.io/posts/git-commit/).
-Checkout .gittemplate file for details.
+---
 
-Use the below command to apply the template.
+### My Tmux
 
-```bash
-git config --global commit.template ~/.config/.gittemplate
-```
+<a href="https://github.com/Avimitin/tmux"><img align="right" width="40%" src="https://raw.githubusercontent.com/Avimitin/tmux/master/tmux-screenshot.png"/></a> 
 
-#### Credit
+- Fully configurable
+- Keep essential functionality and simplicity
+- Nerd font support
+- [And more...](https://github.com/Avimitin/tmux)
 
-The contents in my git commit template is inspired by below project.
-
-- https://chris.beams.io/posts/git-commit
-- https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
-- https://github.com/torvalds/linux/commits/master
-
+<br/>

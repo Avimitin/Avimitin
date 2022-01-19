@@ -53,3 +53,6 @@ peaclock/*
 !git-template/
 
 !starship.toml
+
+!pubkey.asc
+!output.gif

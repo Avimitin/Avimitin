@@ -11,16 +11,16 @@ symbol=" "
 [git_branch]
 symbol=" "
 [git_status]
-conflicted = ""
-ahead = ""
-behind = ""
-diverged = "ﮙ"
-untracked = ""
-stashed = ""
-modified = ""
-staged = '[++\($count\)](green)'
+conflicted = " "
+ahead = " "
+behind = " "
+diverged = "ﮙ "
+untracked = " "
+stashed = " "
+modified = " "
+staged = '[\( $count staged\)](green) '
 renamed = "凜"
-deleted = ""
+deleted = " "
 [jobs]
 symbol=""
 format="[$symbol]($style) "

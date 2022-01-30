@@ -18,17 +18,24 @@ function set_proxy --description "easily set http proxy"
 			__set_proxy $host_ip $port
 		case local
 			__set_proxy 127.0.0.1 $argv[2]
-		case none
-			set -x http_proxy ""
-			set -x https_proxy $http_proxy
+		case reset
+			set -e http_proxy
+			set -e https_proxy
+      set -e all_proxy
 		case '*'
 			__set_proxy $argv[1] $argv[2]
 	end
 end
 
 function __set_proxy
-	set -x http_proxy "http://$argv[1]:$argv[2]"
-	set -x https_proxy $http_proxy
+	set -gx http_proxy "http://$argv[1]:$argv[2]"
+  echo "> http_proxy set to:  $http_proxy"
+
+	set -gx https_proxy $http_proxy
+  echo "> https_proxy set to: $https_proxy"
+
+  set -gx all_proxy $http_proxy
+  echo "> all_proxy set to:   $all_proxy"
 end
 
 function __proxy_print_help
@@ -39,5 +46,5 @@ function __proxy_print_help
 	echo "host {{PORT (integer)}}    set server ip to host ip and a custom port. Eg.set_proxy host 11451"
 	echo "local {{PORT (integer)}}   set server ip to local ip and a custom port. Eg.set_proxy local 11451"
 	echo "{{CUSTOM_IP}} {{PORT}}     custom ip and port, no http prefix needed"
-	echo "none                       reset proxy"
+	echo "reset                      reset proxy"
 end

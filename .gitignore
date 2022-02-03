@@ -56,3 +56,5 @@ peaclock/*
 
 !pubkey.asc
 !output.gif
+
+!zsh/

@@ -47,6 +47,7 @@ function _init_plugin {
 
 function _init_local {
   source $XDG_CONFIG_HOME/zsh/zoxide.zsh
+  source $XDG_CONFIG_HOME/zsh/fn.zsh
 }
 
 function _init_alias {

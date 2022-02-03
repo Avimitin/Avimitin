@@ -1,13 +1,13 @@
-autoload -U colors && colors
-
 export HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
 
 HISTSIZE=1000000
 SAVEHIST=1000000
 
 function _debug {
+  autoload -U colors && colors
+
   # set this variable to 1 to enable debug information
-  if [[ $DEBUG_ZSH_RC -eq 1 ]]; then
+  if (( $DEBUG_ZSH_RC -eq 1 )); then
     echo "$fg[green]INFO$reset_color: $1"
   fi
 }

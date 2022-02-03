@@ -51,9 +51,6 @@ function _init_local {
 }
 
 function _init_alias {
-  # B
-  alias ba="bat --italic-text=always --theme='gruvbox-dark'"
-
   # G
   alias gp="git push"
 

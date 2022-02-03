@@ -65,6 +65,9 @@ function _init_alias {
   # M
   alias mk="mkdir"
 
+  # R
+  alias zsh_reload="source $HOME/.zshrc"
+
   # S
   alias ssh="TERM=xterm-256color ssh"
 

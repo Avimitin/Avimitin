@@ -53,6 +53,9 @@ function _init_alias {
   # B
   alias ba="bat --italic-text=always --theme='gruvbox-dark'"
 
+  # G
+  alias gp="git push"
+
   # L
   alias ll="exa -l -@ -h --icons --group-directories-first"
   alias lt="exa -l -T -L2 --icons"

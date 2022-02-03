@@ -13,7 +13,7 @@ function _debug {
 }
 
 function _init_prompt {
-  if command -v starship > /dev/null 2>&1; then
+  if (( $+commands[starship] )) then
     _debug "initialize starship prompt"
     eval "$(starship init zsh)"
   fi

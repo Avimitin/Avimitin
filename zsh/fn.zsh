@@ -61,3 +61,13 @@ function set_proxy {
       ;;
   esac
 }
+
+# imgscale will resize the photo to bilibili expect size
+function imgscale {
+  if [ ! $+commands[convert] ]; then
+    echo "scaling images need imagemagick"
+    return 1
+  fi
+
+  convert $1 -resize 1250x960 scale_output.jpg
+}

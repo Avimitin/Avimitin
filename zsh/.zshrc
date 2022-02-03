@@ -7,7 +7,7 @@ function _debug {
   autoload -U colors && colors
 
   # set this variable to 1 to enable debug information
-  if (( $DEBUG_ZSH_RC -eq 1 )); then
+  if (( ${DEBUG_ZSH_RC:-0} == 1 )); then
     echo "$fg[green]INFO$reset_color: $1"
   fi
 }

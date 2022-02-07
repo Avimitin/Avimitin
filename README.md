@@ -2,8 +2,6 @@
 
 <img align="right" width="25%" src="./output.gif"/>
 
-## Skills
-
 - ***Programming Language***
 
 Familiar with **C** and **Golang**, and I am daily using **Rust** currently.

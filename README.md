@@ -1,18 +1,25 @@
-## 👋 Hi, here is Avimitin
+# 👋 Hi, here is Avimitin
 
 <img align="right" width="25%" src="./output.gif"/>
 
-A beginner developer who loves the open-source community wants to contribute to it.
+## Skills
 
-Programming, but not programmer yet.
+- ***Programming Language***
 
-- 🤯 Using `C++` and learning `Rust`
-- 🛠 Spending time on some useless stuff that is much ado about nothing
-- 💻 Using Arch and suckless stuff btw. xd.
-- 🧐 Working hard to solve problem and be more than just a programmer.
-- 💤 Dreaming of becoming an expert in the field of operating system.
+Familiar with **C** and **Golang**, and I am daily using **Rust** currently.
 
-PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)
+- ***Daily Tools***
+
+Can adapt to any editor. Daily using neovim under Arch Linux.
+
+- ***Work Experience***
+
+  * PLCT Lab, remote, interns: packages building, testing and analysis of the Arch Linux RISC-V distro.
+
+- ***Contact Me***
+
+  * Email: <avimitin@gmail.com>
+  * PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)
 
 ## Stats
 

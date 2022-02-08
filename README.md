@@ -4,11 +4,11 @@
 
 - ***Programming Language***
 
-Familiar with **C**, **Golang** and **Lua**, and I am daily using **Rust** currently.
+  * Familiar with **C**, **Golang** and **Lua**, and I am daily using **Rust** currently.
 
 - ***Daily Tools***
 
-Can adapt to any editor. Daily using neovim under Arch Linux.
+  * Can adapt to any editor. Daily using neovim under Arch Linux.
 
 - ***Work Experience***
 
@@ -16,7 +16,7 @@ Can adapt to any editor. Daily using neovim under Arch Linux.
 
 - ***Contact Me***
 
-  * Email: <avimitin@gmail.com>
+  * Email: [`avimitin@gmail.com`](mailto:avimitin@gmail.com)
   * PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)
 
 ## GitHub Stats

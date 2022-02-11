@@ -64,6 +64,7 @@ function _init_alias {
 
   # R
   alias zsh_reload="source $HOME/.zshrc;rehash"
+  alias rsync="rsync -azvhP"
 
   # S
   alias ssh="TERM=xterm-256color ssh"

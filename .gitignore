@@ -58,3 +58,7 @@ peaclock/*
 !output.gif
 
 !zsh/
+
+!broot/
+broot/*
+!broot/conf.hjson

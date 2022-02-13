@@ -42,6 +42,9 @@ end
 # MAIN STEP
 # =================================================================
 
+# ======== set up vi mode =========
+fish_vi_key_bindings
+
 # Test if I am using arch
 set IS_ARCH_LINUX false
 if uname -a | grep -q "arch"

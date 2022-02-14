@@ -26,7 +26,7 @@ if command -q lazygit
 end
 
 if command -q rsync
-    alias rsync "rsync -azvhP"
+    alias rsync "command rsync -azvhP"
 end
 
 if command -q ssh

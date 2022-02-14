@@ -78,6 +78,11 @@ function ytd
     end
 end
 
+# systemd
+alias "systart" "sudo systemctl start"
+alias "systop" "sudo systemctl stop"
+alias "systat" "sudo systemctl status"
+
 # ===================================================================
 # env
 # ===================================================================

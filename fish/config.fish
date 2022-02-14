@@ -31,7 +31,7 @@ end
 
 if command -q ssh
     # this fix tmux color
-    alias xssh "TERM=xterm-256color ssh"
+    alias ssh "TERM=xterm-256color command ssh"
 end
 
 if command -q tmux

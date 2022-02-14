@@ -11,7 +11,7 @@ window:
     y: 0
 
   padding:
-    x: 8
+    x: 0
     y: 0
 
   dynamic_padding: false
@@ -31,32 +31,31 @@ window:
 
   gtk_theme_variant: None
 
+  opacity: 0.85
+
 scrolling:
   history: 10000
 
   multiplier: 3
 
-background_opacity: 0.85
-
 font:
   normal:
-    family: UbuntuMono Nerd Font Mono
+    family: Cascadia Code
     style: Regular
 
   bold:
-    family: UbuntuMono Nerd Font Mono
+    family: Cascadia Code
     style: Bold
 
   italic:
-    family: UbuntuMono Nerd Font Mono
+    family: Cascadia Code
     style: Italic
 
   bold_italic:
-    family: UbuntuMono Nerd Font Mono
-
+    family: Cascadia Code
     style: Bold Italic
 
-  size: 18.0
+  size: 12.0
 
   glyph_offset:
     x: 0
@@ -122,7 +121,7 @@ cursor:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    blinking: Off
+    blinking: On
 
   # Vi mode cursor style
   #

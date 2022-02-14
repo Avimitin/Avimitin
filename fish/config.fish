@@ -55,8 +55,27 @@ else if command -q vim
 end
 
 # Y
-if command -q 'yt-dlp'
-    alias ytd "yt-dlp"
+function ytd
+    if not command -q 'yt-dlp'
+        echo "this function needs yt-dlp"
+        return
+    end
+
+    if test -n "$argv"
+        yt-dlp "$argv"
+        return
+    end
+
+    set _selection (xsel -b)
+    echo "Current selection: $_selection"
+    read -l -p "echo 'Are you sure to download this video? [y/n]'" _confirm
+    switch $_confirm
+        case Y y
+            yt-dlp "$_selection"
+        case '' N n
+            echo "Quit.."
+            return 0
+    end
 end
 
 # ===================================================================

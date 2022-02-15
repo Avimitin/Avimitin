@@ -67,11 +67,15 @@ function ytd
     end
 
     set _selection (xsel -b)
-    echo "Current selection: $_selection"
+    printf "Current selection: %s%s%s\n" (set_color blue) $_selection (set_color normal)
     read -l -p "echo 'Are you sure to download this video? [y/n]'" _confirm
     switch $_confirm
         case Y y
-            yt-dlp "$_selection"
+            set _download_dir "$HOME/Downloads/YouTube_Video"
+            mkdir -p $_download_dir && cd $_download_dir
+            yt-dlp "$_selection" --write-thumbnail
+            convert (fd -e 'webp' .) -resize 1250x960 thumbnail-resize.png
+            echo "Done..."
         case '' N n
             echo "Quit.."
             return 0

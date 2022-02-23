@@ -1,6 +1,7 @@
 {
-  # [s]ize, [d]ates, [g]it, show git [i]gnored file
-  default_flags: sdgi
+  # [s]ize, [d]ates, [g]it, don't show git [I]gnored file
+  # don't show [H]idden file
+  default_flags: sdgIH
 
   true_colors: true
   icon_theme: vscode
@@ -34,10 +35,14 @@
   # You'll also find below verbs that you can customize or enable.
   verbs: [
     {
-      invocation: edit
-      shortcut: e
-      execution: "$EDITOR +{line} {file}"
-      leave_broot: false
+        invocation: "edit"
+        keys: [
+            F2
+            ctrl-e
+        ]
+        shortcut: "e"
+        external: "$EDITOR +{line} {file}"
+        from_shell: true
     }
 
     # This verb lets you launch a terminal on ctrl-T
@@ -48,6 +53,16 @@
       execution: "$SHELL"
       set_working_dir: true
       leave_broot: false
+    }
+
+    {
+      key: ctrl-h
+      internal: ":parent"
+    }
+
+    {
+      key: ctrl-l
+      internal: ":open_stay"
     }
 
     # jump to directory

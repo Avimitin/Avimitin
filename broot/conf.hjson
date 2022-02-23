@@ -123,7 +123,7 @@
     tree: rgb(168, 153, 132) None / rgb(102, 92, 84) None
     parent: rgb(235, 219, 178) none / rgb(189, 174, 147) none Italic
     file: None None / None  None Italic
-    directory: rgb(131, 165, 152) None Bold / rgb(131, 165, 152) None
+    directory: rgb(127, 180, 202) None Bold / rgb(131, 165, 152) None
     exe: rgb(184, 187, 38) None
     link: rgb(104, 157, 106) None
     pruning: rgb(124, 111, 100) None Italic
@@ -147,7 +147,7 @@
     git_status_ignored: rgb(213, 196, 161) None
     git_status_conflicted: rgb(204, 36, 29) None
     git_status_other: rgb(204, 36, 29) None
-    selected_line: None rgb(60, 56, 54) / None rgb(50, 48, 47)
+    selected_line: None rgb(45, 79, 103) / None rgb(50, 48, 47)
     char_match: rgb(250, 189, 47) None
     file_error: rgb(251, 73, 52) None
     flag_label: rgb(189, 174, 147) None

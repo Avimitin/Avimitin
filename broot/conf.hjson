@@ -115,6 +115,11 @@
       key: ctrl-d
       execution: ":page_down"
     }
+
+    {
+      invocation: "touch {_file_name}"
+      execution: "touch {directory}/{_file_name}"
+    }
   ]
 
   ###############################################################

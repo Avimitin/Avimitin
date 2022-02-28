@@ -87,6 +87,23 @@ alias "systart" "sudo systemctl start"
 alias "systop" "sudo systemctl stop"
 alias "systat" "sudo systemctl status"
 
+# zellij
+
+function zj
+    if test -n "$argv"
+        zellij -s $argv
+    else
+        # default session name
+        zellij -s "zellij"
+    end
+end
+
+if command -q zellij
+    alias za "zellij attach"
+    alias zl "zellij list-sessions"
+    alias zk "zellij kill-session"
+end
+
 # ===================================================================
 # env
 # ===================================================================

@@ -43,6 +43,7 @@
         shortcut: "e"
         external: "$EDITOR +{line} {file}"
         from_shell: true
+        leave_broot: false
     }
 
     # This verb lets you launch a terminal on ctrl-T

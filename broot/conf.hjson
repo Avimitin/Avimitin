@@ -42,7 +42,6 @@
         ]
         shortcut: "e"
         external: "$EDITOR +{line} {file}"
-        from_shell: true
         leave_broot: false
     }
 

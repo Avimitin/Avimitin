@@ -19,9 +19,12 @@
   * Email: [`avimitin@gmail.com`](mailto:avimitin@gmail.com)
   * PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)
 
-## GitHub Stats
+## Stats
 
 <p>
 <a href="https://github.com/Avimitin?tab=repositories"><img align="left" width="36%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&layout=compact&hide=html,roff&exclude_repo=MacOS-Hackintosh&theme=tokyonight"/></a>
 <a href="https://github.com/Avimitin"><img width="43%" src="https://github-readme-stats.vercel.app/api?username=Avimitin&show_icons=true&theme=tokyonight"/></a>
+</p>
+<p>
+<a href="https://github.com/Avimitin"><img width="50%" src="https://osu-sig.vercel.app/card?user=CookieBacon&mode=std&lang=en&blur=6&animation=true"/></a>
 </p>

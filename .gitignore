@@ -62,3 +62,5 @@ peaclock/*
 !broot/
 broot/*
 !broot/conf.hjson
+
+!kitty/

@@ -1,4 +1,4 @@
-use_nerdfont=true
+use_nerdfont=false
 notify=true
 audio_cache_size=2000
 [theme]

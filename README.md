@@ -25,6 +25,3 @@
 <a href="https://github.com/Avimitin?tab=repositories"><img align="left" width="36%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&layout=compact&hide=html,roff&exclude_repo=MacOS-Hackintosh&theme=tokyonight"/></a>
 <a href="https://github.com/Avimitin"><img width="43%" src="https://github-readme-stats.vercel.app/api?username=Avimitin&show_icons=true&theme=tokyonight"/></a>
 </p>
-<p>
-<a href="https://github.com/Avimitin"><img width="50%" src="https://osu-sig.vercel.app/card?user=CookieBacon&mode=std&lang=en&blur=6&animation=true"/></a>
-</p>

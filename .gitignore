@@ -27,8 +27,6 @@
 !tmux/*
 
 !fontconfig/
-fontconfig/*
-!fontconfig/fonts.conf
 
 !ncspot/
 ncspot/*

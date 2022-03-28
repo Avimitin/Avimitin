@@ -49,7 +49,14 @@ if command -q lazygit
 end
 
 if command -q rsync
+    # Transfer file in [a]rchive (to preserve attributes) and
+    # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
+    # [P]rogress
     alias rsync "command rsync -azvhP"
+
+    # Transfer a directory [r]ecursively and ignoring already transferred
+    # files [u]nless newer
+    alias rsyncd "command rsync -azruhP"
 end
 
 if command -q ssh

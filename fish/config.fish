@@ -1,4 +1,21 @@
-set -x fish_greeting ""
+# ===================================================================
+# env
+# ===================================================================
+set -gx LANG en_US.UTF-8
+
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_DATA_HOME $HOME/.local/share
+
+set -gx EDITOR 'nvim'
+set -gx VISUAL "$EDITOR "
+set -gx SYSTEMD_EDITOR $EDITOR
+set -gx PAGER 'less'
+
+set -gx BROWSER /usr/bin/xdg-open
+
+set -gx BAT_THEME "OneHalfDark"
+
 
 # ===================================================================
 # alias
@@ -105,24 +122,6 @@ if command -q zellij
 end
 
 # ===================================================================
-# env
-# ===================================================================
-set -gx LANG en_US.UTF-8
-
-set -gx XDG_CONFIG_HOME $HOME/.config
-set -gx XDG_CACHE_HOME $HOME/.cache
-set -gx XDG_DATA_HOME $HOME/.local/share
-
-set -gx EDITOR 'nvim'
-set -gx VISUAL "$EDITOR "
-set -gx SYSTEMD_EDITOR $EDITOR
-set -gx PAGER 'less'
-
-set -gx BROWSER /usr/bin/xdg-open
-
-set -gx BAT_THEME "OneHalfDark"
-
-# ===================================================================
 # keybinding
 # ===================================================================
 
@@ -136,3 +135,9 @@ function fish_user_key_binding
     bind --preset -M default 'L' end-of-line
     bind --preset -M visual 'L' end-of-line
 end
+
+
+# ===================================================================
+# fish settings
+# ===================================================================
+set -x fish_greeting ""

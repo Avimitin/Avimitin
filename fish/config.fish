@@ -60,10 +60,23 @@ end
 if command -q tmux
     alias ta 'tmux attach -t'
     alias tad 'tmux attach -d -t'
-    alias ts 'tmux new-session -s'
     alias tl 'tmux list-sessions'
     alias tksv 'tmux kill-server'
     alias tkss 'tmux kill-session -t'
+end
+
+function ts
+    if not command -q tmux
+        echo "No tmux found"
+        return
+    end
+
+    if test -n "$argv"
+        tmux new-session -s $argv
+        return
+    end
+
+    tmux new-session -s A
 end
 
 if command -q python3

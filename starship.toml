@@ -92,7 +92,7 @@ staged = '[\( $count staged\)](green) '
 renamed = "凜"
 deleted = " "
 [jobs]
-symbol=""
+symbol=""
 format="[$symbol]($style) "
 [package]
 format = "pack [ $version](208 bold) "

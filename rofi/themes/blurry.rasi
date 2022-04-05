@@ -10,7 +10,7 @@
 configuration {
     font:                "Noto Sans 16";
     show-icons:          true;
-    icon-theme:          "Papirus";
+    icon-theme:          "WhiteSur-dark";
     display-drun:        "";
     drun-display-format: "{name}";
     disable-history:     false;
@@ -21,7 +21,7 @@ configuration {
     background:     #00000080;
     background-alt: #00000080;
     background-bar: #1f1f1f80;
-    foreground:     #eaeaea;
+    foreground:     #FFFFFF;
     sel-background: #eaeaea80;
     accent:         #3DAEE966;
     transparent:    #00000000;

@@ -25,3 +25,7 @@
 <a href="https://github.com/Avimitin?tab=repositories"><img align="left" width="36%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&layout=compact&hide=html,roff&exclude_repo=MacOS-Hackintosh&theme=tokyonight"/></a>
 <a href="https://github.com/Avimitin"><img width="43%" src="https://github-readme-stats.vercel.app/api?username=Avimitin&show_icons=true&theme=tokyonight"/></a>
 </p>
+
+## Dotfiles
+
+[![image](./images/screenshot.png)](./dotfile.md)

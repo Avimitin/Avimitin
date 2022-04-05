@@ -4,6 +4,7 @@
 # except:
 # basic
 !README.md
+!dotfile.md
 !.gitignore
 !picom.conf
 

@@ -1,0 +1,14 @@
+@import "powermenu.rasi"
+
+window {
+    width:                          473px;
+}
+
+listview {
+    lines:                          4;
+    dynamic:          true;
+}
+
+element-text {
+    font:                           "Ubuntu Nerd Font 40";
+}

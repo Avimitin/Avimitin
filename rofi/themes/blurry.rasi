@@ -8,7 +8,7 @@
  */
 
 configuration {
-    font:                "Ubuntu 16";
+    font:                "Noto Sans 16";
     show-icons:          true;
     icon-theme:          "Papirus";
     display-drun:        "";

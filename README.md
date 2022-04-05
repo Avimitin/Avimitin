@@ -29,3 +29,5 @@
 ## Dotfiles
 
 [![image](./images/screenshot.png)](./dotfile.md)
+
+Gallery: [dotfile](./dotfile.md)

@@ -20,9 +20,9 @@ configuration {
 * {
     background:     #00000080;
     background-alt: #00000080;
-    background-bar: #e3e3e3;
+    background-bar: #1f1f1f80;
     foreground:     #eaeaea;
-    sel-foreground: #1f1f1f;
+    sel-background: #eaeaea80;
     accent:         #3DAEE966;
     transparent:    #00000000;
 }
@@ -45,14 +45,14 @@ prompt {
     enabled:          true;
     padding:          0.30% 1% 0% -0.5%;
     background-color: @transparent;
-    text-color:       @sel-foreground;
+    text-color:       @foreground;
     font:             "Ubuntu Nerd Font 12";
 }
 
 entry {
     background-color:               @transparent;
-    text-color:                     @sel-foreground;
-    placeholder-color:              @sel-foreground;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search";
@@ -120,18 +120,9 @@ element-text {
 }
 
 element selected {
-    background-color: @background-bar;
-    text-color:       @sel-foreground;
+    background-color: @sel-background;
+    text-color:       @foreground;
     border:           0% 0% 0% 0%;
     border-radius:    12px;
     border-color:     @accent;
-}
-
-element-text selected {
-    background-color: @transparent;
-    text-color:       @sel-foreground;
-    expand:           true;
-    horizontal-align: 0.5;
-    vertical-align:   0.5;
-    margin:           0.5% 0.5% -0.5% 0.5%;
 }

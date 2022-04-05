@@ -1,0 +1,10 @@
+@import "powermenu.rasi"
+
+window {
+    transparency:                   "real";
+    border-radius:                  12px;
+    width:                          200px;
+    location:                       center;
+    x-offset:                       0px;
+    y-offset:                       0px;
+}

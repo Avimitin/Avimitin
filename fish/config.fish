@@ -24,6 +24,10 @@ if command -q starship
   starship init fish | source
 end
 
+if command -q bat
+    alias cat bat
+end
+
 if command -q exa
     alias ll "exa -l -@ -h --icons --group-directories-first"
     alias lt "exa -l -T -L2 --icons"

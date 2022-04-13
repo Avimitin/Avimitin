@@ -20,10 +20,6 @@ set -gx BAT_THEME "OneHalfDark"
 # ===================================================================
 # alias
 # ===================================================================
-if command -q starship
-  starship init fish | source
-end
-
 if command -q bat
     alias cat bat
 end

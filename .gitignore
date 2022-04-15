@@ -65,3 +65,5 @@ broot/*
 !kitty/
 
 !rofi/
+
+!Xresources/

@@ -1,0 +1,6 @@
+st.font: CascadiaCode:pixelsize=22
+st.termname: xterm-256color
+! window padding
+st.borderpx: 14
+!- 0.1 to 0.9 = transparency
+st.alpha: 0.9

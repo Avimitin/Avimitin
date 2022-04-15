@@ -155,12 +155,10 @@ end
 fish_vi_key_bindings
 
 # set my keybind
-function fish_user_key_binding
-    bind --preset -M default 'H' beginning-of-line
-    bind --preset -M visual 'H' beginning-of-line
-    bind --preset -M default 'L' end-of-line
-    bind --preset -M visual 'L' end-of-line
-end
+bind --preset -M default 'H' beginning-of-line
+bind --preset -M visual 'H' beginning-of-line
+bind --preset -M default 'L' end-of-line
+bind --preset -M visual 'L' end-of-line
 
 
 # ===================================================================

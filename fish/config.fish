@@ -42,6 +42,7 @@ end
 # G
 if command -q git
     alias gp "git push"
+    alias ga "git add"
 end
 
 if command -q lazygit

@@ -12,3 +12,4 @@
 !/functions/lg.fish
 !/functions/t.fish
 !/functions/set_proxy.fish
+!/functions/st-refresh.fish

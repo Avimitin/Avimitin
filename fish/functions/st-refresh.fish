@@ -5,7 +5,6 @@ function st-refresh
   else
     set prefix "$HOME/.config/Xresources"
     set xresource "$prefix/$xresource"
-    echo $xresource
     if not test -r $xresource
       echo "No xresources named $xresource was found"
       return 1

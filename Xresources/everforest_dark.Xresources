@@ -1,7 +1,7 @@
 #include "st-settings.Xresources"
 
 *.foreground:   #d8caac
-*.background:   #323d43
+*.background:   #2b3339
 *.cursorColor:  #d8caac
 
 ! black

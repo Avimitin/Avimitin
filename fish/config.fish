@@ -149,14 +149,14 @@ end
 # ===================================================================
 
 # enable vi keybind
-fish_vi_key_bindings
+set -g fish_key_bindings fish_vi_key_bindings
 
 # set my keybind
-bind --preset -M default 'H' beginning-of-line
-bind --preset -M visual 'H' beginning-of-line
-bind --preset -M default 'L' end-of-line
-bind --preset -M visual 'L' end-of-line
-
+bind -M default 'H' beginning-of-line
+bind -M visual 'H' beginning-of-line
+bind -M default 'L' end-of-line
+bind -M visual 'L' end-of-line
+bind -M insert '\e;' escape
 
 # ===================================================================
 # fish settings

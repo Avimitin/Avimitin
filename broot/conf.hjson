@@ -95,7 +95,7 @@
     {
       invocation: lazygit
       shortcut: lzg
-      external: "lazygit -p {directory}"
+      external: "lazygit -w {directory}"
     }
 
     # page navaigation

@@ -1,7 +1,7 @@
 {
-  # [s]ize, [d]ates, [g]it, don't show git [I]gnored file
+  # [d]ates, [g]it
   # don't show [H]idden file
-  default_flags: sdgIH
+  default_flags: dgH
 
   true_colors: true
   icon_theme: vscode
@@ -96,6 +96,7 @@
       invocation: lazygit
       shortcut: lzg
       external: "lazygit -w {directory}"
+      leave_broot: false
     }
 
     # page navaigation

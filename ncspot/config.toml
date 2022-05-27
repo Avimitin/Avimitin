@@ -1,6 +1,7 @@
-use_nerdfont=false
+use_nerdfont=true
 notify=true
 audio_cache_size=2000
+bitrate=320
 [theme]
 background = ""
 primary = "#DCD7BA"

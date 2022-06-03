@@ -34,7 +34,7 @@ customCommands:
         title: 'push to which branch?'
     command: 'git push {{index .PromptResponses 0}} {{index .PromptResponses 1}}'
   - key: 'C'
-    command: 'git commit -Sv'
+    command: 'git commit -v'
     description: 'commit file with editor and with diff'
     context: 'files'
     subprocess: true

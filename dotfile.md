@@ -21,3 +21,7 @@ Links: [.config/rofi](./rofi)
 Links: [.config/tmux](https://github.com/Avimitin/tmux)
 
 ![tmux](./tmux/screenshot.png)
+
+## Dunstrc
+
+![Dunstrc](./images/dunstrc.png)

@@ -196,7 +196,9 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    # https://github.com/vinceliuice/McMojave-circle
+    # AUR: paru -Ss mcmojave-circle-icon-theme
+    icon_path = /home/sh1marin/.local/share/icons/McMojave-circle-dark/status@2x/32/:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     ### History ###
 
@@ -295,15 +297,17 @@
     background = "#2c323b"
     foreground = "#EAEAEA"
     timeout = 10
-    # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    # icon source: https://github.com/vinceliuice/McMojave-circle
+    # AUR: paru -Ss mcmojave-circle-icon-theme
+    default_icon = /home/sh1marin/.local/share/icons/McMojave-circle-dark/status@2x/32/dialog-information.svg
 
 [urgency_normal]
     background = "#2c323b"
     foreground = "#ffffff"
     timeout = 10
-    # Icon for notifications with normal urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    # https://github.com/vinceliuice/McMojave-circle
+    # AUR: paru -Ss mcmojave-circle-icon-theme
+    default_icon = /home/sh1marin/.local/share/icons/McMojave-circle-dark/status@2x/32/dialog-information.svg
 
 [urgency_critical]
     background = "#900000"

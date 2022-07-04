@@ -67,3 +67,4 @@ broot/*
 !rofi/
 
 !Xresources/
+!lf/

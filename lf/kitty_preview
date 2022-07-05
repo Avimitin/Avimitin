@@ -10,4 +10,4 @@ if [[ "$( file -Lb --mime-type "$file")" =~ ^image ]]; then
     exit 1
 fi
 
-"$HOME/.config/ranger/scope.sh" "${1}" "${2}" "${3}" "" "" || true
+"$HOME/.config/lf/scope.sh" "${1}" "${2}" "${3}" "" "" || true

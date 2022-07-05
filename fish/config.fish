@@ -26,10 +26,8 @@ if command -q exa
 end
 
 if command -q neovide
-    set -gx EDITOR 'neovide --multigrid'
+    alias edt "neovide --multigrid"
 end
-
-alias edt "$EDITOR"
 
 if command -q zoxide
     zoxide init fish | source

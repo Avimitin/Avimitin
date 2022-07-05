@@ -2,6 +2,8 @@
 # interpreter for shell commands
 set shell bash
 
+set drawbox
+
 set icons true
 set previewer ~/.config/lf/kitty_preview
 set cleaner ~/.config/lf/kitty_clean

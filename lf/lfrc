@@ -5,8 +5,10 @@ set shell bash
 set drawbox
 
 set icons true
-set previewer ~/.config/lf/kitty_preview
-set cleaner ~/.config/lf/kitty_clean
+set previewer ~/.local/bin/ctpv
+set cleaner ~/.local/bin/ctpvclear
+&ctpv -s $id
+cmd on-quit $ctpv -e $id
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to

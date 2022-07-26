@@ -32,10 +32,6 @@ set scrolloff 10
 # use enter for shell commands
 map <enter> shell
 
-# execute current file (must be executable)
-map x $$f
-map X !$f
-
 # dedicated keys for file opener actions
 map o &mimeopen $f
 map O $mimeopen --ask $f
@@ -115,6 +111,8 @@ cmd zi ${{
     lf -remote "send ${id} cd '${result}'"
 }}
 
+map zi push :zi<space>
+
 cmd live_grep ${{
     res="$( \
         RG_PREFIX="rg --column --line-number --no-heading --color=always \
@@ -126,3 +124,5 @@ cmd live_grep ${{
     )"
     [ ! -z "$res" ] && lf -remote "send $id select \"$res\""
 }}
+ 
+map zg live_grep

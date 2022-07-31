@@ -1,0 +1,10 @@
+[Unit]
+Description=Dynamic Output Profile Daemon for Wayland
+BindsTo=river-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi
+
+[Install]
+WantedBy=river-session.target

@@ -73,3 +73,5 @@ broot/*
 !systemd
 
 !river
+
+!firefox-style

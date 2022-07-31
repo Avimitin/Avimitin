@@ -1,0 +1,10 @@
+[Unit]
+Description=Input IM
+BindsTo=river-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fcitx5
+
+[Install]
+WantedBy=river-session.target

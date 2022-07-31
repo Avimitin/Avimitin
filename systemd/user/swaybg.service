@@ -1,0 +1,11 @@
+[Unit]
+Description=Background-Manager
+BindsTo=river-session.target
+
+[Service]
+Type=simple
+IgnoreSIGPIPE=false
+ExecStart=/home/sh1marin/.config/river/chwp
+
+[Install]
+WantedBy=river-session.target

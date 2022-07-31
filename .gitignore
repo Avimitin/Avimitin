@@ -69,3 +69,7 @@ broot/*
 
 !Xresources/
 !lf/
+
+!systemd
+
+!river

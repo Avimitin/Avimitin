@@ -2,6 +2,8 @@
 !/.gitignore
 !/config.fish
 !/startup.fish
+!/conf.d
+conf.d/_*
 
 !/functions
 /functions/*

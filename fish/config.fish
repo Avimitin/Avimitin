@@ -81,7 +81,12 @@ function ytd
         return
     end
 
-    set _selection (xsel -b)
+    if test -n "$WAYLAND_DISPLAY"
+        set _selection (wl-paste)
+    else
+        set _selection (xsel -b)
+    end
+
     printf "Current selection: %s%s%s\n" (set_color blue) $_selection (set_color normal)
     read -l -p "echo 'Are you sure to download this video? [y/n]'" _confirm
     switch $_confirm

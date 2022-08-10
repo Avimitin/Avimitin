@@ -12,14 +12,14 @@ set -gx PAGER 'less'
 #set -gx BROWSER /usr/bin/xdg-open
 
 # fcitx5 settings
-set -gx GTK_IM_MODULE fcitx
-set -gx QT_IM_MODULE fcitx
-set -gx XMODIFIERS "@im=fcitx"
-set -gx SDL_IM_MODULE fcitx
-set -gx GLFW_IM_MODULE fcitx
+# set -gx GTK_IM_MODULE fcitx
+# set -gx QT_IM_MODULE fcitx
+# set -gx XMODIFIERS "@im=fcitx"
+# set -gx SDL_IM_MODULE fcitx
+# set -gx GLFW_IM_MODULE fcitx
 
 # wayland settings
-set -gx QT_QPA_PLATFORM "wayland;xcb"
+set -gx QT_QPA_PLATFORM "wayland"
 set -gx CLUTTER_BACKEND wayland
 set -gx SDL_VIDEODRIVER wayland
 set -gx MOZ_ENABLE_WAYLAND 1

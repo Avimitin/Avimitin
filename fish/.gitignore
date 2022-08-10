@@ -3,7 +3,9 @@
 !/config.fish
 !/startup.fish
 !/conf.d
-conf.d/_*
+conf.d/*
+!conf.d/env.fish
+!conf.d/themes.fish
 
 !/functions
 /functions/*

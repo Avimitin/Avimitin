@@ -4,7 +4,7 @@
 
 - ***Programming Language***
 
-  * Familiar with **C**, **Golang** and **Lua**, and I am daily using **Rust** currently.
+  * Familiar with **C**, **Rust** and **Lua**.
 
 - ***Daily Tools***
 
@@ -12,7 +12,7 @@
 
 - ***Work Experience***
 
-  * PLCT Lab, remote, interns: packages building, testing and analysis of the Arch Linux RISC-V distro.
+  * PLCT Lab, Full-time employees: packages building, testing and analysis of the Arch Linux RISC-V distro.
 
 - ***Contact Me***
 

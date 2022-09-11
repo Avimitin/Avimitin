@@ -1,7 +1,11 @@
 local api = require("wezterm")
 
 return {
-	font = api.font("BlexMono Nerd Font Mono"),
+	font = api.font_with_fallback({
+		"mononoki Nerd Font Mono",
+		"JetbrainsMono Nerd Font Mono",
+		"Noto Sans CJK SC",
+	}),
 	font_size = 11,
 	window_background_opacity = 0.75,
 	force_reverse_video_cursor = true,

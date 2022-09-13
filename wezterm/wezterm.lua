@@ -20,14 +20,14 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	keys = {
 		{
-			key = "n",
-			mods = "CTRL|SHIFT",
+			key = "=",
+			mods = "CTRL",
 			action = api.action.SplitVertical({
 				domain = "CurrentPaneDomain",
 			}),
 		},
 		{
-			key = "n",
+			key = "-",
 			mods = "CTRL",
 			action = api.action.SplitHorizontal({
 				domain = "CurrentPaneDomain",

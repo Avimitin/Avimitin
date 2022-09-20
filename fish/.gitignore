@@ -6,15 +6,12 @@
 conf.d/*
 !conf.d/env.fish
 !conf.d/themes.fish
+!conf.d/alias.fish
 
 !/functions
 /functions/*
 
-!/functions/n.fish
-!/functions/v.fish
-!/functions/cr.fish
-!/functions/lg.fish
-!/functions/t.fish
 !/functions/set_proxy.fish
 !/functions/st-refresh.fish
 !/functions/fm.fish
+!/functions/setup.fish

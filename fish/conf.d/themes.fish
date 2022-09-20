@@ -36,3 +36,9 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
+
+# Hydro
+set -g hydro_color_git $orange
+set -g hydro_color_prompt $green
+set -g hydro_color_duration $comment
+set -g hydro_color_pwd $foreground

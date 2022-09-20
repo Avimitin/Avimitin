@@ -19,4 +19,7 @@ set -x fish_greeting ""
 
 # Hydro prompt settings
 set -g hydro_symbol_prompt ''
+set -g hydro_symbol_git_dirty ' '
+set -g hydro_symbol_git_ahead ' '
+set -g hydro_symbol_git_behind ' '
 set -g fish_prompt_pwd_dir_length 2

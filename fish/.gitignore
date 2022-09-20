@@ -14,4 +14,4 @@ conf.d/*
 !/functions/set_proxy.fish
 !/functions/st-refresh.fish
 !/functions/fm.fish
-!/functions/setup.fish
+!/functions/fish_config_setup.fish

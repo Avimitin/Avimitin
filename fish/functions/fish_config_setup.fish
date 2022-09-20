@@ -1,4 +1,4 @@
-function setup
+function fish_config_setup
     curl -sL https://git.io/fisher | source
 
     fisher install jorgebucaran/fisher

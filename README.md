@@ -4,11 +4,11 @@
 
 - ***Programming Language***
 
-  * Familiar with **C**, **Rust** and **Lua**.
+  * Familiar with **C**, **Rust**, **TypeScript**, **React**, and **Lua**.
 
 - ***Daily Tools***
 
-  * Can adapt to any editor. Daily using neovim under Arch Linux.
+  * Can adapt to any editor. Daily using [neovim](https://github.com/Avimitin/nvim) under Arch Linux.
 
 - ***Work Experience***
 

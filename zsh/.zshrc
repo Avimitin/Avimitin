@@ -88,11 +88,12 @@ function _init_alias {
 }
 
 function _init_keys {
+  # close vi mode
+  bindkey -e
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
 }
 
-_init_prompt
 _init_plugin
 _init_alias
 _init_keys

@@ -51,6 +51,10 @@ function _init_local {
 
 function _init_alias {
   # G
+  alias ga="git add"
+  alias gc="git commit -m"
+  alias gcc="git commit"
+  alias gd="git diff"
   alias gp="git push"
 
   # L

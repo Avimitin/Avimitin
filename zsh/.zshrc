@@ -15,13 +15,6 @@ function _debug {
   fi
 }
 
-function _init_prompt {
-  if (( $+commands[starship] )) then
-    _debug "initialize starship prompt"
-    eval "$(starship init zsh)"
-  fi
-}
-
 function _init_plugin {
   _debug "installing zinit"
 

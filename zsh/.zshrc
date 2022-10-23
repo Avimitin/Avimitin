@@ -39,6 +39,9 @@ function _init_plugin {
 
   zinit light zdharma-continuum/history-search-multi-word
 
+  zinit light sindresorhus/pure
+  autoload -U promptinit
+  promptinit
 }
 
 function _init_local {

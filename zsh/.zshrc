@@ -3,6 +3,9 @@ export HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# close completion bell
+unsetopt LIST_BEEP
+
 function _debug {
   autoload -U colors && colors
 

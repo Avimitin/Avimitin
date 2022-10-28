@@ -27,8 +27,8 @@ return {
 		"Noto Sans CJK SC",
 	}),
 	font_size = 11,
-	window_background_opacity = 0.8,
-	text_background_opacity = 0.2,
+	window_background_opacity = 0.85,
+	text_background_opacity = 0.5,
 	force_reverse_video_cursor = true,
 	window_padding = {
 		left = 0,

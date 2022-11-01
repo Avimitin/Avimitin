@@ -16,11 +16,12 @@ end
 
 # G
 if command -q git
-    alias gP "git push"
-    alias gp "git pull"
     alias ga "git add"
     alias gc "git commit -m"
+    alias gC "GIT_EDITOR=$EDITOR git commit -a"
     alias gd "git diff --no-prefix"
+    alias gP "git push"
+    alias gp "git pull"
 end
 
 if command -q lazygit

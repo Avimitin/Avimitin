@@ -40,3 +40,7 @@ fi
 
 unset -f is_in_ssh
 unset IS_IN_SSH
+
+# For Pure prompts
+PURE_GIT_PULL=0
+PURE_PROMPT_SYMBOL=""

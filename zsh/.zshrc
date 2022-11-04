@@ -13,7 +13,7 @@ replace_ssh_agent() {
   fi
 
   if command -v gpgconf > /dev/null && (( $is_in_ssh == 0 )); then
-    export GPG_TTY=$(tty)
+    export GPG_TTY=$TTY
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     gpgconf --launch gpg-agent
   fi

@@ -23,13 +23,9 @@ replace_ssh_agent() {
 unsetopt LIST_BEEP
 
 # Source separate scripts
-source "$XDG_CONFIG_HOME/zsh/plugins.zsh"
-source "$XDG_CONFIG_HOME/zsh/alias.zsh"
-source "$XDG_CONFIG_HOME/zsh/fn.zsh"
+source "$ZDOTDIR/plugins.zsh"
+source "$ZDOTDIR/alias.zsh"
+source "$ZDOTDIR/fn.zsh"
 
-# close vi mode
-bindkey -e
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
+# GPG Agent
 replace_ssh_agent

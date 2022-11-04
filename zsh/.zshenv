@@ -12,8 +12,31 @@ export BROWSER=/usr/bin/xdg-open
 
 export BAT_THEME="OneHalfDark"
 
+# wayland settings
+export QT_QPA_PLATFORM="wayland"
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
+export MOZ_ENABLE_WAYLAND=1
+
+# Path
 path+=(
-  $HOME/.cargo/bin(N-/)
-  $HOME/go/bin(N-/)
   $HOME/.local/bin(N-/)
 )
+
+# GPG Agent
+IS_IN_SSH=0
+
+is_in_ssh () {
+  if [[ -n "$SSH_CLIENT" ]] || [ -n "$SSH_TTY" ]; then
+    IS_IN_SSH=1
+  fi
+}
+
+if command -v gpgconf > /dev/null && [ "x$IS_IN_SSH" != "x1" ]; then
+  export GPG_TTY=$(tty)
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  gpgconf --launch gpg-agent
+fi
+
+unset -f is_in_ssh
+unset IS_IN_SSH

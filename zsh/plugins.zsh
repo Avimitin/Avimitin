@@ -15,26 +15,92 @@ if [[ ! -d $ZINIT_HOME ]]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+unset LOCK_FILE
+
 source "${ZINIT_HOME}/zinit.zsh"
 
 # PLUGIN LIST
+depends=(
+  # Syntax Highlight
+  zdharma-continuum/fast-syntax-highlighting
 
-# Syntax Highlight
-zinit light zdharma-continuum/fast-syntax-highlighting
+  # Auto suggestion
+  zsh-users/zsh-autosuggestions
 
-# Auto suggestion
-zinit light zsh-users/zsh-autosuggestions
+  # History search
+  zsh-users/zsh-history-substring-search
+  zdharma-continuum/history-search-multi-word
+
+  # Prompt
+  sindresorhus/pure
+
+  # Auto close delimiters
+  hlissner/zsh-autopair
+)
+
+# Install them
+for repo in ${depends[@]}; do
+  zinit light $repo
+done
+
+# Setup auto complete
 autoload -U compinit
-compinit
+compinit -d $ZSH_CACHE_DIR/zcompinit
 
-# History search
-zinit light zsh-users/zsh-history-substring-search
-zinit light zdharma-continuum/history-search-multi-word
+# ================================================================================================
+# Completion Config
+#
+# Credit: https://github.com/CoelacanthusHex/dotfiles/blob/master/zsh/.config/zsh.d/completion.zsh
+# ================================================================================================
 
-# Prompt
-zinit light sindresorhus/pure
+# Menu complete
+zstyle ':completion:*' menu yes select
+# Display by group
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:matches' group yes
+zstyle ':completion:*:options' description yes
+# ignore duplicate entries
+zstyle ':completion:*:history-words'   remove-all-dups yes
+zstyle ':completion:*:history-words'   stop yes
+# define files to ignore for zcompile
+zstyle ':completion:*:*:zcompile:*'    ignored-patterns '(*~|*.zwc|*.zwc.old)'
+zstyle ':completion:correct:'          prompt 'correct to: %e'
+# ignore completion functions for commands you don't have:
+zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
+# Enable case-insensitive completion
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
+# Enhanced filename completion
+# 0 - Exact match               ( Abc -> Abc )
+# 1 - Capitalization correction ( abc -> Abc )
+# 2 - Word completion           ( f-b -> foo-bar )
+# 3 - Suffix completion         ( .cxx -> foo.cxx )
+zstyle ':completion:*:(argument-rest|files):*' matcher-list \
+    '' \
+    'm:{[:lower:]-}={[:upper:]_}' \
+    'r:|[.,_-]=* r:|=*' \
+    'r:|.=* r:|=*'
+zstyle ':completion:*:descriptions' format '%F{blue}> %d: %f'
+zstyle ':completion:*:messages' format '%F{purple}> %d: %f'
+# Warnings are displayed in red
+zstyle ':completion:*:warnings' format '%F{red}%B -- No Matches Found --%b%f'
+zstyle ':completion:*:corrections' format '%F{yellow}%B -- %d (errors: %e) --%b%f'
+# Description for options that are not described by the completion functions, but that have exactly one argument
+zstyle ':completion:*' auto-description '%F{green}Specify: %d%f'
+# Do not go back to current directory after ..
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+# Setup prompts
 autoload -U promptinit
 promptinit
 
-unset LOCK_FILE
-unset HAS_PLUGIN
+# Pure configuration
+PURE_GIT_PULL=0
+PURE_PROMPT_SYMBOL=""
+
+# zsh-history-substring-search
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
+# Treat 'ab c' as '*ab*c*'
+export HISTORY_SUBSTRING_SEARCH_FUZZY=true

@@ -1,8 +1,11 @@
-# prepare the data dir
-mkdir -p $XDG_DATA_HOME/zsh
+# prepare the dir
+[[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
 
+# no vi mode
+bindkey -e
+
+# Functions
 replace_ssh_agent() {
-  # GPG Agent
   local is_in_ssh=0
 
   if [[ -n "$SSH_CLIENT" ]] || [ -n "$SSH_TTY" ]; then

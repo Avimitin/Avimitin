@@ -39,4 +39,4 @@ if (( $+commands[zoxide] )); then
   eval "$(zoxide init zsh)"
 fi
 
-alias zsh_reload="source $HOME/.zshrc;rehash"
+alias reload="sync && exec zsh"

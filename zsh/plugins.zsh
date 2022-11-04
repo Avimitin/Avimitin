@@ -1,6 +1,5 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 LOCK_FILE=${XDG_CONFIG_HOME}/zsh/.noplug.lck
-HAS_PLUGIN=0
 
 if [[ -f $LOCK_FILE ]]; then
   return

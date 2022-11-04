@@ -4,6 +4,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
+# Find .zshrc at ~/.config/zsh/.zshrc
+ZDOTDIR=$XDG_CONFIG_HOME/zsh
+ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
+
 export EDITOR='nvim'
 export VISUAL="$EDITOR "
 export SYSTEMD_EDITOR=$EDITOR
@@ -23,12 +27,7 @@ path+=(
   $HOME/.local/bin(N-/)
 )
 
-# For Pure prompts
-PURE_GIT_PULL=0
-PURE_PROMPT_SYMBOL=""
-
 # History
-export HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
-
+HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000

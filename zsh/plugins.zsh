@@ -36,3 +36,6 @@ zinit light zdharma-continuum/history-search-multi-word
 zinit light sindresorhus/pure
 autoload -U promptinit
 promptinit
+
+unset LOCK_FILE
+unset HAS_PLUGIN

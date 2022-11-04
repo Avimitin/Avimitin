@@ -13,7 +13,6 @@ function _init_keys {
   bindkey '^[[B' history-substring-search-down
 }
 
-_init_plugin
 _init_keys
 
 # Source separate scripts

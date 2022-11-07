@@ -1,9 +1,10 @@
 # G
 alias ga="git add"
-alias gc="git commit -m"
-alias gcc="git commit"
+alias gc="git commit"
+alias gcm="git commit -m"
 alias gd="git diff"
-alias gp="git push"
+alias gp="git pull"
+alias gP="git push"
 
 # L
 alias ll="exa -l -@ -h --icons --git --group-directories-first"

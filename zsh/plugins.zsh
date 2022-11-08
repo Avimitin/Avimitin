@@ -122,8 +122,9 @@ promptinit
 
 # Pure configuration
 PURE_GIT_PULL=0
-PURE_PROMPT_SYMBOL=""
-
+PURE_PROMPT_SYMBOL=""
+prompt_newline='%666v'
+PROMPT=" $PROMPT"
 
 # ========================================================================================================
 # History Search

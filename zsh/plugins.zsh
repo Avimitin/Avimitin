@@ -31,9 +31,6 @@ depends=(
   zsh-users/zsh-history-substring-search
   zdharma-continuum/history-search-multi-word
 
-  # Prompt
-  sindresorhus/pure
-
   # Auto close delimiters
   hlissner/zsh-autopair
 )
@@ -117,6 +114,9 @@ zstyle ':completion:incremental:*' completer _complete _correct
 # ========================================================================================================
 # Prompt Setup
 # ========================================================================================================
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
+
 autoload -U promptinit
 promptinit
 

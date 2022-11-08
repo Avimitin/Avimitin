@@ -52,7 +52,25 @@ compinit -d $ZSH_CACHE_DIR/zcompinit
 #
 # Credit: https://github.com/CoelacanthusHex/dotfiles/blob/master/zsh/.config/zsh.d/completion.zsh
 # ================================================================================================
+zmodload -i zsh/complist
+autoload -U +X bashcompinit && bashcompinit
 
+unsetopt menu_complete
+unsetopt flowcontrol
+setopt auto_menu
+setopt complete_in_word
+setopt listpacked
+setopt magic_equal_subst
+unsetopt complete_aliases
+
+# Better performance for apt, dpkg...commands
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
+
+eval "$(dircolors -b $ZDOTDIR/LS_COLORS)"
+export ZLSCOLORS="${LS_COLORS}"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 # Menu complete
 zstyle ':completion:*' menu yes select
 # Display by group
@@ -89,8 +107,16 @@ zstyle ':completion:*:corrections' format '%F{yellow}%B -- %d (errors: %e) --%b%
 zstyle ':completion:*' auto-description '%F{green}Specify: %d%f'
 # Do not go back to current directory after ..
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+# Error correction
+zstyle ':completion:*:match:*' original only
+zstyle ':completion::prefix-1:*' completer _complete
+zstyle ':completion:predict:*' completer _complete
+zstyle ':completion:incremental:*' completer _complete _correct
 
-# Setup prompts
+
+# ========================================================================================================
+# Prompt Setup
+# ========================================================================================================
 autoload -U promptinit
 promptinit
 
@@ -98,9 +124,31 @@ promptinit
 PURE_GIT_PULL=0
 PURE_PROMPT_SYMBOL=""
 
+
+# ========================================================================================================
+# History Search
+# ========================================================================================================
 # zsh-history-substring-search
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 # Treat 'ab c' as '*ab*c*'
 export HISTORY_SUBSTRING_SEARCH_FUZZY=true
+
+
+# ========================================================================================================
+# FZF Setup
+# ========================================================================================================
+if (( ${+commands[fzf]} )); then
+  if [[ -d "/usr/share/fzf" ]]; then
+    local fzf_dir="/usr/share/fzf"
+    source "${fzf_dir}/completion.zsh"
+    source "${fzf_dir}/key-bindings.zsh"
+  fi
+
+  if (( $+commands[fd] )); then
+    export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+  elif (( $+commands[rg] )); then
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
+  fi
+fi

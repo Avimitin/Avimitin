@@ -109,6 +109,8 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion::prefix-1:*' completer _complete
 zstyle ':completion:predict:*' completer _complete
 zstyle ':completion:incremental:*' completer _complete _correct
+# disable named-directories autocompletion
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
 
 # ========================================================================================================
@@ -129,9 +131,16 @@ PROMPT=" $PROMPT"
 # ========================================================================================================
 # History Search
 # ========================================================================================================
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
 # zsh-history-substring-search
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
+# <Shift-Tab> to backward completion menu
+bindkey ${terminfo[kcbt]} reverse-menu-complete
 export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 # Treat 'ab c' as '*ab*c*'
 export HISTORY_SUBSTRING_SEARCH_FUZZY=true

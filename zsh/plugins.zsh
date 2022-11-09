@@ -149,7 +149,10 @@ export HISTORY_SUBSTRING_SEARCH_FUZZY=true
 # ========================================================================================================
 # FZF Setup
 # ========================================================================================================
+HAS_FZF=0
 if (( ${+commands[fzf]} )); then
+  HAS_FZF=1
+
   if [[ -d "/usr/share/fzf" ]]; then
     local fzf_dir="/usr/share/fzf"
     source "${fzf_dir}/completion.zsh"
@@ -161,4 +164,45 @@ if (( ${+commands[fzf]} )); then
   elif (( $+commands[rg] )); then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
   fi
+
+  export FZF_DEFAULT_OPTS='--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
+fi
+
+__fzf_search_git_status() {
+  if not git rev-parse --git-dir >/dev/null 2>&1; then
+    echo "Not in git respository" >&2
+  else
+    local selected_path="$(git -c color.status=always status --short | fzf --ansi --multi)"
+    # split line by newline, and we can have array of "  M xxx"
+    local splited_status=(${(f)selected_path})
+    if (( $? == 0 )); then
+      local escaped=()
+      for p in ${splited_status[@]}; do
+        # path has been renamed and looks like "  R plugin -> plugins"
+        if [[ "${p[2]}" = "R" ]]; then
+          local splited=(${(@s/ -> /)p})
+          escaped+="${splited[-1]}"
+        else
+          escaped+="$p[4,-1]"
+        fi
+      done
+      echo "${escaped[@]}"
+    fi
+
+    local ret=$?
+    echo
+    return $ret
+  fi
+}
+
+fzf_search_git_status() {
+  LBUFFER="${LBUFFER}$(__fzf_search_git_status)"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+
+if (( $HAS_FZF == 1 )); then
+  zle -N fzf_search_git_status
+  bindkey '^S' fzf_search_git_status
 fi

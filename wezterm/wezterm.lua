@@ -26,7 +26,7 @@ return {
 		"LXGW WenKai Mono",
 		"Noto Sans CJK SC",
 	}),
-	font_size = 11,
+	font_size = 12,
 	window_background_opacity = 0.85,
 	text_background_opacity = 0.5,
 	force_reverse_video_cursor = true,

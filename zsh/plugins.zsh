@@ -169,7 +169,7 @@ if (( ${+commands[fzf]} )); then
 fi
 
 __fzf_search_git_status() {
-  if not git rev-parse --git-dir >/dev/null 2>&1; then
+  if not git rev-parse --git-dir &> /dev/null; then
     echo "Not in git respository" >&2
   else
     local selected_path="$(git -c color.status=always status --short | fzf --ansi --multi)"

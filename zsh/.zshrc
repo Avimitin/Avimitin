@@ -4,7 +4,20 @@
 # no vi mode
 bindkey -e
 
-# Functions
+autoload -U select-word-style
+select-word-style bash
+
+bindkey '^W' backward-kill-word
+
+# close completion bell
+unsetopt LIST_BEEP
+
+# Source separate scripts
+source "$ZDOTDIR/plugins.zsh"
+source "$ZDOTDIR/alias.zsh"
+source "$ZDOTDIR/fn.zsh"
+
+# GPG Agent
 replace_ssh_agent() {
   local is_in_ssh=0
 
@@ -19,13 +32,6 @@ replace_ssh_agent() {
   fi
 }
 
-# close completion bell
-unsetopt LIST_BEEP
-
-# Source separate scripts
-source "$ZDOTDIR/plugins.zsh"
-source "$ZDOTDIR/alias.zsh"
-source "$ZDOTDIR/fn.zsh"
-
-# GPG Agent
+# Execute and remove it
 replace_ssh_agent
+unset replace_ssh_agent

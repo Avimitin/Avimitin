@@ -172,13 +172,14 @@ __fzf_search_git_status() {
   if not git rev-parse --git-dir &> /dev/null; then
     echo "Not in git respository" >&2
   else
-    local selected_path="$(git -c color.status=always status --short | fzf --ansi --multi)"
-    # split line by newline, and we can have array of "  M xxx"
+    local selected_path="$(git -c color.status=always status --short | fzf --ansi --multi --preview='source $ZDOTDIR/fzf_preview.zsh && __fzf_preview_diff {}')"
+    # split line by newline, and we can have array of " M xxx"
+    # https://git-scm.com/docs/git-status/2.35.0#_short_format
     local splited_status=(${(f)selected_path})
     if (( $? == 0 )); then
       local escaped=()
       for p in ${splited_status[@]}; do
-        # path has been renamed and looks like "  R plugin -> plugins"
+        # path has been renamed and looks like " R plugin -> plugins"
         if [[ "${p[2]}" = "R" ]]; then
           local splited=(${(@s/ -> /)p})
           escaped+="${splited[-1]}"

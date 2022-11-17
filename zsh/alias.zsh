@@ -5,6 +5,7 @@ alias gcm="git commit -m"
 alias gd="git diff"
 alias gp="git pull"
 alias gP="git push"
+alias gsw="git switch"
 
 # L
 alias ll="exa -l -@ -h --icons --git --group-directories-first"

@@ -2,7 +2,7 @@ local api = require("wezterm")
 
 local kanagawa = {
 	foreground = "#dcd7ba",
-	background = "#1f1f28",
+	background = "#0A0E14",
 
 	cursor_bg = "#c8c093",
 	cursor_fg = "#c8c093",
@@ -28,7 +28,7 @@ return {
 	}),
 	font_size = 12,
 	window_background_opacity = 0.85,
-	text_background_opacity = 0.5,
+	text_background_opacity = 0.65,
 	force_reverse_video_cursor = true,
 	window_padding = {
 		left = 0,

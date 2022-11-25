@@ -18,6 +18,16 @@ function colorize() {
   readonly ALL_OFF BOLD BLUE GREEN RED YELLOW
 }
 
+function checkdeps() {
+  local depends=($@)
+  for dep in ${depends[@]}; do
+    if ! command -v $dep &> /dev/null; then
+      echo "$dep is missing" >&2
+      return 1
+    fi
+  done
+}
+
 function _set_proxy_help {
   echo "Available options:"
   echo "help                       get help information "
@@ -114,13 +124,9 @@ export NVM_DIR="$HOME/.config/nvm"
 }
 
 function ytd() {
-  local depends=("yt-dlp" "find" "convert")
-  for dep in ${depends}; do
-    if ! command -v $dep &> /dev/null; then
-      echo "yt-dlp is required" >&2
-      return 1
-    fi
-  done
+  if ! checkdeps "yt-dlp" "find" "convert"; then
+    return 1
+  fi
 
   if [[ -n "$@" ]]; then
     yt-dlp "$@"
@@ -156,4 +162,24 @@ function ytd() {
   convert "$(find . -regex '.*\.webp')" -resize 1250x960 thumbnail-resize.png
   echo "Video downloaded, switch to $download_dir"
   return 0
+}
+
+function fetch_remote_patch() {
+  if ! checkdeps "rsync"; then
+    return 1
+  fi
+
+  local usage=$(cat << EOF
+  Usage:
+    fetch_remote_patch "remote_server" "package_name"
+EOF
+  )
+
+  local remote="$1"; shift
+  [[ -z "$remote" ]] && echo "$usage" >&2 && return 1
+
+  local pkgname="$1"; shift
+  [[ -z "$pkgname" ]] && echo "$usage" >&2 && return 1
+
+  rsync -azvhP "${remote}:~/rvpkg/${pkgname}/repos/*/riscv64.patch" .
 }

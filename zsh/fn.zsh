@@ -1,3 +1,23 @@
+function colorize() {
+  # prefer terminal safe colored and bold text when tput is supported
+  if tput setaf 0 &>/dev/null; then
+  	ALL_OFF="$(tput sgr0)"
+  	BOLD="$(tput bold)"
+  	BLUE="${BOLD}$(tput setaf 4)"
+  	GREEN="${BOLD}$(tput setaf 2)"
+  	RED="${BOLD}$(tput setaf 1)"
+  	YELLOW="${BOLD}$(tput setaf 3)"
+  else
+  	ALL_OFF="\e[0m"
+  	BOLD="\e[1m"
+  	BLUE="${BOLD}\e[34m"
+  	GREEN="${BOLD}\e[32m"
+  	RED="${BOLD}\e[31m"
+  	YELLOW="${BOLD}\e[33m"
+  fi
+  readonly ALL_OFF BOLD BLUE GREEN RED YELLOW
+}
+
 function _set_proxy_help {
   echo "Available options:"
   echo "help                       get help information "
@@ -91,4 +111,49 @@ function load_nvm() {
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+
+function ytd() {
+  local depends=("yt-dlp" "find" "convert")
+  for dep in ${depends}; do
+    if ! command -v $dep &> /dev/null; then
+      echo "yt-dlp is required" >&2
+      return 1
+    fi
+  done
+
+  if [[ -n "$@" ]]; then
+    yt-dlp "$@"
+    return $?
+  fi
+
+
+  local content
+  if [[ -n "$WAYLAND_DISPLAY" ]]; then
+    content="$(wl-paste)"
+  else
+    content="$(xsel -b)"
+  fi
+
+  if [[ -z "$content" ]]; then
+    echo "No URL in your clipboard" >&2
+    return 1
+  fi
+
+  colorize
+
+  printf "Current selection: ${BLUE}${content}${ALL_OFF}\n"
+  if ! read -q "confirm?Are you sure to download this URL? ${GREEN}[y/Y]${ALL_OFF}"; then
+    echo
+    echo "Quit..."
+    return 0
+  fi
+
+  echo
+  local download_dir="$HOME/Downloads/YouTube_Video"
+  mkdir -p $download_dir && cd $download_dir
+  yt-dlp "$content" --write-thumbnail
+  convert "$(find . -regex '.*\.webp')" -resize 1250x960 thumbnail-resize.png
+  echo "Video downloaded, switch to $download_dir"
+  return 0
 }

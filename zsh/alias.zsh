@@ -33,9 +33,6 @@ alias urlencode='python3 -c "import sys, urllib.parse as up; print(up.quote(sys.
 # V
 alias vi="nvim"
 
-# Y
-alias ytd="yt-dlp"
-
 # Z
 if (( $+commands[zoxide] )); then
   eval "$(zoxide init zsh)"

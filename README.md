@@ -22,7 +22,7 @@
 ## Stats
 
 <p>
-<a href="https://github.com/Avimitin?tab=repositories"><img align="left" width="28%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&layout=compact&hide=html,roff&exclude_repo=MacOS-Hackintosh&theme=tokyonight"/></a>
+<a href="https://github.com/Avimitin?tab=repositories"><img align="left" width="28%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&layout=compact&hide=html,roff,makefile&exclude_repo=MacOS-Hackintosh&theme=tokyonight"/></a>
 <a href="https://github.com/Avimitin"><img width="33%" src="https://github-readme-stats.vercel.app/api?username=Avimitin&show_icons=true&theme=tokyonight"/></a>
 <a href="https://osu.ppy.sh/users/16900842"><img width="33%" src="https://osu-sig.vercel.app/card?user=CookieBacon&mode=std&lang=en&blur=3&animation=true&mini=true"></a>
 </p>

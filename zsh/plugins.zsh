@@ -52,12 +52,17 @@ compinit -d $ZSH_CACHE_DIR/zcompinit
 zmodload -i zsh/complist
 autoload -U +X bashcompinit && bashcompinit
 
-unsetopt menu_complete
-unsetopt flowcontrol
 setopt auto_menu
+setopt auto_list
+setopt auto_param_slash
+setopt always_to_end
 setopt complete_in_word
+setopt path_dirs
 setopt listpacked
 setopt magic_equal_subst
+setopt extended_glob
+unsetopt menu_complete
+unsetopt flowcontrol
 unsetopt complete_aliases
 
 # Better performance for apt, dpkg...commands
@@ -111,6 +116,14 @@ zstyle ':completion:predict:*' completer _complete
 zstyle ':completion:incremental:*' completer _complete _correct
 # disable named-directories autocompletion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+
+# ssh/scp/rsync
+zstyle ':completion:*:(ssh|scp|rsync):*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'
+zstyle ':completion:*:(scp|rsync):*' group-order users files all-files hosts-domain hosts-host hosts-ipaddr
+zstyle ':completion:*:ssh:*' group-order users hosts-domain hosts-host users hosts-ipaddr
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*'
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
 
 
 # ========================================================================================================

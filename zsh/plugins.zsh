@@ -115,7 +115,7 @@ zstyle ':completion::prefix-1:*' completer _complete
 zstyle ':completion:predict:*' completer _complete
 zstyle ':completion:incremental:*' completer _complete _correct
 # disable named-directories autocompletion
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*:(cd|z):*' tag-order local-directories directory-stack path-directories
 
 # ssh/scp/rsync
 zstyle ':completion:*:(ssh|scp|rsync):*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'

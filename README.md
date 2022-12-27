@@ -1,6 +1,6 @@
 - ***Programming Language***
 
-  * Familiar with **Rust**, **TypeScript**, **React**, **C**, and **Lua**.
+  * Familiar with **Rust**, **TypeScript**, **React**, **Ruby**, **C**, and **Lua**.
 
 - ***Daily Tools***
 

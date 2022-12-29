@@ -79,3 +79,6 @@ broot/*
 !vimrc
 
 !wezterm/
+
+!.bashrc
+!.vimrc

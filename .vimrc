@@ -34,3 +34,6 @@ inoremap <C-e> <End>
 inoremap <C-a> <Home>
 nnoremap ;w :w<CR>
 nnoremap ;x :x<CR>
+
+au InsertEnter * set nornu
+au InsertLeave * set rnu

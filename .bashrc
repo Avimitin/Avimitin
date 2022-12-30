@@ -22,3 +22,13 @@ function cdw() {
 
   cd ~/rvpkg/$1/repos/*/
 }
+
+function cds() {
+  local prefix='/var/lib/archbuild/extra-riscv64/avimitin/build'
+  if [[ "$1" == "" ]]; then
+    cd $prefix
+    return 0
+  fi
+
+  cd "${prefix}/${1}"
+}

@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 PS1='\w > '
 
-alias ll='ls -al --color=auto'
+alias ll='ls -alh --color=auto --group-directories-first'
 alias aspc='asp checkout'
 alias rvbuild="updpkgsums && mkdir -p $HOME/.cache/rvpkg && extra-riscv64-build -- -d $HOME/.cache/rvpkg:/var/cache/pacman/pkg"
 alias gd="git diff --no-prefix"

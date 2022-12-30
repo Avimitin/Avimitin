@@ -47,7 +47,7 @@ set cmdheight=1
 set hid
 set whichwrap+=<,>,h,l
 
-set smartcasae
+set smartcase
 set ignorecase
 
 set lazyredraw

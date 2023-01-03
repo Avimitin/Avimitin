@@ -34,3 +34,29 @@ function cds() {
 
   cd "${prefix}/${1}"
 }
+
+function get_patch() {
+  if [[ "$1" == "" ]]; then
+    >&2 echo "No package argument was given, exit"
+    return 1
+  fi
+
+  local gh_api="https://api.github.com/repos/felixonmars/archriscv-packages/contents"
+  local response=$(curl \
+    -H 'Accept: application/vnd.github+json' \
+    -H 'X-GitHub-Api-Version: 2022-11-28' \
+    -sSf "$gh_api/$1")
+
+  local message="$(echo $response | jq -r '.message' &> /dev/null)"
+
+  if [[ "$message" == "Not Found" ]]; then
+    >&2 echo "$1 is not exist in repo, please check your input"
+    return 1
+  fi
+
+  read -d ' ' -a url_list < <(echo $response | jq -r '.[].download_url')
+  for url in ${url_list[@]}; do
+    echo "Downloading $url"
+    curl -sSfLO "$url"
+  done
+}

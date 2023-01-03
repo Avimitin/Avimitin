@@ -1,4 +1,5 @@
 set number
+set rnu
 filetype plugin indent on
 syntax enable
 set backspace=indent,eol,start
@@ -70,17 +71,20 @@ endif
 
 let mapleader=";"
 
-nnoremap J 5j
-nnoremap K 5k
-nnoremap H ^
-nnoremap L g_
-nnoremap W 5w
-nnoremap B 5b
+noremap J 5j
+noremap K 5k
+noremap H ^
+noremap H ^
+noremap L g_
+noremap L g_
+noremap W 5w
+noremap B 5b
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>q :Bclose<CR>:tabclose<CR>gT
+nnoremap <ESC> :noh<CR>
 
 au InsertEnter * set nornu
 au InsertLeave * set rnu

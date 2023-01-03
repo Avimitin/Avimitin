@@ -13,6 +13,8 @@ alias aspc='asp checkout'
 alias rvbuild="updpkgsums && mkdir -p $HOME/.cache/rvpkg && extra-riscv64-build -- -d $HOME/.cache/rvpkg:/var/cache/pacman/pkg"
 alias gd="git diff --no-prefix"
 alias torv64="setconf PKGBUILD arch \"('x86_64' 'riscv64')\""
+alias tml="tmux ls"
+alias tma="tmux attach-sesstion -t"
 
 function cdw() {
   if [[ "$1" == "" ]]; then

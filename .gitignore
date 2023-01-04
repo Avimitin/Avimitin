@@ -82,3 +82,6 @@ broot/*
 
 !.bashrc
 !.vimrc
+
+!updrcsums.sh
+!rcsums.txt

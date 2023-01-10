@@ -100,13 +100,14 @@ zstyle ':completion:*:(argument-rest|files):*' matcher-list \
     'm:{[:lower:]-}={[:upper:]_}' \
     'r:|[.,_-]=* r:|=*' \
     'r:|.=* r:|=*'
+zstyle ':completion:*' original true
 zstyle ':completion:*:descriptions' format '%F{blue}> %d: %f'
 zstyle ':completion:*:messages' format '%F{purple}> %d: %f'
 # Warnings are displayed in red
 zstyle ':completion:*:warnings' format '%F{red}%B -- No Matches Found --%b%f'
 zstyle ':completion:*:corrections' format '%F{yellow}%B -- %d (errors: %e) --%b%f'
 # Description for options that are not described by the completion functions, but that have exactly one argument
-zstyle ':completion:*' auto-description '%F{green}Specify: %d%f'
+zstyle ':completion:*' auto-description 'Specify: %d'
 # Do not go back to current directory after ..
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 # Error correction
@@ -118,12 +119,39 @@ zstyle ':completion:incremental:*' completer _complete _correct
 zstyle ':completion:*:(cd|z):*' tag-order local-directories directory-stack path-directories
 
 # ssh/scp/rsync
+zstyle -e ':completion:*:hosts' hosts 'reply=(
+    ${=${=${=${${(f)"$(cat {/etc/ssh/ssh_,~/.ssh/}known_hosts(|2)(#qN) 2> /dev/null)"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ }
+    ${=${(f)"$(cat /etc/hosts(|)(#qN) <<(ypcat hosts 2> /dev/null))"}%%(\#${_etc_host_ignores:+|${(j:|:)~_etc_host_ignores}})*}
+    ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+    ${=${${${${(@M)${(f)"$(cat ~/.ssh/config.d/* 2> /dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+    ${=${${${${(@M)${(f)"$(cat ~/.ssh/config.d/**/* 2> /dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+)'
 zstyle ':completion:*:(ssh|scp|rsync):*' tag-order 'hosts:-host:host hosts:-domain:domain hosts:-ipaddr:ip\ address *'
-zstyle ':completion:*:(scp|rsync):*' group-order users files all-files hosts-domain hosts-host hosts-ipaddr
-zstyle ':completion:*:ssh:*' group-order users hosts-domain hosts-host users hosts-ipaddr
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*'
-zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+zstyle ':completion:*:(scp|rsync):*' group-order users files all-files hosts-host hosts-domain hosts-ipaddr
+zstyle ':completion:*:ssh:*' group-order users hosts-host hosts-domain users hosts-ipaddr
+# remove IP address, loopback, localhost and hostname from hosts list
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns \
+    '*(.|:)*' \
+    loopback ip6-loopback localhost ip6-localhost broadcasthost \
+    $HOST \
+    aur
+# remove IP address, localdomain and useless doamin from domain list
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns \
+    '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*' \
+    '*.localdomain' \
+    '*.github*' 'github.com' 'aur.archlinux.org'
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.<->.<->' '255.255.255.255' '::1' 'fe80::*'
+zstyle ':completion:*:(ssh|scp|rsync):*:users' ignored-patterns \
+    adm amule amanda apache avahi bin brltty chrony colord courier cups clamav \
+    daemon dbus deluge distcache dnsmasq dovecot fax fetchmail flatpak ftp \
+    games gdm geoclue gluster gopher grafana http knot lidarr ldap lp \
+    mail mailman mailnull mongodb mpd mysql named netdump news nfsnobody \
+    nobody nscd ntp node_exporter nvidia-persistenced openvpn \
+    papermc pcap pcp polkitd postfix postgres prometheus privoxy pulse pvm \
+    quagga radvd redis rpc rpcuser rpm rtkit shutdown squid sshd sync saned \
+    sddm shadowsocks-rust sonarr systemd-coredump systemd-journal-remote \
+    systemd-network systemd-oom systemd-resolve systemd-timesync \
+    transmission tss usbmux uuidd uucp vcsa v2ray xfs
 
 
 # ========================================================================================================

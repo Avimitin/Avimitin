@@ -41,5 +41,5 @@ fi
 alias reload="sync && exec zsh"
 
 if (( $+commands[neovide] )); then
-  alias nvi="WINIT_UNIX_BACKEND=x11 neovide"
+  alias nvi="WINIT_UNIX_BACKEND=x11 NEOVIDE_MULTIGRID=1 neovide"
 fi

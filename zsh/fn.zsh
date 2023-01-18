@@ -29,14 +29,16 @@ function checkdeps() {
 }
 
 function _set_proxy_help {
-  echo "Available options:"
-  echo "help                       get help information "
-  echo "host_clash                 set server ip to host ip and port to 7890, suitable for wsl and VM user"
-  echo "local_clash                set server ip to local and port to 7890"
-  echo "host {{PORT (integer)}}    set server ip to host ip and a custom port. Eg.set_proxy host 11451"
-  echo "local {{PORT (integer)}}   set server ip to local ip and a custom port. Eg.set_proxy local 11451"
-  echo "{{CUSTOM_IP}} {{PORT}}     custom ip and port, no http prefix needed"
-  echo "reset                      reset proxy"
+  cat << EOF
+Available options:
+    help                       get help information
+    clash_host                 set server ip to host ip and port to 7890, suitable for wsl and VM user
+    clash_local                set server ip to local and port to 7890
+    host {{PORT (integer)}}    set server ip to host ip and a custom port. Eg.set_proxy host 11451
+    local {{PORT (integer)}}   set server ip to local ip and a custom port. Eg.set_proxy local 11451
+    {{CUSTOM_IP}} {{PORT}}     custom ip and port, no http prefix needed
+    reset                      reset proxy
+EOF
 }
 
 function _set_proxy {

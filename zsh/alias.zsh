@@ -17,6 +17,8 @@ alias rsy="rsync -azvhP"
 
 # S
 alias ssh="TERM=xterm-256color ssh"
+alias sysc="systemctl"
+alias syscu="systemctl --user"
 
 # T
 alias ta='tmux attach -t'

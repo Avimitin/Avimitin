@@ -25,6 +25,7 @@ export MOZ_ENABLE_WAYLAND=1
 # Path
 path+=(
   $HOME/.local/bin(N-/)
+  $HOME/w/avimitin/infra/scripts/archrv(N-/)
 )
 
 # History

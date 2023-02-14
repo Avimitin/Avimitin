@@ -21,13 +21,13 @@ local kanagawa = {
 
 return {
 	font = api.font_with_fallback({
-		"mononoki Nerd Font Mono",
+		"agave Nerd Font Mono",
 		"Noto Sans CJK SC",
 		"Noto Color Emoji"
 	}),
 	font_size = 12,
-	window_background_opacity = 0.65,
-	text_background_opacity = 0.65,
+	window_background_opacity = 0.8,
+	text_background_opacity = 0.7,
 	force_reverse_video_cursor = true,
 	window_padding = {
 		left = 0,

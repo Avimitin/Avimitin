@@ -37,7 +37,7 @@ alias vi="nvim"
 
 # Z
 if (( $+commands[zoxide] )); then
-  eval "$(zoxide init zsh)"
+  eval "$(zoxide init --cmd j zsh)"
 fi
 
 alias reload="sync && exec zsh"

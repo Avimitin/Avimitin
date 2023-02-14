@@ -194,6 +194,8 @@ HAS_FZF=0
 if (( ${+commands[fzf]} )); then
   HAS_FZF=1
 
+  export FZF_COMPLETION_TRIGGER=''
+
   if [[ -d "/usr/share/fzf" ]]; then
     local fzf_dir="/usr/share/fzf"
     source "${fzf_dir}/completion.zsh"
@@ -201,12 +203,18 @@ if (( ${+commands[fzf]} )); then
   fi
 
   if (( $+commands[fd] )); then
-    export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+    _fd_argument=('--type f' '--hidden' '--strip-cwd-prefix' '--follow'
+                  '--exclude .git'
+                  "--exclude '*.pyc'"
+                  '--exclude target/debug'
+                  '--exclude target/release')
+    export FZF_DEFAULT_COMMAND="fd ${_fd_argument[*]}"
+    unset _fd_argument
   elif (( $+commands[rg] )); then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
   fi
 
-  export FZF_DEFAULT_OPTS='--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
+  export FZF_DEFAULT_OPTS='--cycle --layout=reverse --border --height=45% --preview-window=wrap --marker="*"'
 fi
 
 __fzf_search_git_status() {

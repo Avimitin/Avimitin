@@ -196,25 +196,45 @@ if (( ${+commands[fzf]} )); then
 
   export FZF_COMPLETION_TRIGGER=''
 
-  if [[ -d "/usr/share/fzf" ]]; then
-    local fzf_dir="/usr/share/fzf"
-    source "${fzf_dir}/completion.zsh"
-    source "${fzf_dir}/key-bindings.zsh"
-  fi
-
   if (( $+commands[fd] )); then
     _fd_argument=('--type f' '--hidden' '--strip-cwd-prefix' '--follow'
+                  '--max-depth 1'
                   '--exclude .git'
                   "--exclude '*.pyc'"
                   '--exclude target/debug'
                   '--exclude target/release')
+
     export FZF_DEFAULT_COMMAND="fd ${_fd_argument[*]}"
+    export FZF_CTRL_T_COMMAND="fd ${_fd_argument[*]}"
+
     unset _fd_argument
   elif (( $+commands[rg] )); then
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*"'
   fi
 
-  export FZF_DEFAULT_OPTS='--cycle --layout=reverse --border --height=45% --preview-window=wrap --marker="*"'
+  _fzf_opts=(
+    '--cycle'
+    '--layout=reverse'
+    '--border'
+    '--height=65%'
+    '--preview-window=wrap'
+    '--marker="*"'
+  )
+
+  export FZF_DEFAULT_OPTS="${_fzf_opts[*]}"
+
+  if (( ${+commands[bat]} )); then
+    _fzf_opts=("--preview 'bat -n --color=always {}'"
+      "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
+      ${_fzf_opts[*]})
+  fi
+  export FZF_CTRL_T_OPTS="${_fzf_opts[*]}"
+
+  if [[ -d "/usr/share/fzf" ]]; then
+    local fzf_dir="/usr/share/fzf"
+    source "${fzf_dir}/completion.zsh"
+    source "${fzf_dir}/key-bindings.zsh"
+  fi
 fi
 
 __fzf_search_git_status() {

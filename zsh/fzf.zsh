@@ -1,7 +1,7 @@
 # ========================================================================================================
 # FZF Setup
 # ========================================================================================================
-export FZF_COMPLETION_TRIGGER=''
+export FZF_COMPLETION_TRIGGER=';;'
 
 if (( $+commands[fd] )); then
   _fd_argument=('--hidden' '--strip-cwd-prefix' '--follow'
@@ -59,7 +59,7 @@ _fzf_compgen_dir() {
      --exclude target/debug \
      --exclude target/release \
      --type d \
-     . "$0"
+     . "$1"
 }
 
 _fzf_comprun() {

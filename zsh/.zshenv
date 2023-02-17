@@ -17,7 +17,7 @@ export BROWSER=/usr/bin/xdg-open
 export BAT_THEME="OneHalfDark"
 
 # wayland settings
-export QT_QPA_PLATFORM="wayland"
+export QT_QPA_PLATFORM="wayland;xcb"
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1

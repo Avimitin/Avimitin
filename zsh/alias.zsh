@@ -1,11 +1,6 @@
 # G
-alias ga="git add"
-alias gc="git commit"
-alias gcm="git commit -m"
-alias gd="git diff"
-alias gp="git pull"
-alias gP="git push"
-alias gsw="git switch"
+alias g="git"
+alias gl="git log --oneline --graph"
 
 # L
 alias ll="exa -l -@ -h --icons --git --group-directories-first"
@@ -17,8 +12,8 @@ alias rsy="rsync -azvhP"
 
 # S
 alias ssh="TERM=xterm-256color ssh"
-alias sysc="systemctl"
-alias syscu="systemctl --user"
+alias sctl="systemctl"
+alias suctl="systemctl --user"
 
 # T
 alias ta='tmux attach -t'
@@ -33,7 +28,8 @@ alias urldecode='python3 -c "import sys, urllib.parse as up; print(up.unquote(sy
 alias urlencode='python3 -c "import sys, urllib.parse as up; print(up.quote(sys.argv[1]))"'
 
 # V
-alias vi="nvim"
+alias vi="vim"
+alias vim="nvim"
 
 # Z
 if (( $+commands[zoxide] )); then
@@ -43,5 +39,8 @@ fi
 alias reload="sync && exec zsh"
 
 if (( $+commands[neovide] )); then
-  alias nvi="WINIT_UNIX_BACKEND=x11 NEOVIDE_MULTIGRID=1 neovide"
+  opts=(WINIT_UNIX_BACKEND=x11
+        NEOVIDE_MULTIGRID=1)
+  alias nvi="${options[*]} neovide"
+  unset opts
 fi

@@ -24,8 +24,8 @@ return {
 		"Broot Icons Visual Studio Code",
 	}),
 	font_size = 10,
-	window_background_opacity = 0.8,
-	text_background_opacity = 0.7,
+	window_background_opacity = 0.85,
+	text_background_opacity = 0.85,
 	force_reverse_video_cursor = true,
 	window_padding = {
 		left = 0,

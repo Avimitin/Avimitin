@@ -12,5 +12,5 @@
 
 - ***Contact Me***
 
-  * Email: [`avimitin@gmail.com`](mailto:avimitin@gmail.com)
+  * Email: [`dev@avimit.in`](mailto:dev@avimit.in)
   * PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)

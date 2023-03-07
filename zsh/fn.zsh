@@ -206,6 +206,7 @@ function prepare_patch_dir() {
       should_create_branch=0
     fi
     git branch -d "$pkgname"
+    git push -d origin "$pkgname"
   fi
 
   if (( $should_create_branch )); then

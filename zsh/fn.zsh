@@ -185,3 +185,36 @@ EOF
 
   rsync -azvhP "${remote}:~/rvpkg/${pkgname}/repos/*/riscv64.patch" .
 }
+
+function prepare_patch_dir() {
+  colorize
+
+  local pkgname="$1"; shift
+  [[ -z "$pkgname" ]] && echo "No PKGNAME" >&2 && return 1
+
+  local current_branch="$(git rev-parse --abbrev-ref)"
+  [[ "$current_branch" != "master" ]] && git switch master
+
+  git pull origin master
+
+  local should_create_branch=1
+  if git rev-parse --verify "$pkgname" &> /dev/null; then
+    read -q "c?Branch $pkgname exist, can I delete it? ${GREEN}[Y/n]${ALL_OFF}"
+    echo
+    if (( $? == 1 )) ; then
+      git switch "$pkgname"
+      should_create_branch=0
+    fi
+    git branch -d "$pkgname"
+  fi
+
+  if (( $should_create_branch )); then
+    git switch -c "$pkgname"
+  fi
+
+  if [[ ! -d "$pkgname"  ]]; then
+    mkdir "$pkgname"
+  fi
+
+  cd "$pkgname"
+}

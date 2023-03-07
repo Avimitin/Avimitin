@@ -1,6 +1,6 @@
 [user]
 	name = Avimitin
-	email = avimitin@gmail.com
+	email = dev@avimit.in
 	signingkey = 0xFF7883E3BF6835DD
 [commit]
 	gpgsign = true

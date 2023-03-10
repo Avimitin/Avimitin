@@ -195,7 +195,7 @@ function prepare_patch_dir() {
   local current_branch="$(git rev-parse --abbrev-ref)"
   [[ "$current_branch" != "master" ]] && git switch master
 
-  git pull origin master
+  git pull upstream master
 
   local should_create_branch=1
   if git rev-parse --verify "$pkgname" &> /dev/null; then

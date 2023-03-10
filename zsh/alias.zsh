@@ -44,3 +44,7 @@ if (( $+commands[neovide] )); then
   alias nv="${opts[*]} neovide"
   unset opts
 fi
+
+if (( $+commands[wezterm] )); then
+  alias imgcat="wezterm imgcat"
+fi

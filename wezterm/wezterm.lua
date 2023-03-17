@@ -71,6 +71,13 @@ return {
 			mods = "CTRL|SHIFT",
 			action = action.ActivatePaneDirection("Left"),
 		},
+		{
+			key = "g",
+			mods = "CTRL|SHIFT",
+			action = action.SpawnCommandInNewTab({
+				args = { "lazygit" },
+			}),
+		},
 	},
 	colors = kanagawa,
 }

@@ -35,3 +35,7 @@ replace_ssh_agent() {
 # Execute and remove it
 replace_ssh_agent
 unset replace_ssh_agent
+
+# opam configuration
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] \
+  || source $HOME/.opam/opam-init/init.zsh &> /dev/null

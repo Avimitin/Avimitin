@@ -75,7 +75,7 @@ return {
 			key = "g",
 			mods = "CTRL|SHIFT",
 			action = action.SpawnCommandInNewTab({
-				args = { "lazygit" },
+				args = { "zsh", "-c", "lazygit" },
 			}),
 		},
 	},

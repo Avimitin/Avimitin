@@ -219,3 +219,16 @@ function prepare_patch_dir() {
 
   cd "$pkgname"
 }
+
+function kill-port() {
+  local port=$1; shift
+  local pid=$(lsof -Fp -i :$port)
+  [[ -z "$pid" ]] && \
+    echo "$port not in used" && \
+    return 1
+  pid=${pid/#p/}
+  local proc_desc=$(ps -o args= -p $pid)
+  echo "[INFO] Process occupying port $port: '$proc_desc'"
+  kill -TERM $pid
+  echo "[INFO] Killed"
+}

@@ -8,8 +8,8 @@
 
 - ***Work Experience***
 
-  * PLCT Lab (2021 - 2023.04): packages building, testing and analysis of the Arch Linux RISC-V distro.
-  * ISCAS, Tasier team (2023.04 - now): packages building, testing and analysis of the OpenEuler distro.
+  * PLCT Lab (2021.12 - 2023.04): packages building, testing and analysis of the Arch Linux RISC-V distro.
+  * PLCT Lab (2023.04 - Now): MLIR RVV Dialect team.
 
 - ***Contact Me***
 

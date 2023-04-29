@@ -2,12 +2,12 @@
 # alias
 # ===================================================================
 if command -q exa
-    alias ll "exa -l -@ -h --icons --git --group-directories-first"
+    alias ll "exa -l -@ -h --icons --group-directories-first"
     alias lt "exa -l -T -L2 --icons"
 end
 
 if command -q neovide
-    alias edt "neovide --multigrid"
+    alias nvi "neovide --multigrid"
 end
 
 if command -q zoxide
@@ -16,13 +16,7 @@ end
 
 # G
 if command -q git
-    alias ga "git add"
-    alias gc "git commit -m"
-    alias gC "GIT_EDITOR=$EDITOR git commit -a"
-    alias gd "git diff --no-prefix"
-    alias gdh "git diff HEAD^"
-    alias gP "git push"
-    alias gp "git pull"
+    alias g "git pull"
 end
 
 if command -q lazygit

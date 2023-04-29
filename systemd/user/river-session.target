@@ -1,6 +1,0 @@
-[Unit]
-Description=River Compositor Session
-Documentation=man:systemd.special
-BindsTo=graphical-session.target
-Wants=graphical-session.target
-After=graphical-session.target

@@ -7,6 +7,7 @@
 
 alias ls='ls --color=auto'
 PS1='\w > '
+PS1="\n$(tput setaf 4)\w$(tput sgr0)\n$(tput setaf 45)$(tput sgr0) "
 
 alias ll='ls -alh --color=auto --group-directories-first'
 alias aspc='asp checkout'
@@ -15,6 +16,11 @@ alias gd="git diff --no-prefix"
 alias torv64="setconf PKGBUILD arch \"('x86_64' 'riscv64')\""
 alias tml="tmux ls"
 alias tma="tmux attach-sesstion -t"
+
+if [[ -d "/usr/share/fzf" ]]; then
+  source "/usr/share/fzf/completion.bash"
+  source "/usr/share/fzf/key-bindings.bash"
+fi
 
 function cdw() {
   if [[ "$1" == "" ]]; then

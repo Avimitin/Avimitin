@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "CascadiaCode";
+  src: url('static/CascadiaCode-min.ttf') format('truetype');
+}
+
+html {
+	text-align: center;
+	background-image: url("static/background.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 25%;
+	min-height: 100vh;
+}
+
+@media (orientation: landscape) {
+	html {
+		background-size: 100vw auto;
+	}
+}
+
+@media (orientation: portrait) {
+	html {
+		background-size: auto 100vh;
+	}
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	color: #fff;
+	font-family: Sans;
+	text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.8),
+			-1px 0px 1px #59a9ef,
+			1px 0px 1px #fcacac;
+	padding: 1rem;
+	font-size: 4rem;
+	font-weight: 900;
+	margin-bottom: 0.2rem;
+}
+
+a {
+	outline: none;
+	text-decoration: none;
+	text-shadow: 2px 5px 8px rgba(101, 101, 111, 0.5);
+	padding: 2px 5px 0;
+	color: #d0caca;
+	font-family: "CascadiaCode";
+	font-size: 1.2rem;
+	font-weight: lighter;
+	transition: all .3s;
+}
+
+a:hover {
+	color: #eaeaea;
+	font-size: 1.8rem;
+	transform: scale(5);
+	animation: animatedGlow 2s linear infinite;
+}
+
+@keyframes animatedGlow {
+  0% {
+	  text-shadow: unset;
+  }
+
+  50% {
+	  text-shadow: 0 0 7px #eaeaea, 0 0 10px #eaeaea, 0 0 21px #eaeaea;
+  }
+
+  100% {
+	  text-shadow: unset;
+  }
+}

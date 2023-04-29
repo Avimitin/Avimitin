@@ -1,0 +1,45 @@
+{
+  "date": {
+    "prefix": "date",
+    "body": [
+      "${VIM:strftime('%Y-%m-%d')}"
+    ],
+    "description": "Add current date, useful for frontmatter"
+  },
+
+  "keyboard tag": {
+    "prefix": "kbd",
+    "body": "<kbd>${1}</kbd> ${0}",
+    "description": "Add an HTML keyboard tag"
+  },
+
+  "hugo frontmatter": {
+    "prefix": "hugofmt",
+    "body": [
+      "+++",
+      "title = '${1:$TM_FILENAME_BASE}'",
+      "date = '${VIM:strftime('%Y-%m-%d')}'",
+      "tag = ['${2}']",
+      "author = '${VIM:\\$USER}'",
+      "+++",
+      "${0}"
+    ],
+    "description": "Add hugo TOML frontmatter"
+  },
+
+  "notebook tag": {
+    "prefix": "nbtag",
+    "body": "<!-- tag: ${1} -->\n${0}",
+    "description": "Add a tag span"
+  },
+
+  "collapse": {
+    "prefix": "collapse",
+    "body": [
+      "<details>",
+      "    <summary markdown=\"span\">${1}</summary>",
+      "</details>"
+    ],
+    "description": "Create a collapsible content"
+  }
+}

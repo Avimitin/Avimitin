@@ -4,6 +4,7 @@
     signingkey = 0xFF7883E3BF6835DD
 [commit]
     gpgsign = true
+	template = /home/sh1marin/.config/.gittemplate
 [init]
     defaultBranch = master
 [alias]

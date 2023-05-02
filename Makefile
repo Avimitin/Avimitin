@@ -51,4 +51,6 @@ rm-git:
 	@$(RM) $(GIT_CFG_TARGET)
 	@$(RM) $(GIT_TPL_TARGET)
 
-.PHONY: all prepare $(DOTS) $(addprefix rm-,$(DOTS))
+clean: $(addprefix rm-$(DOTS))
+
+.PHONY: all prepare clean $(DOTS) $(addprefix rm-,$(DOTS))

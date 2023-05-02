@@ -32,4 +32,23 @@ bash:
 rm-bash:
 	@$(RM) $(BASH_TARGET)
 
+FISH_SOURCE ?= $(realpath ./dotfile/fish)
+FISH_TARGET ?= $(XDG_CONFIG_HOME)/fish
+fish:
+	@$(S_LN) $(FISH_SOURCE) $(FISH_TARGET)
+rm-fish:
+	@$(RM) $(FISH_TARGET)
+
+GIT_CFG_SOURCE ?= $(realpath ./dotfile/git/.gitconfig)
+GIT_TPL_SOURCE ?= $(realpath ./dotfile/git/commit-template.txt)
+GIT_CFG_TARGET ?= $(HOME_DIR)/.gitconfig
+GIT_TPL_TARGET ?= $(XDG_CONFIG_HOME)/.gittemplate
+git:
+	@$(S_LN) $(GIT_CFG_SOURCE) $(GIT_CFG_TARGET)
+	@$(S_LN) $(GIT_TPL_SOURCE) $(GIT_TPL_TARGET)
+	@$(GIT) config --global commit.template $(GIT_TPL_TARGET)
+rm-git:
+	@$(RM) $(GIT_CFG_TARGET)
+	@$(RM) $(GIT_TPL_TARGET)
+
 .PHONY: all prepare $(DOTS) $(addprefix rm-,$(DOTS))

@@ -51,6 +51,17 @@ rm-git:
 	@$(RM) $(GIT_CFG_TARGET)
 	@$(RM) $(GIT_TPL_TARGET)
 
-clean: $(addprefix rm-$(DOTS))
+ZSH_SOURCE ?= $(realpath ./dotfile/zsh)
+ZSH_TARGET ?= $(XDG_CONFIG_HOME)/zsh
+ZSH_ENV_TARGET ?= $(HOME_DIR)/.zshenv
+zsh: prepare
+	@$(PKGER) zsh
+	@$(S_LN) $(ZSH_SOURCE) $(ZSH_TARGET)
+	@$(S_LN) $(ZSH_TARGET)/.zshenv $(ZSH_ENV_TARGET)
+rm-zsh:
+	@$(RM) $(ZSH_ENV_TARGET)
+	@$(RM) $(ZSH_TARGET)
+
+clean: $(addprefix rm-,$(DOTS))
 
 .PHONY: all prepare clean $(DOTS) $(addprefix rm-,$(DOTS))

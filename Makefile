@@ -54,13 +54,29 @@ rm-git:
 ZSH_SOURCE ?= $(realpath ./dotfile/zsh)
 ZSH_TARGET ?= $(XDG_CONFIG_HOME)/zsh
 ZSH_ENV_TARGET ?= $(HOME_DIR)/.zshenv
-zsh: prepare
+zsh:
 	@$(PKGER) zsh
 	@$(S_LN) $(ZSH_SOURCE) $(ZSH_TARGET)
 	@$(S_LN) $(ZSH_TARGET)/.zshenv $(ZSH_ENV_TARGET)
 rm-zsh:
 	@$(RM) $(ZSH_ENV_TARGET)
 	@$(RM) $(ZSH_TARGET)
+
+LAZYGIT_SOURCE ?= $(realpath ./dotfile/lazygit/config.yml)
+LAZYGIT_HOME ?= $(XDG_CONFIG_HOME)/lazygit
+lazygit:
+	@mkdir -p $(LAZYGIT_HOME)
+	@$(S_LN) $(LAZYGIT_SOURCE) $(LAZYGIT_HOME)/config.yml
+rm-lazygit:
+	@$(RM) -r $(LAZYGIT_HOME)
+
+NIX_SOURCE ?= $(realpath ./dotfile/nix/nix.conf)
+NIX_HOME ?= $(XDG_CONFIG_HOME)/nix
+nix:
+	@mkdir -p $(NIX_HOME)
+	@$(S_LN) $(NIX_SOURCE) $(NIX_HOME)/nix.conf
+rm-nix:
+	@$(RM) -r $(NIX_HOME)
 
 clean: $(addprefix rm-,$(DOTS))
 

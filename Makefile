@@ -36,7 +36,7 @@ FISH_SOURCE ?= $(realpath ./dotfile/fish)
 FISH_TARGET ?= $(XDG_CONFIG_HOME)/fish
 fish:
 	@$(S_LN) $(FISH_SOURCE) $(FISH_TARGET)
-	@fish --command $(FISH_TARGET)/setup_plugin.fish
+	@fish $(FISH_TARGET)/setup_plugin.fish
 rm-fish:
 	@$(RM) $(FISH_TARGET)
 

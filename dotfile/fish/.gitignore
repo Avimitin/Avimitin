@@ -1,6 +1,7 @@
 /*
 !/.gitignore
 !/config.fish
+!/setup_plugin.fish
 !/startup.fish
 !/conf.d
 conf.d/*

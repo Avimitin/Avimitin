@@ -16,7 +16,7 @@ end
 
 # G
 if command -q git
-    alias g "git pull"
+    alias g "git"
 end
 
 if command -q lazygit

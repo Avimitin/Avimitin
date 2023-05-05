@@ -35,6 +35,9 @@ rm-bash:
 FISH_SOURCE ?= $(realpath ./dotfile/fish)
 FISH_TARGET ?= $(XDG_CONFIG_HOME)/fish
 fish:
+ifneq (,$(wildcard $(FISH_TARGET)))
+	@rm -r $(FISH_TARGET)
+endif
 	@$(S_LN) $(FISH_SOURCE) $(FISH_TARGET)
 	@fish $(FISH_TARGET)/setup_plugin.fish
 rm-fish:

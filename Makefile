@@ -79,6 +79,16 @@ nix:
 rm-nix:
 	@$(RM) -r $(NIX_HOME)
 
+PARU_SOURCE ?= $(realpath ./dotfile/paru)
+PARU_TARGET ?= $(XDG_CONFIG_HOME)/paru
+paru:
+ifneq (,$(wildcard $PARU_TARGET))
+	@$(RM) -r $(PARU_TARGET)
+endif
+	@$(S_LN) $(PARU_SOURCE) $(PARU_TARGET)
+rm-paru:
+	@$(RM) $(PARU_TARGET)
+
 clean: $(addprefix rm-,$(DOTS))
 
 .PHONY: all prepare clean $(DOTS) $(addprefix rm-,$(DOTS))

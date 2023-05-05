@@ -1,13 +1,13 @@
-set -gx LANG en_US.UTF-8
+set --export LANG en_US.UTF-8
 
-set -gx XDG_CONFIG_HOME $HOME/.config
-set -gx XDG_CACHE_HOME $HOME/.cache
-set -gx XDG_DATA_HOME $HOME/.local/share
+set --export XDG_CONFIG_HOME $HOME/.config
+set --export XDG_CACHE_HOME $HOME/.cache
+set --export XDG_DATA_HOME $HOME/.local/share
 
-set -gx EDITOR 'nvim'
-set -gx VISUAL "$EDITOR "
-set -gx SYSTEMD_EDITOR $EDITOR
-set -gx PAGER 'less'
+set --export EDITOR 'nvim'
+set --export VISUAL "$EDITOR "
+set --export SYSTEMD_EDITOR $EDITOR
+set --export PAGER 'less'
 
 #set -gx BROWSER /usr/bin/xdg-open
 
@@ -19,7 +19,10 @@ set -gx PAGER 'less'
 # set -gx GLFW_IM_MODULE fcitx
 
 # wayland settings
-set -gx QT_QPA_PLATFORM "wayland"
-set -gx CLUTTER_BACKEND wayland
-set -gx SDL_VIDEODRIVER wayland
-set -gx MOZ_ENABLE_WAYLAND 1
+set --export QT_QPA_PLATFORM "wayland"
+set --export CLUTTER_BACKEND wayland
+set --export SDL_VIDEODRIVER wayland
+set --export MOZ_ENABLE_WAYLAND 1
+
+# Path
+fish_add_path $HOME/.local/bin

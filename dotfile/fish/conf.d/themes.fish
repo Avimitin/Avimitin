@@ -42,3 +42,10 @@ set -g hydro_color_git $orange
 set -g hydro_color_prompt $green
 set -g hydro_color_duration $comment
 set -g hydro_color_pwd $foreground
+
+# Hydro prompt settings
+set -g hydro_symbol_prompt ''
+set -g hydro_symbol_git_dirty ' '
+set -g hydro_symbol_git_ahead ' '
+set -g hydro_symbol_git_behind ' '
+set -g fish_prompt_pwd_dir_length 2

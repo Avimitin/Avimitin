@@ -3,6 +3,8 @@ S_LN := ln -svf
 RM := rm -vi
 GIT := git
 
+SUBTREE_PRJ := nvim notes
+
 HOME_DIR ?= $(HOME)
 XDG_CONFIG_HOME ?= $(HOME_DIR)/.config
 
@@ -92,6 +94,12 @@ endif
 rm-paru:
 	@$(RM) $(PARU_TARGET)
 
+push-notes:
+	@$(GIT) subtree \
+		--prefix notes \
+		push \
+		git@github.com:Avimitin/notes.git master
+
 clean: $(addprefix rm-,$(DOTS))
 
-.PHONY: all prepare clean $(DOTS) $(addprefix rm-,$(DOTS))
+.PHONY: all prepare clean $(DOTS) $(addprefix rm-,$(DOTS)) $(addprefix push-,$(SUBTREE_PRJ))

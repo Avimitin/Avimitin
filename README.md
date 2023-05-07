@@ -1,3 +1,7 @@
+<a href="https://github.com/Avimitin">
+  <img width="25%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&langs_count=10&hide_progress=true&exclude_repo=sdwm&theme=tokyonight&hide=Makefile,HTML,CSS,Roff,M4,Rich%20Text%20Format" />
+</a>
+
 - ***Programming Language***
 
   * Familiar with **Rust**, **TypeScript**, **React**, **Ruby**, **C**, and **Lua**.
@@ -15,5 +19,3 @@
 
   * Email: [`dev@avimit.in`](mailto:dev@avimit.in)
   * PGP: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](./pubkey.asc)
-
-[![image](https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&langs_count=10&hide_progress=true&exclude_repo=sdwm&theme=tokyonight&hide=Makefile,HTML,CSS,Roff,M4,Rich%20Text%20Format)](https://github.com/Avimitin)

@@ -68,13 +68,12 @@ DOK 的实现方式是用字典作为数据结构，用行和列作为 key 来�
 - 矩阵实现：字典
 - 矩阵大小：内部字典大小，既非零元素的数量
 - 矩阵访问：使用行列的值为 key 访问内部的字典，如果找不到值就返回 0
-- 矩阵修改：不支持直接修改，想要修改只能创建一个新的字典替换旧的字典
 
 * LIL (List of lists)
 
 > 参考： <https://github.com/scipy/scipy/blob/v1.10.1/scipy/sparse/_lil.py>
 
-LIL 实现需要用到两个列表，一个列表代表行，行内每一个列表元素也是一个数组，
+一个可增量构造矩阵的结构。LIL 实现需要用到两个列表，一个列表代表行，行内每一个列表元素也是一个数组，
 数组内存非零元素对应的列的位置。
 
 另一个列表存实际的非零元素的值，想要获得矩阵 i 行 j 列的元素，需要先访问
@@ -126,12 +125,12 @@ data Matrix = Matrix {
 
 1. 支持引用矩阵的一段切片 (slicing the matrix)
 2. 更新矩阵的结构更加高效
+3. 内存占用相当的小
 
 缺点：
 
 1. 对矩阵的算术计算效率低
-2. 对矩阵列的引用会很慢
-3. 矩阵向量的乘积计算效率低
+2. 对矩阵元素和列的引用效率和矩阵大小成正比
 
 * COO (Coordinate list)
 
@@ -153,7 +152,11 @@ COO 的用途：快速构造出稀疏矩阵并转换到 CSR/CSC 格式。
 
 2. 支持高效访问和数组操作的
 
-* CSR (Compressed Sparse Row)
+* CSR / CRS(Compressed Sparse Row/Compressed Row Storage) / Yale Format
+
+CSR 支持对行的快速索引访问和矩阵向量乘法。其实现主要使用三个一维的数组，分别存放值，列索引，行索引。
+实现上与 COO 很像，但是压缩了行的索引。
+
 * CSC (Compressed Sparse Column)
 
 

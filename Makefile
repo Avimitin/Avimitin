@@ -12,12 +12,14 @@ all: prepare $(DOTS)
 
 prepare:
 	@mkdir -p $(XDG_CONFIG_HOME)
+	@$(GIT) submodule update --init
 
 # ---------------------------------------------
 
 NVIM_SOURCE ?= $(realpath ./dotfile/nvim)
 NVIM_TARGET ?= $(XDG_CONFIG_HOME)/nvim
 nvim:
+	@$(GIT) submodule update --init
 	@$(S_LN) $(NVIM_SOURCE) $(NVIM_TARGET)
 rm-nvim:
 	@$(RM) $(NVIM_TARGET)

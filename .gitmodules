@@ -1,0 +1,3 @@
+[submodule "dotfile/nvim"]
+	path = dotfile/nvim
+	url = git@github.com:Avimitin/nvim.git

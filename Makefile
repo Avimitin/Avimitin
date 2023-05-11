@@ -23,11 +23,9 @@ nvim:
 	@$(S_LN) $(NVIM_SOURCE) $(NVIM_TARGET)
 rm-nvim:
 	@$(RM) $(NVIM_TARGET)
-push-nvim:
-	@$(GIT) subtree push \
-		--prefix dotfile/nvim \
-		git@github.com:Avimitin/nvim \
-		master
+upd-nvim:
+	@$(GIT) add $(NVIM_SOURCE)
+	@$(GIT) commit -m "nvim: bump rev binding"
 
 BASH_SOURCE ?= $(realpath ./dotfile/bash/.bashrc)
 BASH_TARGET ?= $(HOME_DIR)/.bashrc

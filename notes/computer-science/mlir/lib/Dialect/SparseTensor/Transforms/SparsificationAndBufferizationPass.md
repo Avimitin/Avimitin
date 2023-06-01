@@ -15,21 +15,23 @@ bufferization for only dense op.
 Sparse tensor are lowering(bufferized) through function `::runOnOperation()`.
 This function contains three main parts.
 
-1. Enabling transformations. A new OpPassManager is created to add
+### Step 1
+
+Enabling transformations. A new OpPassManager is created to add
 PreSparsificationRewritePass, EmptyTensorToAllocTensorPass. Then run the
 first pipeline.
-2. Bufferize all sparse ops. A new OpPassManager is created to add
-SparsificationPass, PostSparsificationRewritePass...
-3. Bufferize dense ops by `::runDenseBufferization()`
 
-### Step 1
+* PreSparsificationRewritePass (mlir/lib/Dialect/SparseTensor/Transform/SparseTensorPasses.cpp)
+
+A pass that handles sparse tensor rewriting rules. Like dense tensor to sparse tensor conversion,
+sparse tensor reshape...
 
 ### Step 2
 
 Vector related pass is enabled when VL is set. Then options.vectorLength will
 init the `SparsificationAndBufferizationPass::vectorLength` field. If the field
 value is greater than zero, it will add `LoopInvariantCodeMotionPass` and
-`SparseVectorizationPass` into `OpPassManager`.
+[`SparseVectorizationPass`](#SparseVectoriazationPass) into `OpPassManager`.
 
 If RuntimeLibrary is not enabled, `SparseTensorCodegenPass`, `SparseBufferRewritePass`
 and `StorageSpecifierToLLVMPass` will be added into `OpPassManager`.
@@ -37,3 +39,23 @@ If RuntimeLibrary is enabled, then only `SparseTensorConversionPass` will be add
 into `OpPassManager`.
 
 And finally the pipeline will be ran.
+
+### Step 3
+
+Bufferize dense ops by `::runDenseBufferization()`
+
+### SparseVectorizationPass
+
+Fields:
+
+- Vector Length
+- Enable option for [VLA](https://en.wikipedia.org/wiki/Variable-length_array) Vectorization
+
+This option is enabled through `sparse-compiler` pass, by `armsve` option
+
+- Enable option for SIMD Index32
+
+### `vectorizeStmt`
+
+A method to rewrite the given for-loop, with code generation.
+

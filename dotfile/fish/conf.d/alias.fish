@@ -106,3 +106,16 @@ alias "systart" "sudo systemctl start"
 alias "systop" "sudo systemctl stop"
 alias "systat" "sudo systemctl status"
 alias "sysres" "sudo systemctl restart"
+
+function run-infra
+    set --local infra_dir "$HOME/me/infra/bin"
+
+    if test "$argv" = "ls"
+        ls $infra_dir
+        return 0
+    end
+
+    $infra_dir/$argv
+end
+
+complete -c run-infra -f -a "$(run-infra ls)"

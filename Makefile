@@ -100,6 +100,14 @@ push-notes:
 		push \
 		git@github.com:Avimitin/notes.git master
 
+TMUX_SOURCE ?= $(realpath ./dotfile/tmux/.tmux.conf)
+TMUX_TARGET ?= $(HOME_DIR)/.tmux.conf
+tmux:
+ifneq (,$(wildcard $TMUX_TARGET))
+	@$(RM) $(TMUX_TARGET)
+endif
+	@$(S_LN) $(TMUX_SOURCE) $(TMUX_TARGET)
+
 clean: $(addprefix rm-,$(DOTS))
 
 .PHONY: all prepare clean $(DOTS) $(addprefix rm-,$(DOTS)) $(addprefix push-,$(SUBTREE_PRJ))

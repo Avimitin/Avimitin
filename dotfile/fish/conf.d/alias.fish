@@ -101,6 +101,11 @@ function ytd
     end
 end
 
+if command -q gpg
+    alias gpg-uptty "gpg-connect-agent updatestartuptty /bye"
+    alias gpg-swckey 'gpg-connect-agent "scd serialno" "learn --force" /bye'
+end
+
 # systemd
 alias "systart" "sudo systemctl start"
 alias "systop" "sudo systemctl stop"

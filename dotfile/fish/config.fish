@@ -157,7 +157,6 @@ set_env SDL_VIDEODRIVER wayland
 set_env MOZ_ENABLE_WAYLAND 1
 
 # Path
-fish_add_path $HOME/.nix-profile/bin
 fish_add_path $HOME/.local/bin
 
 # ===================================================================

@@ -1,9 +1,11 @@
-{ config, ... }:
+{ config, pkgs, ... }:
+
+with builtins;
 
 let
   toSrc = path: { source = ../dotfile/${path}; };
-  applyMulSrc = pathes:
-    builtins.listToAttrs (map (p: {
+  toMulSrc = pathes:
+    listToAttrs (map (p: {
       name = p;
       value = toSrc p;
     }) pathes);
@@ -19,23 +21,29 @@ in {
     };
   };
   # Symlink file only to avoid program write some unexpected stuff into directory.
-  xdg.configFile = applyMulSrc [
+  xdg.configFile = (toMulSrc [
     "broot/conf.hjson"
     "fish/config.fish"
     "lazygit/config.yml"
     "nix/nix.conf"
     "paru/paru.conf"
     "systemd/user"
-  ];
-  # xdg.configFile."fish/conf.d/home-manager.fish"
-  #   = builtins.toFile "home-manager.fish" ''
-  #     alias hm "${config.home} -f ${builtins.toString ./homelab.nix}"
-  #   '';
-  # xdg.configFile."nvim"
-  #   = builtins.fetchGit {
-  #     url = "git@github.com:Avimitin/nvim.git";
-  #     ref = "master";
-  #   };
+    "nvim"
+  ]) // {
+    # I really hate nixpkgs, for now.
+    # So I don't want to add $HOME/.nix-profile/bin into $PATH, as it will pollute my environment.
+    # The below fish script will create an alias `hm` to help me execute the home-manager.
+    # Also, it force the home-manager to use this nix file to avoid any other possible problem.
+    "fish/conf.d/home-manager.fish" = {
+      source = (pkgs.writeTextFile {
+        name = "home-manager.fish";
+        text = ''
+          alias hm "${config.home.path}/bin/home-manager -f ${
+            toString ./homelab.nix
+          }"'';
+      });
+    };
+  };
 
   programs.home-manager.enable = true;
 }

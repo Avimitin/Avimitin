@@ -1,9 +1,13 @@
-{ ... }:
+{ config, ... }:
 
 let
   toSrc = path: {
-    source = path;
+    source = ../dotfile/${path};
   };
+  toMulSrc = pathes: builtins.listToAttrs
+    (map
+      (p: { name = p; value = toSrc p; })
+      pathes);
 in
 {
   home = {
@@ -11,20 +15,29 @@ in
     homeDirectory = "/home/i";
     stateVersion = "23.05";
     file = {
-      ".bashrc" = toSrc ./bash/.bashrc;
-      ".gitconfig" = toSrc ./git/.gitconfig;
-      ".tmux.conf" = toSrc ./tmux/.tmux.conf;
+      ".bashrc" = toSrc "bash/.bashrc";
+      ".gitconfig" = toSrc "git/.gitconfig";
+      ".tmux.conf" = toSrc "tmux/.tmux.conf";
     };
   };
   # Symlink file only to avoid program write some unexpected stuff into directory.
-  xdg.configFile = {
-    "broot/conf.hjson" = toSrc ./broot/conf.hjson;
-    "fish/config.fish" = toSrc ./fish/config.fish;
-    "lazygit/config.yml" = toSrc ./lazygit/config.yml;
-    "nix/nix.conf" = toSrc ./nix/nix.conf;
-    "paru/paru.conf" = toSrc ./paru/paru.conf;
-    "systemd/user" = toSrc ./systemd/user;
-  };
+  xdg.configFile = toMulSrc [
+    "broot/conf.hjson"
+    "fish/config.fish"
+    "lazygit/config.yml"
+    "nix/nix.conf"
+    "paru/paru.conf"
+    "systemd/user"
+  ];
+  # xdg.configFile."fish/conf.d/home-manager.fish"
+  #   = builtins.toFile "home-manager.fish" ''
+  #     alias hm "${config.home} -f ${builtins.toString ./homelab.nix}"
+  #   '';
+  # xdg.configFile."nvim"
+  #   = builtins.fetchGit {
+  #     url = "git@github.com:Avimitin/nvim.git";
+  #     ref = "master";
+  #   };
 
   programs.home-manager.enable = true;
  }

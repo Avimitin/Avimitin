@@ -19,13 +19,17 @@ rec {
       value = (valFn elem);
     }) list);
 
+  # Convert the given relative path to abosolute path pointed to the dotfile sub directory
   toSrc = path: { source = ../dotfile/${path}; };
 
+  # Iterate the given path list to produce a { *name = { source = path/to/source; }; } attr set
+  # where *name is the given relative path, and value is an abosolute version of the path.
   toMulSrc = listToAttrsMap {
     nameFn = (path: path);
     valFn = (path: toSrc path);
   };
 
+  # A wrapper for nixpkgs.fetchFromGitHub function with additional name alias
   dlFromGh = { name, owner, repo, rev, sha256 }: {
     inherit name;
     src = pkgs.fetchFromGitHub { inherit owner repo rev sha256; };

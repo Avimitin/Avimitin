@@ -1,3 +1,5 @@
+{ ... }:
+
 let
   toSrc = path: {
     source = path;

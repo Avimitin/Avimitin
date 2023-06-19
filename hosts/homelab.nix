@@ -1,15 +1,13 @@
 { config, ... }:
 
 let
-  toSrc = path: {
-    source = ../dotfile/${path};
-  };
-  toMulSrc = pathes: builtins.listToAttrs
-    (map
-      (p: { name = p; value = toSrc p; })
-      pathes);
-in
-{
+  toSrc = path: { source = ../dotfile/${path}; };
+  applyMulSrc = pathes:
+    builtins.listToAttrs (map (p: {
+      name = p;
+      value = toSrc p;
+    }) pathes);
+in {
   home = {
     username = "i";
     homeDirectory = "/home/i";
@@ -21,7 +19,7 @@ in
     };
   };
   # Symlink file only to avoid program write some unexpected stuff into directory.
-  xdg.configFile = toMulSrc [
+  xdg.configFile = applyMulSrc [
     "broot/conf.hjson"
     "fish/config.fish"
     "lazygit/config.yml"
@@ -40,4 +38,4 @@ in
   #   };
 
   programs.home-manager.enable = true;
- }
+}

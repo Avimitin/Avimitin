@@ -13,7 +13,8 @@ rec {
   #
   # { "1" = 1; "2" = 2; "3" = 3 }
   #
-  listToAttrsMap = { nameFn, valFn, }: list:
+  listToAttrsMap = { nameFn, valFn, }:
+    list:
     listToAttrs (map (elem: {
       name = (nameFn elem);
       value = (valFn elem);
@@ -24,10 +25,12 @@ rec {
 
   # Iterate the given path list to produce a { *name = { source = path/to/source; }; } attr set
   # where *name is the given relative path, and value is an abosolute version of the path.
-  toMulSrc = listToAttrsMap {
-    nameFn = (path: path);
-    valFn = (path: toSrc path);
-  };
+  # toMulSrc = listToAttrsMap {
+  #   nameFn = (path: path);
+  #   valFn = (path: toSrc path);
+  # };
+
+  toMulSrc = pathes: pkgs.lib.genAttrs pathes (path: toSrc path);
 
   # A wrapper for nixpkgs.fetchFromGitHub function with additional name alias
   dlFromGh = { name, owner, repo, rev, sha256 }: {

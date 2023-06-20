@@ -6,36 +6,39 @@
 
 * Familiar with **Rust**, **TypeScript**, **React**, **Ruby**, **C**, **nix** and **Lua**
 
+<details>
+    <summary markdown="span">Click to view</summary>
+
 ### My highlight projects
 
-- (Rust) [tg-maid](https://github.com/Avimitin/tg-maid)
+#### (Rust) [tg-maid](https://github.com/Avimitin/tg-maid)
 
 A telegram bot that was used as my Rust playground. I applied all my skill I had learned into this project.
 Such as a generic dispatchable task executor: <https://github.com/Avimitin/tg-maid/blob/master/src/event.rs#L56-L133>.
 
-- (Rust) [deepl-rs](https://github.com/Avimitin/deepl-rs.git)
+#### (Rust) [deepl-rs](https://github.com/Avimitin/deepl-rs.git)
 
 A Rust DeepL API wrapper. In this project I used the Rust await syntax sugar to inline the HTTP request into async/await.
 
-- (TypeScript & Ruby) [uptime-collector](https://github.com/Avimitin/uptime-collector.git)
+#### (TypeScript & Ruby) [uptime-collector](https://github.com/Avimitin/uptime-collector.git)
 
 This is a lightweight CPU usage collector, using React as frontend and Ruby as backend.
 
-- (Lua) [nvim](https://github.com/Avimitin/nvim)
+#### (Lua) [nvim](https://github.com/Avimitin/nvim)
 
 A structure and super fast neovim configuration that purely made with Lua.
 I made so many optimization and customization to exploit the speed from LuaJIT.
 
-- (nix) vector
+#### (nix) vector
 
 I've maintain LLVM with nix in the [sequencer/vector](https://github.com/sequencer/vector/pull/230/files) repo.
 Also, this repository contains many nix code to maintain my dotfile.
 
-- [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3AAvimitin+sort%3Aupdated-desc+)
+#### [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3AAvimitin+sort%3Aupdated-desc+)
 
 I was an active maintainer for Arch Linux RISC-V distro.
 
-- LLVM
+#### LLVM
 
 Below is my contributions to LLVM.
 
@@ -45,6 +48,8 @@ Below is my contributions to LLVM.
 ---
 
 Besides, I am also an active open source contributors: [my GitHub PRs](https://github.com/pulls?q=is%3Apr+author%3AAvimitin+archived%3Afalse+sort%3Aupdated-desc+).
+
+</details>
 
 ## ***Work Experience***
 

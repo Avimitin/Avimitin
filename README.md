@@ -31,7 +31,7 @@ I made so many optimization and customization to exploit the speed from LuaJIT.
 I've maintain LLVM with nix in the [sequencer/vector](https://github.com/sequencer/vector/pull/230/files) repo.
 Also, this repository contains many nix code to maintain my dotfile.
 
-- [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3A%40me+sort%3Aupdated-desc+)
+- [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3AAvimitin+sort%3Aupdated-desc+)
 
 I was an active maintainer for Arch Linux RISC-V distro.
 
@@ -44,7 +44,7 @@ Below is my contributions to LLVM.
 
 ---
 
-Besides, I am also an active open source contributors: [my GitHub PRs](https://github.com/pulls?q=is%3Apr+author%3A%40me+archived%3Afalse+sort%3Aupdated-desc+).
+Besides, I am also an active open source contributors: [my GitHub PRs](https://github.com/pulls?q=is%3Apr+author%3AAvimitin+archived%3Afalse+sort%3Aupdated-desc+).
 
 ## ***Work Experience***
 

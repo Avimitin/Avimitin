@@ -8,6 +8,7 @@
 [init]
     defaultBranch = master
 [alias]
+    a = add
     sw = switch
     cm = commit
     br = branch

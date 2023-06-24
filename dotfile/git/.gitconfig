@@ -9,8 +9,11 @@
     defaultBranch = master
 [alias]
     a = add
+    p = pull
+    P = push
+    c = commit
+    co = clone
     sw = switch
-    cm = commit
     br = branch
     lg = 'log --graph'
 

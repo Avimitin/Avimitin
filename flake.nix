@@ -24,5 +24,11 @@
             program = "${my-nix-formatter}/bin/my-nix-formatter";
           };
         });
+      templates = {
+        "rust-prj" = {
+          path = ./nix/rust-prj.nix;
+          description = "My basic rust project setup";
+        };
+      };
     };
 }

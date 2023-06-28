@@ -25,8 +25,8 @@
           };
         });
       templates = {
-        "rust-prj" = {
-          path = ./nix/rust-prj.nix;
+        "rust" = {
+          path = ./nix/template/rust;
           description = "My basic rust project setup";
         };
       };

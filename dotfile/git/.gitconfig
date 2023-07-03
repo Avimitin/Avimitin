@@ -12,6 +12,7 @@
     p = pull
     P = push
     c = commit
+    cm = commit -m
     co = clone
     sw = switch
     br = branch

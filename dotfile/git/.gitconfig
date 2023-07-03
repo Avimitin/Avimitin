@@ -8,15 +8,17 @@
 [init]
     defaultBranch = master
 [alias]
-    a = add
-    p = pull
     P = push
+    Pu = push --set-upstream
+    a = add
+    br = branch
     c = commit
     cm = commit -m
     co = clone
+    lg = log --graph --oneline
+    p = pull
+    rb = rebase
     sw = switch
-    br = branch
-    lg = 'log --graph'
 
 [core]
     pager = delta

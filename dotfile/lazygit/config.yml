@@ -11,6 +11,9 @@ gui:
       - reverse
 
 git:
+  commit:
+    signOff: true
+    verbose: always
   paging:
     colorArg: always
     pager: delta --dark --paging=never

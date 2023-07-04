@@ -19,28 +19,3 @@ keybinding:
   universal:
     nextMatch: '='
     prevMatch: '-'
-  branches:
-    setUpstream: 's'
-
-customCommands:
-  - key: '<c-p>'
-    context: 'global'
-    loadingText: 'pushing'
-    description: 'push to specific branch and remote'
-    prompts:
-      - type: 'input'
-        title: 'push to which remote?'
-      - type: 'input'
-        title: 'push to which branch?'
-    command: 'git push {{index .PromptResponses 0}} {{index .PromptResponses 1}}'
-  - key: 'C'
-    command: 'git commit -v'
-    description: 'commit file with editor and with diff'
-    context: 'files'
-    subprocess: true
-  - key: 'c'
-    context: 'files'
-    prompts:
-      - type: 'input'
-        title: 'Commit message'
-    command: "git commit -m '{{index .PromptResponses 0}}' --signoff"

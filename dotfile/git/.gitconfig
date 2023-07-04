@@ -5,8 +5,11 @@
 [commit]
     gpgsign = true
     #template = /home/sh1marin/.config/.gittemplate
+    verbose = true
 [init]
     defaultBranch = master
+[format]
+    signOff = true
 [alias]
     P = push
     Pu = push --set-upstream

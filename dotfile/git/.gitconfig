@@ -11,16 +11,18 @@
 [format]
     signOff = true
 [alias]
-    P = push
-    Pu = push --set-upstream
     a = add
     br = branch
     c = commit
     cm = commit -m
-    co = clone
-    lg = log --graph --oneline
-    p = pull
+    cl = clone
+    l = log --graph --oneline
+    p = push
+    pp = pull
+    pu = push --set-upstream
     rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
     sw = switch
 
 [core]

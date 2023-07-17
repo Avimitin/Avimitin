@@ -61,4 +61,4 @@ Besides, I am also an active open source contributors: [my GitHub PRs](https://g
   * My blog: <https://blog.sh1mar.in>
   * Contact me: [`dev@avimit.in`](mailto:dev@avimit.in)
   * GPG Public key: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](https://github.com/Avimitin.gpg)
-  * <sub>I don't use social media so no Twitter or Mastodon here.</sub>
+  * Pleroma: https://dabr.ca/users/sh1marin

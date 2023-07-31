@@ -43,6 +43,7 @@ in {
   # Symlink file only to avoid program write some unexpected stuff into directory.
   xdg.configFile = (toMulSrc [
     "broot/conf.hjson"
+    "direnv/direnvrc"
     "fish/config.fish"
     "lazygit/config.yml"
     "nix/nix.conf"

@@ -42,4 +42,10 @@
         '';
       };
   };
+
+  # Fetch tmux plugin from GitHub and put all of them into $XDG_DATA_HOME/tmux/plugins
+  fetchTmuxPlugin = spec: {
+    target = "tmux/plugins/${spec.repo}";
+    source = pkgs.fetchFromGitHub spec;
+  };
 }

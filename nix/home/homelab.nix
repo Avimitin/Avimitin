@@ -44,5 +44,14 @@ in
     };
   };
 
+  xdg.dataFile = {
+    tmuxJump = lib.fetchTmuxPlugin {
+      owner = "schasse";
+      repo = "tmux-jump";
+      rev = "2ff4940f043cd4ad80fa25c6efa33063fb3b386b";
+      sha256 = "sha256-zgFQKQgESThZGoLRjqZGjxeu/C0HMduUOr7jcgELM7s=";
+    };
+  };
+
   programs.home-manager.enable = false;
 }

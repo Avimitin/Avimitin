@@ -1,54 +1,20 @@
 { pkgs }:
+{
 
-with builtins;
-
-rec {
-  # A helper function to convert a list of element into a set.
-  # For example:
-  #
-  # > with builtins;
-  # > listToAttrsMap { nameFn = (x: toString x); valFn = (x: x); } [ 1 2 3 ]
-  #
-  # will produce:
-  #
-  # { "1" = 1; "2" = 2; "3" = 3 }
-  #
-  listToAttrsMap = { nameFn, valFn, }:
-    list:
-    listToAttrs (map
-      (elem: {
-        name = (nameFn elem);
-        value = (valFn elem);
-      })
-      list);
-
-  # Convert the given relative path to abosolute path pointed to the dotfile sub directory
-  toSrc = path: { source = ../dotfile/${path}; };
-
-  # Iterate the given path list to produce a { *name = { source = path/to/source; }; } attr set
-  # where *name is the given relative path, and value is an abosolute version of the path.
-  # toMulSrc = listToAttrsMap {
-  #   nameFn = (path: path);
-  #   valFn = (path: toSrc path);
-  # };
-
-  toMulSrc = pathes: pkgs.lib.genAttrs pathes (path: toSrc path);
-
-  # A wrapper for nixpkgs.fetchFromGitHub function with additional name alias
-  dlFromGh = { name, owner, repo, rev, sha256 }: {
-    inherit name;
-    src = pkgs.fetchFromGitHub { inherit owner repo rev sha256; };
+  # Read config from dotfile directory and tranform into home-manager configFile attribute
+  fromDotfile = path: {
+    target = "${path}";
+    source = ../dotfile/${path};
   };
 
-  # This function is copied and modified from home-manager/modules/programs/fish.nix
-  genFishPlugs = listToAttrsMap {
-    nameFn = (plugin: "fish/conf.d/plugin-${plugin.name}.fish");
-    valFn = (plugin: {
-      source = pkgs.writeTextFile {
-        name = "${plugin.name}.fish";
+  # Fetch fish plugin from GitHub and transform it into home-manager configFile attribute
+  fetchFishPlugin = spec: {
+    target = "fish/conf.d/plugin-${spec.repo}.fish";
+    source = let src = pkgs.fetchFromGitHub spec; in
+      pkgs.writeTextFile {
+        name = "${spec.repo}.fish";
         text = ''
-          # Plugin ${plugin.name}
-          set -l plugin_dir ${plugin.src}
+          set -l plugin_dir ${src}
 
           # Set paths to import plugin components
           if test -d $plugin_dir/functions
@@ -75,6 +41,5 @@ rec {
           end
         '';
       };
-    });
   };
 }

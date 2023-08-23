@@ -25,6 +25,8 @@
     rbc = rebase --continue
     sw = switch
 
+[pull]
+    rebase = true
 [core]
     pager = delta
 

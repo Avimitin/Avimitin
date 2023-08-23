@@ -21,7 +21,8 @@
         rs-toolchain = pkgs.rust-bin.stable.latest.default.override {
           extensions = [ "rust-src" ];
         };
-      in {
+      in
+      {
         devShells.default = pkgs.mkShell {
           buildInputs = [
             # Including latest cargo,clippy,cargo-fmt

@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 
-with (import ./lib.nix { inherit pkgs; });
+with (import ../lib.nix { inherit pkgs; });
 
 let
-
   fishPlugins = [
     (dlFromGh {
       name = "fzf";
@@ -29,7 +28,8 @@ let
       sha256 = "sha256-zmEa/GJ9jtjzeyJUWVNSz/wYrU2FtqhcHdgxzi6ANHg=";
     })
   ];
-in {
+in
+{
   home = {
     username = "i";
     homeDirectory = "/home/i";

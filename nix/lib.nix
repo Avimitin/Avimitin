@@ -15,10 +15,12 @@ rec {
   #
   listToAttrsMap = { nameFn, valFn, }:
     list:
-    listToAttrs (map (elem: {
-      name = (nameFn elem);
-      value = (valFn elem);
-    }) list);
+    listToAttrs (map
+      (elem: {
+        name = (nameFn elem);
+        value = (valFn elem);
+      })
+      list);
 
   # Convert the given relative path to abosolute path pointed to the dotfile sub directory
   toSrc = path: { source = ../dotfile/${path}; };

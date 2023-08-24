@@ -1,0 +1,4 @@
+[default]
+path = '/home/sh1marin/Pictures/Anime'
+duration = "30m"
+apply-shadow = true

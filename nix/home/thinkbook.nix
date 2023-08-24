@@ -17,16 +17,11 @@ in
   };
 
   xdg.configFile = {
-    neovim = lib.fromDotfile "nvim";
-    systemdServices = lib.fromDotfile "systemd/user";
-    paru = lib.fromDotfile "paru/paru.conf";
-    nix = lib.fromDotfile "nix/nix.conf";
-    lazygit = lib.fromDotfile "lazygit/config.yml";
-    direnv = lib.fromDotfile "direnv/direnvrc";
-    fishConf = lib.fromDotfile "fish/config.fish";
     broot = lib.fromDotfile "broot/conf.toml";
-    fontconfig = lib.fromDotfile "fontconfig/conf.d";
-    wezterm = lib.fromDotfile "wezterm/wezterm.lua";
+    direnv = lib.fromDotfile "direnv/direnvrc";
+    fcitx5Conf = lib.fromDotfile "fcitx5/conf";
+    fcitx5Profile = lib.fromDotfile "fcitx5/profile";
+    fishConf = lib.fromDotfile "fish/config.fish";
     fishPrompt = lib.fetchFishPlugin {
       owner = "jorgebucaran";
       repo = "hydro";
@@ -45,6 +40,17 @@ in
       rev = "c5e170730b4f8395e116d7c06883ed53da2d5561";
       sha256 = "sha256-xWaMd5POCDeeFTsGtHbIvsPelIp+GZPC1X1CseCo3BA=";
     };
+    fontconfig = lib.fromDotfile "fontconfig/conf.d";
+    hyprland = lib.fromDotfile "hypr/hyprland.conf";
+    lazygit = lib.fromDotfile "lazygit/config.yml";
+    neovim = lib.fromDotfile "nvim";
+    nix = lib.fromDotfile "nix/nix.conf";
+    paru = lib.fromDotfile "paru/paru.conf";
+    systemdServices = lib.fromDotfile "systemd/user";
+    waybarConf = lib.fromDotfile "waybar/config";
+    waybarStyle = lib.fromDotfile "waybar/style.css";
+    wezterm = lib.fromDotfile "wezterm/wezterm.lua";
+    wpaperd = lib.fromDotfile "wpaperd/wallpaper.toml";
   };
 
   xdg.dataFile = {

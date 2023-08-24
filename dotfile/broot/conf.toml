@@ -1,0 +1,44 @@
+# show: date, git
+# hide: hidden file
+default_flags = "dgH"
+true_color = true
+date_time_format = "%Y/%m/%d %R"
+cols_order = [
+  "mark",
+  "git",
+  "branch",
+  "permission",
+  "date",
+  "size",
+  "count",
+  "name",
+]
+syntax_theme = "OceanLight"
+show_matching_characters_on_path_searches = false
+
+[[verbs]]
+invocation = "edit"
+key = "ctrl-e"
+shortcut = "e"
+apply_to = "file"
+external = "$EDITOR +{line} {file}"
+leave_broot = false
+
+[[verbs]]
+key = "ctrl-k"
+execution = ":line_up"
+[[verbs]]
+key = "ctrl-j"
+execution = ":line_down"
+[[verbs]]
+key = "ctrl-u"
+execution = ":page_up"
+[[verbs]]
+key = "ctrl-d"
+execution = ":page_down"
+[[verbs]]
+key = "ctrl-l"
+execution = ":panel_right"
+[[verbs]]
+key = "ctrl-h"
+execution = ":panel_left"

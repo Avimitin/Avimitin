@@ -4,44 +4,41 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, home-manager }:
     let
-      applyForEachSystem = flake-utils.lib.eachDefaultSystem;
-      systemBaseModule = system:
-        let
-          pkgs = import nixpkgs { inherit system; };
-        in
-        {
-          formatter = pkgs.nixpkgs-fmt;
-          apps.init-hm = flake-utils.lib.mkApp {
-            drv = pkgs.writeShellScriptBin "init-home-manager" ''
-              set -e
-              name=$1; shift
-              [[ "$name" = "" ]] \
-              && echo "No file given" && exit 1
-                file="$PWD/nix/home/$name.nix"
-                [[ -f "$file" ]] \
-                || (echo "$file not found" && exit 1)
-                  configDir=''${XDG_CONFIG_HOME:-$HOME/.config}
-              mkdir -p $configDir/home-manager
-                ln -s $file $configDir/home-manager/home.nix
-            '';
-          };
-        };
+      applyHomeConfig = home-manager.lib.homeManagerConfiguration;
     in
-    (applyForEachSystem systemBaseModule)
-    // {
-      templates = {
-        "rust" = {
-          path = ./nix/template/rust;
-          description = "My basic rust project setup";
+    {
+      templates = <./nix/template>;
+      homeConfigurations = {
+        "homelab" = applyHomeConfig {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          modules = [ ./nix/home/homelab.nix ];
         };
-        "generic" = {
-          path = ./nix/template/generic;
-          description = "Generic project setup";
+        "thinkbook" = applyHomeConfig {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          modules = [ ./nix/home/thinkbook.nix ];
         };
       };
-    };
+    } //
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        formatter = pkgs.nixpkgs-fmt;
+        apps.hm-switch = flake-utils.lib.mkApp {
+          drv = pkgs.writeShellScriptBin "HomeManagerSwitcher" ''
+            home=$1; shift
+            [[ "x$home" = "x" ]] && echo "No home config given" && exit 1
+            nix run home-manager/master -- switch --flake ".?submodules=1#$home"
+          '';
+        };
+      });
 }

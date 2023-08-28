@@ -11,11 +11,16 @@
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            //"1": "",
+            //"2": "",
+            //"3": "",
+            //"4": "",
+            //"5": "",
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -36,7 +41,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}",
+        "tooltip-format": "{capacity} %",
         "format-charging": " ",
         "format-plugged": "",
         "format-alt": "{icon} {time}",
@@ -44,7 +50,8 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-wifi": "",
+        "tooltip-format": "{essid}{ifname}",
         "format-ethernet": "󰈀",
         "tooltip-format": "󰈀",
         "format-linked": "󰈀",
@@ -54,11 +61,12 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "󰂱 {volume}%{format_source}",
-        "format-bluetooth-muted": "󰗿 Muted  {format_source}",
-        "format-muted": "󰝟  Muted  {format_source}",
+        "tooltip-format": "󰕾  {volume}%   {format_source}",
+        "format-bluetooth": "󰂱",
+        "format-bluetooth-muted": "󰗿",
+        "format-muted": "󰝟",
         "format-source": "  {volume}%",
-        "format-source-muted": "",
+        "format-source-muted": " Muted",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

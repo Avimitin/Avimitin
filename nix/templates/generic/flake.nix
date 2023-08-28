@@ -1,5 +1,5 @@
 {
-  description = "Flakes for Rust development";
+  description = "Generic devshell setup";
 
   inputs = {
     # The nixpkgs

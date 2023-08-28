@@ -15,7 +15,7 @@
       applyHomeConfig = home-manager.lib.homeManagerConfiguration;
     in
     {
-      templates = <./nix/template>;
+      templates = import ./nix/templates;
       homeConfigurations = {
         "homelab" = applyHomeConfig {
           pkgs = import nixpkgs { system = "x86_64-linux"; };

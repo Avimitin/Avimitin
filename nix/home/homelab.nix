@@ -17,6 +17,7 @@ in
   };
 
   xdg.configFile = {
+    brootConf = lib.fromDotfile "broot/conf.toml";
     neovim = lib.fromDotfile "nvim";
     systemdServices = lib.fromDotfile "systemd/user";
     paru = lib.fromDotfile "paru/paru.conf";

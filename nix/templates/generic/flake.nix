@@ -10,15 +10,23 @@
   };
 
   outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          buildInputs = [ ];
-        };
+    let
+      pkgsForSys = system: import nixpkgs { inherit system; };
+      perSystem = (system:
+        let
+          pkgs = pkgsForSys system;
+        in
+        {
+          devShells.default = pkgs.mkShell {
+            buildInputs = [ ];
+          };
 
-        formatter = pkgs.nixpkgs-fmt;
-      });
+          formatter = pkgs.nixpkgs-fmt;
+        });
+    in
+    {
+      # Other system-independent attr
+    } //
+
+    flake-utils.lib.eachDefaultSystem perSystem;
 }

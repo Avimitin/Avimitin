@@ -1,6 +1,6 @@
-# show: date, git
+# show: date
 # hide: hidden file
-default_flags = "dgH"
+default_flags = "dH"
 true_color = true
 date_time_format = "%Y/%m/%d %R"
 cols_order = [

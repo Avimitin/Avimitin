@@ -3,7 +3,7 @@
 let
   lib = import ../lib.nix { inherit pkgs; };
 in
-{
+rec {
   home = {
     username = "i";
     homeDirectory = "/home/i";
@@ -21,7 +21,7 @@ in
     neovim = lib.fromDotfile "nvim";
     systemdServices = lib.fromDotfile "systemd/user";
     paru = lib.fromDotfile "paru/paru.conf";
-    nix = lib.fromDotfile "nix/nix.conf";
+    "nix/nix.conf".source = lib.substituted ../../dotfile/nix/nix.conf { HomeDir = home.homeDirectory; };
     lazygit = lib.fromDotfile "lazygit/config.yml";
     direnv = lib.fromDotfile "direnv/direnvrc";
     fishConf = lib.fromDotfile "fish/config.fish";

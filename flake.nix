@@ -32,14 +32,18 @@
       in
       {
         formatter = pkgs.nixpkgs-fmt;
-        apps.hm-switch = flake-utils.lib.mkApp {
-          drv = with builtins; pkgs.writeShellScriptBin "HomeManagerSwitcher" ''
-            home=$1; shift
-            [[ "x$home" = "x" ]] \
-              && echo -e "Error: No home config given.\n\nAvailable: ${concatStringsSep ", " (attrNames self.homeConfigurations)}" \
-              && exit 1
-            nix run home-manager/master -- switch --flake ".?submodules=1#$home"
-          '';
-        };
+        apps.hm =
+          let
+            hmPkg = home-manager.packages.${system}.home-manager;
+          in
+          flake-utils.lib.mkApp {
+            drv = with builtins; pkgs.writeShellScriptBin "HomeManagerSwitcher" ''
+              home=$1; shift
+              [[ "x$home" = "x" ]] \
+                && echo -e "Error: No home config given.\n\nAvailable: ${concatStringsSep ", " (attrNames self.homeConfigurations)}" \
+                && exit 1
+              ${hmPkg}/bin/home-manager --extra-experimental-features "nix-command flakes" switch --flake ".?submodules=1#$home"
+            '';
+          };
       });
 }

@@ -58,9 +58,10 @@
   # ```
   #
   substituted = with builtins;
-    filepath: kvs:
+    kvs: filepath:
       let
-        substituteArgs = pkgs.lib.mapAttrsToList (k: v: "--subst-var-by ${k} ${v}") kvs;
+        genSubst = k: v: "--subst-var-by ${k} ${if v == null then ''" "'' else v}";
+        substituteArgs = pkgs.lib.mapAttrsToList genSubst kvs;
         substituteArgString = concatStringsSep " " substituteArgs;
         name = pkgs.lib.escapeShellArg (baseNameOf filepath);
       in

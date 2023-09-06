@@ -74,7 +74,7 @@ in
       };
     lazygit = lib.fromDotfile "lazygit/config.yml";
     neovim = lib.fromDotfile "nvim";
-    nix = lib.fromDotfile "nix/nix.conf";
+    "nix/nix.conf".source = lib.substituted { NixSecretKeyFiles = null; } ../../dotfile/nix/nix.conf;
     paru = lib.fromDotfile "paru/paru.conf";
     systemdServices = lib.fromDotfile "systemd/user";
     waybarConf = lib.fromDotfile "waybar/config";

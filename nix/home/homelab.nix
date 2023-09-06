@@ -21,7 +21,7 @@ rec {
     neovim = lib.fromDotfile "nvim";
     systemdServices = lib.fromDotfile "systemd/user";
     paru = lib.fromDotfile "paru/paru.conf";
-    "nix/nix.conf".source = lib.substituted ../../dotfile/nix/nix.conf { HomeDir = home.homeDirectory; };
+    "nix/nix.conf".source = lib.substituted { NixSecretKeyFiles = "${home.homeDirectory}/.config/nix/nix-cache-sk"; } ../../dotfile/nix/nix.conf;
     lazygit = lib.fromDotfile "lazygit/config.yml";
     direnv = lib.fromDotfile "direnv/direnvrc";
     fishConf = lib.fromDotfile "fish/config.fish";

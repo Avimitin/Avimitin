@@ -29,6 +29,11 @@ if command -q exa
     alias lt "exa -l -T -L2 --icons"
 end
 
+if command -q lsd
+    alias ll "lsd --long"
+    alias lt "lsd --tree --depth=2"
+end
+
 if command -q neovide
     alias nvi "neovide --multigrid"
 end

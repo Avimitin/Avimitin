@@ -92,5 +92,23 @@ in
     };
   };
 
-  programs.home-manager.enable = false;
+  programs = {
+    # Use the version specified in flake
+    home-manager.enable = false;
+    lsd = {
+      enable = true;
+      enableAliases = false;
+      settings = {
+        date = "relative";
+        # Actually this means 'one-per-line'
+        layout = "oneline";
+        sorting.dir-grouping = "first";
+        ignore-globs = [
+          ".git"
+          ".hg"
+          ".bsp"
+        ];
+      };
+    };
+  };
 }

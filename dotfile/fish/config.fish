@@ -38,7 +38,7 @@ if command -q nix
     end
 
     function nixr --wraps "nix run"
-        nix run (_wrap_nix $argv)
+        nix run (_wrap_nix $argv[1]) $argv[2..]
     end
 
     function nixd --wraps "nix develop"

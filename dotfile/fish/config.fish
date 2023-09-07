@@ -66,9 +66,12 @@ end
 
 # G
 if command -q git
-    alias pull "git pull"
-    alias push "git push"
-    alias rebase "git rebase"
+    alias pp "git pull"
+    alias p "git push"
+    alias r "git rebase"
+    alias rc "git rebase --continue"
+    alias ra "git rebase --abort"
+    alias s "git status --short"
 end
 
 if command -q lazygit

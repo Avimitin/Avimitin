@@ -44,7 +44,9 @@ end
 
 # G
 if command -q git
-    alias g "git"
+    alias pull "git pull"
+    alias push "git push"
+    alias rebase "git rebase"
 end
 
 if command -q lazygit

@@ -42,7 +42,11 @@
               [[ "x$home" = "x" ]] \
                 && echo -e "Error: No home config given.\n\nAvailable: ${concatStringsSep ", " (attrNames self.homeConfigurations)}" \
                 && exit 1
-              ${hmPkg}/bin/home-manager --extra-experimental-features "nix-command flakes" switch --flake ".?submodules=1#$home"
+              ${hmPkg}/bin/home-manager \
+                --extra-experimental-features "nix-command flakes" \
+                switch \
+                --flake ".?submodules=1#$home" \
+                --show-trace
             '';
           };
       });

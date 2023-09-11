@@ -25,25 +25,9 @@ if command -q broot
 end
 
 if command -q nix
-    function _wrap_nix
-        set -l new_argv
-        for arg in $argv
-            if string match --quiet --regex '^[^\s]+#' $arg
-                set -a new_argv $arg
-            else
-                set -a new_argv ".#$arg"
-            end
-        end
-        echo $new_argv
-    end
-
-    function nixr --wraps "nix run"
-        nix run (_wrap_nix $argv[1]) $argv[2..]
-    end
-
-    function nixd --wraps "nix develop"
-        nix develop (_wrap_nix $argv)
-    end
+    alias nixr "nix run"
+    alias nixl "nix develop"
+    alias nixb "nix build"
 end
 
 if command -q exa

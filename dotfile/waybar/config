@@ -2,7 +2,7 @@
     "layer": "top",
     "height": 30,
     "spacing": 2, // Gaps between modules (4px)
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
     "wlr/workspaces": {
         "disable-scroll": true,

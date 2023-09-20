@@ -30,18 +30,9 @@ if command -q nix
     alias nixb "nix build"
 end
 
-if command -q exa
-    alias ll "exa -l -@ -h --icons --group-directories-first"
-    alias lt "exa -l -T -L2 --icons"
-end
-
 if command -q lsd
     alias ll "lsd --long"
     alias lt "lsd --tree --depth=2"
-end
-
-if command -q neovide
-    alias nvi "neovide --multigrid"
 end
 
 if command -q zoxide
@@ -50,6 +41,8 @@ end
 
 # G
 if command -q git
+    alias co "git clone"
+    alias aa "git add"
     alias pp "git pull"
     alias p "git push"
     alias r "git rebase"
@@ -94,11 +87,6 @@ function ts
     end
 
     tmux new-session -s A
-end
-
-if command -q python3
-    alias urldecode 'python3 -c "import sys, urllib.parse as up; print(up.unquote(sys.argv[1]))"'
-    alias urlencode 'python3 -c "import sys, urllib.parse as up; print(up.quote(sys.argv[1]))"'
 end
 
 if command -q nvim
@@ -187,9 +175,6 @@ set_env QT_QPA_PLATFORM "wayland"
 set_env CLUTTER_BACKEND wayland
 set_env SDL_VIDEODRIVER wayland
 set_env MOZ_ENABLE_WAYLAND 1
-
-# Path
-fish_add_path $HOME/.local/bin
 
 # ===================================================================
 # fish themes

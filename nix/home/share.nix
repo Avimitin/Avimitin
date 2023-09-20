@@ -11,9 +11,18 @@ in {
     tmux = lib.fromDotfile ".tmux.conf";
   };
 
+  home.packages = with pkgs; [
+    delta
+    direnv
+    neovim
+    bat
+    fd
+    ripgrep
+    tmux
+  ];
+
   xdg.configFile = {
     direnv = lib.fromDotfile "direnv/direnvrc";
-    lazygit = lib.fromDotfile "lazygit/config.yml";
 
     fishConf = lib.fromDotfile "fish/config.fish";
     fishPrompt = lib.fetchFishPlugin {
@@ -74,6 +83,28 @@ in {
           ".hg"
           ".bsp"
         ];
+      };
+    };
+  };
+
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      gui.theme = {
+        activeBorderColor = [ "yellow" "bold" ];
+        inactiveBorderColor = [ "white" ];
+        selectedLineBgColor = [ "reverse" ];
+        selectedRangeBgColor = [ "reverse" ];
+      };
+      git = {
+        commit = {
+          signOff = true;
+          verbose = "always";
+        };
+        paging = {
+          colorArgs = "always";
+          pager = "delta --dark --paging=never";
+        };
       };
     };
   };

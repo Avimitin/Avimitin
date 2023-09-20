@@ -12,8 +12,12 @@ rec {
     stateVersion = "23.05";
   };
 
+  home.packages = with pkgs; [
+    metals
+    nil
+  ];
+
   xdg.configFile = {
-    brootConf = lib.fromDotfile "broot/conf.toml";
     systemdServices = lib.fromDotfile "systemd/user";
     paru = lib.fromDotfile "paru/paru.conf";
 

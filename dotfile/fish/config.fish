@@ -163,7 +163,7 @@ set_env XDG_DATA_HOME $HOME/.local/share
 set_env EDITOR 'nvim'
 set_env VISUAL "$EDITOR "
 set_env SYSTEMD_EDITOR $EDITOR
-set_env PAGER 'less'
+set_env PAGER 'nvim +Man!'
 
 #set -gx BROWSER /usr/bin/xdg-open
 

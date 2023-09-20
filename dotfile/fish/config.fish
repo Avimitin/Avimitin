@@ -5,6 +5,10 @@ end
 # ===================================================================
 # alias
 # ===================================================================
+if command -q bat
+    alias v bat
+end
+
 if command -q direnv
     direnv hook fish | source
 end

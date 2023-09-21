@@ -4,7 +4,8 @@
 
 let
   lib = import ../lib.nix { inherit pkgs; };
-in {
+in
+{
   home.file = {
     bash = lib.fromDotfile ".bashrc";
     git = lib.fromDotfile ".gitconfig";
@@ -53,11 +54,12 @@ in {
     # We can't install this file to .config/nvim because it is a symlink to nix store
     nvim-treesitter-parsers = {
       # FIXME: Is it better to pin the neovim version instead of refering the local file?
-      source = let
-        parsers = pkgs.callPackage ../../dotfile/nvim/nix/treesitter-parsers.nix {};
-        toNvimPlug = pkgs.callPackage ../../dotfile/nvim/nix/set-rtp.nix {};
-      in
-        toNvimPlug "treesitter-parsers" (parsers []);
+      source =
+        let
+          parsers = pkgs.callPackage ../../dotfile/nvim/nix/treesitter-parsers.nix { };
+          toNvimPlug = pkgs.callPackage ../../dotfile/nvim/nix/set-rtp.nix { };
+        in
+        toNvimPlug "treesitter-parsers" (parsers [ ]);
       target = "nvim/site/plugin/treesitter-parsers.lua";
     };
   };
@@ -70,7 +72,7 @@ in {
       enableAliases = false;
       settings = {
         date = "relative";
-        blocks = ["date" "size" "name"];
+        blocks = [ "date" "size" "name" ];
         # Actually this means 'one-per-line'
         layout = "oneline";
         sorting.dir-grouping = "first";
@@ -113,20 +115,38 @@ in {
         success_symbol = "[](bold green)";
         error_symbol = "[](bold red)";
       };
-      battery.disabled = true;
-      username.disabled = true;
-      hostname.disabled = true;
+      format =
+        let
+          components = [
+            "$directory"
+            "$git_branch"
+            "$git_commit"
+            "$git_state"
+            "$git_metrics"
+            "$git_status"
+            "$hg_branch"
+            "$nix_shell"
+            "$custom"
+            "$sudo"
+            "$cmd_duration"
+            "$line_break"
+            "$jobs"
+            "$character"
+          ];
+        in
+        "${builtins.concatStringsSep "" components}";
       nix_shell.symbol = "󱄅 ";
       git_status = {
+        style = "yellow";
         format = "([$all_status$ahead_behind]($style) )";
-        conflicted = " ";
-        stashed = "󱧶 ";
-        diverged = "󱡷 ";
-        untracked = " ";
+        conflicted = "";
+        stashed = "";
+        diverged = "";
+        untracked = "";
         modified = " ";
         staged = " ";
-        renamed = " ";
-        deleted = " ";
+        renamed = "";
+        deleted = "";
       };
     };
   };

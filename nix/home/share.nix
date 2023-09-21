@@ -11,26 +11,22 @@ in {
     tmux = lib.fromDotfile ".tmux.conf";
   };
 
+  # Here are a list of package that doesn't need configuration or configuration are handle manunally
   home.packages = with pkgs; [
-    delta
-    direnv
-    neovim
-    bat
-    fd
-    ripgrep
-    tmux
+    delta # Beautiful git diff
+    direnv # Shell hook for nix flake used only
+    neovim # vim alternative
+    bat # cat alternative
+    fd # find alternative
+    ripgrep # grep alternative
+    tmux # Terminal windows manager
+    zoxide # cd alternative
   ];
 
   xdg.configFile = {
     direnv = lib.fromDotfile "direnv/direnvrc";
 
     fishConf = lib.fromDotfile "fish/config.fish";
-    fishPrompt = lib.fetchFishPlugin {
-      owner = "jorgebucaran";
-      repo = "hydro";
-      rev = "41b46a05c84a15fe391b9d43ecb71c7a243b5703";
-      sha256 = "sha256-zmEa/GJ9jtjzeyJUWVNSz/wYrU2FtqhcHdgxzi6ANHg=";
-    };
     fishAutoPair = lib.fetchFishPlugin {
       owner = "jorgebucaran";
       repo = "autopair.fish";
@@ -105,6 +101,32 @@ in {
           colorArgs = "always";
           pager = "delta --dark --paging=never";
         };
+      };
+    };
+  };
+
+  # Prompt for bash
+  programs.starship = {
+    enable = true;
+    settings = {
+      character = {
+        success_symbol = "[](bold green)";
+        error_symbol = "[](bold red)";
+      };
+      battery.disabled = true;
+      username.disabled = true;
+      hostname.disabled = true;
+      nix_shell.symbol = "󱄅 ";
+      git_status = {
+        format = "([$all_status$ahead_behind]($style) )";
+        conflicted = " ";
+        stashed = "󱧶 ";
+        diverged = "󱡷 ";
+        untracked = " ";
+        modified = " ";
+        staged = " ";
+        renamed = " ";
+        deleted = " ";
       };
     };
   };

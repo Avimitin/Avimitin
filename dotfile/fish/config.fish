@@ -9,6 +9,20 @@ if command -q bat
     alias v bat
 end
 
+if command -q fzf
+    # Set directory search to Ctrl-S and remove other unused functionality
+    fzf_configure_bindings --directory=\cs --variables= --git_log= --git_status= --processes=
+end
+
+if command -q starship
+    # Enable starship
+    function starship_transient_prompt_func
+        starship module character
+    end
+    starship init fish | source
+    enable_transience
+end
+
 if command -q direnv
     direnv hook fish | source
 end
@@ -219,16 +233,3 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
-
-# Hydro
-set -g hydro_color_git $orange
-set -g hydro_color_prompt $green
-set -g hydro_color_duration $comment
-set -g hydro_color_pwd $foreground
-
-# Hydro prompt settings
-set -g hydro_symbol_prompt ''
-set -g hydro_symbol_git_dirty ' '
-set -g hydro_symbol_git_ahead ' '
-set -g hydro_symbol_git_behind ' '
-set -g fish_prompt_pwd_dir_length 2

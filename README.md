@@ -4,7 +4,7 @@
 
 ## ***Skills***
 
-* Familiar with **Rust**, **TypeScript**, **React**, **Ruby**, **C**, **Nix** and **Lua**
+* Familiar with **Rust**, **TypeScript**, **React**, **Ruby**, **C++(17)**, **Nix**, **OCaml** and **Lua**
 
 <details>
     <summary markdown="span">Click to view</summary>

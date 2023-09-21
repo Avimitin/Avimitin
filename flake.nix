@@ -32,7 +32,7 @@
       in
       {
         formatter = pkgs.nixpkgs-fmt;
-        apps.hm =
+        apps.home-manager-switch =
           let
             hmPkg = home-manager.packages.${system}.home-manager;
           in

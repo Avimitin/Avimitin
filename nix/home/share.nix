@@ -74,6 +74,7 @@ in
         date = "relative";
         blocks = [ "date" "size" "name" ];
         # Actually this means 'one-per-line'
+        color.theme = "custom";
         layout = "oneline";
         sorting.dir-grouping = "first";
         ignore-globs = [
@@ -81,6 +82,18 @@ in
           ".hg"
           ".bsp"
         ];
+      };
+      colors = {
+        date = {
+          day-old = "green";
+          older = "dark_green";
+        };
+        size = {
+          none = "grey";
+          small = "grey";
+          medium = "yellow";
+          large = "dark_yellow";
+        };
       };
     };
   };

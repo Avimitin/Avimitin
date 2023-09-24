@@ -6,6 +6,9 @@ let
   lib = import ../lib.nix { inherit pkgs; };
 in
 {
+  # Use the one define in nix flake
+  programs.home-manager.enable = false;
+
   home.file = {
     bash = lib.fromDotfile ".bashrc";
     git = lib.fromDotfile ".gitconfig";
@@ -64,36 +67,31 @@ in
     };
   };
 
-  programs = {
-    # Use the version specified in flake
-    home-manager.enable = false;
-    lsd = {
-      enable = true;
-      enableAliases = false;
-      settings = {
-        date = "relative";
-        blocks = [ "date" "size" "name" ];
-        # Actually this means 'one-per-line'
-        color.theme = "custom";
-        layout = "oneline";
-        sorting.dir-grouping = "first";
-        ignore-globs = [
-          ".git"
-          ".hg"
-          ".bsp"
-        ];
+  programs.lsd = {
+    enable = true;
+    enableAliases = false;
+    settings = {
+      date = "relative";
+      blocks = [ "date" "size" "name" ];
+      # Actually this means 'one-per-line'
+      layout = "oneline";
+      sorting.dir-grouping = "first";
+      ignore-globs = [
+        ".git"
+        ".hg"
+        ".bsp"
+      ];
+    };
+    colors = {
+      date = {
+        day-old = "green";
+        older = "dark_green";
       };
-      colors = {
-        date = {
-          day-old = "green";
-          older = "dark_green";
-        };
-        size = {
-          none = "grey";
-          small = "grey";
-          medium = "yellow";
-          large = "dark_yellow";
-        };
+      size = {
+        none = "grey";
+        small = "grey";
+        medium = "yellow";
+        large = "dark_yellow";
       };
     };
   };

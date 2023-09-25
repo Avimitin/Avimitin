@@ -8,6 +8,8 @@ in
 {
   # Use the one define in nix flake
   programs.home-manager.enable = false;
+  # Don't notify news
+  news.display = "silent";
 
   home.file = {
     bash = lib.fromDotfile ".bashrc";

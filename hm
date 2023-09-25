@@ -12,6 +12,11 @@ HM_FLAGS=(
   --extra-experimental-features "flakes nix-command"
   --show-trace
 )
+
+# Alias
+if [[ $operation = "s" || $operation = "sw" ]]; then
+  operation="switch"
+fi
 if [[ $operation = "switch" ]]; then
   home=$1; shift
   HM_FLAGS+=( --flake ".?submodules=1#$home" )

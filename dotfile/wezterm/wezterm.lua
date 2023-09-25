@@ -1,5 +1,4 @@
 local api = require("wezterm")
-local action = api.action
 
 local kanagawa = {
 	foreground = "#dcd7ba",
@@ -49,33 +48,6 @@ return {
 			mods = "CTRL",
 			action = api.action.SplitHorizontal({
 				domain = "CurrentPaneDomain",
-			}),
-		},
-		{
-			key = "j",
-			mods = "CTRL|SHIFT",
-			action = action.ActivatePaneDirection("Down"),
-		},
-		{
-			key = "k",
-			mods = "CTRL|SHIFT",
-			action = action.ActivatePaneDirection("Up"),
-		},
-		{
-			key = "l",
-			mods = "CTRL|SHIFT",
-			action = action.ActivatePaneDirection("Right"),
-		},
-		{
-			key = "h",
-			mods = "CTRL|SHIFT",
-			action = action.ActivatePaneDirection("Left"),
-		},
-		{
-			key = "g",
-			mods = "CTRL|SHIFT",
-			action = action.SpawnCommandInNewTab({
-				args = { "zsh", "-ic", "lazygit" },
 			}),
 		},
 	},

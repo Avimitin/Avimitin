@@ -59,9 +59,9 @@ end
 
 # G
 if command -q git
-    alias co "git clone"
+    alias co "git clone --recurse-submodules"
     alias aa "git add"
-    alias pp "git pull"
+    alias pp "git pull && git submodule update"
     alias p "git push"
     alias r "git rebase"
     alias rc "git rebase --continue"

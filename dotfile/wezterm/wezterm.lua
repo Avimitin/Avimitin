@@ -1,4 +1,5 @@
 local api = require("wezterm")
+local action = api.action
 
 local kanagawa = {
 	foreground = "#dcd7ba",
@@ -23,8 +24,8 @@ return {
 		"Broot Icons Visual Studio Code",
 	}),
 	font_size = 10,
-	window_background_opacity = 0.90,
-	text_background_opacity = 0.80,
+	window_background_opacity = 0.85,
+	text_background_opacity = 0.7,
 	force_reverse_video_cursor = true,
 	window_padding = {
 		left = 10,
@@ -49,6 +50,26 @@ return {
 			action = api.action.SplitHorizontal({
 				domain = "CurrentPaneDomain",
 			}),
+		},
+		{
+			key = "j",
+			mods = "CTRL|SHIFT",
+			action = action.DisableDefaultAssignment,
+		},
+		{
+			key = "k",
+			mods = "CTRL|SHIFT",
+			action = action.DisableDefaultAssignment,
+		},
+		{
+			key = "l",
+			mods = "CTRL|SHIFT",
+			action = action.DisableDefaultAssignment,
+		},
+		{
+			key = "h",
+			mods = "CTRL|SHIFT",
+			action = action.DisableDefaultAssignment,
 		},
 	},
 	colors = kanagawa,

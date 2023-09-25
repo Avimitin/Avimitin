@@ -29,25 +29,12 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = pkgsIn system;
+        hmPkg = home-manager.packages.${system}.home-manager;
       in
       {
         formatter = pkgs.nixpkgs-fmt;
-        apps.home-manager-switch =
-          let
-            hmPkg = home-manager.packages.${system}.home-manager;
-          in
-          flake-utils.lib.mkApp {
-            drv = with builtins; pkgs.writeShellScriptBin "HomeManagerSwitcher" ''
-              home=$1; shift
-              [[ "x$home" = "x" ]] \
-                && echo -e "Error: No home config given.\n\nAvailable: ${concatStringsSep ", " (attrNames self.homeConfigurations)}" \
-                && exit 1
-              ${hmPkg}/bin/home-manager \
-                --extra-experimental-features "nix-command flakes" \
-                switch \
-                --flake ".?submodules=1#$home" \
-                --show-trace
-            '';
-          };
+        apps.home-manager = flake-utils.lib.mkApp {
+          drv = hmPkg;
+        };
       });
 }

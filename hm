@@ -1,0 +1,20 @@
+#!/bin/bash
+
+operation=$1; shift
+[[ -z "$operation" ]] \
+  && echo "Missing operation" \
+  && exit 1
+
+NIX_FLAGS=(
+  --extra-experimental-features "flakes nix-command"
+)
+HM_FLAGS=(
+  --extra-experimental-features "flakes nix-command"
+  --show-trace
+)
+if [[ $operation = "switch" ]]; then
+  home=$1; shift
+  HM_FLAGS+=( --flake ".?submodules=1#$home" )
+fi
+
+nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" "$operation" $@

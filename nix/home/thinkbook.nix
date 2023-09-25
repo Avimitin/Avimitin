@@ -22,6 +22,7 @@ in
     broot = lib.fromDotfile "broot/conf.toml";
     fcitx5Conf = lib.fromDotfile "fcitx5/conf";
     fcitx5Profile = lib.fromDotfile "fcitx5/profile";
+    fcitx5Config = lib.fromDotfile "fcitx5/config";
     fontconfig = lib.fromDotfile "fontconfig/conf.d";
     hyprland =
       let

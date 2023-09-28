@@ -12,7 +12,8 @@
 
   outputs = { self, nixpkgs, flake-utils, home-manager }:
     let
-      pkgsIn = system: import nixpkgs { inherit system; };
+      overlays = [ (import ./overlay.nix) ];
+      pkgsIn = system: import nixpkgs { inherit system overlays; };
       mkHMCfgWith = system: modules:
         home-manager.lib.homeManagerConfiguration {
           pkgs = pkgsIn system;
@@ -24,6 +25,7 @@
       homeConfigurations = {
         "homelab" = mkHMCfgWith "x86_64-linux" [ ./nix/home/homelab.nix ];
         "thinkbook" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ];
+        "thinkbook-carry" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ./nix/home/thinkbook-carry-case.nix ];
       };
     } //
     flake-utils.lib.eachDefaultSystem (system:

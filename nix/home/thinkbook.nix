@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   lib = import ../lib.nix { inherit pkgs; };
@@ -24,32 +24,20 @@ in
     fcitx5Profile = lib.fromDotfile "fcitx5/profile";
     fcitx5Config = lib.fromDotfile "fcitx5/config";
     fontconfig = lib.fromDotfile "fontconfig/conf.d";
-    hyprland =
-      let
-        screenshot = pkgs.writeShellScriptBin "grim-shot" ''
-          set -e
-          file=$(mktemp --tmpdir "screenshot-XXX-$(date +%F-%T).png")
-          ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" -t png $file
-          wl-copy < $file
-          rm $file
-        '';
-        finalHyprConf = pkgs.runCommand "hyprland-config" { } ''
-          mkdir $out
-          substitute ${../../dotfile/hypr/hyprland.conf} $out/hyprland.conf \
-            --subst-var-by wallpaperDaemon ${pkgs.wpaperd}/bin/wpaperd \
-            --subst-var-by screenshotScript ${screenshot}/bin/grim-shot
-        '';
-      in
-      {
-        target = "hypr/hyprland.conf";
-        source = "${finalHyprConf}/hyprland.conf";
-      };
+    hyprland = {
+      target = "hypr/hyprland.conf";
+      source =
+        let
+          hypr-extra-conf = pkgs.callPackage ../../dotfile/hypr/office.nix { inherit (config.home) homeDirectory; };
+          hypr-conf = pkgs.callPackage ../../dotfile/hypr { inherit hypr-extra-conf; };
+        in
+        "${hypr-conf}/hyprland.conf";
+    };
     "nix/nix.conf".source = lib.substituted { NixSecretKeyFiles = null; } ../../dotfile/nix/nix.conf;
     paru = lib.fromDotfile "paru/paru.conf";
     systemdServices = lib.fromDotfile "systemd/user";
     waybarConf = lib.fromDotfile "waybar/config";
     waybarStyle = lib.fromDotfile "waybar/style.css";
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";
-    wpaperd = lib.fromDotfile "wpaperd/wallpaper.toml";
   };
 }

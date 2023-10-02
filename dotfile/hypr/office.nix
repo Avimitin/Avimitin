@@ -1,12 +1,4 @@
-{ writeText, mkWpaperDWrapper, homeDirectory }:
-let
-  wpaperdConf = writeText "wpaperd-anime.toml" ''
-    [default]
-    path = '${homeDirectory}/Pictures/Anime'
-    duration = "30m"
-    apply-shadow = true
-  '';
-in
+{ writeText }:
 writeText "hypr-office.conf" ''
   # Hyprland conf for dual monitor
 
@@ -18,6 +10,4 @@ writeText "hypr-office.conf" ''
 
   workspace=1,monitor:DP-5
   workspace=2,monitor:HDMI-A-1
-
-  exec-once = ${mkWpaperDWrapper wpaperdConf}
 ''

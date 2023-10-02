@@ -3,7 +3,7 @@
 let
   lib = import ../lib.nix { inherit pkgs; };
 in
-{
+rec {
   imports = [ ./share.nix ];
 
   home = {
@@ -28,8 +28,7 @@ in
       target = "hypr/hyprland.conf";
       source =
         let
-          hypr-extra-conf = pkgs.callPackage ../../dotfile/hypr/office.nix { inherit (config.home) homeDirectory; };
-          hypr-conf = pkgs.callPackage ../../dotfile/hypr { inherit hypr-extra-conf; };
+          hypr-conf = pkgs.callPackage ../../dotfile/hypr { };
         in
         "${hypr-conf}/hyprland.conf";
     };
@@ -39,5 +38,16 @@ in
     waybarConf = lib.fromDotfile "waybar/config";
     waybarStyle = lib.fromDotfile "waybar/style.css";
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";
+  };
+
+  programs.wpaperd = {
+    enable = true;
+    settings = {
+      default = {
+        path = "${home.homeDirectory}/Pictures/Anime";
+        duration = "30m";
+        apply-shadow = true;
+      };
+    };
   };
 }

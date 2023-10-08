@@ -13,13 +13,16 @@ HM_FLAGS=(
   --show-trace
 )
 
-# Alias
-if [[ $operation = "s" || $operation = "sw" ]]; then
-  operation="switch"
-fi
-if [[ $operation = "switch" ]]; then
-  home=$1; shift
-  HM_FLAGS+=( --flake ".?submodules=1#$home" )
-fi
+case $operation in
+  s|sw)
+    operation="switch"
+    ;&
+  switch)
+    home=$1; shift
+    HM_FLAGS+=( --flake ".?submodules=1#$home" )
+    ;;
+  *)
+    ;;
+esac
 
 nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" "$operation" $@

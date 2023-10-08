@@ -31,7 +31,7 @@ in
 
   nix.package = pkgs.nix;
   nix.settings = {
-    experimental-features = "flakes nix-command";
+    experimental-features = "flakes nix-command repl-flake";
     extra-trusted-public-keys = "homelab.internal.cache.sh1mar.in:ybM3u9ZuI5VZrvli3Nz7/47aoyXsHa92CNe0NJtHJl4=";
   };
 

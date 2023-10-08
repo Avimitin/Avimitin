@@ -14,10 +14,8 @@ HM_FLAGS=(
 )
 
 case $operation in
-  s|sw)
+  s|sw|switch)
     operation="switch"
-    ;&
-  switch)
     home=$1; shift
     HM_FLAGS+=( --flake ".?submodules=1#$home" )
     ;;

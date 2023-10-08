@@ -33,7 +33,6 @@ rec {
         "${hypr-conf}/hyprland.conf";
     };
     paru = lib.fromDotfile "paru/paru.conf";
-    systemdServices = lib.fromDotfile "systemd/user";
     waybarConf = lib.fromDotfile "waybar/config";
     waybarStyle = lib.fromDotfile "waybar/style.css";
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";

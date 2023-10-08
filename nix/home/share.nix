@@ -29,6 +29,12 @@ in
     zoxide # cd alternative
   ];
 
+  nix.package = pkgs.nix;
+  nix.settings = {
+    experimental-features = "flakes nix-command";
+    extra-trusted-public-keys = "homelab.internal.cache.sh1mar.in:ybM3u9ZuI5VZrvli3Nz7/47aoyXsHa92CNe0NJtHJl4=";
+  };
+
   xdg.configFile = {
     direnv = lib.fromDotfile "direnv/direnvrc";
 

@@ -17,11 +17,10 @@ rec {
     nil
   ];
 
-  xdg.configFile = {
-    systemdServices = lib.fromDotfile "systemd/user";
-    paru = lib.fromDotfile "paru/paru.conf";
+  # This machine also serve as a build cache
+  nix.settings.extra-secret-key-files = "${home.homeDirectory}/.config/nix/nix-cache-sk";
 
-    # This server will serve as a nix store server
-    "nix/nix.conf".source = lib.substituted { NixSecretKeyFiles = "${home.homeDirectory}/.config/nix/nix-cache-sk"; } ../../dotfile/nix/nix.conf;
+  xdg.configFile = {
+    paru = lib.fromDotfile "paru/paru.conf";
   };
 }

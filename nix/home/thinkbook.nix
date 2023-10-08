@@ -32,7 +32,6 @@ rec {
         in
         "${hypr-conf}/hyprland.conf";
     };
-    "nix/nix.conf".source = lib.substituted { NixSecretKeyFiles = null; } ../../dotfile/nix/nix.conf;
     paru = lib.fromDotfile "paru/paru.conf";
     systemdServices = lib.fromDotfile "systemd/user";
     waybarConf = lib.fromDotfile "waybar/config";

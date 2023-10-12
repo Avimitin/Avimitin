@@ -7,6 +7,14 @@ let
     wl-copy < $file
     rm $file
   '';
+  screenlock = writeShellScriptBin "swaylock-with-random-pic" ''
+    swaylock --ignore-empty-password \
+      --show-failed-attempts \
+      --daemonize \
+      --image $(find ~/Pictures/Anime -type f | shuf -n1) \
+      --show-keyboard-layout \
+      --indicator-caps-lock
+  '';
   extraConf = callPackage (if isCarryOut then ./carried-out.nix else ./office.nix) { };
 in
 runCommand "hyprland-conf-generator" { } ''
@@ -14,5 +22,6 @@ runCommand "hyprland-conf-generator" { } ''
 
   substitute ${../../dotfile/hypr/hyprland.conf} $out/hyprland.conf \
     --subst-var-by screenshotScript ${screenshot}/bin/grim-shot \
+    --subst-var-by screenlockScript ${screenlock}/bin/swaylock-with-random-pic \
     --subst-var-by extraConf ${extraConf}
 ''

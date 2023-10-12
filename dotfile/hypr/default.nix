@@ -7,13 +7,31 @@ let
     wl-copy < $file
     rm $file
   '';
+  screenctl = writeShellScriptBin "hyprland-all-screen-ctl" ''
+    action=$1; shift
+    [[ "$action" = "" ]] && echo "No arguments" && exit 1
+
+    screens=( $(hyprctl monitors -j | jq -r .[].name) )
+
+    for sc in ''${screens[@]}; do
+      echo "Screen $sc $action"
+      hyprctl dispatch dpms $action $sc
+    done
+
+    echo "All done"
+  '';
   screenlock = writeShellScriptBin "swaylock-with-random-pic" ''
+    systemd-run --user --collect --unit=swayidle \
+      swayidle -w \
+        timeout 30 'echo "Seems idle, close screens"' \
+        timeout 31 '${screenctl}/bin/hyprland-all-screen-ctl off' \
+          resume '${screenctl}/bin/hyprland-all-screen-ctl on'
     swaylock --ignore-empty-password \
       --show-failed-attempts \
-      --daemonize \
       --image $(find ~/Pictures/Anime -type f | shuf -n1) \
       --show-keyboard-layout \
       --indicator-caps-lock
+    systemctl --user stop swayidle
   '';
   extraConf = callPackage (if isCarryOut then ./carried-out.nix else ./office.nix) { };
 in

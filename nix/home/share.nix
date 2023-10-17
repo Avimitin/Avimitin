@@ -83,7 +83,10 @@ in
       blocks = [ "date" "size" "name" ];
       # Actually this means 'one-per-line'
       layout = "oneline";
-      sorting.dir-grouping = "first";
+      sorting = {
+        dir-grouping = "first";
+        column = "time";
+      };
       ignore-globs = [
         ".git"
         ".hg"

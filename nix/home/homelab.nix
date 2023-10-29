@@ -15,6 +15,7 @@ rec {
   home.packages = with pkgs; [
     metals
     nil
+    clang-tools
   ];
 
   # This machine also serve as a build cache

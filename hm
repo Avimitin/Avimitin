@@ -23,4 +23,4 @@ case $operation in
     ;;
 esac
 
-nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" "$operation" $@
+nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" "$operation" "$@"

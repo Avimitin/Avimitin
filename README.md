@@ -29,10 +29,9 @@ This is a lightweight CPU usage collector, using React as frontend and Ruby as b
 A structure and super fast neovim configuration that purely made with Lua.
 I made so many optimization and customization to exploit the speed from LuaJIT.
 
-#### (nix) vector
+#### (Scala/Chisel/Nix) [chipsalliance/t1](https://github.com/chipsalliance/t1.git)
 
-I've maintain LLVM with nix in the [sequencer/vector](https://github.com/sequencer/vector/pull/230/files) repo.
-Also, this repository contains many nix code to maintain my dotfile.
+I am an active maintainer for performance analyze, compile toolchain, build system, CI/CD infrastructure of the chipsalliance/t1 project.
 
 #### [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3AAvimitin+sort%3Aupdated-desc+)
 

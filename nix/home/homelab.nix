@@ -16,6 +16,7 @@ rec {
     metals
     nil
     clang-tools
+    lua-language-server
   ];
 
   # This machine also serve as a build cache

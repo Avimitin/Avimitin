@@ -17,6 +17,7 @@ rec {
     nil
     clang-tools
     lua-language-server
+    stylua
   ];
 
   # This machine also serve as a build cache

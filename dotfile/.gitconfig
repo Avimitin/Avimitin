@@ -10,35 +10,16 @@
     defaultBranch = master
 [format]
     signOff = true
-[alias]
-    a = add
-    br = branch
-    c = commit
-    cm = commit -m
-    cl = clone
-    l = log --graph --oneline
-    p = push
-    pp = pull
-    pu = push --set-upstream
-    rb = rebase
-    rba = rebase --abort
-    rbc = rebase --continue
-    sw = switch
-
 [pull]
     rebase = true
 [core]
     pager = delta
-
 [interactive]
     diffFilter = delta --color-only --features=interactive
-
 [delta]
     features = decorations
-
 [delta "interactive"]
     keep-plus-minus-markers = false
-
 [delta "decorations"]
     commit-decoration-style = blue ol
     commit-style = raw

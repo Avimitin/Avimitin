@@ -38,14 +38,15 @@ end
 
 # G
 if command -q git
-    alias co "git clone --recurse-submodules"
-    alias aa "git add"
+    alias co "git checkout"
+    alias aa "git commit --amend --no-edit --allow-empty"
     alias pp "git pull --recurse-submodules"
     alias p "git push"
-    alias r "git rebase"
+    alias rb "git rebase"
     alias rc "git rebase --continue"
     alias ra "git rebase --abort"
     alias s "git status --short"
+    alias gl "git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
 end
 
 if command -q lazygit

@@ -27,12 +27,6 @@ if command -q direnv
     direnv hook fish | source
 end
 
-if command -q nix
-    alias nr "nix run"
-    alias nl "nix develop"
-    alias nb "nix build"
-end
-
 if command -q lsd
     alias ll "lsd --long"
     alias lt "lsd --tree --depth=2"

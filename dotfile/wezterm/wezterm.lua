@@ -18,12 +18,12 @@ local kanagawa = {
 
 return {
 	font = api.font_with_fallback({
-		"agave Nerd Font Mono",
+		"JetbrainsMono Nerd Font Mono",
 		"Noto Sans CJK SC",
 		"Noto Color Emoji",
 		"Broot Icons Visual Studio Code",
 	}),
-	font_size = 10,
+	font_size = 8.5,
 	window_background_opacity = 0.85,
 	text_background_opacity = 0.7,
 	force_reverse_video_cursor = true,

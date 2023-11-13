@@ -142,6 +142,7 @@ in
       format =
         let
           components = [
+            "$hostname"
             "$directory"
             "$git_branch"
             "$git_commit"
@@ -160,6 +161,10 @@ in
         in
         "${builtins.concatStringsSep "" components}";
       nix_shell.symbol = "󱄅 ";
+      hostname = {
+        ssh_symbol = "󰌘";
+        format = "[$ssh_symbol]($style) ";
+      };
       git_status = {
         style = "yellow";
         format = "([$all_status$ahead_behind]($style) )";

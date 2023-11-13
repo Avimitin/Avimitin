@@ -46,7 +46,7 @@ return {
 
 	-- Key binding
 	disable_default_key_bindings = true,
-	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
+	leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
 	keys = {
 		{ key = "Enter", mods = "LEADER", action = act.ToggleFullScreen },
 		{ key = "Space", mods = "LEADER", action = act.QuickSelect },

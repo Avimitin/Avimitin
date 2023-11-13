@@ -93,10 +93,10 @@ return {
 		{ key = "[", mods = "ALT", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "ALT", action = act.ActivateTabRelative(1) },
 
-		{ key = "LeftArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Left", 1 }) },
-		{ key = "RightArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
-		{ key = "UpArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
-		{ key = "DownArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
+		{ key = "LeftArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Left", 5 }) },
+		{ key = "RightArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Right", 5 }) },
+		{ key = "UpArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Up", 5 }) },
+		{ key = "DownArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Down", 5 }) },
 
 		{ key = "PageUp", mods = "SHIFT", action = act.ScrollByPage(-1) },
 		{ key = "PageUp", mods = "CTRL", action = act.ActivateTabRelative(-1) },

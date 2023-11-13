@@ -18,7 +18,7 @@ local kanagawa = {
 
 return {
 	font = api.font_with_fallback({
-		"JetbrainsMono Nerd Font Mono",
+		{ family = "JetbrainsMono Nerd Font Mono", harfbuzz_features = { "Zero", "Fractions" } },
 		"Noto Sans CJK SC",
 		"Noto Color Emoji",
 		"Broot Icons Visual Studio Code",
@@ -72,8 +72,8 @@ return {
 
 		{ key = "h", mods = "ALT", action = act.ActivatePaneDirection("Left") },
 		{ key = "l", mods = "ALT", action = act.ActivatePaneDirection("Right") },
-		{ key = "j", mods = "ALT", action = act.ActivatePaneDirection("Up") },
-		{ key = "k", mods = "ALT", action = act.ActivatePaneDirection("Down") },
+		{ key = "j", mods = "ALT", action = act.ActivatePaneDirection("Down") },
+		{ key = "k", mods = "ALT", action = act.ActivatePaneDirection("Up") },
 		{ key = "[", mods = "ALT", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "ALT", action = act.ActivateTabRelative(1) },
 

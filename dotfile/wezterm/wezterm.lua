@@ -21,7 +21,6 @@ return {
 		{ family = "JetbrainsMono Nerd Font Mono", harfbuzz_features = { "Zero", "Fractions" } },
 		"Noto Sans CJK SC",
 		"Noto Color Emoji",
-		"Broot Icons Visual Studio Code",
 	}),
 	font_size = 9,
 	window_background_opacity = 0.85,
@@ -50,18 +49,19 @@ return {
 	keys = {
 		{ key = "Enter", mods = "LEADER", action = act.ToggleFullScreen },
 		{ key = "Space", mods = "LEADER", action = act.QuickSelect },
+		{ key = "phys:Space", mods = "LEADER", action = act.QuickSelect },
+
 		{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 
 		{ key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 		{ key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 
 		{ key = "+", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
-		{ key = "-", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
+		{ key = "_", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
 
 		{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
 		{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
 
-		{ key = "F", mods = "CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
 		{ key = "F", mods = "SHIFT|CTRL", action = act.Search("CurrentSelectionOrEmptyString") },
 
 		{ key = "P", mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
@@ -82,7 +82,6 @@ return {
 		{ key = "UpArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Up", 1 }) },
 		{ key = "DownArrow", mods = "SHIFT|CTRL", action = act.AdjustPaneSize({ "Down", 1 }) },
 
-		{ key = "phys:Space", mods = "SHIFT|CTRL", action = act.QuickSelect },
 		{ key = "PageUp", mods = "SHIFT", action = act.ScrollByPage(-1) },
 		{ key = "PageUp", mods = "CTRL", action = act.ActivateTabRelative(-1) },
 		{ key = "PageUp", mods = "SHIFT|CTRL", action = act.MoveTabRelative(-1) },

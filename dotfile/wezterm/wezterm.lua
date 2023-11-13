@@ -14,6 +14,21 @@ local kanagawa = {
 	ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" },
 	brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" },
 	indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
+	tab_bar = {
+		background = "rgba(0% 0% 0% 0%)",
+		active_tab = {
+			bg_color = "rgba(0% 0% 0% 0%)",
+			fg_color = "#7fb4ca",
+		},
+		inactive_tab = {
+			bg_color = "rgba(0% 0% 0% 0%)",
+			fg_color = "#727169",
+		},
+		new_tab = {
+			bg_color = "rgba(0% 0% 0% 0%)",
+			fg_color = "#727169",
+		},
+	},
 }
 
 return {
@@ -34,6 +49,7 @@ return {
 	},
 	enable_scroll_bar = false,
 	use_fancy_tab_bar = false,
+	tab_bar_at_bottom = true,
 	hide_tab_bar_if_only_one_tab = true,
 	colors = kanagawa,
 

@@ -29,7 +29,6 @@ in
     zoxide # cd alternative
     ruby # Needed by tmux-jump
     nil # Nix language server
-    wezterm # Terminal emulator. Make it share because I need a wezterm server to act like tmux daemon
   ];
 
   nix.package = pkgs.nix;

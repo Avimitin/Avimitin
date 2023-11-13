@@ -15,7 +15,6 @@ rec {
   home.packages = with pkgs; [
     grim
     slurp
-    nil
   ];
 
   xdg.configFile = {

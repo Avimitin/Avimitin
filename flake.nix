@@ -8,11 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvim = {
+      url = "github:Avimitin/nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager }:
+  outputs = { self, nixpkgs, flake-utils, home-manager, nvim }:
     let
-      overlays = [ (import ./overlay.nix) ];
+      overlays = [ (import ./overlay.nix) (nvim.overlays.default) ];
       pkgsIn = system: import nixpkgs { inherit system overlays; };
       mkHMCfgWith = system: modules:
         home-manager.lib.homeManagerConfiguration {
@@ -35,6 +39,7 @@
       in
       {
         formatter = pkgs.nixpkgs-fmt;
+        legacyPackages = pkgs;
         apps.home-manager = flake-utils.lib.mkApp {
           drv = hmPkg;
         };

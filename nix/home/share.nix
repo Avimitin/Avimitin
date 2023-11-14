@@ -64,17 +64,15 @@ in
       rev = "2ff4940f043cd4ad80fa25c6efa33063fb3b386b";
       sha256 = "sha256-zgFQKQgESThZGoLRjqZGjxeu/C0HMduUOr7jcgELM7s=";
     };
-    # We can't install this file to .config/nvim because it is a symlink to nix store
-    nvim-treesitter-parsers = {
-      # FIXME: Is it better to pin the neovim version instead of refering the local file?
-      source =
-        let
-          parsers = pkgs.callPackage ../../dotfile/nvim/nix/treesitter-parsers.nix { };
-          toNvimPlug = pkgs.callPackage ../../dotfile/nvim/nix/set-rtp.nix { };
-        in
-        toNvimPlug "treesitter-parsers" (parsers [ ]);
-      target = "nvim/site/plugin/treesitter-parsers.lua";
-    };
+    # We can't install this file to .config/nvim because the whole nvim directory is a symlink to nix store
+    nvim-treesitter-parsers =
+      let
+        pkg = pkgs.nvim-treesitter-parsers;
+      in
+      {
+        source = "${pkg}${pkg.passthru.luaScript}";
+        target = "nvim/site/plugin/treesitter-parsers.lua";
+      };
   };
 
   programs.lsd = {

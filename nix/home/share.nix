@@ -29,6 +29,8 @@ in
     zoxide # cd alternative
     ruby # Needed by tmux-jump
     nil # Nix language server
+    luajitPackages.magick
+    imagemagick
   ];
 
   nix.package = pkgs.nix;

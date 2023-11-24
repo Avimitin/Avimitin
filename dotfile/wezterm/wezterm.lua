@@ -39,7 +39,7 @@ return {
 	}),
 	font_size = 9,
 	window_background_opacity = 0.85,
-	text_background_opacity = 0.7,
+	text_background_opacity = 1,
 	force_reverse_video_cursor = true,
 	window_padding = {
 		left = 10,
@@ -71,6 +71,7 @@ return {
 
 		{ key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 		{ key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "|", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 
 		{ key = "+", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
 		{ key = "_", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },

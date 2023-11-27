@@ -27,7 +27,6 @@ in
     ripgrep # grep alternative
     tmux # Terminal windows manager
     zoxide # cd alternative
-    ruby # Needed by tmux-jump
     nil # Nix language server
   ];
 

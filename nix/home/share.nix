@@ -58,12 +58,6 @@ in
   };
 
   xdg.dataFile = {
-    tmuxJump = lib.fetchTmuxPlugin {
-      owner = "schasse";
-      repo = "tmux-jump";
-      rev = "2ff4940f043cd4ad80fa25c6efa33063fb3b386b";
-      sha256 = "sha256-zgFQKQgESThZGoLRjqZGjxeu/C0HMduUOr7jcgELM7s=";
-    };
     # We can't install this file to .config/nvim because the whole nvim directory is a symlink to nix store
     nvim-treesitter-parsers =
       let

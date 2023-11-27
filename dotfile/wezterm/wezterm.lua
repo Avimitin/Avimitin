@@ -50,7 +50,7 @@ return {
 	enable_scroll_bar = false,
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
-	hide_tab_bar_if_only_one_tab = true,
+	hide_tab_bar_if_only_one_tab = false,
 	colors = kanagawa,
 
 	ssh_domains = { {
@@ -85,7 +85,7 @@ return {
 
 		{ key = "q", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
 
-		{ key = "X", mods = "LEADER", action = act.ActivateCopyMode },
+		{ key = "X", mods = "SHIFT|CTRL", action = act.ActivateCopyMode },
 
 		{ key = "h", mods = "ALT", action = act.ActivatePaneDirection("Left") },
 		{ key = "l", mods = "ALT", action = act.ActivatePaneDirection("Right") },

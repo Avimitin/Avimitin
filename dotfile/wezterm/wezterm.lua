@@ -37,7 +37,7 @@ return {
 		"Noto Sans CJK SC",
 		"Noto Color Emoji",
 	}),
-	font_size = 9,
+	font_size = 11,
 	window_background_opacity = 0.85,
 	text_background_opacity = 1,
 	force_reverse_video_cursor = true,

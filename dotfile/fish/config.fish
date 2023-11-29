@@ -62,6 +62,12 @@ if command -q rsync
     alias rsy "command rsync -azrvhP"
 end
 
+if command -q rg
+    function rgl
+        rg -B5 -A5 --pretty $argv | less -R
+    end
+end
+
 if command -q ssh
     # this fix tmux color
     alias ssh "TERM=xterm-256color command ssh"

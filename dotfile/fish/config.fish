@@ -40,7 +40,14 @@ end
 
 # G
 if command -q git
-    alias gc "git commit --signoff --verbose"
+    function gc
+        if test -n "$argv"
+            git commit --signoff -m "$argv"
+        else
+            git commit --signoff --verbose
+        end
+    end
+
     alias gco "git checkout"
     alias ga "git add"
     alias gaa "git commit --amend --no-edit --allow-empty"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-operation=$1; shift
-[[ -z "$operation" ]] \
+flag=$1; shift
+[[ -z "$flag" ]] \
   && echo "Missing operation" \
   && exit 1
 
@@ -13,14 +13,39 @@ HM_FLAGS=(
   --show-trace
 )
 
-case $operation in
-  s|sw|switch)
-    operation="switch"
-    home=$1; shift
-    HM_FLAGS+=( --flake ".?submodules=1#$home" )
-    ;;
-  *)
-    ;;
-esac
+operation=""
+
+while true; do
+  case $flag in
+    s|sw|switch)
+      operation="switch"
+      home=$1; shift
+      HM_FLAGS+=( --flake ".?submodules=1#$home" )
+      flag="foo-bar-baz"
+      ;;
+    expire|clean|expire-generations)
+      operation="expire-generations"
+      flag="foo-bar-baz"
+      ;;
+    l|list|generations)
+      operation="generations"
+      flag="foo-bar-baz"
+      ;;
+    --offline)
+      NIX_FLAGS+=( --offline )
+      flag="$1"
+      shift 1
+      ;;
+    *)
+      break
+  esac
+done
+
+if (( $HM_DEBUG )); then
+  echo "NIX_FLAGS: ${NIX_FLAGS[@]}"
+  echo "HM_FLAGS: ${HM_FLAGS[@]}"
+  echo "Operation: $operation"
+  echo "Other opts: $@"
+fi
 
 nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" "$operation" "$@"

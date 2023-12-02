@@ -40,31 +40,49 @@ end
 
 # G
 if command -q git
-    alias co "git checkout"
-    alias aa "git commit --amend --no-edit --allow-empty"
-    alias pp "git pull --recurse-submodules"
-    alias p "git push"
-    alias rb "git rebase"
-    alias rc "git rebase --continue"
-    alias ra "git rebase --abort"
-    alias s "git status --short"
-    alias gl "git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
-end
+    alias gc "git commit --interactive --signoff --verbose"
+    alias gco "git checkout"
+    alias ga "git add"
+    alias gaa "git commit --amend --no-edit --allow-empty"
+    alias gpp "git pull --recurse-submodules"
+    alias gp "git push"
+    alias gr "git rebase"
+    alias grc "git rebase --continue"
+    alias gra "git rebase --abort"
+    alias gl "git log --graph --abbrev-commit --decorate \
+        --format=format:'%C(bold blue)%h%C(reset) %C(ul bold white)%s%C(reset) - %C(green)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
+        %C(italic dim white)%ai (%ar) %C(reset)'"
+    alias gd "git diff"
 
-if command -q lazygit
-    alias lg "lazygit"
+    function gs
+        function print_header
+            echo
+            set_color --bold yellow
+            echo "$argv:"
+            set_color normal
+        end
+
+        print_header Files
+        git status --short
+
+        print_header Branches
+        git branch -v
+
+        print_header Stash
+        git stash list
+    end
 end
 
 if command -q rsync
     # Transfer file in [a]rchive (to preserve attributes) and
     # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
-    # [P]rogress [r]ecursively.
-    alias rsy "command rsync -azrvhP"
+    # [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
+    alias rsy "command rsync -azrvhPL"
 end
 
 if command -q rg
     function rgl
-        rg -B5 -A5 --pretty $argv | less -R
+        rg -C5 --pretty $argv | less -R
     end
 end
 
@@ -73,65 +91,10 @@ if command -q ssh
     alias ssh "TERM=xterm-256color command ssh"
 end
 
-if command -q tmux
-    alias ta 'tmux attach -t'
-    alias tad 'tmux attach -d -t'
-    alias tl 'tmux list-sessions'
-    alias tksv 'tmux kill-server'
-    alias tkss 'tmux kill-session -t'
-end
-
-function ts
-    if not command -q tmux
-        echo "No tmux found"
-        return
-    end
-
-    if test -n "$argv"
-        tmux new-session -s $argv
-        return
-    end
-
-    tmux new-session -s A
-end
-
 if command -q nvim
     alias vi "nvim"
 else if command -q vim
     alias vi "vim"
-end
-
-# Y
-function ytd
-    if not command -q 'yt-dlp'
-        echo "this function needs yt-dlp"
-        return
-    end
-
-    if test -n "$argv"
-        yt-dlp "$argv"
-        return
-    end
-
-    if test -n "$WAYLAND_DISPLAY"
-        set _selection (wl-paste)
-    else
-        set _selection (xsel -b)
-    end
-
-    printf "Current selection: %s%s%s\n" (set_color blue) $_selection (set_color normal)
-    read -l -p "echo 'Are you sure to download this video? [y/n]'" _confirm
-    switch $_confirm
-        case Y y
-            set _download_dir "$HOME/Downloads/YouTube_Video"
-            mkdir -p $_download_dir && cd $_download_dir
-            yt-dlp "$_selection" --write-thumbnail
-            convert (fd -e 'webp' .) -resize 1250x960 thumbnail-resize.png
-            echo "Done..."
-        case '' N n
-            echo "Quit.."
-            return 0
-    end
 end
 
 if command -q gpg
@@ -146,6 +109,7 @@ alias "systat" "sudo systemctl status"
 alias "sysres" "sudo systemctl restart"
 
 # Use gpg-agent to replace ssh-agent
+# TODO: rewrite it in systemd user service
 if command -q gpgconf
   set -gx GPG_TTY (tty)
   gpgconf --launch gpg-agent

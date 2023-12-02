@@ -129,7 +129,7 @@ in
     enable = true;
     settings = {
       character = {
-        success_symbol = "[](bold green)";
+        success_symbol = "[](green)";
         error_symbol = "[](bold red)";
       };
       format =
@@ -137,17 +137,10 @@ in
           components = [
             "$hostname"
             "$directory"
-            "$git_branch"
-            "$git_commit"
-            "$git_state"
-            "$git_metrics"
-            "$git_status"
-            "$hg_branch"
             "$nix_shell"
             "$custom"
             "$sudo"
             "$cmd_duration"
-            "$line_break"
             "$jobs"
             "$character"
           ];
@@ -157,18 +150,6 @@ in
       hostname = {
         ssh_symbol = "󰌘";
         format = "[$ssh_symbol]($style) ";
-      };
-      git_status = {
-        style = "yellow";
-        format = "([$all_status$ahead_behind]($style) )";
-        conflicted = "";
-        stashed = "";
-        diverged = "";
-        untracked = "";
-        modified = " ";
-        staged = " ";
-        renamed = "";
-        deleted = "";
       };
     };
   };

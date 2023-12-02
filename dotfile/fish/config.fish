@@ -40,7 +40,7 @@ end
 
 # G
 if command -q git
-    alias gc "git commit --interactive --signoff --verbose"
+    alias gc "git commit --signoff --verbose"
     alias gco "git checkout"
     alias ga "git add"
     alias gaa "git commit --amend --no-edit --allow-empty"
@@ -64,6 +64,9 @@ if command -q git
 
         print_header Files
         git status --short
+
+        print_header Unpushed
+        git cherry -v
 
         print_header Branches
         git branch -v

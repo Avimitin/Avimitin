@@ -30,6 +30,7 @@ in
     nil # Nix language server
     pyright # Python language server
     nixpkgs-fmt # global formatter for all nix sources
+    haskellPackages.fourmolu # Haskell formatter
   ];
 
   nix.package = pkgs.nix;

@@ -79,7 +79,7 @@ if command -q git
             | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
 
         print_header "Commits (5)"
-        git log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) - %C(yellow)[%an]%C(reset)'
+        git log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) %C(yellow)[%an]%C(reset) %C(auto)%d%C(reset)'
 
         print_header Stash
         git stash list

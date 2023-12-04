@@ -75,7 +75,8 @@ if command -q git
         print_header Branches
         set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
         set --local normal_ref "%(refname:short)"
-        git branch --format "%(align:33,left)%(HEAD) %(if)%(HEAD)%(then)$green_ref%(else)$normal_ref%(end)%(end)  %(color:dim red)%(upstream:track)%(color:reset)"
+        git branch --color=always --format "%(align:33,left)%(HEAD) %(if)%(HEAD)%(then)$green_ref%(else)$normal_ref%(end)%(end)  %(color:bold yellow)%(upstream:track)%(color:reset)" \
+            | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
 
         print_header "Commits (5)"
         git log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) - %C(yellow)[%an]%C(reset)'

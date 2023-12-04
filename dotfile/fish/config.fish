@@ -72,11 +72,13 @@ if command -q git
         print_header Files
         git status --short
 
-        print_header Unpushed
-        git cherry -v
-
         print_header Branches
-        git branch -v
+        set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
+        set --local normal_ref "%(refname:short)"
+        git branch --format "%(align:33,left)%(HEAD) %(if)%(HEAD)%(then)$green_ref%(else)$normal_ref%(end)%(end)  %(color:dim red)%(upstream:track)%(color:reset)"
+
+        print_header "Commits (5)"
+        git log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) - %C(yellow)[%an]%C(reset)'
 
         print_header Stash
         git stash list

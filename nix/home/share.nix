@@ -19,17 +19,20 @@ in
 
   # Here are a list of package that doesn't need configuration or configuration are handle manunally
   home.packages = with pkgs; [
+    # Misc shell tools
     delta # Beautiful git diff
     direnv # Shell hook for nix flake used only
     neovim # vim alternative
     bat # cat alternative
     fd # find alternative
     ripgrep # grep alternative
-    tmux # Terminal windows manager
     zoxide # cd alternative
+
+    # Development
+    nixpkgs-fmt # global formatter for all nix sources
     nil # Nix language server
     pyright # Python language server
-    nixpkgs-fmt # global formatter for all nix sources
+    black # Python formatter
     haskellPackages.fourmolu # Haskell formatter
   ];
 

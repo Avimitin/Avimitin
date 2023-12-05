@@ -51,7 +51,7 @@ if command -q git
     alias gco "git checkout"
     alias ga "git add"
     alias gaa "git commit --amend --no-edit --allow-empty"
-    alias gpp "git pull --recurse-submodules"
+    alias gpp "git pull"
     alias gp "git push"
     alias gr "git rebase"
     alias grc "git rebase --continue"
@@ -60,8 +60,9 @@ if command -q git
         --format=format:'%C(bold blue)%h%C(reset) %C(ul bold white)%s%C(reset) - %C(green)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
     alias gd "git diff"
+    alias gt "git stash"
 
-    function gs
+    function s
         function print_header
             echo
             set_color --bold yellow
@@ -79,7 +80,7 @@ if command -q git
             | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
 
         print_header "Commits (5)"
-        git log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) %C(yellow)[%an]%C(reset) %C(auto)%d%C(reset)'
+        git --no-pager log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) %C(yellow)[%an]%C(reset) %C(auto)%d%C(reset)'
 
         print_header Stash
         git stash list
@@ -133,8 +134,6 @@ set -x fish_greeting ""
 
 alias set_env "set --global --export"
 
-set_env LANG en_US.UTF-8
-
 set_env XDG_CONFIG_HOME $HOME/.config
 set_env XDG_CACHE_HOME $HOME/.cache
 set_env XDG_DATA_HOME $HOME/.local/share
@@ -142,23 +141,8 @@ set_env XDG_DATA_HOME $HOME/.local/share
 set_env EDITOR 'nvim'
 set_env VISUAL "$EDITOR "
 set_env SYSTEMD_EDITOR $EDITOR
-set_env PAGER 'less'
+set_env PAGER 'less -R'
 set_env MANPAGER 'nvim +Man!'
-
-#set -gx BROWSER /usr/bin/xdg-open
-
-# fcitx5 settings
-# set -gx GTK_IM_MODULE fcitx
-# set -gx QT_IM_MODULE fcitx
-# set -gx XMODIFIERS "@im=fcitx"
-# set -gx SDL_IM_MODULE fcitx
-# set -gx GLFW_IM_MODULE fcitx
-
-# wayland settings
-set_env QT_QPA_PLATFORM "wayland"
-set_env CLUTTER_BACKEND wayland
-set_env SDL_VIDEODRIVER wayland
-set_env MOZ_ENABLE_WAYLAND 1
 
 # ===================================================================
 # fish themes

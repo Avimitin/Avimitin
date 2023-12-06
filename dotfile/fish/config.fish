@@ -40,7 +40,7 @@ end
 
 # G
 if command -q git
-    function gc
+    function c
         if test -n "$argv"
             git commit --signoff -m "$argv"
         else
@@ -48,43 +48,50 @@ if command -q git
         end
     end
 
-    alias gco "git checkout"
-    alias ga "git add"
-    alias gaa "git commit --amend --no-edit --allow-empty"
-    alias gpp "git pull"
-    alias gp "git push"
-    alias gr "git rebase"
-    alias grc "git rebase --continue"
-    alias gra "git rebase --abort"
-    alias gl "git log --graph --abbrev-commit --decorate \
-        --format=format:'%C(bold blue)%h%C(reset) %C(ul bold white)%s%C(reset) - %C(green)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
-        %C(italic dim white)%ai (%ar) %C(reset)'"
-    alias gd "git diff"
-    alias gt "git stash"
+    alias a "git add"
+    alias r "git reset HEAD --"
+    alias g "nvim +Flog"
 
     function s
         function print_header
-            echo
             set_color --bold yellow
             echo "$argv:"
             set_color normal
         end
 
-        print_header Files
+        print_header "Files"
         git status --short
+        echo
 
-        print_header Branches
+        print_header "Branches"
         set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
         set --local normal_ref "%(refname:short)"
         git branch --color=always --format "%(align:33,left)%(HEAD) %(if)%(HEAD)%(then)$green_ref%(else)$normal_ref%(end)%(end)  %(color:bold yellow)%(upstream:track)%(color:reset)" \
             | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
+        echo
 
         print_header "Commits (5)"
         git --no-pager log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) %C(yellow)[%an]%C(reset) %C(auto)%d%C(reset)'
+        echo
+        echo
 
-        print_header Stash
+        print_header "Stash"
         git stash list
     end
+
+    alias gco "git checkout"
+    alias grm "git rm --cached --force --"
+    alias gaa "git commit --amend --no-edit --allow-empty"
+    alias gpp "git pull"
+    alias gp "git push"
+    alias grb "git rebase"
+    alias grc "git rebase --continue"
+    alias gra "git rebase --abort"
+    alias gl "git log --graph --abbrev-commit --decorate \
+        --format=format:'%C(bold blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
+        %C(italic dim white)%ai (%ar) %C(reset)'"
+    alias gd "git diff"
+    alias gt "git stash"
 end
 
 if command -q rsync

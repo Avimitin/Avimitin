@@ -189,3 +189,26 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
+
+function _nix_complete
+  set -l nix_args (commandline --current-process --tokenize --cut-at-cursor)
+  set -l current_token (commandline --current-token --cut-at-cursor)
+  set -l nix_arg_to_complete (count $nix_args)
+
+  env NIX_GET_COMPLETIONS=$nix_arg_to_complete $nix_args $current_token
+end
+
+function _nix_accepts_files
+  set -l response (_nix_complete)
+  test $response[1] = 'filenames'
+end
+
+function _nix
+  set -l response (_nix_complete)
+  string collect -- $response[2..-1]
+end
+
+# Disable file path completion if paths do not belong in the current context.
+complete --command nix --condition 'not _nix_accepts_files' --no-files
+
+complete --command nix --arguments '(_nix)'

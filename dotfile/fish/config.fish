@@ -88,7 +88,7 @@ if command -q git
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
     alias gl "git log --graph --abbrev-commit --decorate \
-        --format=format:'%C(bold blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
+        --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
     alias gd "git diff"
     alias gt "git stash"

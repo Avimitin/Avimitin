@@ -35,6 +35,7 @@ rec {
     waybarConf = lib.fromDotfile "waybar/config";
     waybarStyle = lib.fromDotfile "waybar/style.css";
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";
+    kitty = lib.fromDotfile "kitty/kitty.conf";
   };
 
   programs.wpaperd = {

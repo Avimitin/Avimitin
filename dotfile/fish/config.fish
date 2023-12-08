@@ -40,6 +40,10 @@ end
 
 # G
 if command -q git
+    if command -q lazygit
+        alias g lazygit
+    end
+
     function c
         if test -n "$argv"
             git commit --signoff -m "$argv"
@@ -47,10 +51,6 @@ if command -q git
             git commit --signoff --verbose
         end
     end
-
-    alias a "git add"
-    alias r "git reset HEAD --"
-    alias g "nvim +Flog"
 
     function s
         function print_header
@@ -79,8 +79,6 @@ if command -q git
         git stash list
     end
 
-    alias gco "git checkout"
-    alias grm "git rm --cached --force --"
     alias gaa "git commit --amend --no-edit --allow-empty"
     alias gpp "git pull"
     alias gp "git push"
@@ -90,8 +88,6 @@ if command -q git
     alias gl "git log --graph --abbrev-commit --decorate \
         --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
-    alias gd "git diff"
-    alias gt "git stash"
 end
 
 if command -q rsync

@@ -208,3 +208,10 @@ end
 complete --command nix --condition 'not _nix_accepts_files' --no-files
 
 complete --command nix --arguments '(_nix)'
+
+function goforeground
+    fg
+    commandline --function repaint
+end
+
+bind \cz goforeground

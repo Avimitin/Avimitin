@@ -28,8 +28,8 @@
       templates = import ./nix/templates;
       homeConfigurations = {
         "homelab" = mkHMCfgWith "x86_64-linux" [ ./nix/home/homelab.nix ];
-        "thinkbook" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ];
-        "thinkbook-carry" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ./nix/home/thinkbook-carry-case.nix ];
+        "office" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ];
+        "outside" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ./nix/home/thinkbook-carry-case.nix ];
       };
     } //
     flake-utils.lib.eachDefaultSystem (system:

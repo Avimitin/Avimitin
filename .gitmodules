@@ -1,6 +1,0 @@
-[submodule "dotfile/nvim"]
-	path = dotfile/nvim
-	url = git@github.com:Avimitin/nvim.git
-[submodule "blog"]
-	path = blog
-	url = git@github.com:Avimitin/blog

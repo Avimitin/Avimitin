@@ -1,12 +1,20 @@
-{ runCommand, writeShellScriptBin, wpaperd, grim, slurp, callPackage, isCarryOut ? false }:
+{ runCommand, writeShellScriptBin, writeShellApplication, grim, slurp, callPackage, isCarryOut ? false }:
 let
-  screenshot = writeShellScriptBin "grim-shot" ''
-    set -e
-    file=$(mktemp --tmpdir "screenshot-XXX-$(date +%F-%T).png")
-    ${grim}/bin/grim -g "$(${slurp}/bin/slurp)" -t png $file
-    wl-copy < $file
-    rm $file
-  '';
+  screenshotScript = writeShellApplication {
+    name = "wayland-screenshoter";
+
+    runtimeInputs = [
+      grim
+      slurp
+    ];
+
+    text = ''
+      file=$(mktemp -t "screenshot-XXX-$(date +%F-%T).png")
+      grim -g "$(slurp)" -t png "$file"
+      wl-copy < "$file"
+      [[ -n "''${DELETE_SCREENSHOT:-}" ]] && rm "$file"
+    '';
+  };
   screenctl = writeShellScriptBin "hyprland-all-screen-ctl" ''
     action=$1; shift
     [[ "$action" = "" ]] && echo "No arguments" && exit 1
@@ -39,7 +47,7 @@ runCommand "hyprland-conf-generator" { } ''
   mkdir $out
 
   substitute ${../../dotfile/hypr/hyprland.conf} $out/hyprland.conf \
-    --subst-var-by screenshotScript ${screenshot}/bin/grim-shot \
+    --subst-var-by screenshotScript ${screenshotScript}/bin/wayland-screenshoter \
     --subst-var-by screenlockScript ${screenlock}/bin/swaylock-with-random-pic \
     --subst-var-by extraConf ${extraConf}
 ''

@@ -59,7 +59,10 @@ in
       sha256 = "sha256-xWaMd5POCDeeFTsGtHbIvsPelIp+GZPC1X1CseCo3BA=";
     };
 
-    neovim = lib.fromDotfile "nvim";
+    neovim = {
+      source = (pkgs.callPackage ./_sources/generated.nix { }).nvim.src;
+      target = "nvim";
+    };
   };
 
   xdg.dataFile =

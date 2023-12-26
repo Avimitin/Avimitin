@@ -1,0 +1,5 @@
+[nvim]
+# How to check update
+src.git = "git@github.com:Avimitin/nvim.git"
+# How to fetch source
+fetch.github = "Avimitin/nvim"

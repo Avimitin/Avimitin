@@ -25,7 +25,6 @@
         };
     in
     {
-      templates = import ./nix/templates;
       homeConfigurations = {
         "homelab" = mkHMCfgWith "x86_64-linux" [ ./nix/home/homelab.nix ];
         "office" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ];

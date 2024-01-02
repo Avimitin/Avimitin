@@ -5,6 +5,7 @@ NIX_FLAGS=(
 )
 HM_FLAGS=(
   --extra-experimental-features "flakes nix-command"
+  -j auto
   --show-trace
 )
 
@@ -48,7 +49,7 @@ if (( $HM_DEBUG )); then
   echo "Args: $@"
 fi
 
-if [[ "$operation" = "switch" ]]; then
+if [[ "$operation" = "switch" && ! "${NIX_FLAGS[@]}" =~ "--offline" ]]; then
   pushd ./nix/home
   nix run ".#nvfetcher"
   popd

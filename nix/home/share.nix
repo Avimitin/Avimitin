@@ -34,6 +34,8 @@ in
     pyright # Python language server
     black # Python formatter
     haskellPackages.fourmolu # Haskell formatter
+    nodePackages.typescript-language-server # For frontend development
+    prettierd # js/ts formatter
   ];
 
   nix.package = pkgs.nix;

@@ -80,6 +80,7 @@ if command -q git
     end
 
     alias gaa "git commit --amend --no-edit --allow-empty"
+    alias gf "git fetch -p -P --progress --force"
     alias gpp "git pull"
     alias gp "git push"
     alias grb "git rebase"

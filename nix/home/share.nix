@@ -76,8 +76,8 @@ in
         { name = "css"; hash = "sha256-vBm3z2x2m4pDPWzLIezkgqaKPGyTx4zQagJvDU6jVbY="; }
         { name = "diff"; hash = "sha256-0DMJCM0ps+oDyz4IzOPuI92lzDQMaq4trGos16WJQBc="; }
         { name = "firrtl"; hash = "sha256-X//iBrCi4sYgqNubUrnXCRoKBOUMsgS4u9yht7ioucA="; }
-        { name = "gitcommit"; hash = "sha256-f7tSOL6/s+FAt3siH+eO63jXzbU79yh78QfHHvmBFbE="; }
-        { name = "haskell"; hash = "sha256-emH6ZM/PndCQ3Co5KqC0B4i6m6UHikZB7SoZ4XpUnIs="; }
+        { name = "gitcommit"; hash = "sha256-vZpr5GlPHAt55WjPLKwMSOWJjFKSsSEqqcTragcfAvk="; }
+        { name = "haskell"; hash = "sha256-P7CyvMC/5IqNC2Vk0Nsw+EMxXRiUiWTrE0cW4xOv/sw="; }
         { name = "javascript"; hash = "sha256-mQQHsSRwyQuXBLtPBj2kgwdtdlK8qFtEcIqG/2ogiY0="; }
         { name = "typescript"; hash = "sha256-xpXdkmodfLEljrqF/fZt/a6LFdfevi+FzzM5rixfB1E="; srcRoot = "typescript"; }
         { name = "tsx"; hash = "sha256-xpXdkmodfLEljrqF/fZt/a6LFdfevi+FzzM5rixfB1E="; srcRoot = "tsx"; }
@@ -85,11 +85,11 @@ in
         { name = "lua"; hash = "sha256-ZocgN+GD7FOv/a2QuX8EoxwJ3MZCBnT2Y6Kv4jOvYy0="; }
         { name = "org"; hash = "sha256-N/zlpv4oXVfjk+a/7vM0nAPsCCBMVvWN3oavPbPmKwk="; }
         { name = "regex"; hash = "sha256-Y6A1YqbjItM4V5lQ7IM8EMa+nm6v+p/DHYSEVnF29ac="; }
-        { name = "ruby"; hash = "sha256-RaxVKNoIaDj6tMi63ERmeRmq5yHlWL9/u2v6XpMsK/g="; }
+        { name = "ruby"; hash = "sha256-XWgM5pWVSgOmL1W2JNwCSzDjqsCjsD6ur2HP5ophXDQ="; }
         { name = "python"; hash = "sha256-2BW17L46CYrGISeSLWF8RrpAA0enEdJjlvuljnKDgLY="; }
         { name = "rust"; hash = "sha256-rwZbCa5f96BiqYWdbiHBRnlEU0TBJyycCoru0hxxu+U="; }
-        { name = "scala"; hash = "sha256-2zmNRTey8cFrK9Kx4PrJnhMXFwX7HZj32GGeplJuiDc="; }
-        { name = "nix"; hash = "sha256-rzrxcqcc7V+6pgdZ8Q/3VJd5/Oa58AtKKfoC3MBcirs="; }
+        { name = "scala"; hash = "sha256-7hao4Gn4JHyR1iwyGycK0+F41zFPeQVJGfoE8z4QZyQ="; }
+        { name = "nix"; hash = "sha256-U83d361iH3HTqh4ZMWovYE+WOwPLKOi28/aFiG3Olkg="; }
         {
           name = "markdown";
           hash = "sha256-52QZ4bjJIvGxE4N4OJohdcyGSKjxep0pINJjgVq4H+M=";
@@ -107,12 +107,12 @@ in
         }
         {
           name = "ocaml";
-          hash = "sha256-ovTvflpzfMvI+NaKtLfMyI/SyxPODqr4mRkfzROIEjc=";
+          hash = "sha256-YEU+4n9pwtVlqgIcXpZk/gqtQb5K/ycNwcVGEHScHLg=";
           srcRoot = "ocaml";
         }
         {
           name = "ocaml_interface";
-          hash = "sha256-ovTvflpzfMvI+NaKtLfMyI/SyxPODqr4mRkfzROIEjc=";
+          hash = "sha256-YEU+4n9pwtVlqgIcXpZk/gqtQb5K/ycNwcVGEHScHLg=";
           srcRoot = "interface";
         }
         { name = "yaml"; hash = "sha256-RrYFKrhqFLsjQG+7XFbcQ2eYy2eyig5/r+MYO8DId4g="; }
@@ -121,12 +121,8 @@ in
     {
       # We can't install this file to .config/nvim because the whole nvim directory is a symlink to nix store
       nvim-treesitter-parsers = {
-        source = "${tsLoader}${tsLoader.passthru.luaPath}";
+        source = "${tsLoader}${tsLoader.scriptPath}";
         target = "nvim/site/plugin/treesitter-parsers.lua";
-      };
-      nvim-treesitter-updater = {
-        source = "${tsLoader.passthru.updateScript}/bin/treesitter-hash-batch-updater";
-        target = "nvim/assets/treesitter-updater.bash";
       };
     };
 

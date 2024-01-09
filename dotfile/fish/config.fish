@@ -79,6 +79,7 @@ if command -q git
         git stash list
     end
 
+    alias co "git checkout"
     alias gaa "git commit --amend --no-edit --allow-empty"
     alias gf "git fetch -p -P --progress --force"
     alias gpp "git pull"

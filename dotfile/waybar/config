@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "height": 30,
-    "spacing": 2, // Gaps between modules (4px)
+    "spacing": 2,
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
     "wlr/workspaces": {
@@ -53,7 +53,6 @@
         "format-wifi": "",
         "tooltip-format": "{essid}{ifname}",
         "format-ethernet": "󰈀",
-        "tooltip-format": "󰈀",
         "format-linked": "󰈀",
         "format-disconnected": "⚠ Disconnected",
         "format-alt": "{ifname}"

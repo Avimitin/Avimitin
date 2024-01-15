@@ -1,7 +1,7 @@
 {
     "nvim": {
         "cargoLocks": null,
-        "date": "2024-01-11",
+        "date": "2024-01-16",
         "extract": null,
         "name": "nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "Avimitin",
             "repo": "nvim",
-            "rev": "e8267bf3fee049dd2cdb1e83818c4517a0bed130",
-            "sha256": "sha256-4ayi0hQXZHXWbAhwW8UTfhFeFzJhjs1Zlc9vXVqOKLc=",
+            "rev": "5e33b5d2b5b3922ec5a161e81799b430439f475e",
+            "sha256": "sha256-iAHnXwON6iZ4uV6k58U96YZQhZmFcVM8pToAYQj36II=",
             "type": "github"
         },
-        "version": "e8267bf3fee049dd2cdb1e83818c4517a0bed130"
+        "version": "5e33b5d2b5b3922ec5a161e81799b430439f475e"
     }
 }

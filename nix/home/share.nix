@@ -88,6 +88,7 @@ in
         { name = "ruby"; hash = "sha256-XWgM5pWVSgOmL1W2JNwCSzDjqsCjsD6ur2HP5ophXDQ="; }
         { name = "python"; hash = "sha256-2BW17L46CYrGISeSLWF8RrpAA0enEdJjlvuljnKDgLY="; }
         { name = "rust"; hash = "sha256-rwZbCa5f96BiqYWdbiHBRnlEU0TBJyycCoru0hxxu+U="; }
+        { name = "proto"; hash = "sha256-eDnzT35wGxFzhcvy61d+1VG8ObB999mcakG3NNlrcck="; }
         { name = "scala"; hash = "sha256-7hao4Gn4JHyR1iwyGycK0+F41zFPeQVJGfoE8z4QZyQ="; }
         { name = "nix"; hash = "sha256-U83d361iH3HTqh4ZMWovYE+WOwPLKOi28/aFiG3Olkg="; }
         { name = "vimdoc"; hash = "sha256-DuNSE9sgSoQR26CIdEAvwJm+1MeH0Q6dlG7C7sNZGIo="; }

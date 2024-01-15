@@ -11,6 +11,12 @@ if command -q bat
     alias v bat
 end
 
+if test -r /usr/lib/locale/locale-archive
+    # manually setting locale archive to fix programs from nixpkgs doesn't correctly use locale
+    # archive in glibc issues.
+    set -gx LOCALE_ARCHIVE /usr/lib/locale/locale-archive
+end
+
 if command -q fzf
     # Set directory search to Ctrl-S and remove other unused functionality
     fzf_configure_bindings --directory=\cs --variables= --git_log= --git_status= --processes=

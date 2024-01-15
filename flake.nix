@@ -16,7 +16,7 @@
 
   outputs = { self, nixpkgs, flake-utils, home-manager, nvim }:
     let
-      overlays = [ nvim.overlays.default ];
+      overlays = [ nvim.overlays.default (import ./nix/overlay.nix) ];
       pkgsIn = system: import nixpkgs { inherit system overlays; };
       mkHMCfgWith = system: modules:
         home-manager.lib.homeManagerConfiguration {

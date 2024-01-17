@@ -11,14 +11,22 @@
 
 ### My highlight projects
 
+#### (Scala/Chisel/Nix) [chipsalliance/t1](https://github.com/chipsalliance/t1.git)
+
+I am an active maintainer for performance analyze, compile toolchain, build system, CI/CD infrastructure of the chipsalliance/t1 project.
+I've also made the Bert AI model rans on t1.
+
+#### [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3AAvimitin+sort%3Aupdated-desc+)
+
+I was an active maintainer for Arch Linux RISC-V distro. Fixing plenty bugs when porting packages to rv64gc.
+
 #### (Rust) [tg-maid](https://github.com/Avimitin/tg-maid)
 
-A telegram bot that was used as my Rust playground. I applied all my skill I had learned into this project.
-Such as a generic dispatchable task executor: <https://github.com/Avimitin/tg-maid/blob/master/src/event.rs#L56-L133>.
+A telegram bot that was used as my Rust skill playground. I applied all my skill I had learned into this project.
 
 #### (Rust) [deepl-rs](https://github.com/Avimitin/deepl-rs.git)
 
-A Rust DeepL API wrapper. In this project I used the Rust await syntax sugar to inline the HTTP request into async/await.
+A Rust DeepL API wrapper, another Rust skill playground.
 
 #### (TypeScript & Ruby) [uptime-collector](https://github.com/Avimitin/uptime-collector.git)
 
@@ -28,14 +36,6 @@ This is a lightweight CPU usage collector, using React as frontend and Ruby as b
 
 A structure and super fast neovim configuration that purely made with Lua.
 I made so many optimization and customization to exploit the speed from LuaJIT.
-
-#### (Scala/Chisel/Nix) [chipsalliance/t1](https://github.com/chipsalliance/t1.git)
-
-I am an active maintainer for performance analyze, compile toolchain, build system, CI/CD infrastructure of the chipsalliance/t1 project.
-
-#### [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/pulls?q=is%3Apr+author%3AAvimitin+sort%3Aupdated-desc+)
-
-I was an active maintainer for Arch Linux RISC-V distro.
 
 #### LLVM
 
@@ -60,4 +60,4 @@ Besides, I am also an active open source contributors: [my GitHub PRs](https://g
   * My blog: <https://blog.sh1mar.in>
   * Contact me: [`dev@avimit.in`](mailto:dev@avimit.in)
   * GPG Public key: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](https://github.com/Avimitin.gpg)
-  * Pleroma: https://dabr.ca/users/sh1marin
+  * Pleroma: <https://dabr.ca/users/sh1marin>

@@ -3,13 +3,13 @@
 {
   nvim = {
     pname = "nvim";
-    version = "355bc5ba0823b16ea0dd7de4465b3df7b470e8c6";
+    version = "7ae95e4fb0f361a6b28dff1f0dc212bb25dd3318";
     src = fetchFromGitHub {
       owner = "Avimitin";
       repo = "nvim";
-      rev = "355bc5ba0823b16ea0dd7de4465b3df7b470e8c6";
+      rev = "7ae95e4fb0f361a6b28dff1f0dc212bb25dd3318";
       fetchSubmodules = false;
-      sha256 = "sha256-xa+ioqdUKlZOymkmhP3iCGcYMn3mqRW4JeCgWsDMnY0=";
+      sha256 = "sha256-+TK8xpoJigLOgkKsVV6dPMNZPo8eavcPmkVKqUoznkg=";
     };
     date = "2024-01-17";
   };

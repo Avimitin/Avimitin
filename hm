@@ -6,7 +6,6 @@ NIX_FLAGS=(
 HM_FLAGS=(
   --extra-experimental-features "flakes nix-command"
   -j auto
-  --show-trace
 )
 
 flag="$1"; shift
@@ -33,6 +32,11 @@ while true; do
     l|list|generations)
       operation="generations"
       flag="exit"
+      ;;
+    --show-trace)
+      HM_FLAGS+=( --show-trace )
+      flag="$1"
+      shift 1
       ;;
     --offline)
       NIX_FLAGS+=( --offline )

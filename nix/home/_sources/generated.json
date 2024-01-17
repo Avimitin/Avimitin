@@ -13,9 +13,10 @@
             "name": null,
             "owner": "Avimitin",
             "repo": "nvim",
-            "rev": "217958e405afc4089010cf66e557ec17484e9c75",
-            "sha256": "sha256-kNGiQdxX2u83sOV/ZVeuYlcSBjzVRbzlAD8/cd2gABg=",
+            "rev": "355bc5ba0823b16ea0dd7de4465b3df7b470e8c6",
+            "sha256": "sha256-xa+ioqdUKlZOymkmhP3iCGcYMn3mqRW4JeCgWsDMnY0=",
             "type": "github"
         },
-        "version": "217958e405afc4089010cf66e557ec17484e9c75"
+        "version": "355bc5ba0823b16ea0dd7de4465b3df7b470e8c6"
     }
+}

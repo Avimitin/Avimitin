@@ -20,7 +20,6 @@ if command -q broot
             return $code
         end
     end
-    broot --set-install-state installed
 end
 
 if command -q bat

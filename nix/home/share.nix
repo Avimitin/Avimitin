@@ -27,7 +27,8 @@ in
     fd # find alternative
     ripgrep # grep alternative
     zoxide # cd alternative
-    mcfly # Enhanced CTRL-R for shell
+    mcfly # enhanced CTRL-R for shell
+    broot # fuzzy search based file manager
 
     # Development
     nixpkgs-fmt # global formatter for all nix sources

@@ -6,11 +6,9 @@
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim = {
       url = "github:Avimitin/nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

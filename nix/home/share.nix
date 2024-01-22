@@ -38,6 +38,7 @@ in
     haskellPackages.fourmolu # Haskell formatter
     nodePackages.typescript-language-server # For frontend development
     prettierd # js/ts formatter
+    gh # github cli
   ];
 
   nix.package = pkgs.nix;

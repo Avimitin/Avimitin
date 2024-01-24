@@ -155,6 +155,7 @@ end
 if command -q ssh
     # this fix tmux color
     alias ssh "TERM=xterm-256color command ssh"
+    ssh-agent -c | source
 end
 
 if command -q nvim
@@ -163,24 +164,11 @@ else if command -q vim
     alias vi "vim"
 end
 
-if command -q gpg
-    alias gpg-uptty "gpg-connect-agent updatestartuptty /bye"
-    alias gpg-swckey 'gpg-connect-agent "scd serialno" "learn --force" /bye'
-end
-
 # systemd
 alias "systart" "sudo systemctl start"
 alias "systop" "sudo systemctl stop"
 alias "systat" "sudo systemctl status"
 alias "sysres" "sudo systemctl restart"
-
-# Use gpg-agent to replace ssh-agent
-# TODO: rewrite it in systemd user service
-if command -q gpgconf
-  set -gx GPG_TTY (tty)
-  gpgconf --launch gpg-agent
-  set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-end
 
 set -x fish_greeting ""
 

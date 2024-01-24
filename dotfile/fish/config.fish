@@ -155,7 +155,13 @@ end
 if command -q ssh
     # this fix tmux color
     alias ssh "TERM=xterm-256color command ssh"
-    ssh-agent -c | source
+
+    # TODO: After ssh setup, run systemctl --user enable --now ssh-agent.service, it will setup the socket
+    if test -e "$XDG_RUNTIME_DIR/ssh-agent.socket"
+        set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
+    end
+
+    # TODO: After ssh-agent is up, run ssh-add <private-key> to store it into agent
 end
 
 if command -q nvim

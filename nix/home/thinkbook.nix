@@ -18,6 +18,8 @@ rec {
   ];
 
   xdg.configFile = {
+    dunst = lib.fromDotfile "dunst/dunstrc";
+    rofi = lib.fromDotfile "rofi";
     broot = lib.fromDotfile "broot/conf.toml";
     fcitx5Conf = lib.fromDotfile "fcitx5/conf";
     fcitx5Profile = lib.fromDotfile "fcitx5/profile";

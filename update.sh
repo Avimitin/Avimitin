@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -e
 
 nix_file="./nix/home/share.nix"
 parser_expr=".#homeConfigurations.homelab.config.xdg.dataFile.nvim-treesitter-parsers"

@@ -12,14 +12,6 @@ rec {
     stateVersion = "23.05";
   };
 
-  home.packages = with pkgs; [
-    metals
-    nil
-    clang-tools
-    lua-language-server
-    stylua
-  ];
-
   # This machine also serve as a build cache
   nix.settings.extra-secret-key-files = "${home.homeDirectory}/.config/nix/nix-cache-sk";
 

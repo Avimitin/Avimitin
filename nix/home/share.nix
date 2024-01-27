@@ -29,6 +29,7 @@ in
     zoxide # cd alternative
     mcfly # enhanced CTRL-R for shell
     broot # fuzzy search based file manager
+    gh # github cli
 
     # Development
     nixpkgs-fmt # global formatter for all nix sources
@@ -38,7 +39,10 @@ in
     haskellPackages.fourmolu # Haskell formatter
     nodePackages.typescript-language-server # For frontend development
     prettierd # js/ts formatter
-    gh # github cli
+    metals # Scala LSP
+    clang-tools # Contains clangd
+    lua-language-server # Lua LSP
+    stylua # Lua formatter
   ];
 
   nix.package = pkgs.nix;

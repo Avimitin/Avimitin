@@ -214,6 +214,7 @@ in
           ];
         in
         "${builtins.concatStringsSep "" components}";
+      directory.fish_style_pwd_dir_length = 1;
       nix_shell.symbol = "󱄅 ";
       git_branch.format = "[\\($branch(:$remote_branch)\\)]($style) ";
       hostname = {

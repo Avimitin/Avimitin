@@ -195,8 +195,8 @@ in
     enable = true;
     settings = {
       character = {
-        success_symbol = "[](green)";
-        error_symbol = "[](bold red)";
+        success_symbol = "[λ](green)";
+        error_symbol = "[λ](bold red)";
       };
       format =
         let
@@ -204,15 +204,18 @@ in
             "$hostname"
             "$directory"
             "$nix_shell"
+            "$git_branch"
             "$custom"
             "$sudo"
             "$cmd_duration"
+            "$line_break"
             "$jobs"
             "$character"
           ];
         in
         "${builtins.concatStringsSep "" components}";
       nix_shell.symbol = "󱄅 ";
+      git_branch.format = "[\\($branch(:$remote_branch)\\)]($style) ";
       hostname = {
         ssh_symbol = "󰌘";
         format = "[$ssh_symbol]($style) ";

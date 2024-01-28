@@ -170,6 +170,11 @@ else if command -q vim
     alias vi "vim"
 end
 
+# Allow using ncurse as askpass
+if command -q gpg
+    set -gx GPG_TTY (tty)
+end
+
 # systemd
 alias "systart" "sudo systemctl start"
 alias "systop" "sudo systemctl stop"

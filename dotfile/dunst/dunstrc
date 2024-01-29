@@ -198,7 +198,7 @@
     # https://github.com/vinceliuice/McMojave-circle
     # AUR: paru -Ss mcmojave-circle-icon-theme
     enable_recursive_icon_lookup = true
-    icon_theme = McMojave-circle
+    icon_theme = WhiteSur-dark
 
     ### History ###
 

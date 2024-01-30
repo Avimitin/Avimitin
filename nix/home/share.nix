@@ -27,7 +27,6 @@ in
     fd # find alternative
     ripgrep # grep alternative
     zoxide # cd alternative
-    mcfly # enhanced CTRL-R for shell
     broot # fuzzy search based file manager
     gh # github cli
 
@@ -62,12 +61,12 @@ in
       rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
       sha256 = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
     };
-    # fishFzf = lib.fetchFishPlugin {
-    #   owner = "PatrickF1";
-    #   repo = "fzf.fish";
-    #   rev = "c5e170730b4f8395e116d7c06883ed53da2d5561";
-    #   sha256 = "sha256-xWaMd5POCDeeFTsGtHbIvsPelIp+GZPC1X1CseCo3BA=";
-    # };
+    fishFzf = lib.fetchFishPlugin {
+      owner = "PatrickF1";
+      repo = "fzf.fish";
+      rev = "c5e170730b4f8395e116d7c06883ed53da2d5561";
+      sha256 = "sha256-xWaMd5POCDeeFTsGtHbIvsPelIp+GZPC1X1CseCo3BA=";
+    };
 
     neovim = {
       source = (pkgs.callPackage ./_sources/generated.nix { }).nvim.src;

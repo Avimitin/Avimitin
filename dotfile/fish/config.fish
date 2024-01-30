@@ -57,12 +57,6 @@ if test -r /usr/lib/locale/locale-archive
     set -gx LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 end
 
-if command -q mcfly
-    set -gx MCFLY_INTERFACE_VIEW BOTTOM
-    set -gx MCFLY_DISABLE_MENU TRUE
-    mcfly init fish | source
-end
-
 if command -q starship
     # Enable starship
     function starship_transient_prompt_func

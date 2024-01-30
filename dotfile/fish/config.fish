@@ -158,6 +158,10 @@ if command -q ssh
     # TODO: After ssh-agent is up, run ssh-add <private-key> to store it into agent
 end
 
+if command -q neovide
+    alias nvi neovide
+end
+
 if command -q nvim
     alias vi "nvim"
 else if command -q vim
@@ -167,6 +171,10 @@ end
 # Allow using ncurse as askpass
 if command -q gpg
     set -gx GPG_TTY (tty)
+end
+
+if command -q fzf
+    set -gx FZF_DEFAULT_OPTS '--height 35% --layout=reverse'
 end
 
 # systemd

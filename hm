@@ -40,6 +40,7 @@ while true; do
       ;;
     --offline)
       NIX_FLAGS+=( --offline )
+      HM_FLAGS+=( --no-substitute )
       flag="$1"
       shift 1
       ;;

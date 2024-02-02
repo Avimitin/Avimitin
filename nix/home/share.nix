@@ -61,12 +61,6 @@ in
       rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
       sha256 = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
     };
-    fishFzf = lib.fetchFishPlugin {
-      owner = "PatrickF1";
-      repo = "fzf.fish";
-      rev = "c5e170730b4f8395e116d7c06883ed53da2d5561";
-      sha256 = "sha256-xWaMd5POCDeeFTsGtHbIvsPelIp+GZPC1X1CseCo3BA=";
-    };
 
     neovim = {
       source = (pkgs.callPackage ./_sources/generated.nix { }).nvim.src;
@@ -194,8 +188,12 @@ in
     enable = true;
     settings = {
       character = {
-        success_symbol = "[λ](green)";
-        error_symbol = "[λ](bold red)";
+        success_symbol = "[➜](blue)";
+        error_symbol = "[➜](bold red)";
+        vimcmd_symbol = "[☉](green)";
+        vimcmd_replace_one_symbol = "[⟁](purple)";
+        vimcmd_replace_symbol = "[⟁](bold purple)";
+        vimcmd_visual_symbol = "[⚆](green)";
       };
       format =
         let

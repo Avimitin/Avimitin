@@ -7,6 +7,7 @@ HM_FLAGS=(
   --extra-experimental-features "flakes nix-command"
   -j auto
 )
+OFFLINE='y'
 
 flag="$1"; shift
 operation=""
@@ -38,9 +39,8 @@ while true; do
       flag="$1"
       shift 1
       ;;
-    --offline)
-      NIX_FLAGS+=( --offline )
-      HM_FLAGS+=( --no-substitute )
+    --online|-u)
+      OFFLINE='n'
       flag="$1"
       shift 1
       ;;
@@ -53,6 +53,11 @@ while true; do
   esac
 done
 
+if [ "$OFFLINE" = 'y' ]; then
+  NIX_FLAGS+=( --offline )
+  HM_FLAGS+=( --no-substitute )
+fi
+
 if (( $HM_DEBUG )); then
   echo "NIX_FLAGS: ${NIX_FLAGS[@]}"
   echo "HM_FLAGS: ${HM_FLAGS[@]}"
@@ -60,7 +65,7 @@ if (( $HM_DEBUG )); then
   echo "Args: $@"
 fi
 
-if [[ "$operation" = "switch" && ! "${NIX_FLAGS[@]}" =~ "--offline" ]]; then
+if [ "$OFFLINE" = 'n' ]; then
   pushd ./nix/home
   nix run ".#nvfetcher"
   popd

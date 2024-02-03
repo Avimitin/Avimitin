@@ -38,6 +38,7 @@ rec {
     waybarStyle = lib.fromDotfile "waybar/style.css";
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";
     kitty = lib.fromDotfile "kitty/kitty.conf";
+    mimeapps = lib.fromDotfile "mimeapps.list";
   };
 
   programs.wpaperd = {

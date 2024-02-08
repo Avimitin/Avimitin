@@ -60,6 +60,10 @@ if command -q nix
     complete --command nix --condition 'not _nix_accepts_files' --no-files
 
     complete --command nix --arguments '(_nix)'
+
+    alias nd "nix develop"
+    alias nb "nix build -L"
+    alias nr "nix run"
 end
 
 if test -r /usr/lib/locale/locale-archive
@@ -189,10 +193,12 @@ if command -q fzf
 end
 
 # systemd
-alias "systart" "sudo systemctl start"
-alias "systop" "sudo systemctl stop"
-alias "systat" "sudo systemctl status"
-alias "sysres" "sudo systemctl restart"
+alias "skt" "systemctl start"
+alias "skp" "systemctl stop"
+alias "sks" "systemctl status"
+alias "skr" "systemctl restart"
+alias "jkk" "journalctl -k"
+alias "jku" "journalctl -eu"
 
 set -x fish_greeting ""
 

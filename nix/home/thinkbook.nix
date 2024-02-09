@@ -39,6 +39,7 @@ rec {
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";
     kitty = lib.fromDotfile "kitty/kitty.conf";
     mimeapps = lib.fromDotfile "mimeapps.list";
+    sioyek = lib.fromDotfile "sioyek";
   };
 
   programs.wpaperd = {

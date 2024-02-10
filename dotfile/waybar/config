@@ -1,7 +1,8 @@
 {
     "layer": "bottom",
+    "position": "bottom",
     "height": 30,
-    "spacing": 2,
+    "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
     "wlr/workspaces": {
@@ -42,10 +43,10 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "format-wifi": "",
+        "format-wifi": "  {essid}   {bandwidthUpBytes}   {bandwidthDownBytes}",
         "tooltip-format": "{essid}{ifname}",
-        "format-ethernet": "󰈀",
-        "format-linked": "󰈀",
+        "format-ethernet": "󰈀   {ifname}   {bandwidthUpBytes}   {bandwidthDownBytes}",
+        "format-linked": "󰈀   {ifname}   {bandwidthUpBytes}   {bandwidthDownBytes}",
         "format-disconnected": "⚠ Disconnected",
         "format-alt": "{ifname}"
     },

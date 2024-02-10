@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "height": 30,
     "spacing": 2,
     "modules-left": ["hyprland/workspaces"],
@@ -11,11 +11,6 @@
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-            //"1": "",
-            //"2": "",
-            //"3": "",
-            //"4": "",
-            //"5": "",
             "1": "󰲠",
             "2": "󰲢",
             "3": "󰲤",
@@ -27,7 +22,6 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
@@ -37,19 +31,17 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}",
+        "format": "{icon} {capacity} %",
         "tooltip-format": "{capacity} %",
-        "format-charging": " ",
-        "format-plugged": "",
+        "format-charging": "󰂄 {capacity} %",
+        "format-plugged": " {capacity} %",
         "format-alt": "{icon} {time}",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
         "tooltip-format": "{essid}{ifname}",
         "format-ethernet": "󰈀",
@@ -58,10 +50,9 @@
         "format-alt": "{ifname}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "tooltip-format": "󰕾  {volume}%   {format_source}",
-        "format-bluetooth": "󰂱",
+        "format-bluetooth": "󰂱 {volume}%",
         "format-bluetooth-muted": "󰗿",
         "format-muted": "󰝟",
         "format-source": "  {volume}%",

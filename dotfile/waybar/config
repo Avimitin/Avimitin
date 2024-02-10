@@ -43,6 +43,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
+        "interval": 5,
         "format-wifi": "  {essid}   {bandwidthUpBytes}   {bandwidthDownBytes}",
         "tooltip-format": "{essid}{ifname}",
         "format-ethernet": "󰈀   {ifname}   {bandwidthUpBytes}   {bandwidthDownBytes}",

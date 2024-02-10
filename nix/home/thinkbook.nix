@@ -48,7 +48,6 @@ rec {
       default = {
         path = "${home.homeDirectory}/Pictures/Anime";
         duration = "30m";
-        apply-shadow = true;
       };
     };
   };

@@ -1,3 +1,10 @@
+---
+id: notes
+aliases:
+  - rbtree
+tags: []
+---
+
 - Floyds cycle finding algorithm
 
 <!-- tag: #link-list #floyds #cycle #loop #pointer -->
@@ -64,3 +71,7 @@ blocks of the file; for files larger than ten blocks, the
 inode also contains the disk addresses of one or more indirect
 blocks, each of which contains the addresses of more data or
 indirect blocks.
+
+## rbtree
+
+<https://elixir.bootlin.com/linux/latest/source/lib/rbtree.c>

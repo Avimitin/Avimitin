@@ -4,7 +4,7 @@
     "height": 30,
     "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["tray", "pulseaudio", "network", "battery", "clock"],
+    "modules-right": ["tray", "mpris", "pulseaudio", "network", "battery", "clock"],
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -52,9 +52,9 @@
         "format-alt": "{ifname}"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "tooltip-format": "󰕾  {volume}%   {format_source}",
-        "format-bluetooth": "󰂱 {volume}%",
+        "format": "{icon}  {volume}%",
+        "tooltip-format": "󰕾  {volume}%",
+        "format-bluetooth": "󰂱  {volume}%",
         "format-bluetooth-muted": "󰗿",
         "format-muted": "󰝟",
         "format-source": "  {volume}%",
@@ -69,6 +69,17 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "mpris": {
+      "format": "{status_icon}  {dynamic}",
+      "format-paused": "{status_icon}  {dynamic}",
+      "artist-len": 10,
+      "title-len": 40,
+      "status-icons": {
+        "playing": "",
+        "paused": "󰏥",
+        "stop": ""
+      },
     }
 }
 

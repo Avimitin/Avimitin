@@ -44,11 +44,11 @@
     },
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid}   {bandwidthUpBytes}   {bandwidthDownBytes}",
+        "format-wifi": "  {essid}",
         "tooltip-format": "{essid}{ifname}",
-        "format-ethernet": "󰈀   {ifname}   {bandwidthUpBytes}   {bandwidthDownBytes}",
-        "format-linked": "󰈀   {ifname}   {bandwidthUpBytes}   {bandwidthDownBytes}",
-        "format-disconnected": "⚠ Disconnected",
+        "format-ethernet": "󰈀   {ifname}",
+        "format-linked": "󰈀   {ifname}",
+        "format-disconnected": "⚠  Disconnected",
         "format-alt": "{ifname}"
     },
     "pulseaudio": {

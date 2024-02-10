@@ -100,14 +100,6 @@ if command -q git
         alias g lazygit
     end
 
-    function c
-        if test -n "$argv"
-            git commit --signoff -m "$argv"
-        else
-            git commit --signoff --verbose
-        end
-    end
-
     function s
         function print_header
             set_color --bold yellow
@@ -135,8 +127,10 @@ if command -q git
         git stash list
     end
 
+    alias gd "git diff"
     alias co "git checkout"
-    alias gaa "git commit --amend --no-edit --allow-empty"
+    alias gc "git commit"
+    alias gca "git commit --amend --no-edit --allow-empty"
     alias gf "git fetch -p -P --progress --force"
     alias gpp "git pull"
     alias gp "git push"

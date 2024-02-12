@@ -1,16 +1,25 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "bottom",
-    "height": 30,
+    "height": 40,
     "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["tray", "mpris", "pulseaudio", "network", "battery", "clock"],
-    "wlr/workspaces": {
+    "modules-right": ["mpris", "tray", "pulseaudio", "network", "battery", "clock"],
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "on-click": "activate",
-        "format": "{icon}",
+        "window-rewrite-default": "󱂬",
+        "window-rewrite": {
+          "class<firefox>": "",
+          "class<sioyek>": "",
+          "class<kitty>": "",
+          "class<telegram>": "",
+          "class<steam>": "󰓓",
+          "class<thunderbird>": ""
+        },
+        "format": "{icon}  <b>{windows}</b>",
         "format-icons": {
             "1": "󰲠",
             "2": "󰲢",
@@ -35,30 +44,30 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity} %",
-        "tooltip-format": "{capacity} %",
-        "format-charging": "󰂄 {capacity} %",
-        "format-plugged": " {capacity} %",
-        "format-alt": "{icon} {time}",
+        "format": "{icon}",
+        "tooltip-format": "{capacity} %, lefted {time}",
+        "format-charging": "󰂄",
+        "format-plugged": "",
+        "format-alt": "{icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid}",
+        "format-wifi": "",
         "tooltip-format": "{essid}{ifname}",
-        "format-ethernet": "󰈀   {ifname}",
-        "format-linked": "󰈀   {ifname}",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀",
         "format-disconnected": "⚠  Disconnected",
         "format-alt": "{ifname}"
     },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "tooltip-format": "󰕾  {volume}%",
-        "format-bluetooth": "󰂱  {volume}%",
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-bluetooth": "󰂱",
         "format-bluetooth-muted": "󰗿",
         "format-muted": "󰝟",
-        "format-source": "  {volume}%",
-        "format-source-muted": " Muted",
+        "format-source": "",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -79,7 +88,7 @@
         "playing": "",
         "paused": "󰏥",
         "stop": ""
-      },
+      }
     }
 }
 

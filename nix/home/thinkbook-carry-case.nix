@@ -16,7 +16,6 @@
       # Use SFW picture as wallpaper when carry out
       path = "${config.home.homeDirectory}/Pictures/Wallpapers/4K";
       duration = "30m";
-      apply-shadow = true;
     };
   };
 }

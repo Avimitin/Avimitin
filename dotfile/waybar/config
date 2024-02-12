@@ -4,7 +4,7 @@
     "height": 40,
     "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["mpris", "tray", "pulseaudio", "network", "battery", "clock"],
+    "modules-right": ["mpris", "tray", "pulseaudio", "network", "upower", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,

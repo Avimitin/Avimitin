@@ -70,6 +70,7 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#upower,
 #mpd {
     text-shadow: 0px 0px 3px #000;
     margin: 0 0.6rem;

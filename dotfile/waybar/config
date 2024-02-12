@@ -19,7 +19,7 @@
           "class<steam>": "󰓓",
           "class<thunderbird>": ""
         },
-        "format": "<sub>{icon}</sub>   <b>{windows}</b>",
+        "format": "<b>{icon}</b>   <sub>{windows}</sub>",
         "format-icons": {
             "1": "󰲠",
             "2": "󰲢",

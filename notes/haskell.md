@@ -15,7 +15,7 @@ a map can be ordered. If `Map k v` had a type constraint in its data declaration
 the type for `toList` would have to be `toList :: (Ord k) => Map k a -> [(k, a)]`,
 even though the function doesn’t do any comparing of keys by order.
 
-## The functor typeclass
+## The Functor typeclass
 
 How to understand the `fmap` *function* and the `Functor` *typeclass*?
 So first of all, `Functor` is the *typeclass*, the constraint.
@@ -38,3 +38,8 @@ the concrete type `f` at current time is `List`, and type `a` is `Integer`.
 Type `List[Integer]` in this case represents `f a`.
 And if we pass a function like: `\x -> show x`, which returns `String` for
 each element, then the type `List[String]` here represent the type `f b`.
+
+Also worth notice that, typeclass `Functor` wants a type constructor `f`,
+so that it can use it to create concrete type `f a`.
+Unlike normal typeclass `Show`, `Ord`..., when writing instance of
+`Functor`, user doesn't needs to specify a generic concreate type.

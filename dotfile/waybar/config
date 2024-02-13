@@ -20,11 +20,11 @@
           "class<steam>": "󰓓",
           "class<thunderbird>": ""
         },
-        "format": "{icon}  <span font_size='smaller'>{windows}</span>",
+        "format": "{icon}  <span font_size='smaller'>{windows}</span>"
     },
     "tray": {
         "spacing": 15,
-        "icon-size": 20,
+        "icon-size": 20
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -32,7 +32,8 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "upower": {
-      "format": "  {percentage}"
+      "format": "  {percentage}",
+      "tooltip-padding": 16
     },
     "battery": {
         "states": {

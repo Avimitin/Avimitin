@@ -4,7 +4,7 @@
     "height": 40,
     "spacing": 1,
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["mpris", "tray", "pulseaudio", "network", "upower", "clock"],
+    "modules-right": ["mpris", "tray", "upower", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -32,16 +32,16 @@
         }
     },
     "tray": {
-        "spacing": 10,
+        "spacing": 15,
         "icon-size": 15
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M}",
+        "format": "{:%Y-%m-%d %H:%M <b>%a</b>}",
         "format-alt": "{:%Y-%m-%d}"
     },
     "upower": {
-      "format": "  {percentage}",
+      "format": "  {percentage}"
     },
     "battery": {
         "states": {

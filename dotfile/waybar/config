@@ -3,6 +3,7 @@
     "position": "bottom",
     "height": 40,
     "spacing": 1,
+    //"reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["mpris", "tray", "upower", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
@@ -33,7 +34,7 @@
     },
     "tray": {
         "spacing": 15,
-        "icon-size": 15
+        "icon-size": 20,
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

@@ -40,6 +40,9 @@
         "format": "{:%Y-%m-%d %H:%M}",
         "format-alt": "{:%Y-%m-%d}"
     },
+    "upower": {
+      "format": "  {percentage}",
+    },
     "battery": {
         "states": {
             "warning": 30,

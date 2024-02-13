@@ -20,17 +20,7 @@
           "class<steam>": "󰓓",
           "class<thunderbird>": ""
         },
-        "format": "<b>{icon}</b>   <sub>{windows}</sub>",
-        "format-icons": {
-            "1": "󰲠",
-            "2": "󰲢",
-            "3": "󰲤",
-            "4": "󰲦",
-            "5": "󰲨",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
+        "format": "{icon}  <span font_size='smaller'>{windows}</span>",
     },
     "tray": {
         "spacing": 15,
@@ -38,7 +28,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M <b>%a</b>}",
+        "format": "{:%a  <span font_weight='normal'>%Y-%m-%d %H:%M</span>}",
         "format-alt": "{:%Y-%m-%d}"
     },
     "upower": {

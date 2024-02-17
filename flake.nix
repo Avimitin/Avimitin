@@ -11,6 +11,7 @@
     nvim = {
       url = "github:Avimitin/nvim";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
   };
 

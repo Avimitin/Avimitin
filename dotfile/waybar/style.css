@@ -10,8 +10,6 @@
 window#waybar {
     background-color: rgba(20, 20, 20, 0.3);
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 #workspaces * {
@@ -21,7 +19,7 @@ window#waybar {
 #workspaces button {
     margin: 0 1em;
     color: #c8c8c8;
-    text-shadow: @shadow;
+    text-shadow: 0 0 8px @shadow;
 }
 
 #workspaces button:hover,
@@ -29,11 +27,12 @@ window#waybar {
 {
     color: #FFFFFF;
     text-shadow: 0 0 8px #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.urgent {
     background-color: #8d2a10;
-    box-shadow: 0 0 8px @shadow;
+    box-shadow: 0 0 2px @shadow;
     border-radius: 6px;
     margin: 0.5em;
 }

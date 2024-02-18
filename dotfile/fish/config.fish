@@ -107,8 +107,11 @@ if command -q git
             set_color normal
         end
 
-        print_header "Files"
-        git status --short
+        echo
+        print_header "Commits (10)"
+        git --no-pager log -n 10 --graph --abbrev-commit --decorate \
+            --format=format:'%C(dim blue)%h%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset) %C(italic dim white)(%ar)%C(reset)'
+        echo
         echo
 
         print_header "Branches"
@@ -118,25 +121,38 @@ if command -q git
             | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
         echo
 
-        print_header "Commits (5)"
-        git --no-pager log --abbrev-commit -n 5 --format=format:'%C(blue)%h%C(reset) %C(white)%s%C(reset) %C(yellow)[%an]%C(reset) %C(auto)%d%C(reset)'
-        echo
-        echo
-
-        print_header "Stash"
-        git stash list
+        print_header "Files"
+        git status --short
     end
 
+    function gs
+        if test -n "$argv"
+            git show $argv
+        else
+            git show HEAD
+        end
+    end
+
+    alias gb "git branch -v"
+
     alias gd "git diff"
+    alias gdc "git diff --cached"
+
     alias co "git checkout"
+
     alias gc "git commit"
     alias gca "git commit --amend --no-edit --allow-empty"
+
     alias gf "git fetch -p -P --progress --force"
+
     alias gpp "git pull"
     alias gp "git push"
+    alias gpf "git push --force-with-lease"
+
     alias grb "git rebase"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
+
     alias gl "git log --graph --abbrev-commit --decorate \
         --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
@@ -147,12 +163,6 @@ if command -q rsync
     # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
     # [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
     alias rsy "command rsync -azrvhPL"
-end
-
-if command -q rg
-    function rgl
-        rg -C5 --pretty $argv | less -R
-    end
 end
 
 if command -q ssh

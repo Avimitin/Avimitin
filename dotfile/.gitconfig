@@ -1,17 +1,43 @@
+# Basic information
 [user]
     name = Avimitin
     email = dev@avimit.in
     signingkey = 0xFF7883E3BF6835DD
-[commit]
-    gpgSign = true
-    #template = /home/sh1marin/.config/.gittemplate
-    verbose = true
+
 [init]
     defaultBranch = master
+
+[commit]
+    # Sign commit with gpg
+    gpgSign = true
+    # Add diff to interative commit
+    verbose = true
+
 [format]
+    # Add signed off to commit message
     signOff = true
+
 [pull]
+    # Automatically do rebase on git pull conflict
     rebase = true
+
+[column]
+    # Show column instead of paging a list
+    ui = auto
+
+[branch]
+    # Sort by last commit date
+    sort = -committerdate
+
+[rerere]
+    # Remember how I fixed a conflict and re-apply it when possible
+    enable = true
+
+[fetch]
+    # Automatically write commit graph on fetch, which can speed up git log/branch...
+    writeCommitGraph = true
+
+# Diff UI stuffs
 [core]
     pager = delta
 [interactive]

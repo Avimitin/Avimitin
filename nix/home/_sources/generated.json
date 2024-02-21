@@ -1,7 +1,27 @@
 {
+    "neovim-nightly": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "neovim-nightly",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "neovim",
+            "repo": "neovim",
+            "rev": "nightly",
+            "sha256": "sha256-0vixi70e4yS2ZKkAFTnjD3sCKAI5GnRJf5Biz2sNCn0=",
+            "type": "github"
+        },
+        "version": "nightly"
+    },
     "nvim": {
         "cargoLocks": null,
-        "date": "2024-02-17",
+        "date": "2024-02-21",
         "extract": null,
         "name": "nvim",
         "passthru": null,
@@ -13,10 +33,10 @@
             "name": null,
             "owner": "Avimitin",
             "repo": "nvim",
-            "rev": "82e09ea94818dff2b64b03f2f6efbb6e6f5c931d",
-            "sha256": "sha256-RRvtBmmUqb8ZBur+1AJNfOD81XMsPnDbppc5CxIhfaI=",
+            "rev": "3d03a45096c854fd470097db50072480ebfdd025",
+            "sha256": "sha256-cOkqI/kf8LixZjkH1rSQw17sJJZriufMHX8nxXbhw2M=",
             "type": "github"
         },
-        "version": "82e09ea94818dff2b64b03f2f6efbb6e6f5c931d"
+        "version": "3d03a45096c854fd470097db50072480ebfdd025"
     }
 }

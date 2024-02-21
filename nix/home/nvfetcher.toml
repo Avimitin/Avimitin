@@ -3,3 +3,10 @@
 src.git = "git@github.com:Avimitin/nvim.git"
 # How to fetch source
 fetch.github = "Avimitin/nvim"
+
+[neovim-nightly]
+# How to check update
+src.github_tag = "neovim/neovim"
+src.include_regex = "^nightly$"
+# How to fetch source
+fetch.github = "neovim/neovim"

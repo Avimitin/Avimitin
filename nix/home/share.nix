@@ -72,14 +72,14 @@ in
     let
       tsLoader = pkgs.generate-nvim-treesitter-parsers [
         { name = "bash"; hash = "sha256-LXKyqGeKg3OJHZ5666m8xnMHdqcdybZ3BRXKA3Fyh6o="; }
-        { name = "c"; hash = "sha256-BmDb4PVpEafmRmmF0pPrvXQypn7FOt3hAulD0R59FWY="; }
-        { name = "cpp"; hash = "sha256-C95+PpAwRmp4GGHHko96qXoJl4y+pLPhhAa1vyIDt0A="; }
+        { name = "c"; hash = "sha256-B8eRWkZKhg0ZqIfQrk6HC1KjCZQW3i7TwxUSYdAeZ5U="; }
+        { name = "cpp"; hash = "sha256-FqaHzO/Sjjs3sdd2rlnFqVLbg+lfdz6n6CzL0//5wrc="; }
         { name = "css"; hash = "sha256-wu+mjyBNvIgZAEL36CqXQntbGq9qizQUzhzb86bKSU8="; }
         { name = "diff"; hash = "sha256-0DMJCM0ps+oDyz4IzOPuI92lzDQMaq4trGos16WJQBc="; }
         { name = "firrtl"; hash = "sha256-X//iBrCi4sYgqNubUrnXCRoKBOUMsgS4u9yht7ioucA="; }
         { name = "gitcommit"; hash = "sha256-rqNwsqyEHchldNbs8kUF4zDr1pB8qrSMYDlAvQrysFs="; }
         { name = "haskell"; hash = "sha256-7rbLamrUFPgRtANZMNxF99bC/n3Vy5Bl+rOIcInsN8o="; }
-        { name = "javascript"; hash = "sha256-N8BRupggd6BWFXyTTP7mL56Iuy40GsQHqs/b6Pd9Qpk="; }
+        { name = "javascript"; hash = "sha256-TKy2nWwIOEX712UnBJoV6nO03Esac6hmhGLh/o4+Hs4="; }
         { name = "typescript"; hash = "sha256-KqA7S908lydGdXJKMvhaHptCTky7fhztL+wTFe53PBA="; srcRoot = "typescript"; }
         { name = "tsx"; hash = "sha256-KqA7S908lydGdXJKMvhaHptCTky7fhztL+wTFe53PBA="; srcRoot = "tsx"; }
         { name = "llvm"; hash = "sha256-c63jN6pyIssjthp+3f5pYWMwUq+usjhlP2lF/zVNdc8="; }
@@ -88,19 +88,19 @@ in
         { name = "regex"; hash = "sha256-4NHC4z07lBOhmBABNJqpBYds3P6v1mAY9/i0+MuKeuc="; }
         { name = "ruby"; hash = "sha256-1BLQUVzL1aa09B5+moDBZPywidOUlc7LCj+dnvTF0BU="; }
         { name = "python"; hash = "sha256-Dc+H+6UT7uyxglRgIFMQwfVjmgBUCFOtlw5hWg6rVRw="; }
-        { name = "rust"; hash = "sha256-Kp2419Fg1wVo/7paaZgST5NSjiuZphzvTim2sF55nA4="; }
+        { name = "rust"; hash = "sha256-2SFGGNg5xwlP3WIAJy5OKu8LhgPDn1A3EqoUWVifqwY="; }
         { name = "proto"; hash = "sha256-eDnzT35wGxFzhcvy61d+1VG8ObB999mcakG3NNlrcck="; }
         { name = "scala"; hash = "sha256-YtqWs2koZbYs0EGm4/Sk2WeON/NManu5OBmVihTU0to="; }
         { name = "nix"; hash = "sha256-U83d361iH3HTqh4ZMWovYE+WOwPLKOi28/aFiG3Olkg="; }
-        { name = "vimdoc"; hash = "sha256-KbZwevfj0OahCrsUcOvJ1ArD41Q1DOao4tSq2ukgQNo="; }
+        { name = "vimdoc"; hash = "sha256-GMRf+kVVozrP2OheRek0cfx2+vmecAVRRXsgR14at8k="; }
         {
           name = "markdown";
-          hash = "sha256-ohsWstf+12c9DtRUZPQDa1PsihFSw4x/7t3zcSU60YA=";
+          hash = "sha256-WGDm8DtLCHV72eVfXorzzprENBQxQ0csPAukN1z/8yk=";
           srcRoot = "tree-sitter-markdown";
         }
         {
           name = "markdown_inline";
-          hash = "sha256-ohsWstf+12c9DtRUZPQDa1PsihFSw4x/7t3zcSU60YA=";
+          hash = "sha256-WGDm8DtLCHV72eVfXorzzprENBQxQ0csPAukN1z/8yk=";
           srcRoot = "tree-sitter-markdown-inline";
         }
         {

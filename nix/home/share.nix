@@ -42,6 +42,7 @@ in
     clang-tools # Contains clangd
     lua-language-server # Lua LSP
     stylua # Lua formatter
+    solargraph # Ruby language server
   ];
 
   nix.package = pkgs.nix;

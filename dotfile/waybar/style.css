@@ -4,7 +4,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Ubuntu Nerd Font Propo, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
     font-weight: 900;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 window#waybar {
@@ -32,7 +32,7 @@ window#waybar {
 
 #workspaces button.urgent {
     background-color: #8d2a10;
-    box-shadow: 0 0 2px @shadow;
+    box-shadow: 0 0 1px @shadow;
     border-radius: 6px;
     margin: 0.5em;
 }

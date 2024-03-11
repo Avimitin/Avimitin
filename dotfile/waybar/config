@@ -5,6 +5,7 @@
     "spacing": 1,
     //"reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces"],
+    "modules-center": [ "hyprland/window" ],
     "modules-right": ["mpris", "tray", "upower", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -21,7 +22,11 @@
           "class<cider>": "󰎆",
           "class<thunderbird>": ""
         },
-        "format": "{icon}  <span font_size='smaller'>{windows}</span>"
+        "format": "{icon}  {windows}"
+    },
+    "hyprland/window": {
+      "separate-outputs": true,
+      "format": "{class} - {title}"
     },
     "tray": {
         "spacing": 15,

@@ -1,10 +1,16 @@
 @define-color shadow rgba(0, 0, 0, 0.4);
+@define-color grey #c8c8c8;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Ubuntu Nerd Font Propo, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
     font-weight: 900;
     font-size: 16px;
+}
+
+#window {
+    color: @grey;
+    text-shadow: 0 0 8px @shadow;
 }
 
 window#waybar {
@@ -18,7 +24,7 @@ window#waybar {
 
 #workspaces button {
     margin: 0 1em;
-    color: #c8c8c8;
+    color: @grey;
     text-shadow: 0 0 8px @shadow;
 }
 

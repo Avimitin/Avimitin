@@ -21,7 +21,7 @@
     },
     "nvim": {
         "cargoLocks": null,
-        "date": "2024-03-08",
+        "date": "2024-03-13",
         "extract": null,
         "name": "nvim",
         "passthru": null,
@@ -33,10 +33,10 @@
             "name": null,
             "owner": "Avimitin",
             "repo": "nvim",
-            "rev": "c813ee8a113f2d2cfd8f5b9b7a4ad5fa30a388f5",
-            "sha256": "sha256-ac5N7t4YiaYspLraY3y9Eo3V3Ju2f+0f0qSvzrkoe2U=",
+            "rev": "520e1b986b89d548574b57571cf72f1505501bd6",
+            "sha256": "sha256-/cv5JlZ+hbEow2I8ZrxQX48oclkpdxUVovvxC+JbgU4=",
             "type": "github"
         },
-        "version": "c813ee8a113f2d2cfd8f5b9b7a4ad5fa30a388f5"
+        "version": "520e1b986b89d548574b57571cf72f1505501bd6"
     }
 }

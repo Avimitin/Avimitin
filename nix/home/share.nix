@@ -35,8 +35,10 @@ in
     nil # Nix language server
     pyright # Python language server
     black # Python formatter
+    ghc # I need ghci
     haskellPackages.fourmolu # Haskell formatter
-    nodePackages.typescript-language-server # For frontend development
+    # Use the project devShell provided one
+    # nodePackages.typescript-language-server # For frontend development
     prettierd # js/ts formatter
     metals # Scala LSP
     clang-tools # Contains clangd

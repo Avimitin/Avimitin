@@ -85,7 +85,8 @@
       "format": "{status_icon}  {dynamic}",
       "format-paused": "{status_icon}  {dynamic}",
       "artist-len": 10,
-      "title-len": 40,
+      "title-len": 30,
+      "dynamic-order": [ "artist", "title" ],
       "status-icons": {
         "playing": "",
         "paused": "󰏥",

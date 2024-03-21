@@ -56,6 +56,7 @@ done
 if [ "$OFFLINE" = 'y' ]; then
   NIX_FLAGS+=( --offline )
   HM_FLAGS+=( --no-substitute )
+  echo "Running in offline mode"
 fi
 
 if (( $HM_DEBUG )); then
@@ -67,7 +68,7 @@ fi
 
 if [ "$OFFLINE" = 'n' ]; then
   pushd ./nix/home
-  nix run ".#nvfetcher"
+  nix "${NIX_FLAGS[@]}" run ".#nvfetcher"
   popd
 fi
 

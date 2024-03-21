@@ -14,7 +14,7 @@
             "owner": "neovim",
             "repo": "neovim",
             "rev": "nightly",
-            "sha256": "sha256-LymCZqLO+aJ3Xf5QEwhSfizH1OxoKmvQZluaFomTWRQ=",
+            "sha256": "sha256-I/dYjIzi+aCDHn6pWx5yVrifrOLbAeazFBMXrQlTRs8=",
             "type": "github"
         },
         "version": "nightly"

@@ -17,6 +17,18 @@ rec {
     slurp
   ];
 
+  xdg.dataFile = {
+    # Rime will compile stuff into this directory, we can't soft link it
+    # rime = {
+    #   source = "${../../fcitx/rime}";
+    #   target = "~/.local/share/fcitx5/rime";
+    # };
+    theme = {
+      source = "${../../fcitx/theme}";
+      target = "fcitx5/themes/default";
+    };
+  };
+
   xdg.configFile = {
     dunst = lib.fromDotfile "dunst/dunstrc";
     rofi = lib.fromDotfile "rofi";

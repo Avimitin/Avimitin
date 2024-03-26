@@ -14,7 +14,7 @@
   programs.wpaperd.settings = lib.mkForce {
     default = {
       # Use SFW picture as wallpaper when carry out
-      path = "${config.home.homeDirectory}/Pictures/Wallpapers/4K";
+      path = "${config.home.homeDirectory}/Pictures/Wallpapers";
       duration = "30m";
     };
   };

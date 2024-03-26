@@ -55,7 +55,7 @@ rec {
     enable = true;
     settings = {
       default = {
-        path = "${home.homeDirectory}/Pictures/Anime";
+        path = "${home.homeDirectory}/Pictures/Wallpapers";
         duration = "30m";
       };
     };

@@ -1,4 +1,4 @@
-{ runCommand, writeShellScriptBin, writeShellApplication, grim, slurp, callPackage, isCarryOut ? false }:
+{ runCommand, writeShellScriptBin, writeShellApplication, grim, slurp, callPackage, jq, isCarryOut ? false }:
 let
   screenshotScript = writeShellApplication {
     name = "wayland-screenshoter";
@@ -13,6 +13,20 @@ let
       grim -g "$(slurp)" -t png "$file"
       wl-copy < "$file"
       [[ -n "''${DELETE_SCREENSHOT:-}" ]] && rm "$file"
+    '';
+  };
+  rotateScript = writeShellApplication {
+    name = "rotate-all-screen";
+    runtimeInputs = [ jq ];
+    text = ''
+      rotated=$(hyprctl monitors -j | jq -r 'map(.transform != 0)|reduce .[] as $item (true; . and $item)')
+      if [[ "$rotated" = "true" ]]; then
+        hyprctl keyword input:touchdevice:transform 0
+        hyprctl keyword monitor "eDP-1,preferred,auto,1,transform,0"
+      else
+        hyprctl keyword input:touchdevice:transform 1
+        hyprctl keyword monitor "eDP-1,preferred,auto,1,transform,1"
+      fi
     '';
   };
   screenctl = writeShellScriptBin "hyprland-all-screen-ctl" ''
@@ -49,5 +63,6 @@ runCommand "hyprland-conf-generator" { } ''
   substitute ${../../dotfile/hypr/hyprland.conf} $out/hyprland.conf \
     --subst-var-by screenshotScript ${screenshotScript}/bin/wayland-screenshoter \
     --subst-var-by screenlockScript ${screenlock}/bin/swaylock-with-random-pic \
+    --subst-var-by rotateScript ${rotateScript}/bin/rotate-all-screen \
     --subst-var-by extraConf ${extraConf}
 ''

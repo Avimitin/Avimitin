@@ -36,7 +36,7 @@ let
           resume '${screenctl}/bin/hyprland-all-screen-ctl on'
     swaylock --ignore-empty-password \
       --show-failed-attempts \
-      --image $(find ~/Pictures/Anime -type f | shuf -n1) \
+      --image $(find ~/Pictures/Wallpapers -type f | shuf -n1) \
       --show-keyboard-layout \
       --indicator-caps-lock
     systemctl --user stop swayidle

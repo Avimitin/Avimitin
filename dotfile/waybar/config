@@ -22,7 +22,7 @@
           "class<cider>": "󰎆",
           "class<thunderbird>": ""
         },
-        "format": "{icon}  {windows}"
+        "format": "{icon}"
     },
     "hyprland/window": {
       "separate-outputs": true,

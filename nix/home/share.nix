@@ -88,6 +88,7 @@ in
           { name = "javascript"; hash = "sha256-gRamXzcYg0lu+IBxwIk4dY+IW/wi4/S97G89MuuA6bg="; }
           { name = "typescript"; hash = "sha256-KqA7S908lydGdXJKMvhaHptCTky7fhztL+wTFe53PBA="; srcRoot = "typescript"; }
           { name = "tsx"; hash = "sha256-KqA7S908lydGdXJKMvhaHptCTky7fhztL+wTFe53PBA="; srcRoot = "tsx"; }
+          { name = "typst"; hash = "sha256-jObosb5KEXl4lqYVYb/9+6xtD6zmDsB2xQWbQvetM6o="; }
           { name = "llvm"; hash = "sha256-c63jN6pyIssjthp+3f5pYWMwUq+usjhlP2lF/zVNdc8="; }
           { name = "lua"; hash = "sha256-Ir2J5MnWIlhyS3A5hlr+GkgIeRTI9zbLiEt9xRC58NQ="; }
           { name = "org"; hash = "sha256-N/zlpv4oXVfjk+a/7vM0nAPsCCBMVvWN3oavPbPmKwk="; }

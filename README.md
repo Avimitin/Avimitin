@@ -4,7 +4,7 @@
 
 ## ***Skills***
 
-* Familiar with **Scala**, **Rust**, **TypeScript**, **React**, **Ruby**, **C++ (17)**, **Nix**, **OCaml** and **Lua**
+* Familiar with **YAML (GitHub Action Engineer)**, **Scala**, **Rust**, **TypeScript**, **React**, **Ruby**, **C++ (17)**, **Nix**, **OCaml** and **Lua**
 
 <details>
     <summary markdown="span">Click to view</summary>

@@ -9,19 +9,19 @@
       repo = "neovim";
       rev = "nightly";
       fetchSubmodules = false;
-      sha256 = "sha256-I/dYjIzi+aCDHn6pWx5yVrifrOLbAeazFBMXrQlTRs8=";
+      sha256 = "sha256-LymCZqLO+aJ3Xf5QEwhSfizH1OxoKmvQZluaFomTWRQ=";
     };
   };
   nvim = {
     pname = "nvim";
-    version = "1f649359a50621427189bd531029ca6e068de1d3";
+    version = "427bf4ef02808f81749b0ba87cf629b4e8c2ec6a";
     src = fetchFromGitHub {
       owner = "Avimitin";
       repo = "nvim";
-      rev = "1f649359a50621427189bd531029ca6e068de1d3";
+      rev = "427bf4ef02808f81749b0ba87cf629b4e8c2ec6a";
       fetchSubmodules = false;
-      sha256 = "sha256-iX0yHvPMxBmtdMtw+STksxbB8uvy/zO3FCN7yiakWhM=";
+      sha256 = "sha256-sGwLd9/wBU1BL7Y3xZTACfJqhsbVJV5Z3B7ztB3o1PQ=";
     };
-    date = "2024-03-30";
+    date = "2024-04-05";
   };
 }

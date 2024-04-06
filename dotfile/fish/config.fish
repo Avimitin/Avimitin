@@ -164,7 +164,8 @@ if command -q rsync
     # Transfer file in [a]rchive (to preserve attributes) and
     # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
     # [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
-    alias rsy "command rsync -azrvhPL"
+    # Skip based-on [c]hecksum instead of mod-time & size.
+    alias rsy "command rsync -aczrvhPL"
 end
 
 if command -q ssh

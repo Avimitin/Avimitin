@@ -78,6 +78,7 @@ in
       let
         tsLoader = pkgs.generate-nvim-treesitter-parsers [
           { name = "bash"; hash = "sha256-LXKyqGeKg3OJHZ5666m8xnMHdqcdybZ3BRXKA3Fyh6o="; }
+          { name = "beancount"; hash = "sha256-TSZDrVC+2L40shcFug99Bor+m0BGKzqmlirP6efUZBA="; }
           { name = "c"; hash = "sha256-7dgfulzV7tuD91IdR7iVIYn8DTXj8VSjnZOXJdVbevQ="; }
           { name = "cpp"; hash = "sha256-FqaHzO/Sjjs3sdd2rlnFqVLbg+lfdz6n6CzL0//5wrc="; }
           { name = "css"; hash = "sha256-wu+mjyBNvIgZAEL36CqXQntbGq9qizQUzhzb86bKSU8="; }

@@ -9,7 +9,7 @@
       repo = "neovim";
       rev = "nightly";
       fetchSubmodules = false;
-      sha256 = "sha256-LymCZqLO+aJ3Xf5QEwhSfizH1OxoKmvQZluaFomTWRQ=";
+      sha256 = "sha256-0vixi70e4yS2ZKkAFTnjD3sCKAI5GnRJf5Biz2sNCn0=";
     };
   };
   nvim = {

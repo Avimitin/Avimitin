@@ -223,10 +223,6 @@ in
       character = {
         success_symbol = "[➜](blue)";
         error_symbol = "[➜](bold red)";
-        vimcmd_symbol = "[☉](green)";
-        vimcmd_replace_one_symbol = "[⟁](purple)";
-        vimcmd_replace_symbol = "[⟁](bold purple)";
-        vimcmd_visual_symbol = "[⚆](green)";
       };
       format =
         let
@@ -249,7 +245,7 @@ in
       git_branch.format = "[\\($branch(:$remote_branch)\\)]($style) ";
       hostname = {
         ssh_symbol = "󰌘";
-        format = "[$ssh_symbol]($style) ";
+        format = "[$ssh_symbol]($style) [$hostname](bold blue) ";
       };
     };
   };

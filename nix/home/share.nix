@@ -245,7 +245,7 @@ in
       git_branch.format = "[\\($branch(:$remote_branch)\\)]($style) ";
       hostname = {
         ssh_symbol = "󰌘";
-        format = "[$ssh_symbol]($style) [$hostname](bold blue) ";
+        format = "\\([$ssh_symbol]($style) [$hostname](bold blue)\\) ";
       };
     };
   };

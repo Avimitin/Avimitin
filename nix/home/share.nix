@@ -124,42 +124,10 @@ in
         target = "nvim/site/plugin/treesitter-parsers.lua";
       };
 
-    tmux-thumbs =
-      let
-        thumbs = pkgs.rustPlatform.buildRustPackage {
-          pname = "tmux-thumbs";
-          version = "v0.8.0-ae91d5f";
-          src = pkgs.fetchFromGitHub {
-            owner = "Avimitin";
-            repo = "tmux-thumbs";
-            rev = "f690cde956c9d6b7837c5fd121b2a859b72fa7c7";
-            hash = "sha256-v6Rql+XjeCTq9rAHGRN3eaXWYnavzAXUrghK4j5tZx8=";
-          };
-
-          cargoHash = "sha256-ALNhEjjICxxose7VROEt+ABt3R+EXjHm2bJjy3DPXKE=";
-
-          postInstall = ''
-            mkdir -p $out/lib
-
-            tee -a $out/lib/tmux-thumbs-wrapper.sh << EOF
-            #!/bin/bash
-            ${placeholder "out"}/bin/tmux-thumbs --thumbs-path ${placeholder "out"}/bin/thumbs || true
-            EOF
-
-            tee -a $out/lib/tmux-thumbs.tmux <<EOF
-            #!/bin/bash
-            tmux set-option -ag command-alias "thumbs-pick=run-shell -b ${placeholder "out"}/lib/tmux-thumbs-wrapper.sh"
-            tmux bind-key "space" thumbs-pick
-            EOF
-
-            chmod +x $out/lib/tmux-thumbs*
-          '';
-        };
-      in
-      {
-        source = "${thumbs}/lib/tmux-thumbs.tmux";
-        target = "tmux/plugins/tmux-thumbs/tmux-thumbs.tmux";
-      };
+    tmux-thumbs = {
+      source = "${pkgs.tmux-fingers}/${pkgs.tmux-fingers.tmux-script}";
+      target = "tmux/plugins/tmux-fingers/tmux-fingers.tmux";
+    };
   };
 
   programs.lsd = {

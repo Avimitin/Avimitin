@@ -169,6 +169,11 @@ if command -q ssh
     # TODO: After ssh-agent is up, run ssh-add <private-key> to store it into agent
 end
 
+if command -q tmux
+    alias tl "tmux ls"
+    alias ta "tmux attach-session -t"
+end
+
 if command -q neovide
     alias nvi neovide
 end

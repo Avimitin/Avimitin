@@ -66,10 +66,4 @@ if (( $HM_DEBUG )); then
   echo "Args: $@"
 fi
 
-if [ "$OFFLINE" = 'n' ]; then
-  pushd ./nix/home
-  nix "${NIX_FLAGS[@]}" run ".#nvfetcher"
-  popd
-fi
-
 nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" $operation $@

@@ -160,13 +160,13 @@ in
       format =
         let
           components = [
-            "$hostname"
             "$directory"
             "$nix_shell"
             "$git_branch"
             "$custom"
             "$sudo"
             "$cmd_duration"
+            "$hostname"
             "$line_break"
             "$jobs"
             "$character"
@@ -178,7 +178,7 @@ in
       git_branch.format = "[\\($branch(:$remote_branch)\\)]($style) ";
       hostname = {
         ssh_symbol = "󰌘";
-        format = "\\([$ssh_symbol]($style) [$hostname](bold blue)\\) ";
+        format = "in [$ssh_symbol]($style) [$hostname](bright-green)";
       };
     };
   };

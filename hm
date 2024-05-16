@@ -2,6 +2,7 @@
 
 NIX_FLAGS=(
   --extra-experimental-features "flakes nix-command"
+  --no-warn-dirty
 )
 HM_FLAGS=(
   --extra-experimental-features "flakes nix-command"

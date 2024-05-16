@@ -113,11 +113,24 @@ in
   programs.lazygit = {
     enable = true;
     settings = {
-      gui.theme = {
-        activeBorderColor = [ "yellow" "bold" ];
-        inactiveBorderColor = [ "white" ];
-        selectedLineBgColor = [ "reverse" ];
-        selectedRangeBgColor = [ "reverse" ];
+      customCommands = [
+        {
+          key = "F";
+          context = "global";
+          command = "git fetch --all --prune --prune-tags --force";
+          loadingText = "Force fetching all branches.";
+        }
+      ];
+      gui = {
+        showRamdomTip = false;
+        showBottomLine = false;
+        theme = {
+          activeBorderColor = [ "yellow" "bold" ];
+          inactiveBorderColor = [ "white" ];
+          selectedLineBgColor = [ "reverse" ];
+          selectedRangeBgColor = [ "reverse" ];
+        };
+        nerdFontsVersion = "3";
       };
       git = {
         commit = {
@@ -128,6 +141,10 @@ in
           colorArgs = "always";
           pager = "delta --dark --paging=never";
         };
+        log = {
+          showGraph = "when-maximised";
+        };
+        notARepository = "skip";
       };
     };
   };

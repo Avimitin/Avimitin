@@ -1,5 +1,5 @@
 @define-color shadow rgba(0, 0, 0, 0.4);
-@define-color grey #c8c8c8;
+@define-color grey #a4a4a4;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -23,9 +23,14 @@ window#waybar {
 }
 
 #workspaces button {
-    margin: 0 1em;
+    margin: 0 -0.5em;
     color: @grey;
     text-shadow: 0 0 8px @shadow;
+}
+
+#workspaces button.focused {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px #FFFFFF;
 }
 
 #workspaces button:hover,

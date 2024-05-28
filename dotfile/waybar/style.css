@@ -18,27 +18,23 @@ window#waybar {
     color: #ffffff;
 }
 
-#workspaces * {
-    font-weight: 800;
+#workspaces {
+    padding: 0 1.5em;
 }
 
 #workspaces button {
-    margin: 0 -0.5em;
+    font-weight: 800;
+    margin: 0 -0.3em;
     color: @grey;
     text-shadow: 0 0 8px @shadow;
 }
 
-#workspaces button.focused {
-    color: #FFFFFF;
-    text-shadow: 0 0 8px #FFFFFF;
-}
-
+#workspaces button.focused,
 #workspaces button:hover,
 #workspaces button.active
 {
     color: #FFFFFF;
     text-shadow: 0 0 8px #FFFFFF;
-    background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.urgent {

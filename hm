@@ -58,6 +58,8 @@ if [ "$OFFLINE" = 'y' ]; then
   NIX_FLAGS+=( --offline )
   HM_FLAGS+=( --no-substitute )
   echo "Running in offline mode"
+else
+  nix flake update
 fi
 
 if (( $HM_DEBUG )); then
@@ -67,4 +69,4 @@ if (( $HM_DEBUG )); then
   echo "Args: $@"
 fi
 
-nix "${NIX_FLAGS[@]}" run .#home-manager -- "${HM_FLAGS[@]}" $operation $@
+nix "${NIX_FLAGS[@]}" run '.#home-manager' -- "${HM_FLAGS[@]}" $operation $@

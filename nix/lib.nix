@@ -54,7 +54,7 @@
   # Usage:
   #
   # ```nix
-  # newFile = substituted ./path.conf { "FOO" = "bar"; }
+  # newFile = substituted { "FOO" = "bar"; } ./path.conf 
   # ```
   #
   substituted = with builtins;

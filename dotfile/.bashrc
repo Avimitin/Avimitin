@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [[ -r @BASH_COMPLETION@ ]]; then
+    . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
+fi
+
 alias v='bat'
 alias vi="nvim"
 alias ll='lsd --long'

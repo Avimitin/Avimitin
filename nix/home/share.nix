@@ -12,7 +12,10 @@ in
   news.display = "silent";
 
   home.file = {
-    bash = lib.fromDotfile ".bashrc";
+    bash = {
+      source = lib.substituted { BASH_COMPLETION = pkgs.bash-completion; } ../../dotfile/.bashrc;
+      target = ".bashrc";
+    };
     git = lib.fromDotfile ".gitconfig";
     tmux = lib.fromDotfile ".tmux.conf";
   };

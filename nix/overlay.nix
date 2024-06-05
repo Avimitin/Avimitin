@@ -37,6 +37,4 @@ final: prev: {
       chmod +x $out/${passthru.tmux-script}
     '';
   };
-
-  veridian = final.callPackage ./pkgs/veridian.nix { };
 }

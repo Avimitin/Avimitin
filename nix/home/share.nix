@@ -47,7 +47,7 @@ in
     # nodePackages.typescript-language-server # For frontend development
     prettierd # js/ts formatter
     metals # Scala LSP
-    clang-tools # Contains clangd
+    ccls # c/cpp LSP
     lua-language-server # Lua LSP
     stylua # Lua formatter
     solargraph # Ruby language server

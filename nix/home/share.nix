@@ -16,7 +16,6 @@ in
       source = lib.substituted
         {
           BASH_COMPLETION = pkgs.bash-completion;
-          BLESH = pkgs.blesh;
         } ../../dotfile/.bashrc;
       target = ".bashrc";
     };

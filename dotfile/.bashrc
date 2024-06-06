@@ -35,12 +35,6 @@ if [[ -r "@BASH_COMPLETION@" ]]; then
     . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
 fi
 
-if [[ -r "@BLESH@" ]]; then
-    . @BLESH@/share/blesh/ble.sh
-
-    bleopt prompt_ps1_final='$(starship module character)'
-fi
-
 alias v='bat'
 alias vi="nvim"
 alias ll='lsd --long'

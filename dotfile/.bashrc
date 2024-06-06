@@ -5,8 +5,40 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ -r @BASH_COMPLETION@ ]]; then
+# Allow using ncurse as askpass
+export GPG_TTY=$(tty)
+
+# Set fzf default theme
+export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
+
+# manually setting locale archive to fix programs from nixpkgs doesn't correctly use locale
+# archive in glibc issues.
+if [[ -r /usr/lib/locale/locale-archive ]]; then
+    export LOCALE_ARCHIVE='/usr/lib/locale/locale-archive'
+fi
+
+# Set xdg dir
+export XDG_CONFIG_HOME="$HOME/.config/"
+export XDG_CACHE_HOME="$HOME/.cache/"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export EDITOR='nvim'
+export VISUAL="$EDITOR "
+export SYSTEMD_EDITOR="$EDITOR"
+export PAGER='less -R'
+export MANPAGER='nvim +Man!'
+
+eval "$(zoxide init bash)"
+eval "$(starship init bash)"
+
+if [[ -r "@BASH_COMPLETION@" ]]; then
     . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
+fi
+
+if [[ -r "@BLESH@" ]]; then
+    . @BLESH@/share/blesh/ble.sh
+
+    bleopt prompt_ps1_final='$(starship module character)'
 fi
 
 alias v='bat'
@@ -14,9 +46,6 @@ alias vi="nvim"
 alias ll='lsd --long'
 alias lg='lazygit'
 alias rm='rm -i'
-
-eval "$(zoxide init bash)"
-eval "$(starship init bash)"
 
 function gb() {
   local _green_ref="%(color:ul bold green)%(refname:short)%(color:reset)"
@@ -45,26 +74,3 @@ alias ssh="TERM=xterm-256color exec ssh"
 
 alias tl="tmux ls"
 alias ta="tmux attach-session -t"
-
-# Allow using ncurse as askpass
-export GPG_TTY=$(tty)
-
-# Set fzf default theme
-export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
-
-# manually setting locale archive to fix programs from nixpkgs doesn't correctly use locale
-# archive in glibc issues.
-if [[ -r /usr/lib/locale/locale-archive ]]; then
-    export LOCALE_ARCHIVE='/usr/lib/locale/locale-archive'
-fi
-
-# Set xdg dir
-export XDG_CONFIG_HOME="$HOME/.config/"
-export XDG_CACHE_HOME="$HOME/.cache/"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-export EDITOR='nvim'
-export VISUAL="$EDITOR "
-export SYSTEMD_EDITOR="$EDITOR"
-export PAGER='less -R'
-export MANPAGER='nvim +Man!'

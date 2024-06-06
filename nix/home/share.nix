@@ -13,7 +13,11 @@ in
 
   home.file = {
     bash = {
-      source = lib.substituted { BASH_COMPLETION = pkgs.bash-completion; } ../../dotfile/.bashrc;
+      source = lib.substituted
+        {
+          BASH_COMPLETION = pkgs.bash-completion;
+          BLESH = pkgs.blesh;
+        } ../../dotfile/.bashrc;
       target = ".bashrc";
     };
     git = lib.fromDotfile ".gitconfig";

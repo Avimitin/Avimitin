@@ -61,10 +61,10 @@ alias gra="git rebase --abort"
 # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
 # [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
 # Skip based-on [c]hecksum instead of mod-time & size.
-alias rsy="command rsync -aczrvhPL"
+alias rsynca="command rsync -aczrvhPL"
 
 # this fix tmux color
-alias ssh="TERM=xterm-256color exec ssh"
+alias ssh="TERM=xterm-256color command ssh"
 
 alias tl="tmux ls"
 alias ta="tmux attach-session -t"

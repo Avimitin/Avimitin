@@ -1,0 +1,3 @@
+set show-all-if-ambiguous on
+set page-completions off
+set visible-stats on

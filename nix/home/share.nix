@@ -21,19 +21,18 @@ in
     };
     git = lib.fromDotfile ".gitconfig";
     tmux = lib.fromDotfile ".tmux.conf";
+    inputrc = lib.fromDotfile ".inputrc";
   };
 
   # Here are a list of package that doesn't need configuration or configuration are handle manunally
   home.packages = with pkgs; [
     # Misc shell tools
     delta # Beautiful git diff
-    direnv # Shell hook for nix flake used only
     neovim-nightly # vim alternative
     bat # cat alternative
     fd # find alternative
     ripgrep # grep alternative
     zoxide # cd alternative
-    broot # fuzzy search based file manager
     gh # github cli
 
     # Development
@@ -43,9 +42,9 @@ in
     black # Python formatter
     ghc # I need ghci
     haskellPackages.fourmolu # Haskell formatter
-    # Use the project devShell provided one
-    # nodePackages.typescript-language-server # For frontend development
-    prettierd # js/ts formatter
+    haskellPackages.haskell-language-server # Haskell LSP
+    # nodePackages.typescript-language-server # Long time no frontend now
+    prettierd # json formatter
     metals # Scala LSP
     ccls # c/cpp LSP
     lua-language-server # Lua LSP
@@ -61,8 +60,6 @@ in
   };
 
   xdg.configFile = {
-    direnv = lib.fromDotfile "direnv/direnvrc";
-
     fishConf = lib.fromDotfile "fish/config.fish";
     fishAutoPair = lib.fetchFishPlugin {
       owner = "jorgebucaran";

@@ -15,3 +15,14 @@ img {
   max-height: 300px;
   max-width: 300px;
 }
+
+@media only screen and (max-width: 1024px) {
+  body {
+    max-width: 512px;
+  }
+
+  img {
+    max-height: 150px;
+    max-width: 150px;
+  }
+}

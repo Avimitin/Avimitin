@@ -81,7 +81,7 @@ Here are a few of my favorites, and I'd love to hear if you enjoy them too:
 ## Self promotion
 
 - Blog: <https://blog.sh1mar.in>
-- Fediverse: <https://dabr.ca/sh1marin>
+- Fediverse: <https://dabr.ca/users/sh1marin>
 - Contact: [`dev@avimit.in`](mailto:dev@avimit.in) and [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](https://github.com/Avimitin.gpg)
 
 	</body>

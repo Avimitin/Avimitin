@@ -32,7 +32,7 @@
 
 Welcome! This is <https://sh1mar.in>.
 
-The name is inspired by my favorite anime character, Shima Rin from [Laid-Back Camp](https://en.wikipedia.org/wiki/Laid-Back_Camp),
+The name is inspired by my favorite anime character, 志摩 リン (Shima Rin) from [Laid-Back Camp](https://en.wikipedia.org/wiki/Laid-Back_Camp),
 with the letter 'i' replaced with '1'.
 
 ## Who am I

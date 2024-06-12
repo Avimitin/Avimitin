@@ -68,3 +68,5 @@ alias ssh="TERM=xterm-256color command ssh"
 
 alias tl="tmux ls"
 alias ta="tmux attach-session -t"
+
+alias userctl="systemctl --user"

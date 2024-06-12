@@ -24,10 +24,10 @@
       },
       "format": "{icon}",
       "format-icons": {
-        "active": "",
+        "active": "",
         "default": "",
         "empty": ""
-      },
+      }
     },
     "hyprland/window": {
       "separate-outputs": true,
@@ -36,9 +36,9 @@
     "sway/workspaces": {
       "format": "{icon}",
       "format-icons": {
-        "focused": "",
+        "focused": "󰅹",
         "default": ""
-      },
+      }
     },
     "tray": {
         "spacing": 15,

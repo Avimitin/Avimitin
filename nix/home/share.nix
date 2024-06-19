@@ -31,6 +31,7 @@ in
     neovim-nightly # vim alternative
     bat # cat alternative
     fd # find alternative
+    fzf # fuzzy finder
     ripgrep # grep alternative
     zoxide # cd alternative
     gh # github cli

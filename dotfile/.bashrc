@@ -30,6 +30,7 @@ export MANPAGER='nvim +Man!'
 
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+eval "$(fzf --bash)"
 
 if [[ -r "@BASH_COMPLETION@" ]]; then
     . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
@@ -70,3 +71,6 @@ alias tl="tmux ls"
 alias ta="tmux attach-session -t"
 
 alias userctl="systemctl --user"
+
+alias ..="cd .."
+alias ...="cd ../.."

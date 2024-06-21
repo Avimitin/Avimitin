@@ -9,21 +9,6 @@ alias rm "rm -i"
 # ===================================================================
 # alias
 # ===================================================================
-if command -q broot
-    function br --wraps=broot
-        set -l cmd_file (mktemp)
-        if broot --outcmd $cmd_file $argv
-            read --local --null cmd < $cmd_file
-            rm -f $cmd_file
-            eval $cmd
-        else
-            set -l code $status
-            rm -f $cmd_file
-            return $code
-        end
-    end
-end
-
 if command -q bat
     alias v bat
 end
@@ -88,40 +73,7 @@ end
 # G
 if command -q git
     if command -q lazygit
-        alias g lazygit
-    end
-
-    function s
-        function print_header
-            set_color --bold yellow
-            echo "$argv:"
-            set_color normal
-        end
-
-        echo
-        print_header "Commits (10)"
-        git --no-pager log -n 10 --graph --abbrev-commit --decorate \
-            --format=format:'%C(dim blue)%h%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset) %C(italic dim white)(%ar)%C(reset)'
-        echo
-        echo
-
-        print_header "Branches"
-        set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
-        set --local normal_ref "%(refname:short)"
-        git branch --color=always --format "%(align:33,left)%(HEAD) %(if)%(HEAD)%(then)$green_ref%(else)$normal_ref%(end)%(end)  %(color:bold yellow)%(upstream:track)%(color:reset)" \
-            | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
-        echo
-
-        print_header "Files"
-        git status --short
-    end
-
-    function gs
-        if test -n "$argv"
-            git show $argv
-        else
-            git show HEAD
-        end
+        alias lg lazygit
     end
 
     alias gb "git branch -v"
@@ -131,16 +83,12 @@ if command -q git
 
     alias co "git checkout"
 
-    alias gc "git commit"
-    alias gca "git commit --amend --no-edit --allow-empty"
+    alias gcf "git commit --amend --no-edit --allow-empty"
 
-    alias gf "git fetch -p -P --progress --force"
+    alias gff "git fetch -p -P --progress --force"
 
-    alias gpp "git pull"
-    alias gp "git push"
-    alias gpf "git push --force-with-lease"
+    alias gpp "git push --force-with-lease"
 
-    alias grb "git rebase"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
 
@@ -154,7 +102,7 @@ if command -q rsync
     # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
     # [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
     # Skip based-on [c]hecksum instead of mod-time & size.
-    alias rsy "command rsync -aczrvhPL"
+    alias rsynca "command rsync -aczrvhPL"
 end
 
 if command -q ssh
@@ -184,6 +132,9 @@ else if command -q vim
     alias vi "vim"
 end
 
+alias ip "command ip --color=auto"
+alias userctl "command systemctl --user"
+
 # Allow using ncurse as askpass
 if command -q gpg
     set -gx GPG_TTY (tty)
@@ -192,14 +143,6 @@ end
 if command -q fzf
     set -gx FZF_DEFAULT_OPTS '--height 35% --layout=reverse'
 end
-
-# systemd
-alias "skt" "systemctl start"
-alias "skp" "systemctl stop"
-alias "sks" "systemctl status"
-alias "skr" "systemctl restart"
-alias "jkk" "journalctl -k"
-alias "jku" "journalctl -eu"
 
 set -x fish_greeting ""
 
@@ -253,10 +196,3 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
-
-function goforeground
-    fg
-    commandline --function repaint
-end
-
-bind \cz goforeground

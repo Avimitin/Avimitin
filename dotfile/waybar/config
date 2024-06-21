@@ -25,6 +25,7 @@
       "format": "{icon}",
       "format-icons": {
         "active": "",
+        "urgent": "",
         "default": "",
         "empty": ""
       }

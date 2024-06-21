@@ -1,5 +1,5 @@
 @define-color shadow rgba(0, 0, 0, 0.4);
-@define-color grey #646464;
+@define-color grey #b8b8b8;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -36,12 +36,14 @@ window#waybar {
     color: #FFFFFF;
     text-shadow: 0 0 8px #FFFFFF;
     box-shadow: none;
-    background-color: rgba(0, 0, 0, 0);
+    background: none;
+    border: none;
 }
 
 #workspaces button.urgent {
     color: #8d2a10;
-    box-shadow: 0 0 1px @shadow;
+    background: none;
+    border: none;
     box-shadow: none;
     background-color: rgba(0, 0, 0, 0);
 }

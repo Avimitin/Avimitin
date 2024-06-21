@@ -67,10 +67,12 @@ alias rsynca="command rsync -aczrvhPL"
 # this fix tmux color
 alias ssh="TERM=xterm-256color command ssh"
 
-alias tl="tmux ls"
-alias ta="tmux attach-session -t"
+alias tl="command tmux ls"
+alias ta="command tmux attach-session -t"
 
-alias userctl="systemctl --user"
+alias userctl="command systemctl --user"
 
-alias ..="cd .."
-alias ...="cd ../.."
+alias ..="command cd .."
+alias ...="command cd ../.."
+
+alias ip="command ip --color=auto"

@@ -36,13 +36,14 @@ window#waybar {
     color: #FFFFFF;
     text-shadow: 0 0 8px #FFFFFF;
     box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.urgent {
-    background-color: #8d2a10;
+    color: #8d2a10;
     box-shadow: 0 0 1px @shadow;
-    border-radius: 6px;
-    margin: 0.5em;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #battery,

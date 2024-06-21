@@ -28,14 +28,6 @@ export SYSTEMD_EDITOR="$EDITOR"
 export PAGER='less -R'
 export MANPAGER='nvim +Man!'
 
-eval "$(zoxide init bash)"
-eval "$(starship init bash)"
-eval "$(fzf --bash)"
-
-if [[ -r "@BASH_COMPLETION@" ]]; then
-    . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
-fi
-
 alias v='bat'
 alias vi="nvim"
 alias ll='lsd --long'
@@ -64,9 +56,6 @@ alias gra="git rebase --abort"
 # Skip based-on [c]hecksum instead of mod-time & size.
 alias rsynca="command rsync -aczrvhPL"
 
-# this fix tmux color
-alias ssh="TERM=xterm-256color command ssh"
-
 alias tl="command tmux ls"
 alias ta="command tmux attach-session -t"
 
@@ -76,3 +65,21 @@ alias ..="command cd .."
 alias ...="command cd ../.."
 
 alias ip="command ip --color=auto"
+
+# --
+
+if [[ -r "@BASH_COMPLETION@" ]]; then
+    . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
+fi
+
+if [[ -r "@COMPLETE_ALIAS@" ]]; then
+    . @COMPLETE_ALIAS@/complete_alias
+
+    complete -F _complete_alias userctl
+    complete -F _complete_alias ip
+    complete -F _complete_alias rsynca
+fi
+
+eval "$(zoxide init bash)"
+eval "$(fzf --bash)"
+eval "$(starship init bash)"

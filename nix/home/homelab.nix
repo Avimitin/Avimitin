@@ -25,6 +25,14 @@ rec {
   };
 
   xdg.configFile = {
+    mpv = {
+      source = pkgs.runCommand "canonize-uosc-mpv-output" { } ''
+        mkdir $out
+        cp -r ${pkgs.mpvScripts.uosc}/share/fonts $out/
+        cp -r ${pkgs.mpvScripts.uosc}/share/mpv/scripts $out/
+      '';
+      target = "mpv";
+    };
     dunst = lib.fromDotfile "dunst/dunstrc";
     rofi = lib.fromDotfile "rofi";
     broot = lib.fromDotfile "broot/conf.toml";

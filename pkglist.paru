@@ -689,6 +689,8 @@ startup-notification 0.12-8
 steam 1.0.0.79-2
 sudo 1.9.15.p5-1
 svt-av1 2.1.0-1
+swayidle 1.8.0-1
+swaylock 1.7.2-1
 systemd 256.1-1
 systemd-libs 256.1-1
 systemd-sysvcompat 256.1-1

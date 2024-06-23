@@ -144,6 +144,10 @@ if command -q fzf
     set -gx FZF_DEFAULT_OPTS '--height 35% --layout=reverse'
 end
 
+if command -q ffmpeg
+    alias img2mp4 'ffmpeg -r 1/2 -c:v libx264 -pix_fmt yuv420p'
+end
+
 set -x fish_greeting ""
 
 alias set_env "set --global --export"

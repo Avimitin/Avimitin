@@ -37,4 +37,6 @@ final: prev: {
       chmod +x $out/${passthru.tmux-script}
     '';
   };
+
+  qbittorrent-cli = final.callPackage ./pkgs/qbittorrent-cli.nix { };
 }

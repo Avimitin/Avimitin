@@ -76,6 +76,10 @@ if command -q git
         alias lg lazygit
     end
 
+    alias ga "git add"
+    alias grs "git restore --staged"
+    alias gr "git restore"
+
     alias gb "git branch -v"
 
     alias gd "git diff"
@@ -83,19 +87,18 @@ if command -q git
 
     alias co "git checkout"
 
+    alias gcm "git commit -m"
     alias gcf "git commit --amend --no-edit --allow-empty"
 
     alias gff "git fetch -p -P --progress --force"
 
     alias gpp "git push --force-with-lease"
 
+    alias gr "git rebase"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
 
     alias gs "git status -s"
-
-    alias gr "git restore"
-    alias grs "git restore --staged"
 
     alias gl "git log --graph --abbrev-commit --decorate \
         --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\

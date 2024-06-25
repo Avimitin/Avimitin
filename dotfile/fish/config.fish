@@ -92,17 +92,22 @@ if command -q git
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
 
+    alias gs "git status -s"
+
+    alias gr "git restore"
+    alias grs "git restore --staged"
+
     alias gl "git log --graph --abbrev-commit --decorate \
         --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
 end
 
 if command -q rsync
-    # Transfer file in [a]rchive (to preserve attributes) and
-    # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
-    # [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
+    # Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as symlink, preserve permission, mod time, group, owner, copy device)
+    # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable [P]rogress, if file is a [L]ink, copy its referent file.
     # Skip based-on [c]hecksum instead of mod-time & size.
-    alias rsynca "command rsync -aczrvhPL"
+    alias rsyncz "command rsync -aczvhPL"
+    alias rsynca "command rsync -avP"
 end
 
 if command -q ssh

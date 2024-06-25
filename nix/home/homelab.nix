@@ -13,6 +13,7 @@ rec {
   };
 
   home.packages = with pkgs; [
+    qbittorrent-cli
     grim
     slurp
   ];

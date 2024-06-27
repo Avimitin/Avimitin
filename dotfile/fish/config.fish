@@ -156,6 +156,10 @@ if command -q ffmpeg
     alias img2mp4 'ffmpeg -r 1/2 -c:v libx264 -pix_fmt yuv420p'
 end
 
+if command -q kitty
+    alias icat "kitty icat"
+end
+
 set -x fish_greeting ""
 
 alias set_env "set --global --export"

@@ -1,5 +1,7 @@
-@define-color shadow rgba(0, 0, 0, 0.4);
-@define-color grey #b8b8b8;
+@define-color shadow rgba(0, 0, 0, 0.6);
+@define-color grey #dcdcdc;
+@define-color background rgba(80, 80, 80, 0.4);
+@define-color mpris_bg rgba(255, 255, 255, 0.4);
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -10,11 +12,11 @@
 
 #window {
     color: #EAEAEA;
-    text-shadow: 0 0 8px @shadow;
+    text-shadow: 0 0 5px @shadow;
 }
 
 window#waybar {
-    background-color: rgba(20, 20, 20, 0.3);
+    background-color: @background;
     color: #ffffff;
 }
 
@@ -26,7 +28,7 @@ window#waybar {
     font-size: 20px;
     font-weight: 800;
     color: @grey;
-    text-shadow: 0 0 8px @shadow;
+    text-shadow: 0 0 5px @shadow;
 }
 
 #workspaces button.focused,
@@ -34,7 +36,7 @@ window#waybar {
 #workspaces button.active
 {
     color: #FFFFFF;
-    text-shadow: 0 0 8px #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
     box-shadow: none;
     background: none;
     border: none;
@@ -77,7 +79,7 @@ window#waybar {
 
 #mpris {
     text-shadow: 0px 0px 3px @shadow;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: @mpris_bg;
     margin: 0.4em 0.8em;
     padding: 0.2em 1em;
     border-radius: 14px;
@@ -101,7 +103,7 @@ window#waybar {
 }
 
 tooltip {
-    background: rgba(255, 255, 255, 0.2);
+    background: @background;
     border-radius: 15px;
     padding: 10em;
 }

@@ -43,7 +43,7 @@
     },
     "tray": {
         "spacing": 15,
-        "icon-size": 20
+        "icon-size": 25
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -51,8 +51,10 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "upower": {
-      "format": "  {percentage}",
-      "tooltip-padding": 16
+      "format": "",
+      "icon-size": 25,
+      "tooltip-padding": 16,
+      "hide-if-empty": true,
     },
     "battery": {
         "states": {
@@ -72,7 +74,7 @@
         "tooltip-format": "{essid}{ifname}",
         "format-ethernet": "󰈀",
         "format-linked": "󰈀",
-        "format-disconnected": "⚠  Disconnected",
+        "format-disconnected": " Disconnected",
         "format-alt": "{ifname}"
     },
     "pulseaudio": {
@@ -85,8 +87,8 @@
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰏳",
+            "headset": "󰥰",
             "phone": "",
             "portable": "",
             "car": "",

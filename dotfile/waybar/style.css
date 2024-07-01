@@ -5,7 +5,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Ubuntu Nerd Font Propo, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
+    font-family: Symbols Nerd Font Mono, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
     font-weight: 900;
     font-size: 16px;
 }
@@ -71,6 +71,7 @@ window#waybar {
     -gtk-icon-shadow: 0px 0px 3px @shadow;
     margin: 0 0.6em;
     font-size: 18px;
+    font-weight: 600;
 }
 
 #clock {

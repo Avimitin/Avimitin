@@ -1,10 +1,9 @@
-<a href="https://github.com/Avimitin">
-  <img width="25%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avimitin&langs_count=10&hide_progress=true&exclude_repo=sdwm&theme=tokyonight&hide=Makefile,HTML,CSS,Roff,M4,Rich%20Text%20Format" />
-</a>
-
 ## ***Skills***
 
-* Familiar with **YAML (GitHub Action Engineer)**, **Scala**, **Rust**, **TypeScript**, **React**, **Ruby**, **C++ (17)**, **Nix**, **OCaml** and **Lua**
+* Familiar with **Scala**, **Rust**, **TypeScript**, **React**, **Ruby**, **MLIR**, **C++ (17)**, **Nix**, **OCaml** and **Lua**
+* Know how to start and implement a typical CSR or SSR frontend project, with React and Rust as the tech stack.
+* Know how Linux distro works and know what is the best practice for maintaining Linux infrastructure.
+* Know a little about Architecture, and now trying to learn more about circuits and compiler.
 
 <details>
     <summary markdown="span">Click to view</summary>

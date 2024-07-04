@@ -57,6 +57,7 @@ in
     lua-language-server # Lua LSP
     stylua # Lua formatter
     solargraph # Ruby language server
+    rust-analyzer
   ];
 
   nix.package = pkgs.nix;

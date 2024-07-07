@@ -77,16 +77,21 @@ if command -q git
     end
 
     alias ga "git add"
-    alias grs "git restore --staged"
-    alias gr "git restore"
+    alias gap "git add -p"
 
     alias gb "git branch -v"
 
-    alias gd "git diff"
-    alias gdc "git diff --cached"
+    function gd
+        if git diff --quiet
+            git diff --cached
+        else
+            git diff
+        end
+    end
 
     alias co "git checkout"
 
+    alias gc "git commit --signoff"
     alias gcm "git commit -m"
     alias gcf "git commit --amend --no-edit --allow-empty"
 

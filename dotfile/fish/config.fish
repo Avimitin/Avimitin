@@ -72,10 +72,6 @@ end
 
 # G
 if command -q git
-    if command -q lazygit
-        alias lg lazygit
-    end
-
     alias ga "git add"
     alias gap "git add -p"
 
@@ -92,14 +88,14 @@ if command -q git
     alias co "git checkout"
 
     alias gc "git commit --signoff"
-    alias gcm "git commit -m"
-    alias gcf "git commit --amend --no-edit --allow-empty"
+    alias gca "git commit --amend --no-edit --allow-empty"
 
     alias gff "git fetch -p -P --progress --force"
 
-    alias gpp "git push --force-with-lease"
+    alias gpr "git pull --rebase"
+    alias gpf "git push --force-with-lease"
 
-    alias gr "git rebase"
+    alias gr "git rebase --interactive"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
 
@@ -108,6 +104,7 @@ if command -q git
     alias gl "git log --graph --abbrev-commit --decorate \
         --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
+    alias glb "gl --branches"
 end
 
 if command -q rsync

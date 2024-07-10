@@ -9,7 +9,7 @@ let
     ];
 
     text = ''
-      file=$(mktemp -t "screenshot-XXX-$(date +%F-%T).png")
+      file=$(mktemp -t "screenshot-$(date +%F-%T)-XXX.png")
       grim -g "$(slurp)" -t png "$file"
       wl-copy < "$file"
       if [[ -z "''${DELETE_SCREENSHOT:-}" ]]; then

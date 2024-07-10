@@ -35,7 +35,6 @@ in
     # Misc shell tools
     delta # Beautiful git diff
     neovim-nightly # vim alternative
-    bat # cat alternative
     fd # find alternative
     fzf # fuzzy finder
     ripgrep # grep alternative
@@ -116,6 +115,18 @@ in
         small = "grey";
         medium = "yellow";
         large = "dark_yellow";
+      };
+    };
+  };
+
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "kanagawa";
+    };
+    themes = {
+      kanagawa = {
+        src = ../../dotfile/kanagawa.tmTheme;
       };
     };
   };

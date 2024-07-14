@@ -5,7 +5,6 @@
 name: extended
 version: "2020.12.30"
 sort: by_weight
-vocabulary: essay-zh-hans
 use_preset_vocabulary: true
 
 import_tables:

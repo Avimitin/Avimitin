@@ -37,13 +37,23 @@
     # Automatically write commit graph on fetch, which can speed up git log/branch...
     writeCommitGraph = true
 
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 # Diff UI stuffs
 [core]
     pager = delta
 [interactive]
     diffFilter = delta --color-only --features=interactive
 [delta]
+    syntax-theme = kanagawa
     features = decorations
+    line-numbers = true
+    navigate = true
+
 [delta "interactive"]
     keep-plus-minus-markers = false
 [delta "decorations"]

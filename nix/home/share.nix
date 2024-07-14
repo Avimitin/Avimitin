@@ -168,8 +168,8 @@ in
     enable = true;
     settings = {
       character = {
-        success_symbol = "[➜](blue)";
-        error_symbol = "[➜](bold red)";
+        success_symbol = "[](blue)";
+        error_symbol = "[](bold red)";
       };
       format =
         let

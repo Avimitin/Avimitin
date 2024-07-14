@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 45,
+    "height": 30,
     "spacing": 1,
     //"reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces"],
@@ -43,7 +43,7 @@
     },
     "tray": {
         "spacing": 15,
-        "icon-size": 25
+        "icon-size": 15
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

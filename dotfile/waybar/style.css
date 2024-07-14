@@ -7,7 +7,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Symbols Nerd Font Mono, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 #window {
@@ -25,7 +25,7 @@ window#waybar {
 }
 
 #workspaces button {
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 800;
     color: @grey;
     text-shadow: 0 0 5px @shadow;
@@ -70,7 +70,7 @@ window#waybar {
     text-shadow: 0px 0px 3px @shadow;
     -gtk-icon-shadow: 0px 0px 3px @shadow;
     margin: 0 0.6em;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 600;
 }
 

@@ -80,13 +80,6 @@ in
     };
   };
 
-  xdg.dataFile = {
-    tmux-thumbs = {
-      source = "${pkgs.tmux-fingers}/${pkgs.tmux-fingers.tmux-script}";
-      target = "tmux/plugins/tmux-fingers/tmux-fingers.tmux";
-    };
-  };
-
   programs.lsd = {
     enable = true;
     enableAliases = false;

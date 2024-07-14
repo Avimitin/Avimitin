@@ -50,7 +50,7 @@
     diffFilter = delta --color-only --features=interactive
 [delta]
     syntax-theme = kanagawa
-    features = decorations
+    features = decorations unobtrusive-line-numbers
     line-numbers = true
     navigate = true
 

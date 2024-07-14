@@ -13,6 +13,12 @@ if command -q bat
     alias v bat
 end
 
+if command -q rg
+    function search
+        rg --json -C 2 "$argv" | delta --line-numbers
+    end
+end
+
 if command -q nix
     function _nix_complete
       set -l nix_args (commandline --current-process --tokenize --cut-at-cursor)

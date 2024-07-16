@@ -32,7 +32,7 @@
 
 Welcome! This is <https://sh1mar.in>.
 
-The name is inspired by my favorite anime character, 志摩 リン (Shima Rin) from [Laid-Back Camp](https://en.wikipedia.org/wiki/Laid-Back_Camp),
+The name is inspired by my favorite anime character, 志摩 リン (Shima Rin) from [Yuru Camp](https://en.wikipedia.org/wiki/Laid-Back_Camp),
 with the letter 'i' replaced with '1'.
 
 ## Who am I
@@ -57,26 +57,15 @@ My main interests within computer science are architecture and operating systems
 I'm continually striving to deepen my understanding of these areas.
 And I would love to be an Architecture and Kernel engineer in the near future.
 
----
-
 Besides programming, I'm an avid anime and game enthusiast.
-Here are a few of my favorites, and I'd love to hear if you enjoy them too:
+For animation, I really like moody, stream-of-consciousness animation like [Sonny Boy](https://ja.wikipedia.org/wiki/Sonny_Boy),
+emotionally stirring animation like [Kill la Kill](https://en.wikipedia.org/wiki/Kill_la_Kill),
+and character-driven animation like [化物語](https://www.monogatari-series.com/bakemonogatari/).
+I also often watch some American TV Shows, like House of Cards, Breaking Bad and other classics.
 
-### Games
-
-- [osu (CookieBacon)](https://osu.ppy.sh/users/16900842)
-- [Watch Dogs 2](https://en.wikipedia.org/wiki/Watch_Dogs_2)
-- [Elden Ring](https://en.wikipedia.org/wiki/Elden_Ring)
-- [魔法使いの夜, Witch on the Holy Night](https://en.wikipedia.org/wiki/Witch_on_the_Holy_Night)
-- [Persona 3 Reload](https://en.wikipedia.org/wiki/Persona_3_Reload)
-
-### Anime
-
-- [ゆるキャン△](https://ja.wikipedia.org/wiki/%E3%82%86%E3%82%8B%E3%82%AD%E3%83%A3%E3%83%B3%E2%96%B3)
-- [Sonny Boy](https://ja.wikipedia.org/wiki/Sonny_Boy)
-- [化物語](https://www.monogatari-series.com/bakemonogatari/)
-- [Kill la Kill](https://en.wikipedia.org/wiki/Kill_la_Kill)
-- [響け! ユーフォニアム](https://ja.wikipedia.org/wiki/%E9%9F%BF%E3%81%91!_%E3%83%A6%E3%83%BC%E3%83%95%E3%82%A9%E3%83%8B%E3%82%A2%E3%83%A0)
+I have no particular preference for the type of game. Games like the soul-like game of Elden ring,
+the visual novel genre of Witch of the Holy Night, or the generic JRPG Persona series, I really enjoy.
+You can find me on [osu](https://osu.ppy.sh/users/16900842) and [Steam](https://steamcommunity.com/id/sh1marin/).
 
 ## Self promotion
 

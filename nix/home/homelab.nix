@@ -31,6 +31,7 @@ rec {
         mkdir $out
         cp -r ${pkgs.mpvScripts.uosc}/share/fonts $out/
         cp -r ${pkgs.mpvScripts.uosc}/share/mpv/scripts $out/
+        cp ${../../dotfile/mpv/mpv.conf} $out/mpv.conf
       '';
       target = "mpv";
     };

@@ -111,6 +111,7 @@ if command -q git
         --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
         %C(italic dim white)%ai (%ar) %C(reset)'"
     alias glb "gl --branches"
+    alias glp "git log -p"
 end
 
 if command -q rsync

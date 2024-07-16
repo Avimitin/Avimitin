@@ -15,7 +15,7 @@ end
 
 if command -q rg
     function search
-        rg --json -C 2 "$argv" | delta --line-numbers
+        rg --json -C 2 $argv | delta --line-numbers
     end
 end
 

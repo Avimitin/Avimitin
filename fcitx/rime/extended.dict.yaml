@@ -24,4 +24,6 @@ import_tables:
   - sogou_new_words
   - pinyin_simp
   - zhwiki
+# yay -S fcitx5-pinyin-moegirl-rime
+  - moegirl
 ...

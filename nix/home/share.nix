@@ -168,31 +168,32 @@ in
     enable = true;
     settings = {
       character = {
-        success_symbol = "[](blue)";
-        error_symbol = "[](bold red)";
+        success_symbol = "[](blue)";
+        error_symbol = "[](bold red)";
       };
       format =
         let
           components = [
+            "$hostname"
             "$directory"
             "$nix_shell"
             "$git_branch"
             "$custom"
-            "$sudo"
-            "$cmd_duration"
-            "$hostname"
-            "$line_break"
             "$jobs"
+            "$sudo"
             "$character"
           ];
         in
         "${builtins.concatStringsSep "" components}";
-      directory.fish_style_pwd_dir_length = 1;
+      directory = {
+        fish_style_pwd_dir_length = 1;
+        style = "bold green";
+      };
       nix_shell.symbol = "󱄅 ";
-      git_branch.format = "[\\($branch(:$remote_branch)\\)]($style) ";
+      git_branch.format = "[ $branch(:$remote_branch)](bright-yellow) ";
       hostname = {
         ssh_symbol = "󰌘";
-        format = "in [$ssh_symbol]($style) [$hostname](bright-green)";
+        format = "[$ssh_symbol]($style) [$hostname](bright-green)";
       };
     };
   };

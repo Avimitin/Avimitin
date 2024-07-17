@@ -21,10 +21,14 @@ window#waybar {
 }
 
 #workspaces {
-    padding: 0 1.5em;
+    border-radius: 14px;
+    padding: 0 1em;
+    background-color: @mpris_bg;
+    margin: 0.3em 1em;
 }
 
 #workspaces button {
+    padding: 0 0.2em;
     font-size: 12px;
     font-weight: 800;
     color: @grey;
@@ -44,6 +48,7 @@ window#waybar {
 
 #workspaces button.urgent {
     color: #8d2a10;
+    text-shadow: 0 0 10px #5f1c1c;
     background: none;
     border: none;
     box-shadow: none;
@@ -84,16 +89,6 @@ window#waybar {
     margin: 0.4em 0.8em;
     padding: 0.2em 1em;
     border-radius: 14px;
-}
-
-#window,
-#workspaces {
-    margin: 0 0.5em;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
 }
 
 #tray > .needs-attention {

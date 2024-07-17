@@ -108,8 +108,8 @@ if command -q git
     alias gs "git status -s"
 
     alias gl "git log --graph --abbrev-commit --decorate \
-        --format=format:'%C(magenta)%h%C(reset) - %C(#E5DFC5)%s%C(reset) ''\
-%C(yellow)<%an>%C(reset)%C(auto)%d%C(reset)%C(italic dim white) (%ar) %C(reset)'"
+        --format=format:'%C(yellow)%h%C(reset) - %C(#9ce230)%s%C(reset) ''\
+%C(white)<%an>%C(reset)%C(auto)%d%C(reset)%C(italic dim white) (%ar) %C(reset)'"
     alias glb "gl --branches"
     alias glp "git log -p"
 end

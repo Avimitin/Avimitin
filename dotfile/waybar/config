@@ -35,6 +35,7 @@
       "rewrite": {
         "org.telegram.desktop": "Telegram Desktop",
         "firefox": "Firefox",
+        "org.gnome.Nautilus": "Nautilus",
       },
     },
     "sway/workspaces": {

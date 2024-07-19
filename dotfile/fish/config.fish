@@ -78,39 +78,34 @@ end
 
 # G
 if command -q git
-    alias ga "git add"
-    alias gap "git add -p"
+    alias g "git"
+
+    alias ga "git add -p"
 
     alias gb "git branch -v"
 
-    function gd
-        if git diff --quiet
-            git diff --cached
-        else
-            git diff
-        end
-    end
+    alias gd "git diff"
+    alias gdc "git diff --cached"
 
     alias co "git checkout"
 
     alias gc "git commit --signoff"
-    alias gca "git commit --amend --no-edit --allow-empty"
+    alias gc! "git commit --amend --no-edit --allow-empty"
 
-    alias gff "git fetch -p -P --progress --force"
+    alias gf! "git fetch -p -P --progress --force"
 
-    alias gpr "git pull --rebase"
-    alias gpf "git push --force-with-lease"
+    alias gpa "git pull --all --rebase"
+    alias gpl "git pull --rebase"
+
+    alias gp! "git push --force-with-lease"
 
     alias gr "git rebase --interactive"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
 
-    alias gs "git status -s"
+    alias gss "git status -s"
 
-    alias gl "git log --graph --abbrev-commit --decorate \
-        --format=format:'%C(yellow)%h%C(reset) - %C(#9ce230)%s%C(reset) ''\
-%C(white)<%an>%C(reset)%C(auto)%d%C(reset)%C(italic dim white) (%ar) %C(reset)'"
-    alias glb "gl --branches"
+    alias glo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
     alias glp "git log -p"
 end
 

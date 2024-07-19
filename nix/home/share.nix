@@ -44,18 +44,11 @@ in
     # Development
     nixpkgs-fmt # global formatter for all nix sources
     nil # Nix language server
-    pyright # Python language server
-    black # Python formatter
-    ghc # I need ghci
-    haskellPackages.fourmolu # Haskell formatter
-    haskellPackages.haskell-language-server # Haskell LSP
-    # nodePackages.typescript-language-server # Long time no frontend now
     prettierd # json formatter
     metals # Scala LSP
     ccls # c/cpp LSP
     lua-language-server # Lua LSP
     stylua # Lua formatter
-    solargraph # Ruby language server
   ];
 
   nix.package = pkgs.nix;

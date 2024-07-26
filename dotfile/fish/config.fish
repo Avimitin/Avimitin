@@ -99,6 +99,8 @@ if command -q git
 
     alias gp! "git push --force-with-lease"
 
+    alias gw "git worktree"
+
     alias gr "git rebase --interactive"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"

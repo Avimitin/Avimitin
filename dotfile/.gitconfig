@@ -7,20 +7,6 @@
 [init]
     defaultBranch = master
 
-[commit]
-    # Sign commit with gpg
-    gpgSign = true
-    # Add diff to interative commit
-    verbose = true
-
-[format]
-    # Add signed off to commit message
-    signOff = true
-
-[pull]
-    # Automatically do rebase on git pull conflict
-    rebase = true
-
 [column]
     # Show column instead of paging a list
     ui = auto

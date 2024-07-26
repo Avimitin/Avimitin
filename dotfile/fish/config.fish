@@ -89,7 +89,7 @@ if command -q git
 
     alias co "git checkout"
 
-    alias gc "git commit --signoff"
+    alias gc "git commit --signoff --gpg-sign --verbose"
     alias gc! "git commit --amend --no-edit --allow-empty"
 
     alias gf! "git fetch -p -P --progress --force"

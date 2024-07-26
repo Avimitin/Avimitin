@@ -173,6 +173,7 @@ in
             "$git_branch"
             "$custom"
             "$jobs"
+            "$line_break"
             "$sudo"
             "$character"
           ];

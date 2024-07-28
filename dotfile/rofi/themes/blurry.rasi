@@ -1,12 +1,3 @@
-/*
- *
- * Author  : Aditya Shakya
- * Mail    : adi1090x@gmail.com
- * Github  : @adi1090x
- * Twitter : @adi1090x
- *
- */
-
 configuration {
     font:                "Noto Sans 10";
     show-icons:          true;
@@ -16,22 +7,21 @@ configuration {
 }
 
 * {
-    background:       #0f0f0f8f;
-    background-alt:   #000000;
-    background-bar:   #000000;
+    background:       #1410194f;
     foreground:       #FFFFFF;
-    sel-background:   #eaeaea80;
+    sel-background:   #2e1d49b3;
     accent:           #3DAEE966;
     transparent:      #00000000;
 
     border:           0;
-    border-radius:    25px;
     text-color:       @foreground;
     background-color: @background;
 }
 
 window {
-    width:            30%;
+    background-color:  @background;
+    width:            25%;
+    border-radius:    8px;
     location:         center;
 }
 
@@ -49,7 +39,8 @@ entry {
 
 inputbar {
     children:         [ prompt, entry ];
-    background-color: @background-bar;
+    border-radius:    8px;
+    background-color: @background;
     text-color:       @foreground;
     border:           0;
     border-color:     @accent;
@@ -64,13 +55,12 @@ listview {
     cycle:            false;
     dynamic:          true;
     layout:           vertical;
-    border-radius: 12px;
+    border-radius:    5px;
 }
 
 mainbox {
     background-color: @background;
     border:           0% 0% 0% 0%;
-    border-color:     @accent;
     children:         [ inputbar, listview ];
     spacing:          1%;
     padding:          0.8% 0.4%;
@@ -98,5 +88,5 @@ element-text {
 
 element selected {
     background-color: @sel-background;
-    border-radius: 12px;
+    border-radius:    5px;
 }

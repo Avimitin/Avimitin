@@ -88,9 +88,10 @@ if command -q git
     alias gdc "git diff --cached"
 
     alias co "git checkout"
+    alias cob "git checkout -b"
 
     alias gc "git commit --signoff --gpg-sign --verbose"
-    alias gc! "git commit --amend --no-edit --allow-empty"
+    alias gc! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
 
     alias gf! "git fetch -p -P --progress --force"
 
@@ -101,10 +102,11 @@ if command -q git
 
     alias gw "git worktree"
 
-    alias gr "git rebase --interactive"
+    alias gr "git rebase --interactive --gpg-sign"
     alias grc "git rebase --continue"
     alias gra "git rebase --abort"
 
+    alias gs "git show"
     alias gss "git status -s"
 
     alias glo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"

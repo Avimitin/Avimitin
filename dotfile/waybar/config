@@ -4,13 +4,12 @@
     "height": 30,
     "spacing": 1,
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces", "hyprland/window" ],
+    "modules-left": ["hyprland/window" ],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["mpris", "tray", "upower", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
-      "disable-scroll": true,
+      "active-only": true,
       "all-outputs": true,
-      "warp-on-scroll": false,
-      "on-click": "activate",
       "window-rewrite-default": "󱂬",
       "window-rewrite": {
         "class<firefox>": "",
@@ -21,9 +20,17 @@
         "class<cider>": "󰎆",
         "class<thunderbird>": ""
       },
-      "format": "{icon}",
+      "format": "  <b>{icon}</b>",
       "format-icons": {
-        "active": "",
+        "1": "Desktop 1",
+        "2": "Desktop 2",
+        "3": "Desktop 3",
+        "4": "Desktop 4",
+        "5": "Desktop 5",
+        "6": "Desktop 6",
+        "7": "Desktop 7",
+        "8": "Desktop 8",
+        "9": "Desktop 9",
         "urgent": "",
         "default": "",
         "empty": ""
@@ -31,12 +38,9 @@
     },
     "hyprland/window": {
       "separate-outputs": true,
-      "format": "{class}",
-      "rewrite": {
-        "org.telegram.desktop": "Telegram Desktop",
-        "firefox": "Firefox",
-        "org.gnome.Nautilus": "Nautilus",
-      },
+      "format": "<b>{class}</b>  <span color=\"#c5c5c5\">{title}</span>",
+      "icon": true,
+      "icon-size": 18,
     },
     "sway/workspaces": {
       "format": "{icon}",

@@ -1,4 +1,4 @@
-@define-color shadow rgba(0, 0, 0, 0.6);
+@define-color shadow rgba(0, 0, 0, 0.4);
 @define-color grey #dcdcdc;
 @define-color background rgba(80, 80, 80, 0.4);
 @define-color mpris_bg rgba(255, 255, 255, 0.4);
@@ -6,13 +6,14 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Symbols Nerd Font Mono, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
-    font-weight: 900;
     font-size: 12px;
 }
 
 #window {
     color: #EAEAEA;
-    text-shadow: 0 0 5px @shadow;
+    text-shadow: 0 0 10px @shadow;
+    font-weight: 400;
+    margin: 0.3em 1.5em;
 }
 
 window#waybar {
@@ -22,17 +23,16 @@ window#waybar {
 
 #workspaces {
     border-radius: 14px;
-    padding: 0 1em;
-    background-color: @mpris_bg;
-    margin: 0.3em 1em;
+    margin: 0.3em 1.5em;
 }
 
 #workspaces button {
+    font-weight: 900;
     padding: 0 0.2em;
     font-size: 12px;
     font-weight: 800;
     color: @grey;
-    text-shadow: 0 0 5px @shadow;
+    text-shadow: 0 0 10px @shadow;
 }
 
 #workspaces button.focused,

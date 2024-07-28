@@ -8,7 +8,7 @@
  */
 
 configuration {
-    font:                "Noto Sans 16";
+    font:                "Noto Sans 10";
     show-icons:          true;
     icon-theme:          "WhiteSur-dark";
     drun-display-format: "{name}";
@@ -16,7 +16,7 @@ configuration {
 }
 
 * {
-    background:       #0f0f0f;
+    background:       #0f0f0f8f;
     background-alt:   #000000;
     background-bar:   #000000;
     foreground:       #FFFFFF;
@@ -41,7 +41,7 @@ prompt {
 }
 
 entry {
-    font:              "Noto Sans CJK SC 30";
+    font:              "Noto Sans CJK SC 18";
     background-color:  @transparent;
     placeholder-color: @foreground;
     placeholder:       "Search";
@@ -90,7 +90,7 @@ element-icon {
 }
 
 element-text {
-    font: "Noto Sans CJK SC Medium 24";
+    font: "Noto Sans CJK SC Medium 14";
     background-color: @transparent;
     text-color:       @foreground;
     vertical-align:   0.5;

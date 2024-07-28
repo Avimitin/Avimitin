@@ -168,6 +168,29 @@ if command -q kitty
     alias icat "kitty icat"
 end
 
+if command -q hyprctl
+    function hypr_gamemode
+        set --local HYPRGAMEMODE $(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+        if test "$HYPRGAMEMODE" = 1
+            echo "Turn on GAMEMODE"
+            hyprctl --batch "\
+                keyword animations:enabled 0;\
+                keyword decoration:drop_shadow 0;\
+                keyword decoration:blur:enabled 0;\
+                keyword general:gaps_in 0;\
+                keyword general:gaps_out 0;\
+                keyword general:border_size 1;\
+                keyword decoration:rounding 0"
+            systemctl --user stop wpaperd-hypr
+            exit 0
+        end
+
+        echo "Reset to default"
+        hyprctl reload
+        systemd-run --user --unit=wpaperd-hypr /usr/bin/wpaperd
+    end
+end
+
 set -x fish_greeting ""
 
 alias set_env "set --global --export"

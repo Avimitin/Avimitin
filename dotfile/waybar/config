@@ -10,6 +10,8 @@
     "hyprland/workspaces": {
       "active-only": true,
       "all-outputs": true,
+      "on-scroll-up": "hyprctl -q dispatch workspace m+1",
+      "on-scroll-down": "hyprctl -q dispatch workspace m-1",
       "window-rewrite-default": "󱂬",
       "window-rewrite": {
         "class<firefox>": "",

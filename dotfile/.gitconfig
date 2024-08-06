@@ -23,6 +23,10 @@
     # Automatically write commit graph on fetch, which can speed up git log/branch...
     writeCommitGraph = true
 
+[push]
+    # automatically setup remote branch on push
+    autoSetupRemote = true
+
 [merge]
     conflictstyle = diff3
 

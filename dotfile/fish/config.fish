@@ -82,7 +82,22 @@ if command -q git
 
     alias ga "git add -p"
 
-    alias gb "git branch -v"
+    function gb
+        set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
+        set --local normal_ref "%(refname:short)"
+        git branch --color=always --format "%(HEAD) \
+%(if)%(HEAD)%(then)\
+$green_ref\
+%(else)\
+$normal_ref\
+%(end)\
+ %(color:bold yellow)%(upstream:track)%(color:reset)\
+%(if)%(worktreepath)%(then)\
+ (%(color:blue)%(worktreepath)%(color:reset))\
+%(end)" | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
+    end
+
+    alias gbD "git branch -D"
 
     alias gd "git diff"
     alias gdc "git diff --cached"
@@ -98,6 +113,7 @@ if command -q git
     alias gpa "git pull --all --rebase"
     alias gpl "git pull --rebase"
 
+    alias gp "git push"
     alias gp! "git push --force-with-lease"
 
     alias gw "git worktree"
@@ -108,6 +124,8 @@ if command -q git
 
     alias gs "git show"
     alias gss "git status -s"
+
+    alias gsw "git switch"
 
     alias glo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
     alias glp "git log -p"

@@ -1,23 +1,54 @@
-{ runCommand, writeShellScriptBin, writeShellApplication, grim, slurp, callPackage, isCarryOut ? false }:
+{ runCommand, writeShellScriptBin, writeShellApplication, jq, grim, slurp, callPackage, isCarryOut ? false }:
 let
   screenshotScript = writeShellApplication {
     name = "wayland-screenshoter";
 
     runtimeInputs = [
+      jq
       grim
       slurp
     ];
 
     text = ''
-      file=$(mktemp -t "screenshot-$(date +%F-%T)-XXX.png")
-      grim -g "$(slurp)" -t png "$file"
-      wl-copy < "$file"
+      set -e
+
+      # Step1: take the whole screen
+      _ACTIVE_SCREEN=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+      _SCREEN_CAPTURE="$(mktemp -t "screenshot-$_ACTIVE_SCREEN-XXX.png")"
+      grim -o "$_ACTIVE_SCREEN" "$_SCREEN_CAPTURE"
+
+      # Step2: show the image fullscreen and enable selection
+      hyprctl --batch "\
+          keyword windowrulev2 noanim,class:(swayimg);\
+          keyword windowrulev2 noshadow,class:(swayimg)"
+      swayimg --config=info.show=off --fullscreen "$_SCREEN_CAPTURE" &
+      _pid="$!"
+
+      # stop swayimg and cleanup fullscreen shot on exit
+      trap 'kill -ABRT $_pid; rm $_SCREEN_CAPTURE; hyprctl reload config-only' EXIT
+
+      _OUT_DIR="$HOME/Pictures/Screenshot"
+      _OUT_FILE="$_OUT_DIR/screenshot-$(date +%F-%T).png"
+      mkdir -p "$_OUT_DIR"
+
+      _GEO="$(slurp)"
+      if [ "$_GEO" == "selection cancelled" ]; then
+        exit 0
+      fi
+
+      if ! grim -g "$_GEO" -t png "$_OUT_FILE"; then
+        exit 1
+      fi
+      if [ ! -r "$_OUT_FILE" ]; then
+        exit 1
+      fi
+
+      wl-copy < "$_OUT_FILE"
+
       if [[ -z "''${DELETE_SCREENSHOT:-}" ]]; then
-        mkdir -p "$HOME/Pictures/Screenshot"
-        mv "$file" "$HOME/Pictures/Screenshot"
-        notify-send "Screenshot saved under ~/Pictures/Screenshot/"
+        notify-send "Screenshot saved under $_OUT_DIR"
       else
-        rm -f "$file"
+        rm -f "$_OUT_FILE"
       fi
     '';
   };

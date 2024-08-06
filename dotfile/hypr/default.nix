@@ -18,19 +18,27 @@ let
       grim -o "$_ACTIVE_SCREEN" "$_SCREEN_CAPTURE"
 
       # Step2: show the image fullscreen and enable selection
-      hyprctl --batch "\
+      hyprctl -q --batch "\
           keyword windowrulev2 noanim,class:(swayimg);\
           keyword windowrulev2 noshadow,class:(swayimg)"
-      swayimg --config=info.show=off --fullscreen "$_SCREEN_CAPTURE" &
+      swayimg --config=info.show=no --fullscreen "$_SCREEN_CAPTURE" &
       _pid="$!"
 
-      # stop swayimg and cleanup fullscreen shot on exit
-      trap 'kill -ABRT $_pid; rm $_SCREEN_CAPTURE; hyprctl reload config-only' EXIT
+      on_exit() {
+        # stop swayimg
+        kill "$_pid" || true
+        # clean up
+        rm -f "$_SCREEN_CAPTURE"
+        # reload hypr animation & shadow
+        hyprctl -q reload config-only
+      }
+      trap on_exit EXIT
 
       _OUT_DIR="$HOME/Pictures/Screenshot"
       _OUT_FILE="$_OUT_DIR/screenshot-$(date +%F-%T).png"
       mkdir -p "$_OUT_DIR"
 
+      sleep 0.3
       _GEO="$(slurp)"
       if [ "$_GEO" == "selection cancelled" ]; then
         exit 0

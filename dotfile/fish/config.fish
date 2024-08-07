@@ -17,6 +17,15 @@ if command -q rg
     function search
         rg --json -C 2 $argv | delta --line-numbers
     end
+
+    function search_and_replace
+        set -l _dir .
+        if test -n "$argv[3]"
+            set _dir "$argv[3]"
+        end
+        echo "Replacing $argv[1] to $argv[2] in dir $_dir"
+        sed -i "s|$argv[1]|$argv[2]|" $(rg --no-ignore -l "$argv[1]" "$_dir")
+    end
 end
 
 if command -q nix

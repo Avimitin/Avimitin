@@ -12,6 +12,7 @@ application/x-extension-xht=firefox.desktop
 x-scheme-handler/jetbrains-gateway=jetbrains-gateway.desktop
 application/pdf=sioyek.desktop
 text/plain=neovide.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -25,3 +26,4 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/zip=nemo.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;

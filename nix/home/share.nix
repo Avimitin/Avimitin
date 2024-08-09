@@ -60,6 +60,8 @@ in
 
   xdg.configFile = {
     fishConf = lib.fromDotfile "fish/config.fish";
+    xdgPortal = lib.fromDotfile "xdg-desktop-portal";
+
     fishAutoPair = lib.fetchFishPlugin {
       owner = "jorgebucaran";
       repo = "autopair.fish";

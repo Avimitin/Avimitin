@@ -20,6 +20,7 @@ let
       # Step2: show the image fullscreen and enable selection
       hyprctl -q --batch "\
           keyword windowrulev2 noanim,class:(swayimg);\
+          keyword windowrulev2 noborder,class:(swayimg);\
           keyword windowrulev2 noshadow,class:(swayimg)"
       swayimg --config=info.show=no --fullscreen "$_SCREEN_CAPTURE" &
       _pid="$!"
@@ -30,7 +31,7 @@ let
         # clean up
         rm -f "$_SCREEN_CAPTURE"
         # reload hypr animation & shadow
-        hyprctl -q reload config-only
+        hyprctl -q keyword windowrulev2 'unset,class:(swayimg)'
       }
       trap on_exit EXIT
 
@@ -39,7 +40,7 @@ let
       mkdir -p "$_OUT_DIR"
 
       sleep 0.3
-      _GEO="$(slurp)"
+      _GEO="$(slurp 2>&1)"
       if [ "$_GEO" == "selection cancelled" ]; then
         exit 0
       fi

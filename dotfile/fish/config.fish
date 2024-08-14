@@ -83,9 +83,26 @@ end
 
 # G
 if command -q git
-    alias g "git"
-
     alias a "git add -p"
+    alias co "git checkout"
+    alias c "git commit --signoff --gpg-sign --verbose"
+    alias c! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
+    alias d "git diff"
+    alias dc "git diff --cached"
+    alias f! "git fetch -p -P --progress --force"
+    alias g "git"
+    alias gw "git worktree"
+    alias l "git log -n15 --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
+    alias lo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
+    alias lp "git log -p"
+    alias p "git push"
+    alias p! "git push --force-with-lease"
+    alias P "git pull --rebase"
+    alias r "git rebase --interactive --gpg-sign"
+    alias rc "git rebase --continue"
+    alias ra "git rebase --abort"
+    alias s "git status -s"
+
 
     function gb
         set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
@@ -103,33 +120,6 @@ $normal_ref\
     end
 
     alias gbD "git branch -D"
-
-    alias d "git diff"
-    alias dc "git diff --cached"
-
-    alias co "git checkout"
-
-    alias c "git commit --signoff --gpg-sign --verbose"
-    alias c! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
-
-    alias f! "git fetch -p -P --progress --force"
-
-    alias pl "git pull --rebase"
-
-    alias ps "git push"
-    alias p! "git push --force-with-lease"
-
-    alias gw "git worktree"
-
-    alias r "git rebase --interactive --gpg-sign"
-    alias rc "git rebase --continue"
-    alias ra "git rebase --abort"
-
-    alias s "git status -s"
-
-    alias l "git log -n15 --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
-    alias lo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
-    alias lp "git log -p"
 end
 
 if command -q rsync

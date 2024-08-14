@@ -51,10 +51,6 @@ if command -q nix
     complete --command nix --condition 'not _nix_accepts_files' --no-files
 
     complete --command nix --arguments '(_nix)'
-
-    alias nd "nix develop"
-    alias nb "nix build -L"
-    alias nr "nix run"
 end
 
 if test -r /usr/lib/locale/locale-archive
@@ -89,7 +85,7 @@ end
 if command -q git
     alias g "git"
 
-    alias ga "git add -p"
+    alias a "git add -p"
 
     function gb
         set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
@@ -108,36 +104,32 @@ $normal_ref\
 
     alias gbD "git branch -D"
 
-    alias gd "git diff"
-    alias gdc "git diff --cached"
+    alias d "git diff"
+    alias dc "git diff --cached"
 
     alias co "git checkout"
-    alias cob "git checkout -b"
 
-    alias gc "git commit --signoff --gpg-sign --verbose"
-    alias gc! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
+    alias c "git commit --signoff --gpg-sign --verbose"
+    alias c! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
 
-    alias gf! "git fetch -p -P --progress --force"
+    alias F! "git fetch -p -P --progress --force"
 
-    alias gpa "git pull --all --rebase"
-    alias gpl "git pull --rebase"
+    alias pl "git pull --rebase"
 
-    alias gp "git push"
-    alias gp! "git push --force-with-lease"
+    alias ps "git push"
+    alias P! "git push --force-with-lease"
 
     alias gw "git worktree"
 
-    alias gr "git rebase --interactive --gpg-sign"
-    alias grc "git rebase --continue"
-    alias gra "git rebase --abort"
+    alias r "git rebase --interactive --gpg-sign"
+    alias rc "git rebase --continue"
+    alias ra "git rebase --abort"
 
-    alias gs "git show"
-    alias gss "git status -s"
+    alias s "git status -s"
 
-    alias gsw "git switch"
-
-    alias glo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
-    alias glp "git log -p"
+    alias l "git log -n15 --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
+    alias lo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
+    alias lp "git log -p"
 end
 
 if command -q rsync
@@ -145,28 +137,17 @@ if command -q rsync
     # compressed ([z]ipped) mode with [v]erbose and [h]uman-readable [P]rogress, if file is a [L]ink, copy its referent file.
     # Skip based-on [c]hecksum instead of mod-time & size.
     alias rsyncz "command rsync -aczvhPL"
-    alias rsynca "command rsync -avP"
+    alias rsynca "command rsync -avhP"
 end
 
 if command -q ssh
     # this fix tmux color
     alias ssh "TERM=xterm-256color command ssh"
-
-    # TODO: After ssh setup, run systemctl --user enable --now ssh-agent.service, it will setup the socket
-    if test -e "$XDG_RUNTIME_DIR/ssh-agent.socket"
-        set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
-    end
-
-    # TODO: After ssh-agent is up, run ssh-add <private-key> to store it into agent
 end
 
 if command -q tmux
     alias tl "tmux ls"
     alias ta "tmux attach-session -t"
-end
-
-if command -q neovide
-    alias nvi neovide
 end
 
 if command -q nvim
@@ -193,29 +174,6 @@ end
 
 if command -q kitty
     alias icat "kitty icat"
-end
-
-if command -q hyprctl
-    function hypr_gamemode
-        set --local HYPRGAMEMODE $(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-        if test "$HYPRGAMEMODE" = 1
-            echo "Turn on GAMEMODE"
-            hyprctl --batch "\
-                keyword animations:enabled 0;\
-                keyword decoration:drop_shadow 0;\
-                keyword decoration:blur:enabled 0;\
-                keyword general:gaps_in 0;\
-                keyword general:gaps_out 0;\
-                keyword general:border_size 1;\
-                keyword decoration:rounding 0"
-            systemctl --user stop wpaperd-hypr
-            exit 0
-        end
-
-        echo "Reset to default"
-        hyprctl reload
-        systemd-run --user --unit=wpaperd-hypr /usr/bin/wpaperd
-    end
 end
 
 set -x fish_greeting ""

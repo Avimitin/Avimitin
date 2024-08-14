@@ -112,12 +112,12 @@ $normal_ref\
     alias c "git commit --signoff --gpg-sign --verbose"
     alias c! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
 
-    alias F! "git fetch -p -P --progress --force"
+    alias f! "git fetch -p -P --progress --force"
 
     alias pl "git pull --rebase"
 
     alias ps "git push"
-    alias P! "git push --force-with-lease"
+    alias p! "git push --force-with-lease"
 
     alias gw "git worktree"
 

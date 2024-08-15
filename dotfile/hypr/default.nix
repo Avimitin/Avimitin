@@ -1,12 +1,17 @@
-{ runCommand, writeShellScriptBin, writeShellApplication, jq, grim, slurp, callPackage, isCarryOut ? false }:
+{ runCommand
+, writeShellScriptBin
+, writeShellApplication
+, jq
+, callPackage
+, isCarryOut ? false
+, homeDirectory
+}:
 let
   screenshotScript = writeShellApplication {
     name = "wayland-screenshoter";
 
     runtimeInputs = [
       jq
-      grim
-      slurp
     ];
 
     text = ''
@@ -61,31 +66,10 @@ let
       fi
     '';
   };
-  screenctl = writeShellScriptBin "hyprland-all-screen-ctl" ''
-    action=$1; shift
-    [[ "$action" = "" ]] && echo "No arguments" && exit 1
-
-    screens=( $(hyprctl monitors -j | jq -r .[].name) )
-
-    for sc in ''${screens[@]}; do
-      echo "Screen $sc $action"
-      hyprctl dispatch dpms $action $sc
-    done
-
-    echo "All done"
-  '';
-  screenlock = writeShellScriptBin "swaylock-with-random-pic" ''
-    systemd-run --user --collect --unit=swayidle \
-      swayidle -w \
-        timeout 30 'echo "Seems idle, close screens"' \
-        timeout 31 '${screenctl}/bin/hyprland-all-screen-ctl off' \
-          resume '${screenctl}/bin/hyprland-all-screen-ctl on'
-    swaylock --ignore-empty-password \
-      --show-failed-attempts \
-      --image $(find ~/Pictures/Wallpapers -type f | shuf -n1) \
-      --show-keyboard-layout \
-      --indicator-caps-lock
-    systemctl --user stop swayidle
+  screenlock = writeShellScriptBin "run-hyprlock" ''
+    systemd-run --remain-after-exit --user --unit=hypridle /usr/bin/hypridle
+    /usr/bin/hyprlock
+    systemctl --user stop hypridle
   '';
   extraConf = callPackage (if isCarryOut then ./carried-out.nix else ./office.nix) { };
 in
@@ -94,6 +78,12 @@ runCommand "hyprland-conf-generator" { } ''
 
   substitute ${../../dotfile/hypr/hyprland.conf} $out/hyprland.conf \
     --subst-var-by screenshotScript ${screenshotScript}/bin/wayland-screenshoter \
-    --subst-var-by screenlockScript ${screenlock}/bin/swaylock-with-random-pic \
+    --subst-var-by screenlockScript ${screenlock}/bin/run-hyprlock \
     --subst-var-by extraConf ${extraConf}
+
+  substitute ${../../dotfile/hypr/hyprlock.conf} $out/hyprlock.conf \
+    --subst-var-by backgroundImage ${homeDirectory}/Pictures/Wallpapers/Monterey.png \
+    --subst-var-by profileImage ${homeDirectory}/Pictures/Anime/rin/Snipaste_2021-02-22_22-09-17.png
+
+  cp -v ${../../dotfile/hypr/hypridle.conf} $out/hypridle.conf
 ''

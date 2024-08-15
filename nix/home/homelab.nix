@@ -40,12 +40,8 @@ rec {
     broot = lib.fromDotfile "broot/conf.toml";
     fontconfig = lib.fromDotfile "fontconfig/conf.d";
     hyprland = {
-      target = "hypr/hyprland.conf";
-      source =
-        let
-          hypr-conf = pkgs.callPackage ../../dotfile/hypr { };
-        in
-        "${hypr-conf}/hyprland.conf";
+      target = "hypr";
+      source = toString (pkgs.callPackage ../../dotfile/hypr { inherit (home) homeDirectory; });
     };
     paru = lib.fromDotfile "paru/paru.conf";
     waybarConf = lib.fromDotfile "waybar/config";

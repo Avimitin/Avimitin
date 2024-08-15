@@ -2,41 +2,18 @@ inputs:
 
 final: prev: {
   my-nvim-src = inputs.nvim.outPath;
-
-  tmux-fingers = final.stdenvNoCC.mkDerivation rec {
-    name = "tmux-finger";
-
-    nativeBuildInputs = [
-      final.crystal
-      final.shards
-    ];
-
-    src = final.fetchFromGitHub {
-      owner = "Avimitin";
-      repo = "tmux-fingers";
-      rev = "7e693d40cdac2a6a92f90105a17592f9ab53fe19";
-      hash = "sha256-n7mfTX8hI5CyCIZJDHhiAaWyT1bvD2lkn4NddSGmaBA=";
-    };
-
-    buildPhase = ''
-      shards build --production
-    '';
-
-    passthru.tmux-script = "share/tmux/tmux-fingers.tmux";
-
-    installPhase = ''
-      mkdir -p $out/bin $out/share/tmux
-
-      mv bin/tmux-fingers $out/bin
-
-      tee -a $out/${passthru.tmux-script} <<EOF
-      #/bin/bash
-      tmux run "$out/bin/tmux-fingers load-config"
-      exit $?
-      EOF
-      chmod +x $out/${passthru.tmux-script}
-    '';
-  };
-
   qbittorrent-cli = final.callPackage ./pkgs/qbittorrent-cli.nix { };
+  delta = prev.delta.overrideAttrs (old: rec {
+    src = final.fetchFromGitHub {
+      owner = "dandavison";
+      repo = old.pname;
+      rev = "a01141b72001f4c630d77cf5274267d7638851e4";
+      hash = "sha256-My51pQw5a2Y2VTu39MmnjGfmCavg8pFqOmOntUildS0=";
+    };
+    cargoDeps = old.cargoDeps.overrideAttrs (final.lib.const {
+      name = old.cargoDeps.name;
+      inherit src;
+      outputHash = "sha256-TJ/yLt53hKElylycUfGV8JGt7GzqSnIO3ImhZvhVQu0=";
+    });
+  });
 }

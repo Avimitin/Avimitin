@@ -84,6 +84,7 @@ end
 # G
 if command -q git
     alias a "git add -p"
+    alias ga "git add"
     alias co "git checkout"
     alias c "git commit --signoff --gpg-sign --verbose"
     alias c! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"

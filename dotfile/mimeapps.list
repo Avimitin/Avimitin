@@ -13,6 +13,7 @@ x-scheme-handler/jetbrains-gateway=jetbrains-gateway.desktop
 application/pdf=sioyek.desktop
 text/plain=neovide.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+image/png=org.gnome.Loupe.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -27,3 +28,4 @@ application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/zip=nemo.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+image/png=swayimg.desktop;org.gnome.gThumb.desktop;org.gnome.Loupe.desktop;

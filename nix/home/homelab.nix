@@ -48,6 +48,7 @@ rec {
     waybarStyle = lib.fromDotfile "waybar/style.css";
     wezterm = lib.fromDotfile "wezterm/wezterm.lua";
     alacritty = lib.fromDotfile "alacritty/alacritty.toml";
+    mangohud = lib.fromDotfile "MangoHud/MangoHud.conf";
     mimeapps = lib.fromDotfile "mimeapps.list";
     sioyek = lib.fromDotfile "sioyek";
   };

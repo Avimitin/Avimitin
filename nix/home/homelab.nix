@@ -28,9 +28,11 @@ rec {
   xdg.configFile = {
     mpv = {
       source = pkgs.runCommand "canonize-uosc-mpv-output" { } ''
-        mkdir $out
-        cp -r ${pkgs.mpvScripts.uosc}/share/fonts $out/
-        cp -r ${pkgs.mpvScripts.uosc}/share/mpv/scripts $out/
+        mkdir -p $out/fonts $out/scripts
+
+        cp -r ${pkgs.mpvScripts.uosc}/share/fonts/* $out/fonts/
+        cp -r ${pkgs.mpvScripts.uosc}/share/mpv/scripts/* $out/scripts/
+        cp -r ${pkgs.mpvScripts.thumbfast}/share/mpv/scripts/* $out/scripts/
         cp ${../../dotfile/mpv/mpv.conf} $out/mpv.conf
       '';
       target = "mpv";

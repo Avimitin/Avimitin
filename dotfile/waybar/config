@@ -8,7 +8,7 @@
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["mpris", "tray", "upower", "pulseaudio", "network", "clock"],
     "hyprland/workspaces": {
-      "active-only": true,
+      "active-only": false,
       "all-outputs": true,
       "on-scroll-up": "hyprctl -q dispatch workspace m+1",
       "on-scroll-down": "hyprctl -q dispatch workspace m-1",
@@ -22,19 +22,12 @@
         "class<cider>": "󰎆",
         "class<thunderbird>": ""
       },
-      "format": "  <b>{icon}</b>",
+      "format": "{icon}",
       "format-icons": {
-        "1": "Desktop 1",
-        "2": "Desktop 2",
-        "3": "Desktop 3",
-        "4": "Desktop 4",
-        "5": "Desktop 5",
-        "6": "Desktop 6",
-        "7": "Desktop 7",
-        "8": "Desktop 8",
-        "9": "Desktop 9",
         "urgent": "",
-        "default": "",
+        "default": "",
+        //"active": "",
+        "active": "",
         "empty": ""
       }
     },

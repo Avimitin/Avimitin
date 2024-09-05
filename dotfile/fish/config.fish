@@ -98,7 +98,7 @@ if command -q git
     alias lp "git log -p"
     alias p "git push"
     alias p! "git push --force-with-lease"
-    alias P "git pull --rebase"
+    alias pul "git pull --rebase"
     alias r "git rebase --interactive --gpg-sign"
     alias rc "git rebase --continue"
     alias ra "git rebase --abort"

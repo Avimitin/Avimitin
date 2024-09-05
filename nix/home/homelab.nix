@@ -1,7 +1,7 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
 let
-  lib = import ../lib.nix { inherit pkgs; };
+  utils = import ../lib.nix { inherit pkgs; };
 in
 rec {
   imports = [ ./share.nix ];
@@ -37,22 +37,22 @@ rec {
       '';
       target = "mpv";
     };
-    dunst = lib.fromDotfile "dunst/dunstrc";
-    rofi = lib.fromDotfile "rofi";
-    broot = lib.fromDotfile "broot/conf.toml";
-    fontconfig = lib.fromDotfile "fontconfig/conf.d";
+    dunst = utils.fromDotfile "dunst/dunstrc";
+    rofi = utils.fromDotfile "rofi";
+    broot = utils.fromDotfile "broot/conf.toml";
+    fontconfig = utils.fromDotfile "fontconfig/conf.d";
     hyprland = {
       target = "hypr";
       source = toString (pkgs.callPackage ../../dotfile/hypr { inherit (home) homeDirectory; });
     };
-    paru = lib.fromDotfile "paru/paru.conf";
-    waybarConf = lib.fromDotfile "waybar/config";
-    waybarStyle = lib.fromDotfile "waybar/style.css";
-    wezterm = lib.fromDotfile "wezterm/wezterm.lua";
-    alacritty = lib.fromDotfile "alacritty/alacritty.toml";
-    mangohud = lib.fromDotfile "MangoHud/MangoHud.conf";
-    mimeapps = lib.fromDotfile "mimeapps.list";
-    sioyek = lib.fromDotfile "sioyek";
+    paru = utils.fromDotfile "paru/paru.conf";
+    waybarConf = utils.fromDotfile "waybar/config";
+    waybarStyle = utils.fromDotfile "waybar/style.css";
+    wezterm = utils.fromDotfile "wezterm/wezterm.lua";
+    alacritty = utils.fromDotfile "alacritty/alacritty.toml";
+    mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";
+    mimeapps = utils.fromDotfile "mimeapps.list";
+    sioyek = utils.fromDotfile "sioyek";
   };
 
   programs.wpaperd = {

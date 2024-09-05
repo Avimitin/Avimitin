@@ -63,6 +63,7 @@ rec {
     wezterm = utils.fromDotfile "wezterm/wezterm.lua";
     alacritty = utils.fromDotfile "alacritty/alacritty.toml";
     mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";
+    neovide = utils.fromDotfile "neovide";
     mimeapps = utils.fromDotfile "mimeapps.list";
     sioyek = utils.fromDotfile "sioyek";
   };

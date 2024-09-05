@@ -3,7 +3,7 @@ opacity = 0.85
 
 [font]
 normal = { family = "monospace", style = "Regular" }
-size = 9
+size = 8.5
 
 [colors.primary]
 background = "0x1f1f28"

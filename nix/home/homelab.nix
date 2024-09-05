@@ -27,6 +27,14 @@ rec {
       source = "${pkgs.apple-sf-mono}/share/fonts/opentype";
       target = "fonts/opentype/AppleSFMonoFonts";
     };
+    sfPro = {
+      source = "${pkgs.apple-sf-pro}/share/fonts/opentype";
+      target = "fonts/opentype/AppleSFProFonts";
+    };
+    NY = {
+      source = "${pkgs.apple-new-york}/share/fonts/opentype";
+      target = "fonts/opentype/AppleNYFonts";
+    };
   };
 
   xdg.configFile = {

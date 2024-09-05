@@ -23,6 +23,10 @@ rec {
       source = "${../../fcitx/theme}";
       target = "fcitx5/themes/default";
     };
+    sfMono = {
+      source = "${pkgs.apple-sf-mono}/share/fonts/opentype";
+      target = "fonts/opentype/AppleSFMonoFonts";
+    };
   };
 
   xdg.configFile = {
@@ -54,6 +58,12 @@ rec {
     mimeapps = utils.fromDotfile "mimeapps.list";
     sioyek = utils.fromDotfile "sioyek";
   };
+
+  # Use system fc-cache here
+  home.activation.forceUpdateFontConfigCache = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    verboseEcho "Rebuilding font cache"
+    run /usr/bin/fc-cache -f
+  '';
 
   programs.wpaperd = {
     enable = true;

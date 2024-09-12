@@ -41,6 +41,12 @@ ffmpeg -i input.mp4 -i /tmp/palette.png \
    -lavfi "fps=10,scale=720:-1:flags=lanczos [x]; [x][1:v] paletteuse" -y output.gif
 ```
 
+* Image to MP4
+
+```bash
+ffmpeg -i jpg.jpg -r 1/2 -c:v libx264 -pix_fmt yuv420p out.mp4
+```
+
 * Embed ass file
 
 ```bash
@@ -54,3 +60,14 @@ ffmpeg -i input.mp4 -vf "ass=btmc.ass" out.mp4
 ffmpeg -i input.mp4 -ss 00:10 -to 20:30 out.mp4
 ```
 
+- Tweak volume
+
+```bash
+ffmpeg -i cut.mp4 -af "volume=-5.8dB" optimise.mp4
+```
+
+* Embed cover into flac
+
+```bash
+ffmpeg -i "$flac" -i "$cover" -map 0:a -map 1 -codec copy -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" -disposition:v attached_pic "$output"
+```

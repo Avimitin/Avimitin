@@ -49,6 +49,8 @@ in
     ccls # c/cpp LSP
     lua-language-server # Lua LSP
     stylua # Lua formatter
+    pyright # Python LSP
+    black # Python fmt
   ];
 
   nix.package = pkgs.nixVersions.nix_2_24;

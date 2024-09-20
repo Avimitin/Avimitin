@@ -54,8 +54,6 @@ rec {
     broot = utils.fromDotfile "broot/conf.toml";
     fontconfig = utils.fromDotfile "fontconfig/conf.d";
     paru = utils.fromDotfile "paru/paru.conf";
-    waybarConf = utils.fromDotfile "waybar/config";
-    waybarStyle = utils.fromDotfile "waybar/style.css";
     wezterm = utils.fromDotfile "wezterm/wezterm.lua";
     alacritty = utils.fromDotfile "alacritty/alacritty.toml";
     mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";
@@ -69,14 +67,4 @@ rec {
     verboseEcho "Rebuilding font cache"
     run /usr/bin/fc-cache -f
   '';
-
-  programs.wpaperd = {
-    enable = true;
-    settings = {
-      default = {
-        path = "${home.homeDirectory}/Pictures/Wallpapers";
-        duration = "30m";
-      };
-    };
-  };
 }

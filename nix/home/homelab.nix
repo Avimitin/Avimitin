@@ -53,10 +53,6 @@ rec {
     rofi = utils.fromDotfile "rofi";
     broot = utils.fromDotfile "broot/conf.toml";
     fontconfig = utils.fromDotfile "fontconfig/conf.d";
-    hyprland = {
-      target = "hypr";
-      source = toString (pkgs.callPackage ../../dotfile/hypr { inherit (home) homeDirectory; });
-    };
     paru = utils.fromDotfile "paru/paru.conf";
     waybarConf = utils.fromDotfile "waybar/config";
     waybarStyle = utils.fromDotfile "waybar/style.css";

@@ -71,3 +71,9 @@ ffmpeg -i cut.mp4 -af "volume=-5.8dB" optimise.mp4
 ```bash
 ffmpeg -i "$flac" -i "$cover" -map 0:a -map 1 -codec copy -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" -disposition:v attached_pic "$output"
 ```
+
+- 10bit to 8bit
+
+```bash
+ffmpeg -pix_fmt yuv420p
+```

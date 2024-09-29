@@ -1,5 +1,5 @@
 [window]
-opacity = 0.7
+opacity = 0.75
 blur = true
 dimensions = { columns = 200, lines = 60 }
 
@@ -8,7 +8,7 @@ normal = { family = "monospace", style = "Regular" }
 size = 8.5
 
 [colors.primary]
-background = "0x1f1f28"
+background = "0x101017"
 foreground = "0xdcd7ba"
 
 [colors.normal]

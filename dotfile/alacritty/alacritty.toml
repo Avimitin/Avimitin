@@ -1,7 +1,7 @@
 [window]
-opacity = 0.75
-blur = true
-dimensions = { columns = 200, lines = 60 }
+opacity = 1
+#blur = true
+dimensions = { columns = 220, lines = 60 }
 
 [font]
 normal = { family = "monospace", style = "Regular" }

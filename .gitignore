@@ -1,3 +1,5 @@
 dotfile/nvim
 .obsidian
 result
+arch-pkgs/*/*
+!arch-pkgs/*/PKGBUILD

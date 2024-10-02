@@ -1,13 +1,17 @@
-{ buildGoModule, fetchFromGitHub }:
+{ buildGoModule, fetchFromGitHub, cacert }:
 buildGoModule {
   name = "qbittorrent-cli";
 
   src = fetchFromGitHub {
     owner = "ludviglundgren";
     repo = "qbittorrent-cli";
-    rev = "d029c02699408d2ee4f13cee841eb9ea5cc7b2b3";
-    hash = "sha256-RxObIyEeT0UdJO1DhCc4ZITTwtopn6Vwgz01keQzLGI=";
+    rev = "4631210bf1a7b3b82398872ea21dbb5108fee9a3";
+    hash = "sha256-XcmgTBqr5DTKwX80EMUA41FY9yIztYNHW4kgF5z8TVg=";
   };
 
-  vendorHash = "sha256-PFI5pcwLdE/OBElwV8tm/ganH3/PI6/mCSKn6MKvIgg=";
+  propagatedBuildInputs = [
+    cacert
+  ];
+
+  vendorHash = "sha256-neAyMux04H3rfHYvCaX0VXSLhCGsVW5DiJYL/rFruJ4=";
 }

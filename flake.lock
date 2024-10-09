@@ -64,11 +64,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1728461755,
-        "narHash": "sha256-ycfcg4bqUcvRV3wt5Z1G2jhtNvrM/ie9vxZx0rAfXHA=",
+        "lastModified": 1728467133,
+        "narHash": "sha256-qusKWRWipikNMUJ2QNW/25k//Hq0frXngmEQ4kG43/Q=",
         "owner": "Avimitin",
         "repo": "nvim",
-        "rev": "8932db013e249d2bbce373f16c89b12de3b33652",
+        "rev": "ebc0939d19ba4758c1890ba586f70a3eacdc86f4",
         "type": "github"
       },
       "original": {

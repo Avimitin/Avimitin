@@ -91,3 +91,38 @@ Things that we can ignore:
 
 - RVFI
 - HTIF
+
+## Steps for sail-riscv step
+
+```mermaid
+stateDiagram-v2
+  state has_interrupt <<choice>>
+  step --> dispatchInterrupt: Examine the current interrupt state
+  dispatchInterrupt --> has_interrupt
+  has_interrupt --> handle_interrupt : Some
+  has_interrupt --> ext_fetch_hook : None
+  ext_fetch_hook --> fetch
+  state fetch {
+    state "ext_fetch_check_pc(start_pc, pc)" as ext_fetch_check_pc
+    ext_fetch_check_pc --> Ext_FetchAddr_OK : always return Ok(pc)
+    state "translateAddr: Translate virtual address. Args: addr, access type" as translateAddr
+    Ext_FetchAddr_OK --> translateAddr
+    state translateAddr {
+        lookup_TLB --> translate_TLB_hit/miss
+    }
+    translateAddr --> mem_read
+    state is_rv_compressed <<choice>>
+    mem_read --> is_rv_compressed
+    state "return F_RVC(insn[lo])" as return_rvc
+    is_rv_compressed --> return_rvc : is compressed insn
+    is_rv_compressed --> ext_fetch_check_pc(pc+2): not compressed insn
+    state ext_fetch_check_pc(pc+2) {
+        translateAddr(pc+2) --> mem_read(new_ppc)
+        mem_read(new_ppc) --> F_Base(append(hi,lo))
+    }
+    ext_fetch_check_pc(pc+2) --> no_address_error : return
+  }
+  no_address_error --> decode&execute
+  decode&execute --> tick_pc
+  tick_pc --> retired
+```

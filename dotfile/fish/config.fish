@@ -9,10 +9,6 @@ alias rm "rm -i"
 # ===================================================================
 # alias
 # ===================================================================
-if command -q bat
-    alias v bat
-end
-
 if command -q rg
     function search
         rg --json -C 2 $argv | delta --line-numbers
@@ -119,8 +115,6 @@ $normal_ref\
  (%(color:blue)%(worktreepath)%(color:reset))\
 %(end)" | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
     end
-
-    alias gbD "git branch -D"
 end
 
 if command -q rsync
@@ -147,7 +141,6 @@ else if command -q vim
     alias vi "vim"
 end
 
-alias ip "command ip --color=auto"
 alias userctl "command systemctl --user"
 
 # Allow using ncurse as askpass
@@ -155,31 +148,18 @@ if command -q gpg
     set -gx GPG_TTY (tty)
 end
 
-if command -q fzf
-    set -gx FZF_DEFAULT_OPTS '--height 35% --layout=reverse'
-end
-
-if command -q ffmpeg
-    alias img2mp4 'ffmpeg -r 1/2 -c:v libx264 -pix_fmt yuv420p'
-end
-
-if command -q kitty
-    alias icat "kitty icat"
-end
-
 set -x fish_greeting ""
-
-alias set_env "set --global --export"
-
-set_env XDG_CONFIG_HOME $HOME/.config
-set_env XDG_CACHE_HOME $HOME/.cache
-set_env XDG_DATA_HOME $HOME/.local/share
-
-set_env EDITOR 'nvim'
-set_env VISUAL "$EDITOR "
-set_env SYSTEMD_EDITOR $EDITOR
-set_env PAGER 'less -R'
-set_env MANPAGER 'nvim +Man!'
+# --global --export
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx CLICOLOR 1
+set -gx EDITOR 'nvim'
+set -gx VISUAL "$EDITOR "
+set -gx SYSTEMD_EDITOR $EDITOR
+set -gx PAGER 'less -R'
+set -gx MANPAGER 'nvim +Man!'
+set -gx FZF_DEFAULT_OPTS '--height 35% --layout=reverse'
 
 # ===================================================================
 # fish themes

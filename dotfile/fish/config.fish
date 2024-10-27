@@ -142,6 +142,7 @@ else if command -q vim
 end
 
 alias userctl "command systemctl --user"
+alias ip "ip -c"
 
 # Allow using ncurse as askpass
 if command -q gpg

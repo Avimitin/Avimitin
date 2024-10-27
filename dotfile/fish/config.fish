@@ -102,9 +102,14 @@ if command -q git
 
 
     function gb
+        if test -n "$argv"
+            git branch $argv
+            return $status
+        end
+
         set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
         set --local normal_ref "%(refname:short)"
-        git branch --color=always --format "%(HEAD) \
+        git branch --no-column --color=always --format "%(HEAD) \
 %(if)%(HEAD)%(then)\
 $green_ref\
 %(else)\
@@ -113,7 +118,7 @@ $normal_ref\
  %(color:bold yellow)%(upstream:track)%(color:reset)\
 %(if)%(worktreepath)%(then)\
  (%(color:blue)%(worktreepath)%(color:reset))\
-%(end)" | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
+%(end)"
     end
 end
 

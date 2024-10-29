@@ -54,3 +54,47 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
+
+[alias]
+    ap="add -p"
+    co="checkout"
+    c="commit --signoff --gpg-sign --verbose"
+    ca="commit --amend --no-edit --allow-empty --gpg-sign --signoff"
+    d="diff"
+    dc="diff --cached"
+    f="fetch -p -P --force"
+    w="worktree"
+    s="status -s"
+    l="log -n15 --graph --decorate \
+        --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' \
+        --date=short"
+    lo="log --graph --decorate \
+        --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' \
+        --date=short"
+    lp="log -p"
+    pf="push --force-with-lease"
+    pr="pull --rebase"
+    r="rebase --interactive --gpg-sign"
+    rc="rebase --continue"
+    ra="rebase --abort"
+    br="!gb() {\
+    if [[ -n \"$@\" ]]; then\
+        git branch $@;\
+        return $?;\
+    fi;\
+    local green_ref=\"%(color:ul bold green)%(refname:short)%(color:reset)\";\
+    local normal_ref=\"%(refname:short)\";\
+    git branch --no-column --color=always --format=\"\
+%(HEAD)\
+%(if)%(HEAD)%(then)\
+ $green_ref\
+%(else)\
+ $normal_ref\
+%(end)\
+ %(color:bold yellow)%(upstream:track)%(color:reset)\
+%(if)%(worktreepath)%(then)\
+ (%(color:blue)%(worktreepath)%(color:reset))\
+%(end)\";\
+};\
+gb;\
+unset gb"

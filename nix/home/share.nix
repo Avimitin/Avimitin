@@ -162,7 +162,7 @@ in
 
   # Prompt for bash
   programs.starship = {
-    enable = true;
+    enable = false;
     settings = {
       character = {
         success_symbol = "[](blue)";

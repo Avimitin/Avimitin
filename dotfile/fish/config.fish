@@ -55,15 +55,6 @@ if test -r /usr/lib/locale/locale-archive
     set -gx LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 end
 
-if command -q starship
-    # Enable starship
-    function starship_transient_prompt_func
-        starship module character
-    end
-    starship init fish | source
-    enable_transience
-end
-
 if command -q direnv
     direnv hook fish | source
 end

@@ -5,81 +5,91 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Allow using ncurse as askpass
-export GPG_TTY=$(tty)
+[[ $DISPLAY ]] && shopt -s checkwinsize
 
-# Set fzf default theme
-export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
+#PS1='[\u@\h \W]\$ '
+liBlack="\[\033[0;30m\]"
+boBlack="\[\033[1;30m\]"
+liRed="\[\033[0;31m\]"
+boRed="\[\033[1;31m\]"
+liGreen="\[\033[0;32m\]"
+boGreen="\[\033[1;32m\]"
+liYellow="\[\033[0;33m\]"
+boYellow="\[\033[1;33m\]"
+liBlue="\[\033[0;34m\]"
+boBlue="\[\033[1;34m\]"
+liMagenta="\[\033[0;35m\]"
+boMagenta="\[\033[1;35m\]"
+liCyan="\[\033[0;36m\]"
+boCyan="\[\033[1;36m\]"
+liWhite="\[\033[0;37m\]"
+boWhite="\[\033[1;37m\]"
 
-# manually setting locale archive to fix programs from nixpkgs doesn't correctly use locale
-# archive in glibc issues.
-if [[ -r /usr/lib/locale/locale-archive ]]; then
-    export LOCALE_ARCHIVE='/usr/lib/locale/locale-archive'
+PS1="$boGreen\u$liWhite@$boBlue\h$liWhite $boYellow\w$boMagenta\`git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/ (\1)/'\` $boRed{\`let exitstatus=\$_EXIT_CODE ; if [[ \${exitstatus} != 0 ]] ; then echo \"\${exitstatus}\" ; else echo "0" ; fi\`}$liWhite\$ "
+PROMPT_COMMAND="_EXIT_CODE=\$?; ${PROMPT_COMMAND:-:}"
+
+case ${TERM} in
+  Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|tmux*|xterm*)
+    PROMPT_COMMAND+=('printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"')
+    ;;
+  screen*)
+    PROMPT_COMMAND+=('printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"')
+    ;;
+esac
+
+if [[ -r /usr/share/bash-completion/bash_completion ]]; then
+  . /usr/share/bash-completion/bash_completion
 fi
 
-# Set xdg dir
-export XDG_CONFIG_HOME="$HOME/.config/"
-export XDG_CACHE_HOME="$HOME/.cache/"
+export PATH="$HOME/.nix-profile/bin:$PATH"
+export GPG_TTY=$(tty)
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export CLICOLOR=1
 
-export EDITOR='nvim'
+if [[ -r /usr/lib/locale/locale-archive ]]; then
+  export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+fi
+
+if command -v nvim >/dev/null; then
+  alias vi="nvim"
+  export EDITOR="nvim"
+elif command -v vim >/dev/null; then
+  alias vi="vim"
+  export EDITOR="vim"
+fi
+
 export VISUAL="$EDITOR "
-export SYSTEMD_EDITOR="$EDITOR"
+export SYSTEMD_EDITOR=$EDITOR
 export PAGER='less -R'
 export MANPAGER='nvim +Man!'
+export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
 
-alias v='bat'
-alias vi="nvim"
-alias ll='lsd --long'
-alias lg='lazygit'
-alias rm='rm -i'
+alias rm="rm -i"
+alias ll="lsd --long"
+alias la="ls -al"
+alias lt="lsd --tree --depth=2"
+alias g="command git"
 
-function gb() {
-  local _green_ref="%(color:ul bold green)%(refname:short)%(color:reset)"
-  local _normal_ref="%(refname:short)"
-  git branch --color=always --format "%(align:33,left)%(HEAD) %(if)%(HEAD)%(then)$green_ref%(else)$normal_ref%(end)%(end)  %(color:bold yellow)%(upstream:track)%(color:reset)" \
-      | sed 's/\[ahead/\[↑/; s/, behind /, ↓ /'
-}
+# Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as
+# symlink, preserve permission, mod time, group, owner, copy device) compressed
+# ([z]ipped) mode with [v]erbose and [h]uman-readable [P]rogress, if file is a
+# [L]ink, copy its referent file. Skip based-on [c]hecksum instead of mod-time
+# & size.
+alias rsyncz="command rsync -aczvhPL"
+alias rsynca="command rsync -avhP"
 
-alias gl="git log --graph --abbrev-commit --decorate \
-    --format=format:'%C(dim blue)%h%C(reset) %C(bold green)➜%C(reset) %C(bold white)%s%C(reset) - %C(yellow)[%an]%C(reset)%C(auto)%d%C(reset)%n''\
-    %C(italic dim white)%ai (%ar) %C(reset)'"
-
-alias gdc="git diff --cached"
-alias gpf="git push --force-with-lease"
-alias grc="git rebase --continue"
-alias gra="git rebase --abort"
-
-# Transfer file in [a]rchive (to preserve attributes) and
-# compressed ([z]ipped) mode with [v]erbose and [h]uman-readable
-# [P]rogress [r]ecursively, if file is a [L]ink, copy its referent file.
-# Skip based-on [c]hecksum instead of mod-time & size.
-alias rsynca="command rsync -aczrvhPL"
+alias ssh="env TERM=xterm-256color ssh"
 
 alias tl="command tmux ls"
 alias ta="command tmux attach-session -t"
 
 alias userctl="command systemctl --user"
+alias ip="command ip -c"
 
-alias ..="command cd .."
-alias ...="command cd ../.."
-
-alias ip="command ip --color=auto"
-
-# --
-
-if [[ -r "@BASH_COMPLETION@" ]]; then
-    . @BASH_COMPLETION@/etc/profile.d/bash_completion.sh
-fi
-
-if [[ -r "@COMPLETE_ALIAS@" ]]; then
-    . @COMPLETE_ALIAS@/complete_alias
-
-    complete -F _complete_alias userctl
-    complete -F _complete_alias ip
-    complete -F _complete_alias rsynca
-fi
+function search() {
+  rg --json -C 2 $@ | delta --line-numbers
+}
 
 eval "$(zoxide init bash)"
-eval "$(fzf --bash)"
-eval "$(starship init bash)"

@@ -10,7 +10,7 @@ size = 7.5
 # Colors (Vesper)
 # Source https://github.com/raunofreiberg/vesper
 [colors.primary]
-background = '#101010'
+background = '#011627'
 foreground = '#ffffff'
 
 [colors.normal]
@@ -21,7 +21,7 @@ yellow  = '#e6b99d'
 blue    = '#aca1cf'
 magenta = '#e29eca'
 cyan    = '#ea83a5'
-white   = '#a0a0a0'
+white   = '#d6dcdb'
 
 [colors.bright]
 black   = '#7e7e7e'

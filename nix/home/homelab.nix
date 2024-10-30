@@ -35,6 +35,10 @@ rec {
       source = "${pkgs.apple-new-york}/share/fonts/opentype";
       target = "fonts/opentype/AppleNYFonts";
     };
+    cascadiaNextSC = {
+      source = "${pkgs.cascadia-next-sc}";
+      target = "fonts/opentype/CascadiaNextSC.wght.ttf";
+    };
   };
 
   xdg.configFile = {

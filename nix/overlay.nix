@@ -19,4 +19,8 @@ final: prev: {
     fontName = "NY";
     hash = "sha256-HC7ttFJswPMm+Lfql49aQzdWR2osjFYHJTdgjtuI+PQ=";
   };
+  cascadia-next-sc = final.fetchurl {
+    url = "https://github.com/microsoft/cascadia-code/releases/download/cascadia-next/CascadiaNextSC.wght.ttf";
+    hash = "sha256-Dy1DJF+vjJ6kyU2qLL0HhT4xCONH6W/UTjfWrqqKfu8=";
+  };
 }

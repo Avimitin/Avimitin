@@ -55,22 +55,21 @@ fi
 if command -v nvim >/dev/null; then
   alias vi="nvim"
   export EDITOR="nvim"
+  export MANPAGER='nvim +Man!'
 elif command -v vim >/dev/null; then
   alias vi="vim"
   export EDITOR="vim"
+  export MANPAGER='vim +Man!'
 fi
 
 export VISUAL="$EDITOR "
 export SYSTEMD_EDITOR=$EDITOR
 export PAGER='less -R'
-export MANPAGER='nvim +Man!'
-export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
 
 alias rm="rm -i"
 alias ll="lsd --long"
 alias la="ls -al"
 alias lt="lsd --tree --depth=2"
-alias g="command git"
 
 # Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as
 # symlink, preserve permission, mod time, group, owner, copy device) compressed
@@ -92,7 +91,14 @@ function search() {
   rg --json -C 2 $@ | delta --line-numbers
 }
 
-eval "$(zoxide init bash)"
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init bash)"
+fi
+
+if command -v fzf >/dev/null; then
+  export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
+  eval "$(fzf --bash)"
+fi
 
 # If there are multiple matches for completion, Tab should cycle through them
 bind 'TAB:menu-complete'

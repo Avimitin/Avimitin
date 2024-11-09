@@ -62,7 +62,7 @@
     ca="commit --amend --no-edit --allow-empty --gpg-sign --signoff"
     d="diff"
     dc="diff --cached"
-    f="fetch -p -P --force"
+    ff="fetch -p -P --force"
     w="worktree"
     s="status -s"
     l="log -n15 --graph --decorate \
@@ -96,5 +96,5 @@
  (%(color:blue)%(worktreepath)%(color:reset))\
 %(end)\";\
 };\
-gb;\
+gb $@;\
 unset gb"

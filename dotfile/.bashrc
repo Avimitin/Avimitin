@@ -25,7 +25,7 @@ boCyan="\[\033[1;36m\]"
 liWhite="\[\033[0;37m\]"
 boWhite="\[\033[1;37m\]"
 
-PS1="$boGreen\u$liWhite@$boBlue\h$liWhite $boYellow\w$boMagenta\`git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/ (\1)/'\` $boRed{\`let exitstatus=\$_EXIT_CODE ; if [[ \${exitstatus} != 0 ]] ; then echo \"\${exitstatus}\" ; else echo "0" ; fi\`}$liWhite\$ "
+PS1="$boGreen\u$liWhite@$boBlue\h$liWhite $boYellow\w $liWhite\$ "
 PROMPT_COMMAND="_EXIT_CODE=\$?; ${PROMPT_COMMAND:-:}"
 
 case ${TERM} in

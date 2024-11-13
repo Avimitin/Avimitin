@@ -46,7 +46,6 @@ export GPG_TTY=$(tty)
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export CLICOLOR=1
 
 if [[ -r /usr/lib/locale/locale-archive ]]; then
   export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
@@ -66,10 +65,10 @@ export VISUAL="$EDITOR "
 export SYSTEMD_EDITOR=$EDITOR
 export PAGER='less -R'
 
-alias rm="rm -i"
-alias ll="lsd --long"
-alias la="ls -al"
-alias lt="lsd --tree --depth=2"
+alias rm="command rm -i"
+alias ll="command lsd --long"
+alias la="command ls -al --color"
+alias lt="command lsd --tree --depth=2"
 
 # Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as
 # symlink, preserve permission, mod time, group, owner, copy device) compressed

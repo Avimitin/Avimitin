@@ -87,7 +87,7 @@ alias userctl="command systemctl --user"
 alias ip="command ip -c"
 
 function search() {
-  rg --json -C 2 $@ | delta --line-numbers
+  rg --json -. -C 2 $@ | delta --line-numbers
 }
 
 if command -v zoxide >/dev/null; then

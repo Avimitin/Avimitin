@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+gb() {
+  if [[ -n \"$@\" ]]; then
+        git branch $@
+        return $?
+  fi
+
+  local green_ref='%(color:ul bold green)%(refname:short)%(color:reset)'
+  local normal_ref='%(refname:short)'
+
+  git branch --no-column --color=always --format="\
+%(HEAD)\
+%(if)%(HEAD)%(then)\
+ $green_ref\
+%(else)\
+ $normal_ref\
+%(end)\
+ %(color:bold yellow)%(upstream:track)%(color:reset)\
+%(if)%(worktreepath)%(then)\
+ (%(color:blue)%(worktreepath)%(color:reset))\
+%(end)"
+}
+
+gb $@

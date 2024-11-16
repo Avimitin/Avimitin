@@ -25,7 +25,6 @@ in
         } ../../dotfile/.bashrc;
       target = ".bashrc";
     };
-    git = lib.fromDotfile ".gitconfig";
     tmux = lib.fromDotfile ".tmux.conf";
     inputrc = lib.fromDotfile ".inputrc";
   };
@@ -63,6 +62,8 @@ in
   xdg.configFile = {
     fishConf = lib.fromDotfile "fish/config.fish";
     xdgPortal = lib.fromDotfile "xdg-desktop-portal";
+
+    git = lib.fromDotfile "git";
 
     fishAutoPair = lib.fetchFishPlugin {
       owner = "jorgebucaran";

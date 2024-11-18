@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
-gb() {
-  if [[ -n \"$@\" ]]; then
-        git branch $@
-        return $?
-  fi
+if [[ -n "$@" ]]; then
+  git branch $@
+  exit $?
+fi
 
-  local green_ref='%(color:ul bold green)%(refname:short)%(color:reset)'
-  local normal_ref='%(refname:short)'
+green_ref='%(color:ul bold green)%(refname:short)%(color:reset)'
+normal_ref='%(refname:short)'
 
-  git branch --no-column --color=always --format="\
+git branch --no-column --color=always --format="\
 %(HEAD)\
 %(if)%(HEAD)%(then)\
  $green_ref\
@@ -20,6 +19,3 @@ gb() {
 %(if)%(worktreepath)%(then)\
  (%(color:blue)%(worktreepath)%(color:reset))\
 %(end)"
-}
-
-gb $@

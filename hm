@@ -59,7 +59,7 @@ if [ "$OFFLINE" = 'y' ]; then
   HM_FLAGS+=( --no-substitute )
   echo "Running in offline mode"
 else
-  nix flake update
+  nix flake update --commit-lock-file --commit-lock-file-summary "[nix] bump flake.nix"
 fi
 
 if (( $HM_DEBUG )); then

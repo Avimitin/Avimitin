@@ -64,6 +64,7 @@ rec {
     neovide = utils.fromDotfile "neovide";
     mimeapps = utils.fromDotfile "mimeapps.list";
     sioyek = utils.fromDotfile "sioyek";
+    "gtk-3.0" = utils.fromDotfile "gtk-3.0";
   };
 
   # Use system fc-cache here

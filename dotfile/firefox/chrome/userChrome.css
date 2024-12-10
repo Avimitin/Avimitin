@@ -419,7 +419,7 @@ toolbar:not([customizing]) > #nav-bar-customization-target {
 /* AUTO HIDE SIDE BAR */
 
 #sidebar-box {
-    --uc-sidebar-width: 44px;
+    --uc-sidebar-width: 35px;
     --uc-sidebar-hover-width: 260px;
     --uc-autohide-sidebar-delay: 1ms; /* Waiting time before hiding sidebar */
     position: relative;

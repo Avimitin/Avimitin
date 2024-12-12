@@ -62,7 +62,7 @@
     cm="commit --signoff --gpg-sign -m"
     ca="commit --amend --no-edit --allow-empty --gpg-sign --signoff"
     diffc="diff --cached"
-    force-fetch="fetch -p -P --force"
+    sync-upstream="fetch -p -P --force"
     wt="worktree"
     s="!~/.config/git/git-status"
     l="log -n15 --graph --decorate \

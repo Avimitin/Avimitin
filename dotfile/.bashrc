@@ -47,6 +47,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+HISTCONTROL=ignoreboth
+HISTFILE="$XDG_CACHE_HOME/bash_history"
+HISTFILESIZE=100000
+
 if [[ -r /usr/lib/locale/locale-archive ]]; then
   export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 fi

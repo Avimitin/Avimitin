@@ -160,40 +160,4 @@ in
       };
     };
   };
-
-  # Prompt for bash
-  programs.starship = {
-    enable = false;
-    settings = {
-      character = {
-        success_symbol = "[](blue)";
-        error_symbol = "[](bold red)";
-      };
-      format =
-        let
-          components = [
-            "$hostname"
-            "$directory"
-            "$nix_shell"
-            "$git_branch"
-            "$custom"
-            "$jobs"
-            "$line_break"
-            "$sudo"
-            "$character"
-          ];
-        in
-        "${builtins.concatStringsSep "" components}";
-      directory = {
-        fish_style_pwd_dir_length = 1;
-        style = "bold green";
-      };
-      nix_shell.symbol = "󱄅 ";
-      git_branch.format = "[ $branch(:$remote_branch)](bright-yellow) ";
-      hostname = {
-        ssh_symbol = "󰌘";
-        format = "[\\[$ssh_symbol $hostname\\]](bright-cyan) ";
-      };
-    };
-  };
 }

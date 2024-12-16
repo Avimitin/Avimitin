@@ -20,7 +20,7 @@ rec {
 
   xdg.dataFile = {
     theme = {
-      source = "${../../fcitx/theme}";
+      source = "${../../dotfile/fcitx/theme}";
       target = "fcitx5/themes/default";
     };
     sfMono = {

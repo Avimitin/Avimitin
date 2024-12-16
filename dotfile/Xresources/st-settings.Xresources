@@ -1,6 +1,0 @@
-st.font: BlexMono Nerd Font Mono:pixelsize=24
-st.termname: xterm-256color
-! window padding
-st.borderpx: 2
-!- 0.1 to 0.9 = transparency
-st.alpha: 0.65

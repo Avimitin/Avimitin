@@ -103,6 +103,10 @@ if command -v fzf >/dev/null; then
   eval "$(fzf --bash)"
 fi
 
+if command -v blesh-share >/dev/null; then
+  source "$(blesh-share)/ble.sh"
+fi
+
 # If there are multiple matches for completion, Tab should cycle through them
 bind 'TAB:menu-complete'
 # And Shift-Tab should cycle backwards

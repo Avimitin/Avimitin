@@ -39,6 +39,7 @@ in
     ripgrep # grep alternative
     zoxide # cd alternative
     gh # github cli
+    blesh # enhance bash
 
     # Development
     nixpkgs-fmt # global formatter for all nix sources

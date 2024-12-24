@@ -1,6 +1,4 @@
-#
-# ~/.bashrc
-#
+# shellcheck shell=bash
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -8,31 +6,33 @@
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
 #PS1='[\u@\h \W]\$ '
-liBlack="\[\033[0;30m\]"
-boBlack="\[\033[1;30m\]"
-liRed="\[\033[0;31m\]"
-boRed="\[\033[1;31m\]"
-liGreen="\[\033[0;32m\]"
+#liBlack="\[\033[0;30m\]"
+#boBlack="\[\033[1;30m\]"
+#liRed="\[\033[0;31m\]"
+#boRed="\[\033[1;31m\]"
+#liGreen="\[\033[0;32m\]"
 boGreen="\[\033[1;32m\]"
-liYellow="\[\033[0;33m\]"
+#liYellow="\[\033[0;33m\]"
 boYellow="\[\033[1;33m\]"
-liBlue="\[\033[0;34m\]"
+#liBlue="\[\033[0;34m\]"
 boBlue="\[\033[1;34m\]"
-liMagenta="\[\033[0;35m\]"
-boMagenta="\[\033[1;35m\]"
-liCyan="\[\033[0;36m\]"
-boCyan="\[\033[1;36m\]"
+#liMagenta="\[\033[0;35m\]"
+#boMagenta="\[\033[1;35m\]"
+#liCyan="\[\033[0;36m\]"
+#boCyan="\[\033[1;36m\]"
 liWhite="\[\033[0;37m\]"
-boWhite="\[\033[1;37m\]"
+#boWhite="\[\033[1;37m\]"
 
 PS1="$boGreen\u$liWhite@$boBlue\h$liWhite $boYellow\w $liWhite\$ "
 PROMPT_COMMAND="_EXIT_CODE=\$?; ${PROMPT_COMMAND:-:}"
 
 case ${TERM} in
   Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|tmux*|xterm*)
+    # shellcheck disable=SC2016
     PROMPT_COMMAND+=('printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"')
     ;;
   screen*)
+    # shellcheck disable=SC2016
     PROMPT_COMMAND+=('printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"')
     ;;
 esac
@@ -41,8 +41,12 @@ if [[ -r /usr/share/bash-completion/bash_completion ]]; then
   . /usr/share/bash-completion/bash_completion
 fi
 
-export PATH="$HOME/.nix-profile/bin:$PATH"
-export GPG_TTY=$(tty)
+if [[ -r "$HOME/.nix-profile/bin" ]]; then
+  export PATH="$HOME/.nix-profile/bin:$PATH"
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -70,9 +74,14 @@ export SYSTEMD_EDITOR=$EDITOR
 export PAGER='less -R'
 
 alias rm="command rm -i"
-alias ll="command lsd --long"
+
+if command -v lsd >/dev/null; then
+  alias ll="command lsd --long"
+  alias lt="command lsd --tree --depth=2"
+else
+  alias ll="command ls -al --color"
+fi
 alias la="command ls -al --color"
-alias lt="command lsd --tree --depth=2"
 
 # Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as
 # symlink, preserve permission, mod time, group, owner, copy device) compressed
@@ -91,7 +100,15 @@ alias userctl="command systemctl --user"
 alias ip="command ip -c"
 
 function search() {
-  rg --json -. -C 2 $@ | delta --line-numbers
+  if [[ -z "$*" ]]; then
+    echo "No arguments" >&2
+    exit 1
+  fi
+
+  local pattern="$1"; shift
+  # Yes, I intended to let the glob expand here
+  # shellcheck disable=SC2068
+  rg --json -. -C 2 "$pattern" $@ | delta --line-numbers
 }
 
 if command -v zoxide >/dev/null; then
@@ -104,6 +121,7 @@ if command -v fzf >/dev/null; then
 fi
 
 if command -v blesh-share >/dev/null; then
+  # shellcheck disable=SC1091
   source "$(blesh-share)/ble.sh"
 fi
 

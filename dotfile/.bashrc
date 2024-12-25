@@ -122,15 +122,47 @@ fi
 
 if command -v blesh-share >/dev/null; then
   # shellcheck disable=SC1091
-  source "$(blesh-share)/ble.sh"
-fi
+  source "$(blesh-share)/ble.sh" --noattach
 
-# If there are multiple matches for completion, Tab should cycle through them
-bind 'TAB:menu-complete'
-# And Shift-Tab should cycle backwards
-bind '"\e[Z": menu-complete-backward'
-# Display a list of the matching files
-bind "set show-all-if-ambiguous on"
-# Perform partial (common) completion on the first Tab press, only start
-# cycling full results on the second Tab press (from bash version 5)
-bind "set menu-complete-display-prefix on"
+  # blerc
+  ble-bind -f 'M-C-?' kill-backward-cword
+  ble-bind -f 'M-DEL' kill-backward-cword
+
+  ble-bind -f 'M-C-?' kill-backward-fword
+  ble-bind -f 'M-DEL' kill-backward-fword
+
+  function blerc/define-sabbrev-commit {
+    ble/color/defface blerc_git_commit_id fg=63
+    ble/complete/action#inherit-from blerc_git_commit_id word
+    function ble/complete/action:blerc_git_commit_id/init-menu-item {
+      local ret
+      ble/color/face2g blerc_git_commit_id; g=$ret
+    }
+    function blerc/sabbrev-git-commit {
+      bleopt sabbrev_menu_style=desc-raw
+      bleopt sabbrev_menu_opts=enter_menu
+
+      local format=$'%h \e[1;32m(%ar)\e[m %s - \e[4m%an\e[m\e[1;33m%d\e[m'
+      local arr; ble/util/assign-array arr 'git log --pretty=format:"$format"' &>/dev/null
+      local line hash subject
+      for line in "${arr[@]}"; do
+        builtin read hash subject <<< "$line"
+        ble/complete/cand/yield blerc_git_commit_id "$hash" "$subject"
+      done
+    }
+    ble-sabbrev -m '\commit'='blerc/sabbrev-git-commit'
+  }
+  blehook/eval-after-load complete blerc/define-sabbrev-commit
+
+  [[ ! ${BLE_VERSION-} ]] || ble-attach
+else
+  # If there are multiple matches for completion, Tab should cycle through them
+  bind 'TAB:menu-complete'
+  # And Shift-Tab should cycle backwards
+  bind '"\e[Z": menu-complete-backward'
+  # Display a list of the matching files
+  bind "set show-all-if-ambiguous on"
+  # Perform partial (common) completion on the first Tab press, only start
+  # cycling full results on the second Tab press (from bash version 5)
+  bind "set menu-complete-display-prefix on"
+fi

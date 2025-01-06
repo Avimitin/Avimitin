@@ -131,6 +131,7 @@ if command -v blesh-share >/dev/null; then
   ble-bind -f 'M-C-?' kill-backward-fword
   ble-bind -f 'M-DEL' kill-backward-fword
 
+  # shellcheck disable=SC2317,SC2034,SC2016
   function blerc/define-sabbrev-commit {
     ble/color/defface blerc_git_commit_id fg=63
     ble/complete/action#inherit-from blerc_git_commit_id word
@@ -146,7 +147,7 @@ if command -v blesh-share >/dev/null; then
       local arr; ble/util/assign-array arr 'git log --pretty=format:"$format"' &>/dev/null
       local line hash subject
       for line in "${arr[@]}"; do
-        builtin read hash subject <<< "$line"
+        builtin read -r hash subject <<< "$line"
         ble/complete/cand/yield blerc_git_commit_id "$hash" "$subject"
       done
     }

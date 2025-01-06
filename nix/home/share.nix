@@ -31,6 +31,8 @@ in
 
   # Here are a list of package that doesn't need configuration or configuration are handle manunally
   home.packages = with pkgs; [
+    nix
+
     # Misc shell tools
     delta # Beautiful git diff
     neovim-nightly # vim alternative

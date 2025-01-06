@@ -40,6 +40,7 @@ in
     zoxide # cd alternative
     gh # github cli
     blesh # enhance bash
+    atuin # enhance bash shell history
 
     # Development
     nixpkgs-fmt # global formatter for all nix sources

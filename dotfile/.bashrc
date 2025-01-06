@@ -155,6 +155,10 @@ if command -v blesh-share >/dev/null; then
   blehook/eval-after-load complete blerc/define-sabbrev-commit
 
   [[ ! ${BLE_VERSION-} ]] || ble-attach
+
+  if command -v atuin >/dev/null; then
+    eval "$(atuin init bash)"
+  fi
 else
   # If there are multiple matches for completion, Tab should cycle through them
   bind 'TAB:menu-complete'

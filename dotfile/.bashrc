@@ -37,10 +37,6 @@ case ${TERM} in
     ;;
 esac
 
-if [[ -r /usr/share/bash-completion/bash_completion ]]; then
-  . /usr/share/bash-completion/bash_completion
-fi
-
 if [[ -r "$HOME/.nix-profile/bin" ]]; then
   export PATH="$HOME/.nix-profile/bin:$PATH"
 fi
@@ -118,6 +114,10 @@ fi
 if command -v fzf >/dev/null; then
   export FZF_DEFAULT_OPTS='--height 35% --layout=reverse'
   eval "$(fzf --bash)"
+fi
+
+if [[ -r "@bash_completion@" ]]; then
+  . "@bash_completion@/share/bash-completion/bash_completion"
 fi
 
 if command -v blesh-share >/dev/null; then

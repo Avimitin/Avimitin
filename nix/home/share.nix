@@ -13,16 +13,17 @@ in
 
   home.file = {
     bash = {
-      source = lib.substituted
-        {
-          BASH_COMPLETION = pkgs.bash-completion;
-          COMPLETE_ALIAS = pkgs.fetchFromGitHub {
-            owner = "cykerway";
-            repo = "complete-alias";
-            rev = "7f2555c2fe7a1f248ed2d4301e46c8eebcbbc4e2";
-            hash = "sha256-yohvfmfUbjGkIoX4GF8pBH+7gGRzFkyx0WXOlj+Neag=";
-          };
-        } ../../dotfile/.bashrc;
+      source = pkgs.substituteAll {
+        src = ../../dotfile/.bashrc;
+
+        bash_completion = pkgs.bash-completion;
+
+        # Ensure .bashrc work and correct
+        postInstall = ''
+          ${pkgs.buildPackages.bash}/bin/bash -n $target
+          ${pkgs.shellcheck}/bin/shellcheck -x $target
+        '';
+      };
       target = ".bashrc";
     };
     tmux = lib.fromDotfile ".tmux.conf";

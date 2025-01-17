@@ -13,6 +13,7 @@ in
 
   home.file = {
     bash = {
+      enable = false;
       source = pkgs.substituteAll {
         src = ../../dotfile/.bashrc;
 
@@ -128,7 +129,7 @@ in
   };
 
   programs.lazygit = {
-    enable = true;
+    enable = false;
     settings = {
       customCommands = [
         {

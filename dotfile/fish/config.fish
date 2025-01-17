@@ -4,11 +4,26 @@ end
 
 fish_add_path "$HOME/.nix-profile/bin"
 
-alias rm "rm -i"
+# ===================================================================
+# hooks
+# ===================================================================
+if command -q direnv
+    direnv hook fish | source
+end
+
+if command -q atuin
+    atuin init fish | source
+end
+
+if command -q zoxide
+    zoxide init fish | source
+end
 
 # ===================================================================
 # alias
 # ===================================================================
+alias rm "rm -i"
+
 if command -q rg
     function search
         rg --json -C 2 $argv | delta --line-numbers
@@ -49,69 +64,14 @@ if command -q nix
     complete --command nix --arguments '(_nix)'
 end
 
-if test -r /usr/lib/locale/locale-archive
-    # manually setting locale archive to fix programs from nixpkgs doesn't correctly use locale
-    # archive in glibc issues.
-    set -gx LOCALE_ARCHIVE /usr/lib/locale/locale-archive
-end
-
-if command -q direnv
-    direnv hook fish | source
-end
 
 if command -q lsd
-    alias ll "lsd --long"
-    alias lt "lsd --tree --depth=2"
+    alias ll "command lsd --long"
+    alias lt "command lsd --tree --depth=2"
+else
+    alias ll "command ls -al --color"
 end
-
-if command -q zoxide
-    zoxide init fish | source
-end
-
-# G
-if command -q git
-    alias a "git add -p"
-    alias ga "git add"
-    alias co "git checkout"
-    alias c "git commit --signoff --gpg-sign --verbose"
-    alias c! "git commit --amend --no-edit --allow-empty --gpg-sign --signoff"
-    alias d "git diff"
-    alias dc "git diff --cached"
-    alias f! "git fetch -p -P --progress --force"
-    alias g "git"
-    alias gw "git worktree"
-    alias l "git log -n15 --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
-    alias lo "git log --graph --decorate --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' --date=short"
-    alias lp "git log -p"
-    alias p "git push"
-    alias p! "git push --force-with-lease"
-    alias pul "git pull --rebase"
-    alias r "git rebase --interactive --gpg-sign"
-    alias rc "git rebase --continue"
-    alias ra "git rebase --abort"
-    alias s "git status -s"
-
-
-    function gb
-        if test -n "$argv"
-            git branch $argv
-            return $status
-        end
-
-        set --local green_ref "%(color:ul bold green)%(refname:short)%(color:reset)"
-        set --local normal_ref "%(refname:short)"
-        git branch --no-column --color=always --format "%(HEAD) \
-%(if)%(HEAD)%(then)\
-$green_ref\
-%(else)\
-$normal_ref\
-%(end)\
- %(color:bold yellow)%(upstream:track)%(color:reset)\
-%(if)%(worktreepath)%(then)\
- (%(color:blue)%(worktreepath)%(color:reset))\
-%(end)"
-    end
-end
+alias la="command ls -al --color"
 
 if command -q rsync
     # Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as symlink, preserve permission, mod time, group, owner, copy device)
@@ -133,16 +93,32 @@ end
 
 if command -q nvim
     alias vi "nvim"
+    set -gx EDITOR 'nvim'
+    set -gx MANPAGER 'nvim +Man!'
 else if command -q vim
     alias vi "vim"
+    set -gx EDITOR 'vim'
+    set -gx MANPAGER 'vim +Man!'
 end
 
 alias userctl "command systemctl --user"
 alias ip "ip -c"
 
+# ===================================================================
+# Variables
+# ===================================================================
+
 # Allow using ncurse as askpass
 if command -q gpg
     set -gx GPG_TTY (tty)
+end
+
+# manually setting locale archive to fix programs from nixpkgs doesn't correctly use locale
+# archive in glibc issues.
+if test -r "@nix_locale_archive@"
+    set -gx LOCALE_ARCHIVE "@nix_locale_archive@"
+else if test -r /usr/lib/locale/locale-archive
+    set -gx LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 end
 
 set -x fish_greeting ""
@@ -151,11 +127,11 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx CLICOLOR 1
-set -gx EDITOR 'nvim'
-set -gx VISUAL "$EDITOR "
+if test -n "$EDITOR"
+    set -gx VISUAL "$EDITOR "
+end
 set -gx SYSTEMD_EDITOR $EDITOR
 set -gx PAGER 'less -R'
-set -gx MANPAGER 'nvim +Man!'
 set -gx FZF_DEFAULT_OPTS '--height 35% --layout=reverse'
 
 # ===================================================================

@@ -66,7 +66,17 @@ in
   };
 
   xdg.configFile = {
-    fishConf = lib.fromDotfile "fish/config.fish";
+    fishConf = {
+      source = pkgs.substituteAll {
+        src = ../../dotfile/fish/config.fish;
+        nix_locale_archive = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+        postInstall = ''
+          ${pkgs.fish}/bin/fish -n "$target"
+        '';
+      };
+
+      target = "fish/config.fish";
+    };
     xdgPortal = lib.fromDotfile "xdg-desktop-portal";
 
     git = lib.fromDotfile "git";

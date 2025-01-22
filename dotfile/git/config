@@ -78,3 +78,4 @@
     rebasec="rebase --continue"
     rebasea="rebase --abort"
     br="!~/.config/git/git-branch"
+    fixup="commit -m 'fixup!'"

@@ -2,36 +2,28 @@
 
 # COPY FROM <https://github.com/rec/gitz/blob/main/git-st>
 
-usage() {
-    cat <<EOF
-git st:
-    Colorful, compact git status
-
-USAGE
-    git st
-
-DESCRIPTION
-    One-line status for each file with lines added and removed.
-
-    This version written by https://github.com/PlatyPew/,
-    original version by https://www.reddit.com/user/ex1c)
-
-EOF
-}
-
-while getopts ":h" opt; do
-  case $opt in
-    h)
-      usage ; exit ; ;;
-  esac
-done
-
 IFS=
 status="$(git -c color.status=always status -sb)"
 
 if [ $? -ne 0 ]; then
     exit 1
 fi
+
+green_ref='%(color:ul bold green)%(refname:short)%(color:reset)'
+normal_ref='%(refname:short)'
+
+git branch --no-column --color=always --format="\
+%(HEAD)\
+%(if)%(HEAD)%(then)\
+ $green_ref\
+%(else)\
+ $normal_ref\
+%(end)\
+ %(color:bold yellow)%(upstream:track)%(color:reset)\
+%(if)%(worktreepath)%(then)\
+ (%(color:blue)%(worktreepath)%(color:reset))\
+%(end)"
+echo
 
 diff="$(git diff --color --stat HEAD 2> /dev/null \
  | sed '$d; s/^ //' \

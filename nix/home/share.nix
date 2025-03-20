@@ -33,7 +33,7 @@ in
 
   # Here are a list of package that doesn't need configuration or configuration are handle manunally
   home.packages = with pkgs; [
-    nix
+    nixVersions.nix_2_26
 
     # Misc shell tools
     delta # Beautiful git diff
@@ -58,11 +58,9 @@ in
     black # Python fmt
   ];
 
-  nix.package = pkgs.nixVersions.nix_2_24;
+  nix.package = pkgs.nixVersions.nix_2_26;
   nix.settings = {
     experimental-features = "flakes nix-command pipe-operators";
-    extra-substituters = "s3://nix?endpoint=simisear.felixc.at:19090&scheme=http";
-    extra-trusted-public-keys = "cache.simisear.felixc.at:OdMciouarCkjO8G358rIpIYmRfCFxos0mkVm7Qk2ikQ=";
     bash-prompt-prefix = "(nix:$name)\\040";
   };
 

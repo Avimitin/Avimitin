@@ -1,8 +1,17 @@
 [window]
 opacity = 1
 #blur = true
-dimensions = { columns = 220, lines = 60 }
+decorations = "Transparent"
+startup_mode = "Fullscreen"
+dynamic_padding = true
+
+[window.padding]
+x = 3
+y = 3
 
 [font]
 normal = { family = "monospace", style = "Regular" }
 size = 9
+
+[keyboard]
+bindings = [{ key = "F11", action = "ToggleFullscreen" }]

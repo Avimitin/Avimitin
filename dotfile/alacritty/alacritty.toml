@@ -5,3 +5,4 @@ dimensions = { columns = 220, lines = 60 }
 
 [font]
 normal = { family = "monospace", style = "Regular" }
+size = 9

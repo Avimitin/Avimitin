@@ -62,6 +62,7 @@ in
   nix.settings = {
     experimental-features = "flakes nix-command pipe-operators";
     bash-prompt-prefix = "(nix:$name)\\040";
+    sandbox-paths = [ "/bin/sh=${pkgs.busybox-sandbox-shell.out}/bin/busybox" ];
   };
 
   xdg.configFile = {

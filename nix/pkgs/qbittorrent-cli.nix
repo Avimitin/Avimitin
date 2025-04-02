@@ -1,4 +1,8 @@
-{ buildGoModule, fetchFromGitHub, cacert }:
+{
+  buildGoModule,
+  fetchFromGitHub,
+  cacert,
+}:
 buildGoModule {
   name = "qbittorrent-cli";
 

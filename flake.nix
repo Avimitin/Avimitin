@@ -13,13 +13,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, home-manager, nvim }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      home-manager,
+      nvim,
+      treefmt-nix,
+    }@inputs:
     let
-      overlays = [ nvim.overlays.default ((import ./nix/overlay.nix) inputs) ];
+      overlays = [
+        nvim.overlays.default
+        ((import ./nix/overlay.nix) inputs)
+      ];
       pkgsIn = system: import nixpkgs { inherit system overlays; };
-      mkHMCfgWith = system: modules:
+      mkHMCfgWith =
+        system: modules:
         home-manager.lib.homeManagerConfiguration {
           pkgs = pkgsIn system;
           inherit modules;
@@ -29,19 +45,29 @@
       homeConfigurations = {
         "homelab" = mkHMCfgWith "x86_64-linux" [ ./nix/home/homelab.nix ];
         "office" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ];
-        "outside" = mkHMCfgWith "x86_64-linux" [ ./nix/home/thinkbook.nix ./nix/home/thinkbook-carry-case.nix ];
+        "outside" = mkHMCfgWith "x86_64-linux" [
+          ./nix/home/thinkbook.nix
+          ./nix/home/thinkbook-carry-case.nix
+        ];
       };
-    } //
-    flake-utils.lib.eachDefaultSystem (system:
+    }
+    // flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = pkgsIn system;
         hmPkg = home-manager.packages.${system}.home-manager;
+        treefmtEval = treefmt-nix.lib.evalModule pkgs {
+          projectRootFile = "flake.nix";
+          settings.verbose = 1;
+          programs.nixfmt.enable = true;
+        };
       in
       {
-        formatter = pkgs.nixpkgs-fmt;
+        formatter = treefmtEval.config.build.wrapper;
         legacyPackages = pkgs;
         apps.home-manager = flake-utils.lib.mkApp {
           drv = hmPkg;
         };
-      });
+      }
+    );
 }

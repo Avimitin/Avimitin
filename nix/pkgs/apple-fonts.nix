@@ -1,12 +1,14 @@
 # https://github.com/VergeDX/nur-packages/blob/master/pkgs/apple-fonts/common.nix
 
-{ stdenv
-, fetchurl
-, p7zip
+{
+  stdenv,
+  fetchurl,
+  p7zip,
 }:
 
-{ fontName ? ""
-, hash ? ""
+{
+  fontName ? "",
+  hash ? "",
 }:
 stdenv.mkDerivation {
   name = "Apple-${fontName}";

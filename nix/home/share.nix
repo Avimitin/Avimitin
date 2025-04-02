@@ -99,7 +99,11 @@ in
     enableAliases = false;
     settings = {
       date = "relative";
-      blocks = [ "date" "size" "name" ];
+      blocks = [
+        "date"
+        "size"
+        "name"
+      ];
       # Actually this means 'one-per-line'
       layout = "oneline";
       sorting = {
@@ -153,7 +157,10 @@ in
         showRamdomTip = false;
         showBottomLine = false;
         theme = {
-          activeBorderColor = [ "yellow" "bold" ];
+          activeBorderColor = [
+            "yellow"
+            "bold"
+          ];
           inactiveBorderColor = [ "white" ];
           selectedLineBgColor = [ "reverse" ];
           selectedRangeBgColor = [ "reverse" ];

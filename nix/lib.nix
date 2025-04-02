@@ -10,7 +10,10 @@
   # Fetch fish plugin from GitHub and transform it into home-manager configFile attribute
   fetchFishPlugin = spec: {
     target = "fish/conf.d/plugin-${spec.repo}.fish";
-    source = let src = pkgs.fetchFromGitHub spec; in
+    source =
+      let
+        src = pkgs.fetchFromGitHub spec;
+      in
       pkgs.writeTextFile {
         name = "${spec.repo}.fish";
         text = ''
@@ -54,20 +57,21 @@
   # Usage:
   #
   # ```nix
-  # newFile = substituted { "FOO" = "bar"; } ./path.conf 
+  # newFile = substituted { "FOO" = "bar"; } ./path.conf
   # ```
   #
-  substituted = with builtins;
+  substituted =
+    with builtins;
     kvs: filepath:
-      let
-        genSubst = k: v: "--subst-var-by ${k} ${if v == null then ''" "'' else v}";
-        substituteArgs = pkgs.lib.mapAttrsToList genSubst kvs;
-        substituteArgString = concatStringsSep " " substituteArgs;
-        name = pkgs.lib.escapeShellArg (baseNameOf filepath);
-      in
-      pkgs.runCommand name { } ''
-        substitute ${filepath} \
-          $out \
-          ${substituteArgString}
-      '';
+    let
+      genSubst = k: v: "--subst-var-by ${k} ${if v == null then ''" "'' else v}";
+      substituteArgs = pkgs.lib.mapAttrsToList genSubst kvs;
+      substituteArgString = concatStringsSep " " substituteArgs;
+      name = pkgs.lib.escapeShellArg (baseNameOf filepath);
+    in
+    pkgs.runCommand name { } ''
+      substitute ${filepath} \
+        $out \
+        ${substituteArgString}
+    '';
 }

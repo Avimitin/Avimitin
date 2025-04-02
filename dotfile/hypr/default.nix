@@ -1,10 +1,11 @@
-{ runCommand
-, writeShellScriptBin
-, writeShellApplication
-, jq
-, callPackage
-, isCarryOut ? false
-, homeDirectory
+{
+  runCommand,
+  writeShellScriptBin,
+  writeShellApplication,
+  jq,
+  callPackage,
+  isCarryOut ? false,
+  homeDirectory,
 }:
 let
   screenshotScript = writeShellApplication {

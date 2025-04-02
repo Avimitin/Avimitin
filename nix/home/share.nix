@@ -47,7 +47,7 @@ in
     atuin # enhance bash shell history
 
     # Development
-    nixpkgs-fmt # global formatter for all nix sources
+    nixfmt-rfc-style # global formatter for all nix sources
     nil # Nix language server
     prettierd # json formatter
     metals # Scala LSP

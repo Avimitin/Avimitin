@@ -46,6 +46,8 @@ in
     blesh # enhance bash
     atuin # enhance bash shell history
 
+    fanbox-dl # Pixiv Fanbox Downloader
+
     # Development
     nixfmt-rfc-style # global formatter for all nix sources
     nil # Nix language server

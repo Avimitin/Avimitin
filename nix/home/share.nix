@@ -33,7 +33,7 @@ in
 
   # Here are a list of package that doesn't need configuration or configuration are handle manunally
   home.packages = with pkgs; [
-    nixVersions.nix_2_26
+    nixVersions.nix_2_28
 
     # Misc shell tools
     delta # Beautiful git diff
@@ -43,7 +43,6 @@ in
     ripgrep # grep alternative
     zoxide # cd alternative
     gh # github cli
-    blesh # enhance bash
     atuin # enhance bash shell history
 
     fanbox-dl # Pixiv Fanbox Downloader
@@ -60,11 +59,10 @@ in
     black # Python fmt
   ];
 
-  nix.package = pkgs.nixVersions.nix_2_26;
+  nix.package = pkgs.nixVersions.nix_2_28;
   nix.settings = {
     experimental-features = "flakes nix-command pipe-operators";
     bash-prompt-prefix = "(nix:$name)\\040";
-    sandbox-paths = [ "/bin/sh=${pkgs.busybox-sandbox-shell.out}/bin/busybox" ];
   };
 
   xdg.configFile = {
@@ -140,48 +138,6 @@ in
     themes = {
       kanagawa = {
         src = ../../dotfile/kanagawa.tmTheme;
-      };
-    };
-  };
-
-  programs.lazygit = {
-    enable = false;
-    settings = {
-      customCommands = [
-        {
-          key = "F";
-          context = "global";
-          command = "git fetch --all --prune --prune-tags --force";
-          loadingText = "Force fetching all branches.";
-        }
-      ];
-      gui = {
-        showRamdomTip = false;
-        showBottomLine = false;
-        theme = {
-          activeBorderColor = [
-            "yellow"
-            "bold"
-          ];
-          inactiveBorderColor = [ "white" ];
-          selectedLineBgColor = [ "reverse" ];
-          selectedRangeBgColor = [ "reverse" ];
-        };
-        nerdFontsVersion = "3";
-      };
-      git = {
-        commit = {
-          signOff = true;
-          verbose = "always";
-        };
-        paging = {
-          colorArgs = "always";
-          pager = "delta --dark --paging=never";
-        };
-        log = {
-          showGraph = "when-maximised";
-        };
-        notARepository = "skip";
       };
     };
   };

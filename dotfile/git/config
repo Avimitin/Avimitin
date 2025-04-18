@@ -60,7 +60,7 @@
     co="checkout"
     c="commit --verbose"
     cm="commit -m"
-    sca="commit --amend --no-edit --allow-empty"
+    ca="commit --amend --no-edit --allow-empty"
     sc="commit --signoff --gpg-sign --verbose"
     scm="commit --signoff --gpg-sign -m"
     sca="commit --amend --no-edit --allow-empty --gpg-sign --signoff"

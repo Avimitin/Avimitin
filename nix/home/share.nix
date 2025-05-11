@@ -96,7 +96,9 @@ in
 
   programs.lsd = {
     enable = true;
-    enableAliases = false;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+    enableZshIntegration = false;
     settings = {
       date = "relative";
       blocks = [

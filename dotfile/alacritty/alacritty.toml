@@ -11,7 +11,7 @@ y = 3
 
 [font]
 normal = { family = "monospace", style = "Regular" }
-size = 9
+size = 8
 
 [keyboard]
 bindings = [{ key = "F11", action = "ToggleFullscreen" }]

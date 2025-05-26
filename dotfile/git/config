@@ -82,6 +82,5 @@
     rebasei="rebase --interactive --gpg-sign"
     rebasec="rebase --continue"
     rebasea="rebase --abort"
-    br="!~/.config/git/git-branch"
     fixup="commit -m 'fixup!'"
     nuclear="!git reset --hard HEAD && git clean -fdx"

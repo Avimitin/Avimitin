@@ -14,10 +14,14 @@ in
   home.file = {
     bash = {
       enable = false;
-      source = pkgs.substituteAll {
+      source = pkgs.replaceVarsWith {
+        name = "bashrc";
+
         src = ../../dotfile/.bashrc;
 
-        bash_completion = pkgs.bash-completion;
+        replacements = {
+          bash_completion = pkgs.bash-completion;
+        };
 
         # Ensure .bashrc work and correct
         postInstall = ''
@@ -67,9 +71,15 @@ in
 
   xdg.configFile = {
     fishConf = {
-      source = pkgs.substituteAll {
+      source = pkgs.replaceVarsWith {
+        name = "config.fish";
+
         src = ../../dotfile/fish/config.fish;
-        nix_locale_archive = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+
+        replacements = {
+          nix_locale_archive = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+        };
+
         postInstall = ''
           ${pkgs.fish}/bin/fish -n "$target"
         '';

@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
 # COPY FROM <https://github.com/rec/gitz/blob/main/git-st>
+# Added:
+#   - colorful branch
+#   - git prefix cd
+
+# git always run shell command on top of project root, we need to change to PWD
+cd ${GIT_PREFIX:-.}
 
 IFS=
 status="$(git -c color.status=always status -sb)"

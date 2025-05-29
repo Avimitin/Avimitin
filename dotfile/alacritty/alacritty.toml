@@ -16,29 +16,35 @@ size = 8
 [keyboard]
 bindings = [{ key = "F11", action = "ToggleFullscreen" }]
 
-# Colors (Vesper)
-# Source https://github.com/raunofreiberg/vesper
+# Colors (PaperColor - Light)
 
+# Default colors
 [colors.primary]
-background = '#101010'
-foreground = '#ffffff'
+background = '#eeeeee'
+foreground = '#444444'
 
+[colors.cursor]
+text = '#eeeeee'
+cursor = '#444444'
+
+# Normal colors
 [colors.normal]
-black   = '#101010'
-red     = '#f5a191'
-green   = '#90b99f'
-yellow  = '#e6b99d'
-blue    = '#aca1cf'
-magenta = '#e29eca'
-cyan    = '#ea83a5'
-white   = '#a0a0a0'
+black   = '#eeeeee'
+red     = '#af0000'
+green   = '#008700'
+yellow  = '#5f8700'
+blue    = '#0087af'
+magenta = '#878787'
+cyan    = '#005f87'
+white   = '#444444'
 
+# Bright colors
 [colors.bright]
-black   = '#7e7e7e'
-red     = '#ff8080'
-green   = '#99ffe4'
-yellow  = '#ffc799'
-blue    = '#b9aeda'
-magenta = '#ecaad6'
-cyan    = '#f591b2'
-white   = '#ffffff'
+black   = '#bcbcbc'
+red     = '#d70000'
+green   = '#d70087'
+yellow  = '#8700af'
+blue    = '#d75f00'
+magenta = '#d75f00'
+cyan    = '#005faf'
+white   = '#005f87'

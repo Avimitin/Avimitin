@@ -54,11 +54,8 @@
         "on-click": "pavucontrol"
     },
     "mpris": {
-      "format": "{status_icon}\n{dynamic}",
-      "format-paused": "{status_icon}\n{dynamic}",
-      "artist-len": 10,
-      "title-len": 30,
-      "dynamic-order": [ "artist", "title" ],
+      "format": "{status_icon}",
+      "format-paused": "{status_icon}",
       "status-icons": {
         "playing": "",
         "paused": "󰏥",

@@ -83,8 +83,8 @@ window#waybar {
 #mpris {
     text-shadow: 0px 0px 3px @shadow;
     background-color: @mpris_bg;
-    margin: 0.4em 0.8em;
-    padding: 0.2em 1em;
+    margin: 0.4em;
+    padding: 0.5em;
     border-radius: 14px;
 }
 

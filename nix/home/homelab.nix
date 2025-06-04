@@ -69,6 +69,7 @@ rec {
     mimeapps = utils.fromDotfile "mimeapps.list";
     sioyek = utils.fromDotfile "sioyek";
     "gtk-3.0" = utils.fromDotfile "gtk-3.0";
+    waybar = utils.fromDotfile "waybar";
   };
 
   # Use system fc-cache here

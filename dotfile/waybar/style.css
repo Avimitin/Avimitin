@@ -1,12 +1,13 @@
 @define-color shadow rgba(0, 0, 0, 0.4);
 @define-color grey #dcdcdc;
-@define-color background rgba(80, 80, 80, 0.4);
+@define-color background rgba(70, 84, 110, 0.6);
+@define-color obaque-bg rgb(60, 80, 125);
 @define-color mpris_bg rgba(255, 255, 255, 0.4);
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Symbols Nerd Font Mono, SF Pro Display, Noto Sans, Helvetica, Arial, FontAwesome, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #window {
@@ -19,16 +20,16 @@
 window#waybar {
     background-color: @background;
     color: #ffffff;
+    border-right: 1px solid #6c7086;
 }
 
 #workspaces {
-    border-radius: 14px;
-    margin: 0.3em 1.5em;
+    margin: 1.5em 1em;
 }
 
 #workspaces button {
     font-weight: 900;
-    padding: 0 0.2em;
+    padding: 0.4em 0em;
     font-size: 12px;
     font-weight: 800;
     color: @grey;
@@ -74,13 +75,9 @@ window#waybar {
 #mpd {
     text-shadow: 0px 0px 3px @shadow;
     -gtk-icon-shadow: 0px 0px 3px @shadow;
-    margin: 0 0.6em;
-    font-size: 12px;
+    padding: 0.5em;
+    font-size: 14px;
     font-weight: 600;
-}
-
-#clock {
-    font-size: 100%;
 }
 
 #mpris {
@@ -99,7 +96,6 @@ window#waybar {
 }
 
 tooltip {
-    background: @background;
-    border-radius: 15px;
-    padding: 10em;
+    background: @obaque-bg;
+    padding: 5em;
 }

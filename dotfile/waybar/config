@@ -1,63 +1,17 @@
+// vim: ft=jsonc
 {
     "layer": "top",
-    "position": "top",
-    "height": 30,
-    "spacing": 1,
-    "reload_style_on_change": true,
-    "modules-left": ["hyprland/window" ],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["mpris", "tray", "upower", "pulseaudio", "network", "clock"],
-    "hyprland/workspaces": {
-      "active-only": false,
-      "all-outputs": true,
-      "on-scroll-up": "hyprctl -q dispatch workspace m+1",
-      "on-scroll-down": "hyprctl -q dispatch workspace m-1",
-      "window-rewrite-default": "󱂬",
-      "window-rewrite": {
-        "class<firefox>": "",
-        "class<sioyek>": "",
-        "class<kitty>": "",
-        "class<org.telegram.desktop>": "",
-        "class<steam>": "󰓓",
-        "class<cider>": "󰎆",
-        "class<thunderbird>": ""
-      },
-      "format": "{icon}",
-      "format-icons": {
-        "urgent": "",
-        "default": "",
-        //"active": "",
-        "active": "",
-        "empty": ""
-      }
-    },
-    "hyprland/window": {
-      "separate-outputs": true,
-      "format": "<b>{class}</b>  <span color=\"#c5c5c5\">{title}</span>",
-      "icon": true,
-      "icon-size": 18,
-    },
-    "sway/workspaces": {
-      "format": "{icon}",
-      "format-icons": {
-        "focused": "󰅹",
-        "default": ""
-      }
-    },
+    "position": "left",
+    "modules-left": ["niri/workspaces" ],
+    "modules-center": ["clock"],
+    "modules-right": ["mpris", "tray", "pulseaudio", "network"],
     "tray": {
         "spacing": 15,
         "icon-size": 15
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a  <span font_weight='normal'>%Y-%m-%d %H:%M</span>}",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "upower": {
-      "format": "",
-      "icon-size": 18,
-      "tooltip-padding": 16,
-      "hide-if-empty": true,
+        "tooltip-format": "<big>{:%Y %m %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%m\n%e\n\n<b>%H\n%M</b>}"
     },
     "battery": {
         "states": {
@@ -100,8 +54,8 @@
         "on-click": "pavucontrol"
     },
     "mpris": {
-      "format": "{status_icon}  {dynamic}",
-      "format-paused": "{status_icon}  {dynamic}",
+      "format": "{status_icon}\n{dynamic}",
+      "format-paused": "{status_icon}\n{dynamic}",
       "artist-len": 10,
       "title-len": 30,
       "dynamic-order": [ "artist", "title" ],

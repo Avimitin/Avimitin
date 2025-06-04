@@ -83,4 +83,5 @@
     rebasec="rebase --continue"
     rebasea="rebase --abort"
     fixup="commit -m 'fixup!'"
+    wip="!git add . && git commit -m WIP"
     nuclear="!git reset --hard HEAD && git clean -fdx"

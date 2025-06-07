@@ -4,14 +4,14 @@
     "position": "left",
     "modules-left": ["niri/workspaces" ],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "tray", "pulseaudio", "network"],
+    "modules-right": ["mpris", "tray", "battery", "pulseaudio", "network"],
     "tray": {
         "spacing": 15,
         "icon-size": 15
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %m %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%m\n%e\n\n<b>%H\n%M</b>}"
+        "format": "{:%m\n%d\n\n<b>%H\n%M</b>}"
     },
     "battery": {
         "states": {

@@ -60,6 +60,7 @@ in
     stylua # Lua formatter
     pyright # Python LSP
     black # Python fmt
+    tinymist # Typst LSP w/ preview
   ];
 
   nix.package = pkgs.nixVersions.nix_2_28;

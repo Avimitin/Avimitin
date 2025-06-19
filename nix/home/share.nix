@@ -47,7 +47,6 @@ in
     ripgrep # grep alternative
     zoxide # cd alternative
     gh # github cli
-    atuin # enhance bash shell history
 
     fanbox-dl # Pixiv Fanbox Downloader
 

@@ -1,14 +1,13 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }:
 
 let
   utils = import ../lib.nix { inherit pkgs; };
 in
-rec {
+{
   imports = [ ./share.nix ];
 
   home = {
@@ -19,8 +18,6 @@ rec {
 
   home.packages = with pkgs; [
     qbittorrent-cli
-    grim
-    slurp
   ];
 
   xdg.dataFile = {
@@ -58,16 +55,11 @@ rec {
       '';
       target = "mpv";
     };
-    dunst = utils.fromDotfile "dunst/dunstrc";
-    rofi = utils.fromDotfile "rofi";
     broot = utils.fromDotfile "broot/conf.toml";
     fontconfig = utils.fromDotfile "fontconfig/conf.d";
-    paru = utils.fromDotfile "paru/paru.conf";
-    wezterm = utils.fromDotfile "wezterm/wezterm.lua";
     alacritty = utils.fromDotfile "alacritty/alacritty.toml";
     mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";
     mimeapps = utils.fromDotfile "mimeapps.list";
-    sioyek = utils.fromDotfile "sioyek";
     "gtk-3.0" = utils.fromDotfile "gtk-3.0";
     waybar = utils.fromDotfile "waybar";
   };

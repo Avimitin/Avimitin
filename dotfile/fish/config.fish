@@ -46,12 +46,7 @@ if command -q nix
 end
 
 
-if command -q lsd
-    alias ll "command lsd --long"
-    alias lt "command lsd --tree --depth=2"
-else
-    alias ll "command ls -al --color"
-end
+alias ll "command ls -alh --hyperlink --group-directories-first"
 alias la="command ls -al --color"
 
 if command -q rsync

@@ -46,8 +46,7 @@ if command -q nix
 end
 
 
-alias ll "command ls -alh --hyperlink --group-directories-first"
-alias la="command ls -al --color"
+alias ll "command ls -alh --color --hyperlink --group-directories-first"
 
 if command -q rsync
     # Transfer file in [a]rchive (-a == -rlptgoD: recursive, copy symlihnk as symlink, preserve permission, mod time, group, owner, copy device)

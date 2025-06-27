@@ -47,6 +47,7 @@ in
     ripgrep # grep alternative
     zoxide # cd alternative
     gh # github cli
+    lazygit # git gui
 
     fanbox-dl # Pixiv Fanbox Downloader
 

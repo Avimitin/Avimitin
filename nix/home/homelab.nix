@@ -16,10 +16,6 @@ in
     stateVersion = "24.11";
   };
 
-  home.packages = with pkgs; [
-    qbittorrent-cli
-  ];
-
   xdg.dataFile = {
     theme = {
       source = "${../../dotfile/fcitx/theme}";
@@ -37,10 +33,6 @@ in
       source = "${pkgs.apple-new-york}/share/fonts/opentype";
       target = "fonts/opentype/AppleNYFonts";
     };
-    cascadiaNextSC = {
-      source = "${pkgs.cascadia-next-sc}";
-      target = "fonts/opentype/CascadiaNextSC.wght.ttf";
-    };
   };
 
   xdg.configFile = {
@@ -55,7 +47,6 @@ in
       '';
       target = "mpv";
     };
-    broot = utils.fromDotfile "broot/conf.toml";
     fontconfig = utils.fromDotfile "fontconfig/conf.d";
     alacritty = utils.fromDotfile "alacritty/alacritty.toml";
     mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";

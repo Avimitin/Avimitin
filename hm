@@ -15,12 +15,6 @@ operation=""
 
 while true; do
   case "$flag" in
-    update)
-      nix flake update
-      pushd ./nix/home && nix run ".#nvfetcher" && popd
-      ./update.sh
-      exit 0
-      ;;
     s|sw|switch)
       operation="switch"
       home=$1; shift

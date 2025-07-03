@@ -53,6 +53,18 @@ in
     mimeapps = utils.fromDotfile "mimeapps.list";
     "gtk-3.0" = utils.fromDotfile "gtk-3.0";
     waybar = utils.fromDotfile "waybar";
+    hyprlock = {
+      source = pkgs.replaceVarsWith {
+        name = "hyprlock.conf";
+        src = ../../dotfile/hypr/hyprlock.conf;
+
+        replacements = {
+          backgroundImage = "${config.home.homeDirectory}/Pictures/Wallpapers/hyprlock.jpg";
+          profileImage = "${config.home.homeDirectory}/Pictures/avatar.jpg";
+        };
+      };
+      target = "hypr/hyprlock.conf";
+    };
   };
 
   # Use system fc-cache here

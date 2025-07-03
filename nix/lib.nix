@@ -51,27 +51,4 @@
     target = "tmux/plugins/${spec.repo}";
     source = pkgs.fetchFromGitHub spec;
   };
-
-  # Substitute the pass in `file` with given `kvs` key-value pair.
-  #
-  # Usage:
-  #
-  # ```nix
-  # newFile = substituted { "FOO" = "bar"; } ./path.conf
-  # ```
-  #
-  substituted =
-    with builtins;
-    kvs: filepath:
-    let
-      genSubst = k: v: "--subst-var-by ${k} ${if v == null then ''" "'' else v}";
-      substituteArgs = pkgs.lib.mapAttrsToList genSubst kvs;
-      substituteArgString = concatStringsSep " " substituteArgs;
-      name = pkgs.lib.escapeShellArg (baseNameOf filepath);
-    in
-    pkgs.runCommand name { } ''
-      substitute ${filepath} \
-        $out \
-        ${substituteArgString}
-    '';
 }

@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 
@@ -60,7 +61,6 @@ in
 
         replacements = {
           backgroundImage = "${config.home.homeDirectory}/Pictures/Wallpapers/hyprlock.jpg";
-          profileImage = "${config.home.homeDirectory}/Pictures/avatar.jpg";
         };
       };
       target = "hypr/hyprlock.conf";

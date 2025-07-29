@@ -7,7 +7,7 @@ final: prev: {
   # sans-serif
   apple-sf-pro = final.mkAppleFonts {
     fontName = "SF-Pro";
-    hash = "sha256-IccB0uWWfPCidHYX6sAusuEZX906dVYo8IaqeX7/O88=";
+    hash = "sha256-090HwtgILtK/KGoOzcwz1iAtoiShKAVjiNhUDQtO+gQ=";
   };
   # monospace
   apple-sf-mono = final.mkAppleFonts {

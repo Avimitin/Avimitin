@@ -66,8 +66,9 @@
     sca="commit --amend --no-edit --allow-empty --gpg-sign --signoff"
     d="diff"
     dc="diff --cached"
+    p="push"
+    pf="push --force-with-lease"
     sync="fetch -p -P --force"
-    wt="worktree"
     s="!~/.config/git/git-status"
     l="log -n15 --graph --decorate \
         --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' \
@@ -76,7 +77,6 @@
         --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' \
         --date=short"
     lp="log -p"
-    pushf="push --force-with-lease"
     pullr="pull --rebase"
     sign-to="git rebase --exec 'git commit --amend --no-edit -n -S' -i"
     rebasei="rebase --interactive --gpg-sign"

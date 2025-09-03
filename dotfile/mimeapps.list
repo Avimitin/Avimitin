@@ -60,8 +60,8 @@ video/x-theora+ogg=mpv.desktop;
 x-scheme-handler/chrome=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-8HAYU2.desktop;
-x-scheme-handler/tonsite=org.telegram.desktop.desktop;userapp-Telegram Desktop-Z6VOU2.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-8HAYU2.desktop;userapp-Telegram Desktop-SUYIC3.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;userapp-Telegram Desktop-Z6VOU2.desktop;userapp-Telegram Desktop-UNIJC3.desktop;
 
 [Default Applications]
 application/epub=okularApplication_epub.desktop
@@ -129,5 +129,5 @@ x-scheme-handler/chrome=firefox.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/jetbrains-gateway=jetbrains-gateway.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-8HAYU2.desktop
-x-scheme-handler/tonsite=userapp-Telegram Desktop-Z6VOU2.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-SUYIC3.desktop
+x-scheme-handler/tonsite=userapp-Telegram Desktop-UNIJC3.desktop

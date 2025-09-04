@@ -4,7 +4,6 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 environment {
     QT_QPA_PLATFORM "wayland;xcb"
-    DISPLAY ":0"
 }
 
 // Input device configuration.

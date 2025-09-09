@@ -57,6 +57,7 @@
 
 [alias]
     ap="add -p"
+    cam="commit -a -m"
     co="checkout"
     c="commit --verbose"
     cm="commit -m"

@@ -79,6 +79,8 @@ end
 alias userctl "command systemctl --user"
 alias ip "ip -c"
 
+alias web-open "firefox --new-window --kiosk"
+
 # ===================================================================
 # Variables
 # ===================================================================

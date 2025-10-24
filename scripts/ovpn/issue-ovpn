@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+
+# Generate CA before this script
+#
+# export EASYRSA=/etc/easy-rsa
+# export EASYRSA_VARS_FILE=/etc/easy-rsa/vars
+# cd /etc/easy-rsa
+# easyrsa init-pki
+# easyrsa build-ca
+
+set -o pipefail
+set -o errexit
+
+type easyrsa >/dev/null
+
+SERVER_MODE=${SERVER_MODE:-0}
+CLIENT_MODE=${CLIENT_MODE:-0}
+NAME=${NAME:-}
+REMOTE=${REMOTE:-}
+export EASYRSA="${EASYRSA:-$(pwd)}"
+export EASYRSA_VARS_FILE=${EASYRSA_VARS_FILE:-"/etc/easy-rsa/vars"}
+
+PORT=${PORT:-51194}
+
+if [[ -z "$NAME" ]]; then
+  echo "Set NAME=<name>"
+  exit 1
+fi
+
+if (( "$SERVER_MODE" && "$CLIENT_MODE" )); then
+  echo "Both SERVER_MODE and CLIENT_MODE are set, unsupported operation"
+  exit 1
+fi
+
+# make sure writable
+touch "$EASYRSA/.lock"
+rm "$EASYRSA/.lock"
+if [[ ! -d "$EASYRSA/pki" ]]; then
+  echo "No pki directory init yet, please build ca first";
+  exit 1
+fi
+
+pushd "$EASYRSA" >/dev/null
+
+if (( "$SERVER_MODE" )); then
+  if [[ ! -f "$EASYRSA/pki/private/easyrsa-tls.key" ]]; then
+    easyrsa gen-tls-crypt-key
+  fi
+
+  easyrsa build-server-full "$NAME" nopass
+
+  cat<<EOF > pki/issued/"$NAME-server-bundled.conf"
+port ${PORT}
+topology subnet
+proto tcp
+dev tun
+verb 2
+mute 20
+keepalive 3 10
+persist-key
+persist-tun
+float
+resolv-retry infinite
+connect-retry 0.1 0.5
+tcp-nodelay
+tls-groups "X25519:secp256r1:X448:secp521r1:secp384r1"
+cipher AES-256-GCM
+auth SHA512
+ifconfig-pool-persist ipp-tcp.txt
+status openvpn-status-tcp.log
+server 10.8.0.0 255.255.255.0
+
+$(cat pki/inline/private/"$NAME".inline)
+EOF
+
+  echo "File generated at: pki/issued/$NAME-server-bundled.conf"
+elif (( "$CLIENT_MODE" )); then
+  if [[ -z "$REMOTE" ]]; then
+    echo "Set REMOTE=<remote_address>"
+    exit 1
+  fi
+
+  if [[ ! -f "$EASYRSA/pki/private/easyrsa-tls.key" ]]; then
+    echo "HMAC key is not setup for server yet, run server mode first"
+    exit 1
+  fi
+
+  easyrsa build-client-full "$NAME" nopass
+
+  cat<<EOF > pki/issued/"$NAME-client-bundled.conf"
+client
+remote $REMOTE $PORT
+
+proto tcp
+dev tun
+verb 2
+mute 20
+keepalive 3 10
+persist-key
+persist-tun
+float
+resolv-retry infinite
+connect-retry 0.1 0.5
+tcp-nodelay
+tls-groups "X25519:secp256r1:X448:secp521r1:secp384r1"
+cipher AES-256-GCM
+auth SHA512
+status openvpn-status-tcp.log
+
+$(cat pki/inline/private/"$NAME".inline)
+EOF
+
+  echo "File generated at: pki/issued/$NAME-client-bundled.conf"
+else
+  echo "Set SERVER_MODE=1 or CLIENT_MODE=1"
+  exit 1
+fi
+
+popd >/dev/null

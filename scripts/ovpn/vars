@@ -1,0 +1,3 @@
+set_var EASYRSA_DIGEST "sha512"  # Default sha256
+set_var EASYRSA_ALGO  ed
+set_var EASYRSA_CURVE ed25519

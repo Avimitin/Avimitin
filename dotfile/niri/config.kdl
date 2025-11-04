@@ -4,6 +4,9 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 environment {
     QT_QPA_PLATFORM "wayland;xcb"
+    QT_QPA_PLATFORMTHEME "qt5ct:qt6ct"
+    // dirty fix for GTK4 dialog pop-up
+    GTK_IM_MODULE "fcitx"
 }
 
 // Input device configuration.
@@ -103,6 +106,10 @@ input {
     position x=1280 y=0
 }
 
+output "DP-1" {
+    scale 1
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -164,7 +171,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        // active-color "#6a8da8"
+        active-color "#616161"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
@@ -176,7 +183,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        active-gradient from="#bb63ff" to="#65ddff" angle=45
+        // active-gradient from="#bb63ff" to="#65ddff" angle=45
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -305,11 +312,30 @@ animations {
     }
 }
 
+overview {
+    zoom 0.6
+
+    workspace-shadow {
+        // set off to disable shadow
+
+        // Softness controls the shadow blur radius.
+        softness 1
+
+        // Spread expands the shadow.
+        spread 1
+
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=0
+
+        color "#454545"
+    }
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    geometry-corner-radius 6
+    geometry-corner-radius 4
     // geometry-corner-radius 15
     clip-to-geometry true
     tiled-state true
@@ -572,7 +598,7 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+F { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".

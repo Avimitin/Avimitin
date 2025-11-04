@@ -12,7 +12,7 @@ in
   news.display = "silent";
 
   home.file = {
-    bash = {
+    bashrc = {
       enable = false;
       source = pkgs.replaceVarsWith {
         name = "bashrc";

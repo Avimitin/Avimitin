@@ -62,6 +62,7 @@ in
     pyright # Python LSP
     black # Python fmt
     tinymist # Typst LSP w/ preview
+    nix-output-monitor # Pipe nix output for monitor
   ];
 
   nix.package = pkgs.nixVersions.nix_2_28;

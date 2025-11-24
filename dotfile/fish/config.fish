@@ -62,6 +62,7 @@ if command -q ssh
 end
 
 if command -q tmux
+    alias tmuxd "systemd-run --user --scope tmux new-session"
     alias tl "tmux ls"
     alias ta "tmux attach-session -t"
 end

@@ -373,6 +373,12 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match title=r#"flameshot"#
+    open-fullscreen false
+    open-floating true
+}
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {

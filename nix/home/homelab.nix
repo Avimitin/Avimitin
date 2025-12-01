@@ -65,6 +65,10 @@ in
       };
       target = "hypr/hyprlock.conf";
     };
+    niri = utils.fromDotfile "niri/config.kdl";
+    foot = utils.fromDotfile "foot/foot.ini";
+    flameshot = utils.fromDotfile "flameshot/flameshot.ini";
+    fastfetch = utils.fromDotfile "fastfetch/config.jsonc";
   };
 
   # Use system fc-cache here

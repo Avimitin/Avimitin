@@ -1,10 +1,10 @@
-{ pkgs }:
+{ pkgs, config }:
 {
 
   # Read config from dotfile directory and tranform into home-manager configFile attribute
   fromDotfile = path: {
     target = "${path}";
-    source = ../dotfile/${path};
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/me/dotfile/${path}";
   };
 
   # Fetch fish plugin from GitHub and transform it into home-manager configFile attribute

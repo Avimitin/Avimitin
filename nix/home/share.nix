@@ -1,9 +1,9 @@
 # This nix file contains configuration to used on almost all my machine
 
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
-  lib = import ../lib.nix { inherit pkgs; };
+  lib = import ../lib.nix { inherit pkgs config; };
 in
 {
   # Use the one define in nix flake

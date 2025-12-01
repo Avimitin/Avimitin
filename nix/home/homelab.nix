@@ -6,7 +6,7 @@
 }:
 
 let
-  utils = import ../lib.nix { inherit pkgs; };
+  utils = import ../lib.nix { inherit pkgs config; };
 in
 {
   imports = [ ./share.nix ];

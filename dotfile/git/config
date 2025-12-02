@@ -79,7 +79,7 @@
         --date=short"
     lp="log -p"
     pullr="pull --rebase"
-    sign-to="git rebase --exec 'git commit --amend --no-edit -n -S' -i"
+    sign-to="rebase --exec 'git commit --amend --no-edit -n -S' -i"
     rebasei="rebase --interactive --gpg-sign"
     rebasec="rebase --continue"
     rebasea="rebase --abort"

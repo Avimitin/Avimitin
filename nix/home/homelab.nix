@@ -53,6 +53,7 @@ in
     mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";
     mimeapps = utils.fromDotfile "mimeapps.list";
     "gtk-3.0" = utils.fromDotfile "gtk-3.0";
+    "gtk-4.0" = utils.fromDotfile "gtk-4.0";
     waybar = utils.fromDotfile "waybar";
     hyprlock = {
       source = pkgs.replaceVarsWith {

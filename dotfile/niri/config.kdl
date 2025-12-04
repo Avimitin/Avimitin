@@ -4,7 +4,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 environment {
     QT_QPA_PLATFORM "wayland;xcb"
-    QT_QPA_PLATFORMTHEME "qt5ct:qt6ct"
+    QT_QPA_PLATFORMTHEME "qt6ct"
     // dirty fix for GTK4 dialog pop-up
     GTK_IM_MODULE "fcitx"
 }

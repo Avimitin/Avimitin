@@ -52,7 +52,7 @@ in
     fanbox-dl # Pixiv Fanbox Downloader
 
     # Development
-    nixfmt-rfc-style # global formatter for all nix sources
+    nixfmt # global formatter for all nix sources
     nil # Nix language server
     prettierd # json formatter
     metals # Scala LSP

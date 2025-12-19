@@ -57,20 +57,16 @@
 
 [alias]
     ap="add -p"
-    cam="commit -a -m"
-    co="checkout"
-    c="commit --verbose"
+    c="commit"
     cm="commit -m"
     ca="commit --amend --no-edit --allow-empty"
-    sc="commit --signoff --gpg-sign --verbose"
-    scm="commit --signoff --gpg-sign -m"
-    sca="commit --amend --no-edit --allow-empty --gpg-sign --signoff"
     d="diff"
     dc="diff --cached"
     p="push"
     pf="push --force-with-lease"
     sync="fetch -p -P --force"
     s="!~/.config/git/git-status"
+    sw="switch"
     l="log -n15 --graph --decorate \
         --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' \
         --date=short"
@@ -78,11 +74,5 @@
         --pretty=format:'%C(yellow)%h %C(italic dim white)%ad %Cblue%an%C(reset)%Cgreen%d %Creset%s' \
         --date=short"
     lp="log -p"
-    pullr="pull --rebase"
     sign-to="rebase --exec 'git commit --amend --no-edit -n -S' -i"
-    rebasei="rebase --interactive --gpg-sign"
-    rebasec="rebase --continue"
-    rebasea="rebase --abort"
-    fixup="commit -m 'fixup!'"
-    wip="!git add . && git commit -m WIP"
     nuclear="!git reset --hard HEAD && git clean -fdx"

@@ -60,7 +60,8 @@ in
     lua-language-server # Lua LSP
     stylua # Lua formatter
     pyright # Python LSP
-    black # Python fmt
+    ruff # Python fmt
+    uv # Python package manager
     tinymist # Typst LSP w/ preview
     nix-output-monitor # Pipe nix output for monitor
   ];

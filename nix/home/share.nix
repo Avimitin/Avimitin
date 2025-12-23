@@ -64,6 +64,7 @@ in
     uv # Python package manager
     tinymist # Typst LSP w/ preview
     nix-output-monitor # Pipe nix output for monitor
+    just # Just a command executor
   ];
 
   nix.package = pkgs.nixVersions.nix_2_28;

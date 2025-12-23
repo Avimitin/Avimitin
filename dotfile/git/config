@@ -56,13 +56,15 @@
     hunk-header-style = file line-number syntax
 
 [alias]
+    a="add"
     ap="add -p"
     c="commit"
-    cm="commit -m"
+    cs="commit --signoff --gpg-sign"
     ca="commit --amend --no-edit --allow-empty"
     d="diff"
     dc="diff --cached"
     p="push"
+    r="rebase"
     pf="push --force-with-lease"
     sync="fetch -p -P --force"
     s="!~/.config/git/git-status"

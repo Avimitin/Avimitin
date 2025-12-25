@@ -1,0 +1,29 @@
+# ctrl+shift+, reload config
+font-family = SF Mono
+font-size = 14
+theme = Cobalt Next Minimal
+keybind = ctrl+b>n=new_window
+
+shell-integration = fish
+mouse-hide-while-typing = true
+scrollback-limit = 1000000
+
+keybind = ctrl+shift+n=new_window
+
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+
+keybind = ctrl+b>'=new_split:right
+keybind = ctrl+b>shift+'=new_split:up
+keybind = ctrl+b>s=new_split:auto
+keybind = ctrl+b>f=toggle_split_zoom
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>q=close_tab
+keybind = ctrl+b>enter=toggle_split_zoom
+
+keybind = alt+n=next_tab
+keybind = alt+p=previous_tab
+
+window-save-state = always

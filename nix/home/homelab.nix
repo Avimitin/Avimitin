@@ -68,6 +68,7 @@ in
     };
     niri = utils.fromDotfile "niri/config.kdl";
     foot = utils.fromDotfile "foot/foot.ini";
+    ghostty = utils.fromDotfile "ghostty/config";
     flameshot = utils.fromDotfile "flameshot/flameshot.ini";
     fastfetch = utils.fromDotfile "fastfetch/config.jsonc";
   };

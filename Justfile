@@ -6,16 +6,25 @@ set shell := ["bash", "-c"]
 nix_flags := '--extra-experimental-features "flakes nix-command" --no-warn-dirty'
 hm_flags := '--extra-experimental-features "flakes nix-command" -j auto'
 
-# Offline flags (applied by default)
-nix_offline := "--offline"
-hm_offline := "--no-substitute"
+# Offline mode control (default to true)
+offline := "true"
+nix_offline := if offline == "true" { "--offline" } else { "" }
+hm_offline := if offline == "true" { "--no-substitute" } else { "" }
 
 # Default recipe: List available commands
 default:
     @just --list
 
-# Switch to a home configuration (Offline)
+# Run any command in online mode
+# Usage: just online <command> [args...]
+# Example: just online switch my-machine
+online *args:
+    @just offline=false {{args}}
+
+# Switch to a home configuration (Offline by default)
 # Usage: just switch <name> [args...]
+# For online mode: just online switch <name> [args...]
+# Alternative: just offline=false switch <name> [args...]
 # Example: just switch my-machine --show-trace
 alias s := switch
 switch name *args:

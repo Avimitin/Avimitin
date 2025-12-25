@@ -18,12 +18,13 @@ default:
 # Run any command in online mode
 # Usage: just online <command> [args...]
 # Example: just online switch my-machine
+alias o := online
 online *args:
     @just offline=false {{args}}
 
 # Switch to a home configuration (Offline by default)
 # Usage: just switch <name> [args...]
-# For online mode: just online switch <name> [args...]
+# For online mode: just o switch <name> [args...] (or 'just online ...')
 # Alternative: just offline=false switch <name> [args...]
 # Example: just switch my-machine --show-trace
 alias s := switch

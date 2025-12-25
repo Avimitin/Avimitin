@@ -62,6 +62,11 @@
           let
             pkgs = import nixpkgs {
               inherit system overlays;
+              config.allowUnfreePredicate =
+                pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  "claude-code"
+                ];
             };
           in
           {

@@ -30,60 +30,34 @@
 
 ![head-img](./head-img.png)
 
-Welcome! This is <https://sh1mar.in>.
+Welcome to <https://sh1mar.in>.
 
-The name is inspired by my favorite anime character, 志摩 リン (Shima Rin) from [Yuru Camp](https://en.wikipedia.org/wiki/Laid-Back_Camp),
-with the letter 'i' replaced with '1'.
+The name is inspired by my favorite anime character, 志摩 リン (Shima Rin) from
+[Yuru Camp](https://en.wikipedia.org/wiki/Laid-Back_Camp).
 
-## About Me
+## About
 
-I'm a passionate software developer with a love for both modern and classic
-approaches to web design. While I've worked with React for frontend
-development, there's something charming about pure HTML and minimal CSS – which
-is why this homepage embraces that simplicity.
+I am a software developer focusing on system architecture and operating
+systems. I primarily use Rust and Nix on Linux. Currently, I am learning SoC
+design and verification.
 
-As a self-proclaimed Linux terminal enthusiast, I find joy in crafting an
-elegant and modern development UI. Much of my time is spent fine-tuning my
-neovim and tmux setup. It might seem like a quirky hobby, but it's one that
-brings me satisfaction and improves my workflow.
+My open-source work is available on [GitHub](https://github.com/Avimitin).
 
-My primary programming language is Rust, and I manage projects with Nix. I've
-also dabbled in Scala and C++, though I'm still on the journey to mastering
-these challenging languages. Recently, I've been exploring Haskell as a
-potential daily driver. Its declarative and immutable programming model offers
-a refreshing perspective, even if it comes with its own learning curve.
+## Interests
 
-Architecture and operating systems are my main areas of interest within
-computer science. I'm constantly working to deepen my understanding of these
-fields, with the goal of becoming an Architecture and Kernel engineer in the
-future.
+I enjoy anime, TV shows, and rhythm games. I previously played osu! and now
+primarily play beatmania IIDX and DanceDanceRevolution.
 
-I've contributed to several open-source projects, which you can check out on my
-[GitHub](https://github.com/Avimitin).
+I am currently building arcade machines at home.
 
-When I'm not immersed in code, I'm an enthusiastic consumer of anime and games.
-I have a particular fondness for:
-
-- Moody, stream-of-consciousness animations like [Sonny Boy](https://ja.wikipedia.org/wiki/Sonny_Boy)
-- Emotionally stirring series such as [Kill la Kill](https://en.wikipedia.org/wiki/Kill_la_Kill)
-- Character-driven narratives like [化物語](https://www.monogatari-series.com/bakemonogatari/)
-
-I also enjoy American TV classics like House of Cards and Breaking Bad.
-
-In the gaming world, I'm eclectic in my tastes. From the challenging landscapes
-of Elden Ring to the narrative depth of visual novels like Witch of the Holy
-Night, or the expansive JRPG worlds of the Persona series – I find enjoyment
-across genres.
-
-Feel free to connect with me on [osu](https://osu.ppy.sh/users/16900842) or
-[Steam](https://steamcommunity.com/id/sh1marin/) if you'd like to game
-together!
-
-## Self promotion
+## Links
 
 - Blog: <https://blog.sh1mar.in>
 - Fediverse: <https://dabr.ca/sh1marin>
-- Contact: [`dev@avimit.in`](mailto:dev@avimit.in) and [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](https://github.com/Avimitin.gpg)
+- Contact: [`dev@avimit.in`](mailto:dev@avimit.in)
+- GPG: [`6EAE AA25 973B 8863 CDF7  7E25 FF78 83E3 BF68 35DD`](https://github.com/Avimitin.gpg)
+- Gaming: [Steam](https://steamcommunity.com/id/sh1marin/) / [osu!](https://osu.ppy.sh/users/16900842)
+- Bangumi: <https://bgm.tv/user/930342>
 
 	</body>
 </html>

@@ -1,0 +1,4 @@
+default: build
+
+build:
+    nix run .#pandoc -- -f markdown -t html5 -o index.html index.md

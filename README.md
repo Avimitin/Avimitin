@@ -1,4 +1,4 @@
-## ***Self Promotion***
+## ***About Me***
 
   * Resume: [English Ver](https://github.com/Avimitin/resume/blob/master/resume-en.pdf) | [Chinese Ver](https://github.com/Avimitin/resume/blob/master/resume-cn.pdf)
   * ORCiD: <https://orcid.org/0009-0001-3675-3798>

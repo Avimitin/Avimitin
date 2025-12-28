@@ -58,6 +58,7 @@
 [alias]
     a="add"
     ap="add -p"
+    br="branch"
     c="commit"
     cs="commit --signoff --gpg-sign"
     ca="commit --amend --no-edit --allow-empty"

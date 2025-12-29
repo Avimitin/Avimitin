@@ -26,6 +26,7 @@
 	</head>
 
 	<body>
+		<main>
 
 # sh1marin
 
@@ -68,5 +69,6 @@ I am currently building arcade machines at home.
 - Gaming: [Steam](https://steamcommunity.com/id/sh1marin/) / [osu!](https://osu.ppy.sh/users/16900842)
 - Bangumi: <https://bgm.tv/user/930342>
 
+		</main>
 	</body>
 </html>

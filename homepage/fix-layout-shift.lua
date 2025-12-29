@@ -1,6 +1,14 @@
+local first_image_seen = false
+
 function Image(elem)
-  -- Add loading="lazy"
-  elem.attributes.loading = "lazy"
+  -- Add loading="lazy" only if it's not the first image
+  if first_image_seen then
+    elem.attributes.loading = "lazy"
+  else
+    first_image_seen = true
+    -- Ensure the first image (LCP) is eager loaded
+    elem.attributes.loading = "eager"
+  end
 
   -- If width and height are already set, skip
   if elem.attributes.width and elem.attributes.height then

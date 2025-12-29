@@ -21,14 +21,14 @@
 		<meta name="msapplication-TileColor" content="#00aba9" />
 		<meta name="theme-color" content="#ffffff" />
 
-		<link rel="preconnect stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="styles.css" />
 	</head>
 
 	<body>
 
 # sh1marin
 
-<img class="avatar" loading="lazy" src="./avatar.webp" alt="avatar" />
+![avatar](./avatar.webp){.avatar}
 
 Welcome to <https://sh1mar.in>.
 
@@ -50,34 +50,13 @@ primarily play beatmania IIDX and DanceDanceRevolution.
 
 I am currently building arcade machines at home.
 
-### IIDX
+![IIDX Full Pic](./iidx.webp)
 
-<figure>
-<img loading="lazy" src="./iidx.webp" alt="IIDX Full Pics" />
-<figcaption aria-hidden="true">IIDX Full Pics</figcaption>
-</figure>
-<br/>
-<figure>
-<img loading="lazy" src="./iidx-dp.webp" alt="IIDX DP" />
-<figcaption aria-hidden="true">IIDX DP</figcaption>
-</figure>
+![IIDX DP](./iidx-dp.webp)
 
----
+![Taiko](./taiko.webp)
 
-### Taiko
-
-<figure>
-<img loading="lazy" src="./taiko.webp" alt="Taiko" />
-<figcaption aria-hidden="true">Taiko</figcaption>
-
----
-
-### DDR
-
-<figure>
-<img loading="lazy" src="./ddr.webp" alt="DDR" />
-<figcaption aria-hidden="true">DDR</figcaption>
-</figure>
+![DDR](./ddr.webp)
 
 ## Links
 

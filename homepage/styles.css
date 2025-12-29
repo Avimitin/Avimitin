@@ -7,14 +7,20 @@ body {
   box-sizing: border-box;
 }
 
-figcaption {
-  display: none;
+figure {
+  text-align: center;
+  font-weight: 600;
 }
 
 .avatar {
   display: block;
   max-height: 160px;
+  width: auto;
   margin: 0 auto;
+}
+
+.avatar + figcaption {
+  display: none;
 }
 
 img {
@@ -22,6 +28,7 @@ img {
   max-height: 400px;
   max-width: 600px;
   margin: 0 auto;
+  height: auto;
 }
 
 h3 {

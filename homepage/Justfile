@@ -1,4 +1,5 @@
 default: build
 
 build:
-    nix run .#pandoc -- -f markdown -t html5 -o index.html index.md
+    nix shell '.#pandoc' '.#imagemagick' --command \
+        pandoc -f markdown -t html5 --lua-filter=fix-layout-shift.lua -o index.html index.md

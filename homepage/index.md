@@ -21,14 +21,14 @@
 		<meta name="msapplication-TileColor" content="#00aba9" />
 		<meta name="theme-color" content="#ffffff" />
 
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect stylesheet" href="styles.css" />
 	</head>
 
 	<body>
 
 # sh1marin
 
-<img class="avatar" loading="lazy" src="./avatar.jpg" alt="avatar" />
+<img class="avatar" loading="lazy" src="./avatar.webp" alt="avatar" />
 
 Welcome to <https://sh1mar.in>.
 
@@ -53,12 +53,12 @@ I am currently building arcade machines at home.
 ### IIDX
 
 <figure>
-<img loading="lazy" src="./iidx.jpg" alt="IIDX Full Pics" />
+<img loading="lazy" src="./iidx.webp" alt="IIDX Full Pics" />
 <figcaption aria-hidden="true">IIDX Full Pics</figcaption>
 </figure>
 <br/>
 <figure>
-<img loading="lazy" src="./iidx-dp.jpg" alt="IIDX DP" />
+<img loading="lazy" src="./iidx-dp.webp" alt="IIDX DP" />
 <figcaption aria-hidden="true">IIDX DP</figcaption>
 </figure>
 
@@ -67,7 +67,7 @@ I am currently building arcade machines at home.
 ### Taiko
 
 <figure>
-<img loading="lazy" src="./taiko.jpg" alt="Taiko" />
+<img loading="lazy" src="./taiko.webp" alt="Taiko" />
 <figcaption aria-hidden="true">Taiko</figcaption>
 
 ---
@@ -75,7 +75,7 @@ I am currently building arcade machines at home.
 ### DDR
 
 <figure>
-<img loading="lazy" src="./ddr.jpg" alt="DDR" />
+<img loading="lazy" src="./ddr.webp" alt="DDR" />
 <figcaption aria-hidden="true">DDR</figcaption>
 </figure>
 

@@ -28,7 +28,7 @@
 
 # sh1marin
 
-<img class="avatar" src="./head-img.png" alt="avatar" />
+<img class="avatar" loading="lazy" src="./avatar.jpg" alt="avatar" />
 
 Welcome to <https://sh1mar.in>.
 
@@ -52,22 +52,32 @@ I am currently building arcade machines at home.
 
 ### IIDX
 
-![IIDX Full Pics](./iidx.jpg)
+<figure>
+<img loading="lazy" src="./iidx.jpg" alt="IIDX Full Pics" />
+<figcaption aria-hidden="true">IIDX Full Pics</figcaption>
+</figure>
 <br/>
-
-![IIDX DP](./iidx-dp.jpg)
+<figure>
+<img loading="lazy" src="./iidx-dp.jpg" alt="IIDX DP" />
+<figcaption aria-hidden="true">IIDX DP</figcaption>
+</figure>
 
 ---
 
 ### Taiko
 
-![Taiko](./taiko.jpg)
+<figure>
+<img loading="lazy" src="./taiko.jpg" alt="Taiko" />
+<figcaption aria-hidden="true">Taiko</figcaption>
 
 ---
 
 ### DDR
 
-![DDR](./ddr.jpg)
+<figure>
+<img loading="lazy" src="./ddr.jpg" alt="DDR" />
+<figcaption aria-hidden="true">DDR</figcaption>
+</figure>
 
 ## Links
 

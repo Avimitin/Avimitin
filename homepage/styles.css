@@ -11,9 +11,22 @@ figcaption {
   display: none;
 }
 
+.avatar {
+  display: block;
+  max-height: 160px;
+  margin: 0 auto;
+}
+
 img {
-  max-height: 300px;
-  max-width: 300px;
+  display: block;
+  max-height: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h3 {
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {

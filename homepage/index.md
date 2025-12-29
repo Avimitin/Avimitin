@@ -28,7 +28,7 @@
 
 # sh1marin
 
-![head-img](./head-img.png)
+<img class="avatar" src="./head-img.png" alt="avatar" />
 
 Welcome to <https://sh1mar.in>.
 
@@ -38,8 +38,8 @@ The name is inspired by my favorite anime character, 志摩 リン (Shima Rin) f
 ## About
 
 I am a software developer focusing on system architecture and operating
-systems. I primarily use Rust and Nix on Linux. Currently, I am learning SoC
-design and verification.
+systems, including ISA simulation and Linux distribution maintenance.
+Currently, I am learning SoC RTL design and verification.
 
 My open-source work is available on [GitHub](https://github.com/Avimitin).
 
@@ -49,6 +49,25 @@ I enjoy anime, TV shows, and rhythm games. I previously played osu! and now
 primarily play beatmania IIDX and DanceDanceRevolution.
 
 I am currently building arcade machines at home.
+
+### IIDX
+
+![IIDX Full Pics](./iidx.jpg)
+<br/>
+
+![IIDX DP](./iidx-dp.jpg)
+
+---
+
+### Taiko
+
+![Taiko](./taiko.jpg)
+
+---
+
+### DDR
+
+![DDR](./ddr.jpg)
 
 ## Links
 

@@ -398,6 +398,14 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="^org.telegram.desktop$" title="^Media viewer$"
+    default-column-width { proportion 0.700000; }
+    default-window-height { proportion 0.700000; }
+    open-fullscreen false
+    open-floating true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {

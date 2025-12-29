@@ -21,6 +21,7 @@
 		<meta name="msapplication-TileColor" content="#00aba9" />
 		<meta name="theme-color" content="#ffffff" />
 
+		<link rel="preload" href="styles.css" as="style" />
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 

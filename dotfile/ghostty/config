@@ -27,3 +27,4 @@ keybind = alt+n=next_tab
 keybind = alt+p=previous_tab
 
 window-save-state = always
+keybind = shift+enter=text:\x1b\r

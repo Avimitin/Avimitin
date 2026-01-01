@@ -357,7 +357,7 @@ overview {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
-    geometry-corner-radius 4
+    geometry-corner-radius 12
     // geometry-corner-radius 15
     clip-to-geometry true
     tiled-state true
@@ -375,6 +375,18 @@ window-rule {
     match title=r#"flameshot"#
     open-fullscreen false
     open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org\.gnome\."#
+    draw-border-with-background false
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+window-rule {
+    match is-active=false
+    opacity 0.95
 }
 
 // Open the Firefox picture-in-picture player as floating by default.

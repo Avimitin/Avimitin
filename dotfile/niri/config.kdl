@@ -5,6 +5,11 @@
 environment {
     QT_QPA_PLATFORM "wayland;xcb"
     QT_QPA_PLATFORMTHEME "qt6ct"
+    XDG_CURRENT_DESKTOP "niri"
+}
+
+hotkey-overlay {
+    skip-at-startup
 }
 
 // Input device configuration.
@@ -112,8 +117,11 @@ output "DP-1" {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    // Only useful when no background
+    // background-color "transparent"
+
     // Set gaps around windows in logical pixels.
-    gaps 10
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -158,7 +166,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
         width 2
@@ -194,10 +202,10 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
-        width 4
-        active-color "#ffc87f"
+        width 2
+        active-color "#616161"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
@@ -242,6 +250,10 @@ layout {
 
         // You can also change the shadow color and opacity.
         // color "#000"
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
     }
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
@@ -308,29 +320,35 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // The wiki explains how to configure individual animations:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
-    // Uncomment to turn off all animations.
-    // off
-
+    workspace-switch {
+        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
+    }
     window-open {
-        duration-ms 250
+        duration-ms 150
         curve "ease-out-expo"
     }
-
     window-close {
-        duration-ms 250
+        duration-ms 150
         curve "ease-out-quad"
     }
-
     horizontal-view-movement {
-        spring damping-ratio=1.8 stiffness=1500 epsilon=0.0001
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
     }
-
-    workspace-switch {
-        spring damping-ratio=1.8 stiffness=1500 epsilon=0.0001
+    window-movement {
+        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
     }
-
     window-resize {
-        spring damping-ratio=1.8 stiffness=1500 epsilon=0.0001
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+    }
+    config-notification-open-close {
+        spring damping-ratio=0.65 stiffness=923 epsilon=0.001
+    }
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+    overview-open-close {
+        spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
     }
 }
 
@@ -361,20 +379,7 @@ window-rule {
     // geometry-corner-radius 15
     clip-to-geometry true
     tiled-state true
-}
-
-window-rule {
-    match app-id="^jetbrains" title="^$" // wayland
-    match app-id="^jetbrains" title="^ $" // X11
-
-    open-focused false
-    open-floating true
-}
-
-window-rule {
-    match title=r#"flameshot"#
-    open-fullscreen false
-    open-floating true
+    draw-border-with-background false
 }
 
 window-rule {
@@ -395,6 +400,11 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="steam" title="Friends List"
+    match app-id="^org.telegram.desktop$" title="^Media viewer$"
+    match title=r#"flameshot"#
+
+    open-fullscreen false
     open-floating true
 }
 
@@ -402,19 +412,6 @@ window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=20 y=20 relative-to="bottom-right"
     open-focused false
-    open-floating true
-}
-
-window-rule {
-    match app-id="steam" title="Friends List"
-    open-floating true
-}
-
-window-rule {
-    match app-id="^org.telegram.desktop$" title="^Media viewer$"
-    default-column-width { proportion 0.700000; }
-    default-window-height { proportion 0.700000; }
-    open-fullscreen false
     open-floating true
 }
 

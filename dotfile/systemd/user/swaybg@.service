@@ -1,0 +1,12 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+Description=Swaybg running on namespace %i
+
+[Service]
+ExecStart=/usr/bin/swaybg -m fill -n %i -i ""
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

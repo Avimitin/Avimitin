@@ -1,0 +1,18 @@
+[Unit]
+Description=Calibre OSPF Service
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=4
+
+[Service]
+ExecStart=/usr/bin/calibre-server --port=58083 --enable-local-write
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+SystemCallArchitectures=native
+MemoryDenyWriteExecute=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

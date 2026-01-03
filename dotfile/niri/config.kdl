@@ -205,7 +205,7 @@ layout {
         // off
 
         width 2
-        active-color "#616161"
+        active-color "#3c6676"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.

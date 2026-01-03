@@ -1,6 +1,6 @@
 @define-color shadow rgba(0, 0, 0, 0.4);
 @define-color grey #dcdcdc;
-@define-color background rgba(70, 84, 110, 0.6);
+@define-color background rgba(29, 83, 103, 0.5);
 @define-color obaque-bg rgb(60, 80, 125);
 @define-color mpris_bg rgba(255, 255, 255, 0.4);
 
@@ -21,7 +21,7 @@
 window#waybar {
     background-color: @background;
     color: #ffffff;
-    border-right: 1px solid #6c7086;
+    border-right: 1px solid #297693;
 }
 
 #workspaces {

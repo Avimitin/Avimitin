@@ -359,15 +359,15 @@ overview {
         // set off to disable shadow
 
         // Softness controls the shadow blur radius.
-        softness 1
+        softness 20
 
         // Spread expands the shadow.
-        spread 1
+        spread 10
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=0
 
-        color "#454545"
+        color "#0d0d0d"
     }
 }
 

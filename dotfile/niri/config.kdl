@@ -371,6 +371,12 @@ overview {
     }
 }
 
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^backdrop$"
+    place-within-backdrop true
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules

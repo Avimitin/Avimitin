@@ -1,0 +1,16 @@
+pkgbase = qbittorrent-cli-git
+	pkgdesc = Cli to manage qBittorrent
+	pkgver = 2.0.0.r9.4631210
+	pkgrel = 1
+	url = https://github.com/ludviglundgren/qbittorrent-cli
+	arch = x86_64
+	license = MIT
+	makedepends = git
+	makedepends = go-pie
+	depends = glibc
+	provides = qbittorrent-cli
+	conflicts = qbittorrent-cli
+	source = qbittorrent-cli::git+https://github.com/ludviglundgren/qbittorrent-cli
+	sha512sums = SKIP
+
+pkgname = qbittorrent-cli-git

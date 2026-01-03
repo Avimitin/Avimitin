@@ -3,3 +3,9 @@ dotfile/nvim
 result
 arch-pkgs/*/*
 !arch-pkgs/*/PKGBUILD
+!arch-pkgs/*/keys
+!arch-pkgs/*/LICENSES
+!arch-pkgs/*/LICENSE
+!arch-pkgs/*/.nvchecker.toml
+!arch-pkgs/*/REUSE.toml
+!arch-pkgs/*/.SRCINFO

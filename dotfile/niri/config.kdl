@@ -362,12 +362,12 @@ overview {
         softness 20
 
         // Spread expands the shadow.
-        spread 10
+        spread 5
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=0
 
-        color "#0d0d0d"
+        color "#00000082"
     }
 }
 

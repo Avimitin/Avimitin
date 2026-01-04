@@ -2,7 +2,7 @@
 {
     "layer": "top",
     "position": "left",
-    "modules-left": ["niri/workspaces" ],
+    "modules-left": ["niri/workspaces", "niri/workspace-overview"],
     "modules-center": ["clock"],
     "modules-right": ["mpris", "tray", "battery", "pulseaudio", "network", "custom/notification"],
     "tray": {
@@ -81,6 +81,9 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "niri/workspace-overview": {
+        "format": ""
     }
 }
 

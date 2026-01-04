@@ -71,6 +71,7 @@ window#waybar {
 #scratchpad,
 #upower,
 #clock,
+#custom-notification,
 #mpd {
     text-shadow: 0px 0px 3px @shadow;
     -gtk-icon-shadow: 0px 0px 3px @shadow;

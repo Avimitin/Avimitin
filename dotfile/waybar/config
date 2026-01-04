@@ -4,7 +4,7 @@
     "position": "left",
     "modules-left": ["niri/workspaces" ],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "tray", "battery", "pulseaudio", "network"],
+    "modules-right": ["mpris", "tray", "battery", "pulseaudio", "network", "custom/notification"],
     "tray": {
         "spacing": 15,
         "icon-size": 15
@@ -61,6 +61,26 @@
         "paused": "󰏥",
         "stop": ""
       }
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span size='16pt'>{icon}</span>",
+        "format-icons": {
+          "notification": "󱅫",
+          "none": "󰂜",
+          "dnd-notification": "󰂠",
+          "dnd-none": "󰪓",
+          "inhibited-notification": "󰂛",
+          "inhibited-none": "󰪑",
+          "dnd-inhibited-notification": "󰂛",
+          "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     }
 }
 

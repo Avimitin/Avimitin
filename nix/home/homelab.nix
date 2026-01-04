@@ -71,6 +71,8 @@ in
     ghostty = utils.fromDotfile "ghostty/config";
     flameshot = utils.fromDotfile "flameshot/flameshot.ini";
     fastfetch = utils.fromDotfile "fastfetch/config.jsonc";
+    swaync = utils.fromDotfile "swaync";
+    swaync-service = utils.fromDotfile "systemd/user/swaync.service";
   };
 
   # Use system fc-cache here

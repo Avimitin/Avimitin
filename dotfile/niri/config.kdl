@@ -377,6 +377,11 @@ layer-rule {
     place-within-backdrop true
 }
 
+layer-rule {
+    match namespace="^swaync-notification-window$"
+    opacity 1.0
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -416,7 +421,7 @@ window-rule {
 
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-    default-floating-position x=20 y=20 relative-to="bottom-right"
+    default-floating-position x=20 y=20 relative-to="bottom-left"
     open-focused false
     open-floating true
 }

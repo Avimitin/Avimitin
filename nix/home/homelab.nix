@@ -75,6 +75,7 @@ in
     swaync = ln "swaync";
     swaync-service = ln "systemd/user/swaync.service";
     vicinae-server = ln "systemd/user/vicinae-server.service";
+    vicinae-config = ln "vicinae/settings.json";
     zathurarc = ln "zathura/zathurarc";
   };
 

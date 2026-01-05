@@ -7,6 +7,7 @@
 
 let
   utils = import ../lib.nix { inherit pkgs config; };
+  ln = utils.fromDotfile;
 in
 {
   imports = [ ./share.nix ];
@@ -48,13 +49,13 @@ in
       '';
       target = "mpv";
     };
-    fontconfig = utils.fromDotfile "fontconfig/conf.d";
-    alacritty = utils.fromDotfile "alacritty/alacritty.toml";
-    mangohud = utils.fromDotfile "MangoHud/MangoHud.conf";
-    mimeapps = utils.fromDotfile "mimeapps.list";
-    "gtk-3.0" = utils.fromDotfile "gtk-3.0";
-    "gtk-4.0" = utils.fromDotfile "gtk-4.0";
-    waybar = utils.fromDotfile "waybar";
+    fontconfig = ln "fontconfig/conf.d";
+    alacritty = ln "alacritty/alacritty.toml";
+    mangohud = ln "MangoHud/MangoHud.conf";
+    mimeapps = ln "mimeapps.list";
+    "gtk-3.0" = ln "gtk-3.0";
+    "gtk-4.0" = ln "gtk-4.0";
+    waybar = ln "waybar";
     hyprlock = {
       source = pkgs.replaceVarsWith {
         name = "hyprlock.conf";
@@ -66,14 +67,15 @@ in
       };
       target = "hypr/hyprlock.conf";
     };
-    niri = utils.fromDotfile "niri/config.kdl";
-    foot = utils.fromDotfile "foot/foot.ini";
-    ghostty = utils.fromDotfile "ghostty/config";
-    flameshot = utils.fromDotfile "flameshot/flameshot.ini";
-    fastfetch = utils.fromDotfile "fastfetch/config.jsonc";
-    swaync = utils.fromDotfile "swaync";
-    swaync-service = utils.fromDotfile "systemd/user/swaync.service";
-    vicinae-server = utils.fromDotfile "systemd/user/vicinae-server.service";
+    niri = ln "niri/config.kdl";
+    foot = ln "foot/foot.ini";
+    ghostty = ln "ghostty/config";
+    flameshot = ln "flameshot/flameshot.ini";
+    fastfetch = ln "fastfetch/config.jsonc";
+    swaync = ln "swaync";
+    swaync-service = ln "systemd/user/swaync.service";
+    vicinae-server = ln "systemd/user/vicinae-server.service";
+    zathurarc = ln "zathura/zathurarc";
   };
 
   # Use system fc-cache here

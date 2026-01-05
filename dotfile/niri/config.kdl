@@ -705,4 +705,5 @@ binds {
 
 debug {
     disable-direct-scanout
+    honor-xdg-activation-with-invalid-serial
 }

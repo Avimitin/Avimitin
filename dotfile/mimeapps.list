@@ -64,9 +64,9 @@ x-scheme-handler/tg=userapp-Telegram Desktop-8HAYU2.desktop;userapp-Telegram Des
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;userapp-Telegram Desktop-Z6VOU2.desktop;userapp-Telegram Desktop-UNIJC3.desktop;
 
 [Default Applications]
-application/epub=okularApplication_epub.desktop
-application/epub+zip=okularApplication_epub.desktop
-application/pdf=okularApplication_pdf.desktop
+application/epub=org.pwmt.zathura.desktop
+application/epub+zip=org.pwmt.zathura.desktop
+application/pdf=org.pwmt.zathura.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
 application/x-extension-shtml=firefox.desktop

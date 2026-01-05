@@ -73,6 +73,7 @@ in
     fastfetch = utils.fromDotfile "fastfetch/config.jsonc";
     swaync = utils.fromDotfile "swaync";
     swaync-service = utils.fromDotfile "systemd/user/swaync.service";
+    vicinae-server = utils.fromDotfile "systemd/user/vicinae-server.service";
   };
 
   # Use system fc-cache here

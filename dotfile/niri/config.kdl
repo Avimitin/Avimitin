@@ -1,13 +1,3 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-// Check the wiki for a full description of the configuration:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
-environment {
-    QT_QPA_PLATFORM "wayland;xcb"
-    QT_QPA_PLATFORMTHEME "qt6ct"
-    XDG_CURRENT_DESKTOP "niri"
-}
-
 hotkey-overlay {
     skip-at-startup
 }

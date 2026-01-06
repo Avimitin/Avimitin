@@ -1,3 +1,10 @@
+if status is-login
+    export QT_QPA_PLATFORM="wayland;xcb"
+    export QT_QPA_PLATFORMTHEME="qt6ct"
+    export SDL_VIDEODRIVER="wayland"
+    export MOZ_ENABLE_WAYLAND=1
+end
+
 if not status is-interactive
   return
 end

@@ -5,6 +5,3 @@ After=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/vicinae server
-
-[Install]
-WantedBy=graphical-session.target

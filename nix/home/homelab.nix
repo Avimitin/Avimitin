@@ -77,6 +77,7 @@ in
     vicinae-server = ln "systemd/user/vicinae-server.service";
     vicinae-config = ln "vicinae/settings.json";
     zathurarc = ln "zathura/zathurarc";
+    swaybg = ln "systemd/user/swaybg@.service";
   };
 
   # Use system fc-cache here

@@ -9,6 +9,3 @@ BusName=org.freedesktop.Notifications
 ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
 ExecStart=/usr/bin/swaync
 ExecReload=/usr/bin/swaync-client -R -rs
-
-[Install]
-WantedBy=graphical-session.target

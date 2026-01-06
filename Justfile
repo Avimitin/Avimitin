@@ -29,7 +29,7 @@ online *args:
 # Example: just switch my-machine --show-trace
 alias s := switch
 switch name *args:
-    nix {{nix_flags}} {{nix_offline}} run '.#home-manager' -- {{hm_flags}} {{hm_offline}} --flake ".#{{name}}" switch {{args}}
+    @nix {{nix_flags}} {{nix_offline}} run '.#home-manager' -- {{hm_flags}} {{hm_offline}} --flake ".#{{name}}" switch {{args}}
 
 # Update and Switch (Online)
 # Updates flake.lock first, then switches

@@ -25,34 +25,23 @@ window#waybar {
 }
 
 #workspaces {
-    margin: 1em;
+    text-shadow: 0px 0px 3px @shadow;
+    margin: 0.4em;
 }
 
 #workspaces button {
-    font-weight: 900;
-    padding: 0.4em 0em;
-    color: @grey;
-    text-shadow: 0 0 10px @shadow;
+    text-shadow: 0px 0px 3px @shadow;
+    -gtk-icon-shadow: 0px 0px 3px @shadow;
+    padding: 0.5em;
 }
 
-#workspaces button.focused,
-#workspaces button:hover,
-#workspaces button.active
-{
-    color: #FFFFFF;
-    text-shadow: 0 0 5px #FFFFFF;
-    box-shadow: none;
-    background: none;
-    border: none;
+#workspaces button.app-icon {
+    border-radius: 0px;
 }
 
-#workspaces button.urgent {
-    color: #8d2a10;
-    text-shadow: 0 0 10px #5f1c1c;
-    background: none;
-    border: none;
-    box-shadow: none;
-    background-color: rgba(0, 0, 0, 0);
+#workspaces button.app-icon.focused {
+    background-color: #4d8093;
+    border-radius: 5px;
 }
 
 #battery,
@@ -76,24 +65,6 @@ window#waybar {
     text-shadow: 0px 0px 3px @shadow;
     -gtk-icon-shadow: 0px 0px 3px @shadow;
     padding: 0.5em;
-}
-
-#workspace-overview {
-    text-shadow: 0px 0px 3px @shadow;
-    background-color: #4d8093;
-    margin: 0.4em;
-    /* padding: 0.5em; */
-    border-radius: 14px;
-}
-
-#workspace-overview button {
-    text-shadow: 0px 0px 3px @shadow;
-    -gtk-icon-shadow: 0px 0px 3px @shadow;
-    padding: 0.5em;
-}
-
-#workspace-overview button.focused {
-    background-color: rgba(29, 83, 103, 0.5);
 }
 
 #mpris {

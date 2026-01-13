@@ -84,8 +84,7 @@
     },
     "niri/workspaces": {
         "app-icons": true,
-        "format-window": "",
-        "format": "•"
+        "format-window": ""
     }
 }
 

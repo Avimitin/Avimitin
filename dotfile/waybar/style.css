@@ -27,7 +27,7 @@ window#waybar {
 #workspaces {
     text-shadow: 0px 0px 3px @shadow;
     background-color: rgba(0, 0, 0, 0.2);
-    margin: 0.5em;
+    margin: 1em 0.4em;
     border-radius: 16px;
     color: #a0a0a0;
     font-weight: 900;
@@ -36,6 +36,11 @@ window#waybar {
 #workspaces box.workspace-group {
     border-radius: 16px;
     opacity: 0.6;
+    padding: 1em 0em;
+}
+
+#workspaces .workspace-group-label {
+    margin-top: 0.5em;
 }
 
 #workspaces box.workspace-group.active-workspace {
@@ -47,6 +52,7 @@ window#waybar {
 #workspaces button {
     color: #a0a0a0;
     opacity: 0.6;
+    padding: 0.5em 0em;
 }
 
 #workspaces button.focused {

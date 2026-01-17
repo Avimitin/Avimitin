@@ -88,6 +88,10 @@ alias ip "ip -c"
 
 alias web-open "firefox --new-window --kiosk"
 
+if command -q git
+    alias g git
+end
+
 # ===================================================================
 # Variables
 # ===================================================================

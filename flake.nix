@@ -21,12 +21,11 @@
       nixpkgs,
       flake-parts,
       home-manager,
-      nvim,
       treefmt-nix,
+      ...
     }@inputs:
     let
       overlays = [
-        nvim.overlays.default
         ((import ./nix/overlay.nix) inputs)
       ];
     in

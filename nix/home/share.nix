@@ -41,7 +41,7 @@ in
 
     # Misc shell tools
     delta # Beautiful git diff
-    neovim-nightly # vim alternative
+    my-neovim # vim alternative
     fd # find alternative
     fzf # fuzzy finder
     ripgrep # grep alternative

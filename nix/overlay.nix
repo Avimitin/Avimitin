@@ -2,6 +2,8 @@ inputs:
 
 final: prev: {
   my-nvim-src = inputs.nvim.outPath;
+  my-neovim = inputs.nvim.packages.${final.stdenv.hostPlatform.system}.neovim;
+
   qbittorrent-cli = final.callPackage ./pkgs/qbittorrent-cli.nix { };
   mkAppleFonts = final.callPackage ./pkgs/apple-fonts.nix { };
   # sans-serif

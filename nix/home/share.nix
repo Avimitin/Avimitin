@@ -102,11 +102,6 @@ in
       rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
       sha256 = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
     };
-
-    neovim = {
-      source = pkgs.my-nvim-src;
-      target = "nvim";
-    };
   };
 
   programs.bat = {

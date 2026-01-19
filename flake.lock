@@ -216,11 +216,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1768820541,
-        "narHash": "sha256-0hjKI1/Ik3O+pdm/tZezywix1EVORdNrqTZvXiv0s/M=",
+        "lastModified": 1768825420,
+        "narHash": "sha256-oPKjQm5WUm0rBgdlQtUe55yzRl9Al8nVlws2+CijfpU=",
         "owner": "Avimitin",
         "repo": "nvim",
-        "rev": "92333d360a99ce2c9d20319892c2650f66fd17be",
+        "rev": "9fce22adf4661edc2449b1dd7557b0f213d0d40c",
         "type": "github"
       },
       "original": {

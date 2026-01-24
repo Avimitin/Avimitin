@@ -6,7 +6,7 @@ addWants() {
 }
 
 services=(
-  "app-com.mitchellh.ghostty.service"
+  "foot-server.service"
   "gamemoded.service"
   "kde-indicator.service"
   "plasma-polkit-agent.service"

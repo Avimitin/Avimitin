@@ -69,7 +69,6 @@ in
     };
     niri = ln "niri/config.kdl";
     foot = ln "foot/foot.ini";
-    ghostty = ln "ghostty/config";
     flameshot = ln "flameshot/flameshot.ini";
     fastfetch = ln "fastfetch/config.jsonc";
     swaync = ln "swaync";

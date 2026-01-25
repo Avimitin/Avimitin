@@ -67,6 +67,7 @@
     p="push"
     r="rebase"
     pf="push --force-with-lease"
+    pp="pull --prune"
     sync="fetch -p -P --force"
     s="!~/.config/git/git-status"
     sw="switch"

@@ -65,7 +65,11 @@ in
     tinymist # Typst LSP w/ preview
     nix-output-monitor # Pipe nix output for monitor
     just # Just a command executor
-    claude-code # Claude
+
+    # AI stuff
+    claude-code
+    gemini-cli
+    opencode
   ];
 
   nix.package = pkgs.nixVersions.nix_2_28;

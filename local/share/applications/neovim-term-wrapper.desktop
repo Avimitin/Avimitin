@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Neovim wrapped with terminal
-Comment=Open Neovim with Terminal
-Exec=/usr/bin/foot --title=Neovim nvim
-Icon=neovim
-Terminal=false
-Type=Application
-Categories=System;TerminalEmulator;

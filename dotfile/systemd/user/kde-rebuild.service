@@ -1,9 +1,0 @@
-[Unit]
-PartOf=graphical-session.target
-After=graphical-session.target
-Requisite=graphical-session.target
-
-[Service]
-Type=oneshot
-Environment=XDG_MENU_PREFIX=arch-
-ExecStart=/usr/bin/kbuildsycoca6 --noincremental

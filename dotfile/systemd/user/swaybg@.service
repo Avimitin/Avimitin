@@ -1,8 +1,0 @@
-[Unit]
-PartOf=graphical-session.target
-After=graphical-session.target
-Description=Swaybg running on namespace %i
-
-[Service]
-ExecStart=/usr/bin/swaybg -m fill -n %i -i "%h/Pictures/Wallpapers/%i.jpg"
-Restart=on-failure

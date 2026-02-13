@@ -2,17 +2,26 @@
   description = "Flakes to setup my configuration";
 
   inputs = {
+    # Unstable nixpkgs for latest packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # "stable" nixpkgs for system usage
+    nixpkgs-channel.url = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-25.11/nixexprs.tar.xz";
+    # Modulerize nix modules
     flake-parts.url = "github:hercules-ci/flake-parts";
+    # User home configuration
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # My neovim bundle
     nvim.url = "github:Avimitin/nvim";
+    # Nix formatter
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Nix Devops for machine nix configuration deployment
+    colmena.url = "github:zhaofengli/colmena";
   };
 
   outputs =
@@ -39,6 +48,37 @@
         imports = [
           inputs.treefmt-nix.flakeModule
         ];
+
+        # colmenaHive is the central collection of all the NixOS configuration
+        flake.colmenaHive = inputs.colmena.lib.makeHive {
+          meta.nixpkgs.lib = inputs.nixpkgs.lib;
+
+          # I would like to configure Nixpkgs per machine based
+          meta.nodeNixpkgs = {
+            thinkbook13 = import inputs.nixpkgs-channel {
+              system = "x86_64-linux";
+              overlays = [];
+            };
+          };
+
+          thinkbook13 = {
+            deployment = {
+              # Allow local deployment with `colmena apply-local`
+              allowLocalDeployment = true;
+
+              # Disable SSH deployment. This node will be skipped in a
+              # normal`colmena apply`.
+              targetHost = null;
+            };
+
+            imports = [
+              inputs.home-manager.nixosModules.home-manager
+              # Gives modules ability to access flake input
+              { home-manager.extraSpecialArgs = { flake-inputs = inputs; }; }
+              ./nix/modules/thinkbook13
+            ];
+          };
+        };
 
         flake = {
           homeConfigurations = {
@@ -70,6 +110,7 @@
           in
           {
             # Override the default "pkgs" attribute in per-system config.
+            # This work as same as `specialArgs`
             _module.args.pkgs = pkgs;
 
             # Although the pkgs attribute is already override, but I am afraid
@@ -78,6 +119,8 @@
             # explicitly told every user we are using an overlayed version of
             # nixpkgs.
             legacyPackages = pkgs;
+
+            packages.colmena = inputs'.colmena.packages.colmena;
 
             apps.home-manager = {
               type = "app";

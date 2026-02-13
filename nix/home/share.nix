@@ -31,7 +31,6 @@ in
       };
       target = ".bashrc";
     };
-    tmux = lib.fromDotfile ".tmux.conf";
     inputrc = lib.fromDotfile ".inputrc";
   };
 
